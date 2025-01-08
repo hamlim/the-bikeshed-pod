@@ -9,7 +9,7 @@
     "lint": "biome lint"
   },
   "dependencies": {
-    "next": "15.0.3-canary.8"
+    "next": "15.2.0-canary.1"
   },
   "devDependencies": {
     "@types/node": "22.7.7",

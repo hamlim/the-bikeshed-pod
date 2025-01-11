@@ -8,5 +8,11 @@
       "binding": "BUCKET",
       "bucket_name": "the-bikeshed-pod"
     }
+  ],
+  "routes": [
+    {
+      "pattern": "https://bikeshedpod.com/api/*",
+      "zone_id": "c91161096f67411117669d5a57ba7809"
+    }
   ]
 }

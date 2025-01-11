@@ -6,12 +6,19 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "biome lint"
+    "lint": "biome lint",
+    "build:worker": "opennextjs-cloudflare",
+    "dev:worker": "wrangler dev --port 8771",
+    "preview:worker": "npm run build:worker && npm run dev:worker",
+    "deploy:worker": "npm run build:worker && wrangler deploy"
   },
   "dependencies": {
     "next": "15.2.0-canary.1"
   },
   "devDependencies": {
+    "@opennextjs/aws": "3.3.1",
+    "@opennextjs/cloudflare": "0.3.7",
+    "wrangler": "3.101.0",
     "@types/node": "22.7.7",
     "@types/react": "npm:types-react@19.0.0-rc.1",
     "@types/react-dom": "npm:types-react-dom@19.0.0-rc.1",

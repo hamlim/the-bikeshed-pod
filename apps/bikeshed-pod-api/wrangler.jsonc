@@ -1,0 +1,12 @@
+{
+  "name": "bikeshed-pod-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2025-01-11",
+  "compatibility_flags": ["nodejs_compat"],
+  "r2_buckets": [
+    {
+      "binding": "BUCKET",
+      "bucket_name": "the-bikeshed-pod"
+    }
+  ]
+}

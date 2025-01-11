@@ -1,0 +1,14 @@
+{
+  "name": "bikeshed-pod-api",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy --minify"
+  },
+  "dependencies": {
+    "hono": "4.6.16"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "4.20241218.0",
+    "wrangler": "3.96.0"
+  }
+}

@@ -3,18 +3,22 @@ import { Button } from "~/components/ui/button";
 import { Card, CardContent } from "~/components/ui/card";
 
 interface EpisodePageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-export default function EpisodePage({ params }: EpisodePageProps) {
+export default async function EpisodePage({ params }: EpisodePageProps) {
+  const id = (await params).id;
+
+  // @TODO: fetch episode data and what not
+
   return (
     <div className="container mx-auto max-w-3xl py-12">
       <Card>
         <CardContent className="p-8">
           <h1 className="text-3xl font-bold mb-4">
-            Episode {params.id}: The Great Tabs vs Spaces Debate
+            Episode {id}: The Great Tabs vs Spaces Debate
           </h1>
 
           <div className="flex gap-4 text-sm text-slate-500 mb-6">

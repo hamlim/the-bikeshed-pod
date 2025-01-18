@@ -48,17 +48,10 @@ function getEpisodeName(episodeId: string) {
 }
 
 app.get(`/audio/:episodeId`, async function handler(context) {
-  console.log(
-    "GET /audio/:episodeId",
-    context.get("path"),
-    context.req.param("episodeId"),
-  );
   let episodeId = context.req.param("episodeId");
-  if (!episodeId) {
-    return context.text("The episodeId is required", 400);
-  }
   let episode = await context.env.BUCKET.get(getEpisodeName(episodeId));
   if (!episode) {
+    console.warn(`[audio/:episodeId] Could not find the episode: ${episodeId}`);
     return context.text(
       "These are not the droids you're looking for. (Could not find the episode, if you expect this to work please contact us at bikeshedpod@gmail.com)",
       404,
@@ -77,7 +70,6 @@ app.get(`/audio/:episodeId`, async function handler(context) {
 });
 
 app.get(`*`, async function handler(context) {
-  console.log("GET *", context.get("path"));
   // teapot
   return context.text("This is not the route you're looking for!", 418);
 });

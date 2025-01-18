@@ -1,4 +1,5 @@
 import { Github, Mic2, Twitter } from "lucide-react";
+import { BlueSky } from "~/components/BlueSky";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent } from "~/components/ui/card";
 
@@ -28,28 +29,30 @@ export default function AboutPage() {
             </p>
 
             <h2>The Hosts</h2>
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-3 gap-6 my-6">
               <div>
-                <h3>Jane Developer</h3>
+                <h3>Matt Hamlin</h3>
                 <p className="text-slate-600">
-                  Full-stack developer with 10 years of experience in
-                  bikeshedding discussions.
+                  Full-stack, 50 years in experience bikeshedding.
                 </p>
               </div>
               <div>
-                <h3>John Coder</h3>
+                <h3>Scott Kaye</h3>
                 <p className="text-slate-600">
-                  Systems architect who has strong opinions about tabs vs
-                  spaces.
+                  Alacritous Pollyanna and frontend enthusiast.
                 </p>
+              </div>
+              <div>
+                <h3>Dillon Curry</h3>
+                <p className="text-slate-600">Spicy take Curry.</p>
               </div>
             </div>
 
             <h2>Connect With Us</h2>
             <div className="flex gap-4">
               <Button variant="outline" size="sm" className="gap-2">
-                <Twitter className="w-4 h-4" />
-                Twitter
+                <BlueSky className="w-4 h-4" />
+                Blue Sky
               </Button>
               <Button variant="outline" size="sm" className="gap-2">
                 <Github className="w-4 h-4" />

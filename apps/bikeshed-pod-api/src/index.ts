@@ -1,15 +1,16 @@
 import { Hono } from "hono";
 import type { Context, Next } from "hono";
 
+// @TODO - remove if actually not needed?
 // small little helper to ensure paths are prefixed with the base path
-function withBasePath(basePath: string) {
-  return function path(strings: TemplateStringsArray, ...values: Array<any>) {
-    let interpolated = String.raw({ raw: strings }, ...values);
-    return `${basePath}${interpolated.startsWith("/") ? "" : "/"}${interpolated}`;
-  };
-}
+// function withBasePath(basePath: string) {
+//   return function path(strings: TemplateStringsArray, ...values: Array<any>) {
+//     let interpolated = String.raw({ raw: strings }, ...values);
+//     return `${basePath}${interpolated.startsWith("/") ? "" : "/"}${interpolated}`;
+//   };
+// }
 
-let path = withBasePath("/api");
+// let path = withBasePath("/api");
 
 type Variables = {
   path: string;
@@ -33,7 +34,7 @@ app.use(function pathMiddleware(
   return next();
 });
 
-app.get(path`/__info`, async function handler(context) {
+app.get(`/__info`, async function handler(context) {
   return context.json({
     name: "bikeshed-pod-api",
     version: "0.0.1",
@@ -44,7 +45,7 @@ function getEpisodeName(episodeId: string) {
   return `episodes/${episodeId}.mp3`;
 }
 
-app.get(path`/audio/:episodeId`, async function handler(context) {
+app.get(`/audio/:episodeId`, async function handler(context) {
   console.log(
     "GET /audio/:episodeId",
     context.get("path"),
@@ -73,7 +74,7 @@ app.get(path`/audio/:episodeId`, async function handler(context) {
   });
 });
 
-app.get(path`*`, async function handler(context) {
+app.get(`*`, async function handler(context) {
   console.log("GET *", context.get("path"));
   // teapot
   return context.text("This is not the route you're looking for!", 418);

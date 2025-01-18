@@ -1,4 +1,5 @@
 import { Search } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "~/components/ui/button";
 
@@ -11,8 +12,15 @@ export function Nav() {
             <Link
               href="/"
               className="text-xl font-bold hover:text-slate-600 transition-colors"
+              aria-label="The Bikeshed Podcast"
             >
-              Bikeshed Pod
+              <Image
+                src="/logo.png"
+                alt="The Bikeshed Podcast"
+                width={125}
+                height={125}
+                aria-hidden="true"
+              />
             </Link>
             <div className="flex gap-4">
               <Link

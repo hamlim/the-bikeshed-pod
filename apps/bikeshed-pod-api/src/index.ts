@@ -44,13 +44,13 @@ app.get("/audio/__list", async function audioListHanlder(context) {
   return context.json(episodeKeys);
 });
 
-function getEpisodeName(episodeId: string) {
-  return `episodes/${episodeId}.mp3`;
+function getEpisodeAudioKey(episodeId: string) {
+  return `episodes/${episodeId}/audio.mp3`;
 }
 
 app.get(`/audio/:episodeId`, async function audioHandler(context) {
   let episodeId = context.req.param("episodeId");
-  let episode = await context.env.BUCKET.get(getEpisodeName(episodeId));
+  let episode = await context.env.BUCKET.get(getEpisodeAudioKey(episodeId));
   if (!episode) {
     console.warn(`[audio/:episodeId] Could not find the episode: ${episodeId}`);
     return context.text(
@@ -74,12 +74,34 @@ app.get(`/audio/:episodeId`, async function audioHandler(context) {
 
 // region: episode-metadata
 
-app.get(`/episode/:episodeId`, async function episodeMetadataHandler(context) {
+function getEpisodeMetadataKey(episodeId: string) {
+  return `episodes/${episodeId}/metadata.json`;
+}
+
+app.get(`/episode/:episodeId`, async function episodeGetHandler(context) {
   let episodeId = context.req.param("episodeId");
-  // TODO: how are we storing the episode metadata?
-  return context.json({
-    episodeId,
-  });
+  let episode = await context.env.BUCKET.get(getEpisodeMetadataKey(episodeId));
+  if (!episode) {
+    return context.text("Not found", 404);
+  }
+  return context.json(episode);
+});
+
+app.put(`/episode/:episodeId`, async function episodePutHandler(context) {
+  let episodeId = context.req.param("episodeId");
+
+  let body = await context.req.json();
+
+  try {
+    await context.env.BUCKET.put(getEpisodeMetadataKey(episodeId), body);
+  } catch (error) {
+    console.error(
+      `[episodePutHandler] Could not put episode metadata: ${error}`,
+    );
+    return context.text("Internal server error", 500);
+  }
+
+  return context.text("OK", 200);
 });
 
 // endregion: episode-metadata

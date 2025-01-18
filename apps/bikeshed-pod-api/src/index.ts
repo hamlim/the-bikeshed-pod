@@ -18,6 +18,7 @@ type Variables = {
 
 type Bindings = {
   BUCKET: R2Bucket;
+  API_TOKEN: string;
 };
 
 type CustomContext = Context<{ Variables: Variables; Bindings: Bindings }>;
@@ -39,6 +40,18 @@ app.get(`/__info`, async function handler(context) {
     name: "bikeshed-pod-api",
     version: "0.0.1",
   });
+});
+
+app.get("/audio/__list", async function audioListHanlder(context) {
+  if (
+    !context.req.query("token") ||
+    context.req.query("token") !== context.env.API_TOKEN
+  ) {
+    return context.text("Unauthorized", 401);
+  }
+  let episodes = await context.env.BUCKET.list();
+  let episodeKeys = episodes.objects.map((episode) => episode.key);
+  return context.json(episodeKeys);
 });
 
 function getEpisodeName(episodeId: string) {

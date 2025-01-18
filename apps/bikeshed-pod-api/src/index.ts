@@ -45,6 +45,11 @@ function getEpisodeName(episodeId: string) {
 }
 
 app.get(path`/audio/:episodeId`, async function handler(context) {
+  console.log(
+    "GET /audio/:episodeId",
+    context.get("path"),
+    context.req.param("episodeId"),
+  );
   let episodeId = context.req.param("episodeId");
   if (!episodeId) {
     return context.text("The episodeId is required", 400);
@@ -68,10 +73,10 @@ app.get(path`/audio/:episodeId`, async function handler(context) {
   });
 });
 
-let TEAPOT = 418;
-
 app.get(path`*`, async function handler(context) {
-  return context.text("This is not the route you're looking for!", TEAPOT);
+  console.log("GET *", context.get("path"));
+  // teapot
+  return context.text("This is not the route you're looking for!", 418);
 });
 
 export default app;

@@ -2,19 +2,28 @@ import { Hono } from "hono";
 import type { Context, Next } from "hono";
 
 // small little helper to ensure paths are prefixed with the base path
-
 function withBasePath(basePath: string) {
   return function path(strings: TemplateStringsArray, ...values: Array<any>) {
     let interpolated = String.raw({ raw: strings }, ...values);
-    return `/api${interpolated.startsWith("/") ? "" : "/"}${interpolated}`;
+    return `${basePath}${interpolated.startsWith("/") ? "" : "/"}${interpolated}`;
   };
 }
 
 let path = withBasePath("/api");
 
-type CustomContext = Context<{ Variables: { path: string } }>;
+type Variables = {
+  path: string;
+};
 
-let app = new Hono<{ Variables: { path: string } }>().basePath("/api");
+type Bindings = {
+  BUCKET: R2Bucket;
+};
+
+type CustomContext = Context<{ Variables: Variables; Bindings: Bindings }>;
+
+let app = new Hono<{ Variables: Variables; Bindings: Bindings }>().basePath(
+  "/api",
+);
 
 app.use(function pathMiddleware(
   context: CustomContext,
@@ -33,6 +42,27 @@ app.get(path`/__info`, async function handler(context) {
 
 app.get(path`*`, async function handler(context) {
   return context.text(context.get("path"), 200);
+});
+
+app.get(path`/audio/:episodeId`, async function handler(context) {
+  let episodeId = context.req.param("episodeId");
+  let episode = await context.env.BUCKET.get(`episodes/${episodeId}`);
+  if (!episode) {
+    return context.text(
+      "These are not the droids you're looking for. (Could not find the episode, if you expect this to work please contact us at bikeshedpod@gmail.com)",
+      404,
+      {
+        headers: ["Content-Type: text/plain"],
+      },
+    );
+  }
+  let responseHeaders = new Headers();
+  episode.writeHttpMetadata(responseHeaders);
+  responseHeaders.set("etag", episode.httpEtag);
+  return new Response(episode.body, {
+    headers: responseHeaders,
+    status: 200,
+  });
 });
 
 export default app;

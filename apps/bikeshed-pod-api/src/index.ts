@@ -1,17 +1,6 @@
 import { Hono } from "hono";
 import type { Context, Next } from "hono";
 
-// @TODO - remove if actually not needed?
-// small little helper to ensure paths are prefixed with the base path
-// function withBasePath(basePath: string) {
-//   return function path(strings: TemplateStringsArray, ...values: Array<any>) {
-//     let interpolated = String.raw({ raw: strings }, ...values);
-//     return `${basePath}${interpolated.startsWith("/") ? "" : "/"}${interpolated}`;
-//   };
-// }
-
-// let path = withBasePath("/api");
-
 type Variables = {
   path: string;
 };

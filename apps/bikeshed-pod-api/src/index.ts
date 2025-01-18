@@ -31,6 +31,7 @@ app.get(`/__info`, async function handler(context) {
   });
 });
 
+// region: audio
 app.get("/audio/__list", async function audioListHanlder(context) {
   if (
     !context.req.query("token") ||
@@ -47,7 +48,7 @@ function getEpisodeName(episodeId: string) {
   return `episodes/${episodeId}.mp3`;
 }
 
-app.get(`/audio/:episodeId`, async function handler(context) {
+app.get(`/audio/:episodeId`, async function audioHandler(context) {
   let episodeId = context.req.param("episodeId");
   let episode = await context.env.BUCKET.get(getEpisodeName(episodeId));
   if (!episode) {
@@ -69,7 +70,21 @@ app.get(`/audio/:episodeId`, async function handler(context) {
   });
 });
 
-app.get(`*`, async function handler(context) {
+// endregion: audio
+
+// region: episode-metadata
+
+app.get(`/episode/:episodeId`, async function episodeMetadataHandler(context) {
+  let episodeId = context.req.param("episodeId");
+  // TODO: how are we storing the episode metadata?
+  return context.json({
+    episodeId,
+  });
+});
+
+// endregion: episode-metadata
+
+app.get(`*`, async function catchAllHandler(context) {
   // teapot
   return context.text("This is not the route you're looking for!", 418);
 });

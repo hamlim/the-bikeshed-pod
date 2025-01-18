@@ -122,8 +122,52 @@ describe("/audio", () => {
 });
 
 describe("/episode", () => {
-  it("responds with a 200 for an existent episode", async () => {
-    let response = await app.request("/api/episode/1");
-    expect(response.status).toBe(200);
+  describe("GET", () => {
+    it("responds with a 200 for an existent episode", async () => {
+      let response = await app.request(
+        "/api/episode/1",
+        {},
+        {
+          BUCKET: {
+            async get(_key: string) {
+              return {
+                episodeId: "1",
+              };
+            },
+          },
+        },
+      );
+      expect(response.status).toBe(200);
+      expect(await response.json()).toEqual({
+        episodeId: "1",
+      });
+    });
+  });
+
+  describe("PUT", () => {
+    it("responds with a 200 for a valid episode", async () => {
+      let response = await app.request(
+        "/api/episode/1",
+        {
+          method: "PUT",
+          body: JSON.stringify({
+            episodeId: "1",
+          }),
+        },
+        {
+          BUCKET: {
+            async put(_key: string, _body: string) {
+              expect(_body).toEqual(
+                JSON.stringify({
+                  episodeId: "1",
+                }),
+              );
+              return;
+            },
+          },
+        },
+      );
+      expect(response.status).toBe(200);
+    });
   });
 });

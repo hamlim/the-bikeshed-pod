@@ -93,7 +93,10 @@ app.put(`/episode/:episodeId`, async function episodePutHandler(context) {
   let body = await context.req.json();
 
   try {
-    await context.env.BUCKET.put(getEpisodeMetadataKey(episodeId), body);
+    await context.env.BUCKET.put(
+      getEpisodeMetadataKey(episodeId),
+      JSON.stringify(body),
+    );
   } catch (error) {
     console.error(
       `[episodePutHandler] Could not put episode metadata: ${error}`,

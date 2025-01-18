@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 
-let app = new Hono();
+let app = new Hono().basePath("/api");
 
 app.get("/__info", async function handler(context) {
   return context.json({

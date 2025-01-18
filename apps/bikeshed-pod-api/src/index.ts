@@ -1,16 +1,38 @@
 import { Hono } from "hono";
+import type { Context, Next } from "hono";
 
-let app = new Hono().basePath("/api");
+// small little helper to ensure paths are prefixed with the base path
 
-app.get("/__info", async function handler(context) {
+function withBasePath(basePath: string) {
+  return function path(strings: TemplateStringsArray, ...values: Array<any>) {
+    let interpolated = String.raw({ raw: strings }, ...values);
+    return `/api${interpolated.startsWith("/") ? "" : "/"}${interpolated}`;
+  };
+}
+
+let path = withBasePath("/api");
+
+type CustomContext = Context<{ Variables: { path: string } }>;
+
+let app = new Hono<{ Variables: { path: string } }>().basePath("/api");
+
+app.use(function pathMiddleware(
+  context: CustomContext,
+  next: Next,
+): ReturnType<Next> {
+  context.set("path", context.req.path.replace("/api", ""));
+  return next();
+});
+
+app.get(path`/__info`, async function handler(context) {
   return context.json({
     name: "bikeshed-pod-api",
     version: "0.0.1",
   });
 });
 
-app.get("*", async function handler(context) {
-  return context.text(context.req.path, 200);
+app.get(path`*`, async function handler(context) {
+  return context.text(context.get("path"), 200);
 });
 
 export default app;

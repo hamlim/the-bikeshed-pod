@@ -29,24 +29,34 @@ export default function AboutPage() {
             </p>
 
             <h2>The Hosts</h2>
-            <div className="grid md:grid-cols-3 gap-6 my-6">
-              <div>
-                <h3>Matt Hamlin</h3>
-                <p className="text-slate-600">
-                  Full-stack, 50 years in experience bikeshedding.
-                </p>
-              </div>
-              <div>
-                <h3>Scott Kaye</h3>
-                <p className="text-slate-600">
-                  Alacritous Pollyanna and frontend enthusiast.
-                </p>
-              </div>
-              <div>
-                <h3>Dillon Curry</h3>
-                <p className="text-slate-600">Spicy take Curry.</p>
-              </div>
-            </div>
+            <ul className="grid md:grid-cols-3 gap-6 my-6">
+              <li className="rounded-2xl bg-gray-100 p-4">
+                <div className="flex aspect-square w-20 h-20 bg-black rounded-full mx-auto mb-4" />
+                <div>
+                  {" "}
+                  <h3 className="font-bold">Matt Hamlin</h3>
+                  <p className="text-slate-600">
+                    Full-stack, 50 years in experience bikeshedding.
+                  </p>
+                </div>
+              </li>
+              <li className="rounded-2xl bg-gray-100 p-4">
+                <div className="flex aspect-square w-20 h-20 bg-black rounded-full mx-auto mb-4" />
+                <div>
+                  <h3 className="font-bold">Scott Kaye</h3>
+                  <p className="text-slate-600">
+                    Alacritous Pollyanna and frontend enthusiast.
+                  </p>
+                </div>
+              </li>
+              <li className="rounded-2xl bg-gray-100 p-4">
+                <div className="flex aspect-square w-20 h-20 bg-black rounded-full mx-auto mb-4" />
+                <div>
+                  <h3 className="font-bold">Dillon Curry</h3>
+                  <p className="text-slate-600">Spicy take Curry.</p>
+                </div>
+              </li>
+            </ul>
 
             <h2>Connect With Us</h2>
             <div className="flex gap-4">

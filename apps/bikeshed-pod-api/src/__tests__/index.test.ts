@@ -171,3 +171,40 @@ describe("/episode", () => {
     });
   });
 });
+
+describe("/episodes/list", () => {
+  it("responds with a 200 for a valid list", async () => {
+    let response = await app.request(
+      "/api/episodes/list",
+      {},
+      {
+        BUCKET: {
+          async list() {
+            return {
+              objects: [
+                { key: "episodes/1" },
+                { key: "episodes/2" },
+                { key: "episodes/3" },
+              ],
+            };
+          },
+        },
+      },
+    );
+    expect(response.status).toBe(200);
+  });
+  it("responds with a 500 for a list error", async () => {
+    let response = await app.request(
+      "/api/episodes/list",
+      {},
+      {
+        BUCKET: {
+          async list() {
+            throw new Error("test");
+          },
+        },
+      },
+    );
+    expect(response.status).toBe(500);
+  });
+});

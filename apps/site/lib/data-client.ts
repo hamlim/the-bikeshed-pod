@@ -36,10 +36,11 @@ export class DataClient {
     if (this.episodesCache.size > 0) {
       return Array.from(this.episodesCache);
     }
-    // @TODO: support
     let response = await fetch(`${this.endpointURL}/episodes/list`);
-    let episodes = await response.json();
-    this.episodesCache.add(episodes);
-    return episodes;
+    let episodes = (await response.json()) as Array<string>;
+    for (let episode of episodes) {
+      this.episodesCache.add(episode);
+    }
+    return Array.from(this.episodesCache);
   }
 }

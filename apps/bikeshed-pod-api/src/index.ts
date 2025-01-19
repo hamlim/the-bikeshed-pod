@@ -107,6 +107,17 @@ app.put(`/episode/:episodeId`, async function episodePutHandler(context) {
   return context.text("OK", 200);
 });
 
+app.get("/episodes/list", async function listEpisodesHandler(context: Context) {
+  try {
+    let episodes = await context.env.BUCKET.list();
+    let episodeKeys = episodes.objects.map((episode) => episode.key);
+    return context.json(episodeKeys);
+  } catch (error) {
+    console.error(`[listEpisodesHandler] Could not list episodes: ${error}`);
+    return context.text("Internal server error", 500);
+  }
+});
+
 // endregion: episode-metadata
 
 app.get(`*`, async function catchAllHandler(context) {

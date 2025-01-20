@@ -26,6 +26,9 @@
       "style": {
         "useConst": "off",
         "noUnusedTemplateLiteral": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "off"
       }
     }
   },

@@ -34,7 +34,7 @@ episodes/
 
 ### Show Metadata:
 
-> [!DANGER]
+> ![DANGER]
 > This is a WIP schema! There's no runtime validation yet
 
 ```json
@@ -53,6 +53,7 @@ episodes/
             ]
         }
     ],
+    "metadata": ["tag-1", "tag-2", "some-other-thing"],
     "longDescription": "Long form description/show notes - supports MDX",
     "audioURL": "https://bikeshedpod.com/api/audio/{episodeId}"
 }

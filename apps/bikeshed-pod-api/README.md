@@ -34,7 +34,7 @@ episodes/
 
 ### Show Metadata:
 
-> ![DANGER]
+> [!WARNING]
 > This is a WIP schema! There's no runtime validation yet
 
 ```json

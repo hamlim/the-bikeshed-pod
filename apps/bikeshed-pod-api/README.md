@@ -54,6 +54,8 @@ episodes/
         }
     ],
     "metadata": ["tag-1", "tag-2", "some-other-thing"],
+    "publishTime": 12345,
+    "duration": 12345,
     "longDescription": "Long form description/show notes - supports MDX",
     "audioURL": "https://bikeshedpod.com/api/audio/{episodeId}"
 }

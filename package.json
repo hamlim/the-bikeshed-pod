@@ -20,7 +20,11 @@
     "test": "turbo run test",
     "generator": "bun ./scripts/generator.ts",
     "one-version:check": "one-version check",
-    "knip": "knip"
+    "knip": "knip",
+    "update-repo": "bunx @whare/cli@latest update ."
   },
-  "packageManager": "bun@1.1.32"
+  "packageManager": "bun@1.1.32",
+  "whare": {
+    "version": "f7771ae6a1e864a5c8905513d441e9fbadac99d1"
+  }
 }

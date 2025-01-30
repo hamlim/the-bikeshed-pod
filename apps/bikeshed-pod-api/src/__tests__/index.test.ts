@@ -56,76 +56,34 @@ describe("app", () => {
   });
 });
 
-describe("/audio", () => {
-  it("bails on audio requests without an episodeId", async () => {
-    let response = await app.request("/api/audio/");
-    // falls through
-    expect(response.status).toBe(418);
-  });
-
-  it("responds with a 404 for a non-existent episode", async () => {
-    let response = await app.request(
-      "/api/audio/non-existent",
-      {},
-      {
-        BUCKET: {
-          async get(_key: string) {
-            return undefined;
-          },
-        },
-      },
-    );
-    expect(response.status).toBe(404);
-  });
-
-  describe("/__list", () => {
-    it("list bails without a token", async () => {
-      let response = await app.request("/api/audio/__list");
-      expect(response.status).toBe(401);
+describe("/episode", () => {
+  describe("GET /audio", () => {
+    it("bails on audio requests without an episodeId", async () => {
+      let response = await app.request("/api/episode/audio/");
+      // falls through
+      expect(response.status).toBe(418);
     });
 
-    it("list bails with an invalid token", async () => {
+    it("responds with a 404 for a non-existent episode", async () => {
       let response = await app.request(
-        "/api/audio/__list?token=foo",
+        "/api/episode/audio/non-existent",
         {},
         {
-          API_TOKEN: "test",
-        },
-      );
-      expect(response.status).toBe(401);
-    });
-
-    it("list works with a valid token", async () => {
-      let episodes = [
-        { key: "episodes/1.mp3" },
-        { key: "episodes/2.mp3" },
-        { key: "episodes/3.mp3" },
-      ];
-      let response = await app.request(
-        "/api/audio/__list?token=test",
-        {},
-        {
-          API_TOKEN: "test",
           BUCKET: {
-            async list() {
-              return {
-                objects: episodes,
-              };
+            async get(_key: string) {
+              return undefined;
             },
           },
         },
       );
-      expect(response.status).toBe(200);
-      expect(await response.json()).toEqual(episodes.map((e) => e.key));
+      expect(response.status).toBe(404);
     });
   });
-});
 
-describe("/episode", () => {
-  describe("GET", () => {
+  describe("GET /metadata", () => {
     it("responds with a 200 for an existent episode", async () => {
       let response = await app.request(
-        "/api/episode/1",
+        "/api/episode/metadata/1",
         {},
         {
           BUCKET: {
@@ -144,10 +102,10 @@ describe("/episode", () => {
     });
   });
 
-  describe("PUT", () => {
+  describe("PUT /metadata", () => {
     it("responds with a 200 for a valid episode", async () => {
       let response = await app.request(
-        "/api/episode/1",
+        "/api/episode/metadata/1",
         {
           method: "PUT",
           body: JSON.stringify({

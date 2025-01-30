@@ -4,20 +4,27 @@ The API for the Bikeshed Pod.
 
 ## Routes
 
-### `/api/audio/:episodeId`
+### `GET /api/episode/audio/:episodeId`
 
 Public route to respond with the mp3 audio for the specified episode
 
-- `:episodeId` should map to the episode name within the `episodes/` dir, **without** the extension
+- `:episodeId` should map to the episode name within the `episodes/` dir
 
-### `/api/audio/__list`
+### `GET /api/episode/metadata/:episodeId`
 
-"Private" route for listing all available episode "keys" (e.g. paths within the bucket).
+Public route to respond with the metadata (see [metadata](#metadata) for more details on the shape)
 
-You **need** to provide a `token` query parameter with the `API_TOKEN` value from your `.env.dev` file.
+- `:episodeId` should map to the episode name within the `episodes/` dir
 
-> [!NOTE]
-> If you don't have the `API_TOKEN` yet, reach out to Matt to get it!
+### `PUT /api/episode/metadata/:episodeId`
+
+Public route to add/update metadata for the specified episode (see [metadata](#metadata) for more details on the shape)
+
+- `:episodeId` should map to the episode name within the `episodes/` dir
+
+### `GET /api/episodes/list`
+
+Public route to list all current episodes
 
 ## Bucket
 
@@ -30,9 +37,10 @@ episodes/
   {episodeID}/
     audio.mp3
     metadata.json
+    transcription.srt # @TODO: will this be an srt file?
 ```
 
-### Show Metadata:
+### Metadata:
 
 > [!WARNING]
 > This is a WIP schema! There's no runtime validation yet

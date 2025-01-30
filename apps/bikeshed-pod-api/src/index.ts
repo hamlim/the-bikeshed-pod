@@ -31,81 +31,77 @@ app.get(`/__info`, async function handler(context) {
   });
 });
 
-// region: audio
-app.get("/audio/__list", async function audioListHanlder(context) {
-  if (
-    !context.req.query("token") ||
-    context.req.query("token") !== context.env.API_TOKEN
-  ) {
-    return context.text("Unauthorized", 401);
-  }
-  let episodes = await context.env.BUCKET.list();
-  let episodeKeys = episodes.objects.map((episode) => episode.key);
-  return context.json(episodeKeys);
-});
-
 function getEpisodeAudioKey(episodeId: string) {
   return `episodes/${episodeId}/audio.mp3`;
 }
 
-app.get(`/audio/:episodeId`, async function audioHandler(context) {
-  let episodeId = context.req.param("episodeId");
-  let episode = await context.env.BUCKET.get(getEpisodeAudioKey(episodeId));
-  if (!episode) {
-    console.warn(`[audio/:episodeId] Could not find the episode: ${episodeId}`);
-    return context.text(
-      "These are not the droids you're looking for. (Could not find the episode, if you expect this to work please contact us at bikeshedpod@gmail.com)",
-      404,
-      {
-        headers: ["Content-Type: text/plain"],
-      },
-    );
-  }
-  let responseHeaders = new Headers();
-  episode.writeHttpMetadata(responseHeaders);
-  responseHeaders.set("etag", episode.httpEtag);
-  return new Response(episode.body, {
-    headers: responseHeaders,
-    status: 200,
-  });
-});
-
-// endregion: audio
-
-// region: episode-metadata
+app.get(
+  `/episode/audio/:episodeId`,
+  async function episodeAudioGetHandler(context) {
+    let episodeId = context.req.param("episodeId");
+    let episode = await context.env.BUCKET.get(getEpisodeAudioKey(episodeId));
+    if (!episode) {
+      console.warn(
+        `[GET /episode/audio/:episodeId] Could not find the episode: ${episodeId}`,
+      );
+      return context.text(
+        "These are not the droids you're looking for. (Could not find the episode, if you expect this to work please contact us at bikeshedpod@gmail.com)",
+        404,
+        {
+          headers: ["Content-Type: text/plain"],
+        },
+      );
+    }
+    let responseHeaders = new Headers();
+    episode.writeHttpMetadata(responseHeaders);
+    responseHeaders.set("etag", episode.httpEtag);
+    return new Response(episode.body, {
+      headers: responseHeaders,
+      status: 200,
+    });
+  },
+);
 
 function getEpisodeMetadataKey(episodeId: string) {
   return `episodes/${episodeId}/metadata.json`;
 }
 
-app.get(`/episode/:episodeId`, async function episodeGetHandler(context) {
-  let episodeId = context.req.param("episodeId");
-  let episode = await context.env.BUCKET.get(getEpisodeMetadataKey(episodeId));
-  if (!episode) {
-    return context.text("Not found", 404);
-  }
-  return context.json(episode);
-});
-
-app.put(`/episode/:episodeId`, async function episodePutHandler(context) {
-  let episodeId = context.req.param("episodeId");
-
-  let body = await context.req.json();
-
-  try {
-    await context.env.BUCKET.put(
+app.get(
+  `/episode/metadata/:episodeId`,
+  async function episodeMetadataGetHandler(context) {
+    let episodeId = context.req.param("episodeId");
+    let episode = await context.env.BUCKET.get(
       getEpisodeMetadataKey(episodeId),
-      JSON.stringify(body),
     );
-  } catch (error) {
-    console.error(
-      `[episodePutHandler] Could not put episode metadata: ${error}`,
-    );
-    return context.text("Internal server error", 500);
-  }
+    if (!episode) {
+      return context.text("Not found", 404);
+    }
+    return context.json(episode);
+  },
+);
 
-  return context.text("OK", 200);
-});
+app.put(
+  `/episode/metadata/:episodeId`,
+  async function episodeMetadataPutHandler(context) {
+    let episodeId = context.req.param("episodeId");
+
+    let body = await context.req.json();
+
+    try {
+      await context.env.BUCKET.put(
+        getEpisodeMetadataKey(episodeId),
+        JSON.stringify(body),
+      );
+    } catch (error) {
+      console.error(
+        `[PUT /episode/metadata/:episodeId] Could not put episode metadata: ${error}`,
+      );
+      return context.text("Internal server error", 500);
+    }
+
+    return context.text("OK", 200);
+  },
+);
 
 app.get("/episodes/list", async function listEpisodesHandler(context: Context) {
   try {
@@ -118,11 +114,12 @@ app.get("/episodes/list", async function listEpisodesHandler(context: Context) {
   }
 });
 
-// endregion: episode-metadata
-
 app.get(`*`, async function catchAllHandler(context) {
-  // teapot
-  return context.text("This is not the route you're looking for!", 418);
+  return context.text(
+    "This is not the route you're looking for!",
+    // teapot
+    418,
+  );
 });
 
 export default app;

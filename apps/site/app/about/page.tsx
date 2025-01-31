@@ -1,4 +1,5 @@
-import { Github, Mic2, Twitter } from "lucide-react";
+import { Github, Mic2 } from "lucide-react";
+import Image from "next/image";
 import { BlueSky } from "~/components/BlueSky";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent } from "~/components/ui/card";
@@ -31,9 +32,16 @@ export default function AboutPage() {
             <h2>The Hosts</h2>
             <ul className="grid md:grid-cols-3 gap-6 my-6">
               <li className="rounded-2xl bg-gray-100 p-4">
-                <div className="flex aspect-square w-20 h-20 bg-black rounded-full mx-auto mb-4" />
+                <div className="border-2 border-gray-300 relative grid w-32 h-32 overflow-hidden rounded-full mx-auto mb-4">
+                  <Image
+                    fill
+                    src="/matt.png"
+                    alt="Matt Hamlin headshot"
+                    className="object-cover"
+                  />
+                </div>
+
                 <div>
-                  {" "}
                   <h3 className="font-bold">Matt Hamlin</h3>
                   <p className="text-slate-600">
                     Full-stack, 50 years in experience bikeshedding.
@@ -41,7 +49,14 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="rounded-2xl bg-gray-100 p-4">
-                <div className="flex aspect-square w-20 h-20 bg-black rounded-full mx-auto mb-4" />
+                <div className="border-2 border-gray-300 relative grid w-32 h-32 overflow-hidden rounded-full mx-auto mb-4">
+                  <Image
+                    fill
+                    src="/scott.png"
+                    alt="Scott Kaye headshot"
+                    className="object-cover"
+                  />
+                </div>
                 <div>
                   <h3 className="font-bold">Scott Kaye</h3>
                   <p className="text-slate-600">
@@ -50,7 +65,15 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="rounded-2xl bg-gray-100 p-4">
-                <div className="flex aspect-square w-20 h-20 bg-black rounded-full mx-auto mb-4" />
+                <div className="border-2 border-gray-300 relative grid w-32 h-32 overflow-hidden rounded-full mx-auto mb-4">
+                  <Image
+                    fill
+                    src="/dillon.jpg"
+                    alt="Dillon Curry headshot"
+                    className="object-cover"
+                  />
+                </div>
+
                 <div>
                   <h3 className="font-bold">Dillon Curry</h3>
                   <p className="text-slate-600">Spicy take Curry.</p>
@@ -58,7 +81,7 @@ export default function AboutPage() {
               </li>
             </ul>
 
-            <h2>Connect With Us</h2>
+            <h2 className="mb-2">Connect With Us</h2>
             <div className="flex gap-4">
               <Button variant="outline" size="sm" className="gap-2">
                 <BlueSky className="w-4 h-4" />

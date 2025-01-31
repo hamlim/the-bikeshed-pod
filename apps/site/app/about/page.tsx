@@ -32,13 +32,15 @@ export default function AboutPage() {
             <h2>The Hosts</h2>
             <ul className="grid md:grid-cols-3 gap-6 my-6">
               <li className="rounded-2xl bg-gray-100 p-4">
-                <Image
-                  src="/matt.jpg"
-                  width={100}
-                  height={100}
-                  alt="Matt Hamlin headshot"
-                  className="aspect-square border rounded-full mx-auto mb-4"
-                />
+                <div className="border-2 border-gray-300 relative grid w-32 h-32 overflow-hidden rounded-full mx-auto mb-4">
+                  <Image
+                    fill
+                    src="/matt.png"
+                    alt="Matt Hamlin headshot"
+                    className="object-cover"
+                  />
+                </div>
+
                 <div>
                   <h3 className="font-bold">Matt Hamlin</h3>
                   <p className="text-slate-600">
@@ -47,13 +49,14 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="rounded-2xl bg-gray-100 p-4">
-                <Image
-                  src="/scott.png"
-                  width={100}
-                  height={100}
-                  alt="Scott Kaye headshot"
-                  className="aspect-square border rounded-full mx-auto mb-4"
-                />
+                <div className="border-2 border-gray-300 relative grid w-32 h-32 overflow-hidden rounded-full mx-auto mb-4">
+                  <Image
+                    fill
+                    src="/scott.png"
+                    alt="Scott Kaye headshot"
+                    className="object-cover"
+                  />
+                </div>
                 <div>
                   <h3 className="font-bold">Scott Kaye</h3>
                   <p className="text-slate-600">
@@ -62,13 +65,14 @@ export default function AboutPage() {
                 </div>
               </li>
               <li className="rounded-2xl bg-gray-100 p-4">
-                <Image
-                  src="/dillon.jpg"
-                  width={100}
-                  height={100}
-                  alt="Dillon Curry headshot"
-                  className="aspect-square border rounded-full mx-auto mb-4"
-                />
+                <div className="border-2 border-gray-300 relative grid w-32 h-32 overflow-hidden rounded-full mx-auto mb-4">
+                  <Image
+                    fill
+                    src="/dillon.jpg"
+                    alt="Dillon Curry headshot"
+                    className="object-cover"
+                  />
+                </div>
 
                 <div>
                   <h3 className="font-bold">Dillon Curry</h3>

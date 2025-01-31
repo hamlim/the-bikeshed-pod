@@ -44,7 +44,7 @@ export default function AboutPage() {
                 <div>
                   <h3 className="font-bold">Matt Hamlin</h3>
                   <p className="text-slate-600">
-                    Full-stack, 50 years in experience bikeshedding.
+                    Full-stack, 50 years of experience bikeshedding.
                   </p>
                 </div>
               </li>

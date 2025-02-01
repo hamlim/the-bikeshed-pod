@@ -44,12 +44,12 @@ app.get(
       console.warn(
         `[GET /episode/audio/:episodeId] Could not find the episode: ${episodeId}`,
       );
-      return context.text(
-        "These are not the droids you're looking for. (Could not find the episode, if you expect this to work please contact us at bikeshedpod@gmail.com)",
-        404,
+      return context.json(
         {
-          headers: ["Content-Type: text/plain"],
+          message:
+            "These are not the droids you're looking for. (Could not find the episode, if you expect this to work please contact us at bikeshedpod@gmail.com)",
         },
+        404,
       );
     }
     let responseHeaders = new Headers();
@@ -74,7 +74,7 @@ app.get(
       getEpisodeMetadataKey(episodeId),
     );
     if (!episode) {
-      return context.text("Not found", 404);
+      return context.json({ message: "Not found" }, 404);
     }
     return context.json(episode);
   },
@@ -83,6 +83,7 @@ app.get(
 app.put(
   `/episode/metadata/:episodeId`,
   async function episodeMetadataPutHandler(context) {
+    // @TODO: add security for this endpoint
     let episodeId = context.req.param("episodeId");
 
     let body = await context.req.json();
@@ -96,10 +97,10 @@ app.put(
       console.error(
         `[PUT /episode/metadata/:episodeId] Could not put episode metadata: ${error}`,
       );
-      return context.text("Internal server error", 500);
+      return context.json({ message: "Internal server error" }, 500);
     }
 
-    return context.text("OK", 200);
+    return context.json({ message: "Episode metadata updated" }, 200);
   },
 );
 
@@ -110,13 +111,49 @@ app.get("/episodes/list", async function listEpisodesHandler(context: Context) {
     return context.json(episodeKeys);
   } catch (error) {
     console.error(`[listEpisodesHandler] Could not list episodes: ${error}`);
-    return context.text("Internal server error", 500);
+    return context.json({ message: "Internal server error" }, 500);
+  }
+});
+
+app.get(`/episodes/metadata`, async function getAllEpisodeMetadata(context) {
+  let episodeKeys: string[] = [];
+  try {
+    let episodes = await context.env.BUCKET.list();
+    for (let episode of episodes.objects) {
+      episodeKeys.push(episode.key);
+    }
+  } catch (error) {
+    console.error(`[getAllEpisodeMetadata] Could not list episodes: ${error}`);
+    return context.json({ message: "Internal server error" }, 500);
+  }
+
+  try {
+    let episodeMetadata = await Promise.all(
+      episodeKeys.map(async (episodeKey) => {
+        let episode = await context.env.BUCKET.get(
+          getEpisodeMetadataKey(episodeKey),
+        );
+        if (!episode) {
+          throw new Error(
+            `[getAllEpisodeMetadata] Could not find the episode: ${episodeKey}`,
+          );
+        }
+        return episode.json();
+      }),
+    );
+
+    return context.json(episodeMetadata);
+  } catch (error) {
+    console.error(
+      `[getAllEpisodeMetadata] Could not get episode metadata: ${error}`,
+    );
+    return context.json({ message: "Internal server error" }, 500);
   }
 });
 
 app.get(`*`, async function catchAllHandler(context) {
-  return context.text(
-    "This is not the route you're looking for!",
+  return context.json(
+    { message: "This is not the route you're looking for!" },
     // teapot
     418,
   );

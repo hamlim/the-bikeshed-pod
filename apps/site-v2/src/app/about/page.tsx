@@ -85,7 +85,7 @@ export default function AboutPage() {
                   Bluesky
                 </a>
               </Button>
-              <Button variant="outline" size="sm" className="gap-2">
+              <Button asChild variant="outline" size="sm" className="gap-2">
                 <a href="#TODO">
                   <Github className="w-4 h-4" />
                   GitHub

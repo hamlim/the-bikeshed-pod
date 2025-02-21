@@ -87,7 +87,7 @@ export default function AboutPage() {
                 className="gap-2"
               >
                 <BlueSky className="w-4 h-4" />
-                Blue Sky
+                Bluesky
               </Action>
               <Action
                 is="a"

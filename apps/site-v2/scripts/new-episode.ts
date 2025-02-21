@@ -8,7 +8,8 @@ if (!id) {
 }
 
 let folderPath = `./src/app/episodes/${id}`;
-let filePath = `${folderPath}/episode-${id}.mdx`;
+let mdxFilePath = `${folderPath}/episode-${id}.mdx`;
+let pageFilePath = `${folderPath}/page.tsx`;
 
 if (existsSync(folderPath)) {
   console.warn(`⚠️ Episode ${id} already exists!`);
@@ -17,9 +18,10 @@ if (existsSync(folderPath)) {
 
 await mkdir(folderPath, { recursive: true });
 
-await writeFile(
-  filePath,
-  `---
+await Promise.all([
+  writeFile(
+    mdxFilePath,
+    `---
 episodeId: "${id}"
 title: "TODO"
 shortDescription: "TODO"
@@ -32,6 +34,21 @@ audioURL: "TODO"
 
 Long description here...
 `,
-);
+  ),
+  writeFile(
+    pageFilePath,
+    `import Content, {frontmatter} from "./episode-${id}.mdx";
+
+export default function EpisodePage() {
+  return (
+    <article>
+      
+      <Content />
+    </article>
+  )
+}
+`,
+  ),
+]);
 
 console.log(`✅ Episode ${id} created successfully!`);

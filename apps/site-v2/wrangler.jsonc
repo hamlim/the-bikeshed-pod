@@ -18,5 +18,15 @@
   ],
   "vars": {
     "BUN_VERSION": "1.2.2"
-  }
+  },
+  "routes": [
+    {
+      "pattern": "bikeshedpod.com",
+      "custom_domain": true
+    },
+    {
+      "pattern": "www.bikeshedpod.com",
+      "custom_domain": true
+    }
+  ]
 }

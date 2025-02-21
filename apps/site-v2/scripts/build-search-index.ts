@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { create, insert, load, save, search } from "@orama/orama";
+import { create, insert, save } from "@orama/orama";
 import glob from "fast-glob";
 import matter from "gray-matter";
 import { hosts } from "../src/hosts";
@@ -89,7 +89,7 @@ await fs.writeFile(
 );
 
 // write search index
-let indexExport = await save(index);
+let indexExport = save(index);
 
 let jsonIndex = JSON.stringify(indexExport);
 console.log("Writing search index...");

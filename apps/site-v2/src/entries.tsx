@@ -12,7 +12,7 @@ import page4 from "./app/episodes/bike-1/page";
 import page5 from "./app/episodes/ignored/page";
 import page6 from "./app/episodes/page";
 import page7 from "./app/page";
-import route8 from "./app/rss/route";
+import route8 from "./app/rss.xml/route";
 import page9 from "./app/search/page";
 
 let pages = createPages(async ({ createPage, createLayout, createRoot, createApi }) => [
@@ -63,7 +63,7 @@ createPage({
 }),
 createApi({
   render: "dynamic",
-  path: "/rss",
+  path: "/rss.xml",
   handlers: {
     GET: route8,
     POST: route8,

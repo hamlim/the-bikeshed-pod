@@ -47,11 +47,25 @@ function stringifyHosts(hosts: Array<Host>): Array<string> {
 // along with the contents
 let episodeMDXFiles = await glob("./src/app/episodes/**/*.mdx");
 
+let rssContent: Array<EpisodeMetadata> = [];
+
 for (let episode of episodeMDXFiles) {
   let fileContent = await fs.readFile(episode, "utf8");
 
   // parse the frontmatter
   let { data, content } = matter(fileContent);
+
+  rssContent.push({
+    episodeId: data.episodeId,
+    title: data.title,
+    shortDescription: data.shortDescription,
+    hosts: hydrateHosts(data.hosts),
+    metadata: data.metadata,
+    publishTime: data.publishTime,
+    duration: data.duration,
+    longDescription: content,
+    audioURL: data.audioURL,
+  });
 
   // insert the episode into the index
   insert(index, {
@@ -67,8 +81,16 @@ for (let episode of episodeMDXFiles) {
   });
 }
 
-let res = search(index, {
-  term: "github",
-});
+// write rss content
+console.log("Writing RSS content...");
+await fs.writeFile(
+  "./src/app/rss/rss.json",
+  JSON.stringify(rssContent, null, 2),
+);
 
-console.log(res);
+// write search index
+let indexExport = await save(index);
+
+let jsonIndex = JSON.stringify(indexExport);
+console.log("Writing search index...");
+await fs.writeFile("./src/app/search/search-index.json", jsonIndex);

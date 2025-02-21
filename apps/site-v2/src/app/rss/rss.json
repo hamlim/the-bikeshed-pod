@@ -1,0 +1,54 @@
+[
+  {
+    "episodeId": "bike-1",
+    "title": "Build or Buy",
+    "shortDescription": "A fairly long and winding discussion, talking about the history of the pod and then digging into whether you should build or buy your next internal tool!",
+    "hosts": [
+      {
+        "name": "Scott Kaye",
+        "socials": [
+          {
+            "network": "bluesky",
+            "url": "https://bsky.app/profile/scottykaye.com"
+          },
+          {
+            "network": "twitter",
+            "url": "https://x.com/scottykaye"
+          },
+          {
+            "network": "github",
+            "url": "https://github.com/scottykaye/"
+          },
+          {
+            "network": "website",
+            "url": "https://scottykaye.com/"
+          }
+        ]
+      },
+      {
+        "name": "Matt Hamlin",
+        "socials": [
+          {
+            "network": "bluesky",
+            "url": "https://bsky.app/profile/matthamlin.me"
+          },
+          {
+            "network": "github",
+            "url": "https://github.com/hamlim/"
+          },
+          {
+            "network": "website",
+            "url": "https://matthamlin.me/"
+          }
+        ]
+      }
+    ],
+    "metadata": [
+      "debate"
+    ],
+    "publishTime": 1740140911421,
+    "duration": 123,
+    "longDescription": "\nWelcome to the Bikeshed Podcast!\n\nThis week [Scott](https://scottykaye.com/) and [Matt](https://matthamlin.me/) talk about the history of the pod, and then dig into the main topic for the day: whether to build or buy!\n",
+    "audioURL": "TODO"
+  }
+]

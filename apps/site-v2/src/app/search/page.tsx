@@ -1,15 +1,53 @@
 import { Action } from "@local/components/action";
+import { create, load, search } from "@orama/orama";
+import type {
+  Result as OramaResult,
+  Results as OramaResults,
+} from "@orama/orama";
 import { PlayCircle, Search } from "lucide-react";
 import type { PageProps } from "waku/router";
 import { Card, CardContent } from "#components/ui/card";
 import { Input } from "#components/ui/input";
 import { Label } from "#components/ui/label";
+import type { EpisodeMetadata } from "../../types";
+
+let searchIndex: typeof import("./search-index.json");
+
+async function loadIndex() {
+  if (!searchIndex) {
+    searchIndex = await import("./search-index.json");
+  }
+
+  return searchIndex;
+}
 
 export default async function SearchPage({
   query: queryString,
 }: PageProps<"/search">) {
   let searchParams = new URLSearchParams(queryString);
   let query = searchParams.get("query") || "";
+
+  let results: Array<EpisodeMetadata> = [];
+
+  if (query) {
+    let searchIndex = await loadIndex();
+
+    let newQueryDB = create({
+      schema: {
+        __placeholder: "string",
+      },
+    });
+
+    load(newQueryDB, searchIndex);
+
+    let res = search(newQueryDB, {
+      term: query,
+    }) as OramaResults<EpisodeMetadata>;
+
+    results =
+      res.hits.map((result: OramaResult<EpisodeMetadata>) => result.document) ||
+      [];
+  }
 
   return (
     <div className="container mx-auto max-w-5xl py-12">
@@ -34,34 +72,46 @@ export default async function SearchPage({
       </form>
 
       <div className="grid gap-6">
-        {/* Example search results */}
-        {query &&
-          [1, 2].map((episode) => (
-            <Card key={episode}>
-              <CardContent className="p-6">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <h3 className="text-xl font-semibold mb-2">
-                      Episode {episode}: Search Result Example
-                    </h3>
-                    <p className="text-slate-600 mb-4">
-                      This episode matches your search for "{query}"...
-                    </p>
-                    <Action
-                      is="button"
-                      variant="outline"
-                      size="sm"
-                      className="gap-2"
-                    >
-                      <PlayCircle className="w-4 h-4" />
-                      Listen Now
-                    </Action>
-                  </div>
-                  <div className="text-sm text-slate-500">45 min</div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        {query ? (
+          <>
+            {results.length > 0 ? (
+              results.map((episode) => (
+                <Card key={episode.episodeId}>
+                  <CardContent className="p-6">
+                    <div className="flex justify-between items-start">
+                      <div>
+                        <h3 className="text-xl font-semibold mb-2">
+                          Episode {episode.title}: Search Result Example
+                        </h3>
+                        <p className="text-slate-600 mb-4">
+                          This episode matches your search for "{query}"...
+                        </p>
+                        <Action
+                          is="button"
+                          variant="outline"
+                          size="sm"
+                          className="gap-2"
+                        >
+                          <PlayCircle className="w-4 h-4" />
+                          Listen Now
+                        </Action>
+                      </div>
+                      <div className="text-sm text-slate-500">45 min</div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))
+            ) : (
+              <div className="text-center text-slate-500">
+                No results found for "{query}"
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="text-center text-slate-500">
+            Search for episodes by title, description, or keywords
+          </div>
+        )}
       </div>
     </div>
   );

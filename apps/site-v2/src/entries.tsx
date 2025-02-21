@@ -12,7 +12,8 @@ import page4 from "./app/episodes/bike-1/page";
 import page5 from "./app/episodes/ignored/page";
 import page6 from "./app/episodes/page";
 import page7 from "./app/page";
-import page8 from "./app/search/page";
+import route8 from "./app/rss/route";
+import page9 from "./app/search/page";
 
 let pages = createPages(async ({ createPage, createLayout, createRoot, createApi }) => [
 createLayout({
@@ -60,10 +61,21 @@ createPage({
   path: "/",
   component: page7,
 }),
+createApi({
+  render: "dynamic",
+  path: "/rss",
+  handlers: {
+    GET: route8,
+    POST: route8,
+    PUT: route8,
+    DELETE: route8,
+    PATCH: route8,
+  },
+}),
 createPage({
   render: "dynamic",
   path: "/search",
-  component: page8,
+  component: page9,
 }),
 ]);
 

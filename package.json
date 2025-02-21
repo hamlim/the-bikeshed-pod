@@ -18,6 +18,7 @@
     "format": "biome format --write",
     "format:check": "biome format --changed --no-errors-on-unmatched",
     "test": "turbo run test",
+    "deploy": "turbo run deploy",
     "generator": "bun ./scripts/generator.ts",
     "one-version:check": "one-version check",
     "knip": "knip",

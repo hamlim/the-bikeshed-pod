@@ -10,7 +10,7 @@ import { Button } from "#ui/button";
 export default function EpisodesPage() {
   return (
     <div className="container mx-auto max-w-5xl py-12">
-      <h1 className="text-4xl font-bold mb-8">All Episodes</h1>
+      <h1 className="text-4xl font-bold mb-8 mx-6">All Episodes</h1>
       <div className="grid gap-6">
         {[1, 2, 3, 4, 5].map((episode) => (
           <Card key={episode}>

@@ -15,10 +15,10 @@ export default function Home() {
       <section className="px-4 py-24 md:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold text-white">
+            <h1 className="text-4xl md:text-6xl font-bold text-white dark:text-base">
               The Bikeshed Pod
             </h1>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto">
+            <p className="text-xl max-w-2xl mx-auto text-white dark:text-base">
               Where developers debate the small stuff that matters. Join us for
               in-depth discussions about coding practices, tools, and tech
               decisions.
@@ -79,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* Latest Episodes Section */}
-      <section className="px-4 py-16 md:px-6 lg:px-8 bg-slate-50">
+      <section className="px-4 py-16 md:px-6 lg:px-8">
         <div className="container mx-auto max-w-5xl">
           <h2 className="text-3xl font-bold mb-8">Latest Episodes</h2>
           <div className="grid gap-6">
@@ -91,7 +91,7 @@ export default function Home() {
                       <h3 className="text-xl font-semibold mb-2">
                         Episode {episode}: The Great Tabs vs Spaces Debate
                       </h3>
-                      <p className="text-slate-600 mb-4">
+                      <p className="mb-4">
                         Join us as we dive deep into the age-old developer
                         debate: tabs or spaces? We explore the pros and cons,
                         tooling implications, and team dynamics.
@@ -101,7 +101,7 @@ export default function Home() {
                         Listen Now
                       </Button>
                     </div>
-                    <div className="text-sm text-slate-500">45 min</div>
+                    <div className="text-sm">45 min</div>
                   </div>
                 </CardContent>
               </Card>

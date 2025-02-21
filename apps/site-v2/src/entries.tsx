@@ -11,9 +11,8 @@ import route3 from "./app/api/greet/route";
 import page4 from "./app/episodes/bike-1/page";
 import page5 from "./app/episodes/ignored/page";
 import page6 from "./app/episodes/page";
-import page7 from "./app/mdx/page.static";
-import page8 from "./app/page";
-import page9 from "./app/search/page";
+import page7 from "./app/page";
+import page8 from "./app/search/page";
 
 let pages = createPages(async ({ createPage, createLayout, createRoot, createApi }) => [
 createLayout({
@@ -57,19 +56,14 @@ createPage({
   component: page6,
 }),
 createPage({
-  render: "static",
-  path: "/mdx",
+  render: "dynamic",
+  path: "/",
   component: page7,
 }),
 createPage({
   render: "dynamic",
-  path: "/",
-  component: page8,
-}),
-createPage({
-  render: "dynamic",
   path: "/search",
-  component: page9,
+  component: page8,
 }),
 ]);
 

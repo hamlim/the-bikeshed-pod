@@ -1,6 +1,6 @@
 import { Action } from "@local/components/action";
 import { Github, Mic2 } from "lucide-react";
-import { BlueSky } from "#components/blue-sky";
+import { BlueSky } from "#components/bluesky";
 import { Card, CardContent } from "#components/ui/card";
 
 export default function AboutPage() {

@@ -84,7 +84,7 @@ for (let episode of episodeMDXFiles) {
 // write rss content
 console.log("Writing RSS content...");
 await fs.writeFile(
-  "./src/app/rss/rss.json",
+  "./src/app/rss.xml/rss.json",
   JSON.stringify(rssContent, null, 2),
 );
 

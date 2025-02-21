@@ -1,4 +1,3 @@
-import { Action } from "@local/components/action";
 import { Clock, Mic2, PlayCircle, Rss } from "lucide-react";
 import {
   Card,
@@ -7,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "#components/ui/card";
+import { Button } from "#ui/button";
 
 export default function Home() {
   return (
@@ -24,14 +24,14 @@ export default function Home() {
               decisions.
             </p>
             <div className="flex gap-4 justify-center pt-8">
-              <Action is="button" size="lg" className="gap-2">
+              <Button size="lg" className="gap-2">
                 <PlayCircle className="w-5 h-5" />
                 Latest Episode
-              </Action>
-              <Action is="button" size="lg" variant="outline" className="gap-2">
+              </Button>
+              <Button size="lg" variant="outline" className="gap-2">
                 <Rss className="w-5 h-5" />
                 Subscribe
-              </Action>
+              </Button>
             </div>
           </div>
         </div>
@@ -96,15 +96,10 @@ export default function Home() {
                         debate: tabs or spaces? We explore the pros and cons,
                         tooling implications, and team dynamics.
                       </p>
-                      <Action
-                        is="button"
-                        variant="outline"
-                        size="sm"
-                        className="gap-2"
-                      >
+                      <Button variant="outline" size="sm" className="gap-2">
                         <PlayCircle className="w-4 h-4" />
                         Listen Now
-                      </Action>
+                      </Button>
                     </div>
                     <div className="text-sm text-slate-500">45 min</div>
                   </div>

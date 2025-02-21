@@ -1,7 +1,7 @@
-import { Action } from "@local/components/action";
 import { Github, Mic2 } from "lucide-react";
 import { BlueSky } from "#components/bluesky";
 import { Card, CardContent } from "#components/ui/card";
+import { Button } from "#ui/button";
 
 export default function AboutPage() {
   return (
@@ -79,26 +79,18 @@ export default function AboutPage() {
 
             <h2 className="mb-2">Connect With Us</h2>
             <div className="flex gap-4">
-              <Action
-                is="a"
-                href="#TODO"
-                variant="outline"
-                size="sm"
-                className="gap-2"
-              >
-                <BlueSky className="w-4 h-4" />
-                Bluesky
-              </Action>
-              <Action
-                is="a"
-                href="#TODO"
-                variant="outline"
-                size="sm"
-                className="gap-2"
-              >
-                <Github className="w-4 h-4" />
-                GitHub
-              </Action>
+              <Button asChild variant="outline" size="sm" className="gap-2">
+                <a href="#TODO">
+                  <BlueSky className="w-4 h-4" />
+                  Bluesky
+                </a>
+              </Button>
+              <Button variant="outline" size="sm" className="gap-2">
+                <a href="#TODO">
+                  <Github className="w-4 h-4" />
+                  GitHub
+                </a>
+              </Button>
             </div>
           </div>
         </CardContent>

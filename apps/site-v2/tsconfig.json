@@ -13,7 +13,10 @@
     "jsx": "react-jsx",
     "paths": {
       "#utils/*": ["./src/utils/*"],
-      "#components/*": ["./src/components/*"]
+      "#components/*": ["./src/components/*"],
+      "#ui/*": ["./src/components/ui/*"],
+      "#lib/*": ["./src/lib/*"],
+      "#hooks/*": ["./src/hooks/*"]
     }
   }
 }

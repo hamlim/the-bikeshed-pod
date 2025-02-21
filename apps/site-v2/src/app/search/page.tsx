@@ -1,4 +1,3 @@
-import { Action } from "@local/components/action";
 import { create, load, search } from "@orama/orama";
 import type {
   Result as OramaResult,
@@ -9,6 +8,7 @@ import type { PageProps } from "waku/router";
 import { Card, CardContent } from "#components/ui/card";
 import { Input } from "#components/ui/input";
 import { Label } from "#components/ui/label";
+import { Button } from "#ui/button";
 import type { EpisodeMetadata } from "../../types";
 
 let searchIndex: typeof import("./search-index.json");
@@ -66,9 +66,7 @@ export default async function SearchPage({
             />
           </Label>
         </div>
-        <Action is="button" type="submit" variant="primary">
-          Search
-        </Action>
+        <Button type="submit">Search</Button>
       </form>
 
       <div className="grid gap-6">
@@ -86,15 +84,10 @@ export default async function SearchPage({
                         <p className="text-slate-600 mb-4">
                           This episode matches your search for "{query}"...
                         </p>
-                        <Action
-                          is="button"
-                          variant="outline"
-                          size="sm"
-                          className="gap-2"
-                        >
+                        <Button variant="outline" size="sm" className="gap-2">
                           <PlayCircle className="w-4 h-4" />
                           Listen Now
-                        </Action>
+                        </Button>
                       </div>
                       <div className="text-sm text-slate-500">45 min</div>
                     </div>

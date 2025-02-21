@@ -1,10 +1,11 @@
-import { Action } from "@local/components/action";
 import { PlayCircle } from "lucide-react";
+import { Link } from "waku";
 import {
   Card,
   CardContent,
   // , CardHeader, CardTitle
 } from "#components/ui/card";
+import { Button } from "#ui/button";
 
 export default function EpisodesPage() {
   return (
@@ -25,23 +26,13 @@ export default function EpisodesPage() {
                     implications, and team dynamics.
                   </p>
                   <div className="flex gap-2">
-                    <Action
-                      is="button"
-                      variant="outline"
-                      size="sm"
-                      className="gap-2"
-                    >
+                    <Button variant="outline" size="sm" className="gap-2">
                       <PlayCircle className="w-4 h-4" />
                       Listen Now
-                    </Action>
-                    <Action
-                      is="a"
-                      href={`/episodes/${episode}`}
-                      variant="ghost"
-                      size="sm"
-                    >
-                      View Details
-                    </Action>
+                    </Button>
+                    <Button asChild variant="ghost" size="sm">
+                      <Link to={`/episodes/${episode}`}>View Details</Link>
+                    </Button>
                   </div>
                 </div>
                 <div className="text-sm text-slate-500">45 min</div>

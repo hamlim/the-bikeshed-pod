@@ -1,7 +1,7 @@
-import { Action } from "@local/components/action";
 import { Calendar, Clock, PlayCircle, Share2 } from "lucide-react";
 import type { PageProps } from "waku/router";
 import { Card, CardContent } from "#components/ui/card";
+import { Button } from "#ui/button";
 
 export default async function EpisodePage({ id }: PageProps<"/episodes/[id]">) {
   //   const id = (await params).id;
@@ -27,10 +27,10 @@ export default async function EpisodePage({ id }: PageProps<"/episodes/[id]">) {
             </span>
           </div>
 
-          <Action is="button" size="lg" className="gap-2 mb-8">
+          <Button size="lg" className="gap-2 mb-8">
             <PlayCircle className="w-5 h-5" />
             Play Episode
-          </Action>
+          </Button>
 
           <div className="prose prose-slate max-w-none">
             <h2>Episode Description</h2>
@@ -51,10 +51,10 @@ export default async function EpisodePage({ id }: PageProps<"/episodes/[id]">) {
           </div>
 
           <div className="flex justify-between items-center mt-8 pt-8 border-t">
-            <Action is="button" variant="outline" className="gap-2">
+            <Button variant="outline" className="gap-2">
               <Share2 className="w-4 h-4" />
               Share Episode
-            </Action>
+            </Button>
           </div>
         </CardContent>
       </Card>

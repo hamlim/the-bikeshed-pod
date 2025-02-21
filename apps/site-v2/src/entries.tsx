@@ -8,11 +8,12 @@ import layout0 from "./app/@layout";
 import root1 from "./app/@root";
 import page2 from "./app/about/page";
 import route3 from "./app/api/greet/route";
-import page4 from "./app/episodes/[id]/page";
-import page5 from "./app/episodes/page";
-import page6 from "./app/mdx/page.static";
-import page7 from "./app/page";
-import page8 from "./app/search/page";
+import page4 from "./app/episodes/bike-1/page";
+import page5 from "./app/episodes/ignored/page";
+import page6 from "./app/episodes/page";
+import page7 from "./app/mdx/page.static";
+import page8 from "./app/page";
+import page9 from "./app/search/page";
 
 let pages = createPages(async ({ createPage, createLayout, createRoot, createApi }) => [
 createLayout({
@@ -42,28 +43,33 @@ createApi({
 }),
 createPage({
   render: "dynamic",
-  path: "/episodes/[id]",
+  path: "/episodes/bike-1",
   component: page4,
 }),
 createPage({
   render: "dynamic",
-  path: "/episodes",
+  path: "/episodes/ignored",
   component: page5,
+}),
+createPage({
+  render: "dynamic",
+  path: "/episodes",
+  component: page6,
 }),
 createPage({
   render: "static",
   path: "/mdx",
-  component: page6,
-}),
-createPage({
-  render: "dynamic",
-  path: "/",
   component: page7,
 }),
 createPage({
   render: "dynamic",
-  path: "/search",
+  path: "/",
   component: page8,
+}),
+createPage({
+  render: "dynamic",
+  path: "/search",
+  component: page9,
 }),
 ]);
 

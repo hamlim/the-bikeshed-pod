@@ -14,15 +14,16 @@
     "deploy": "wrangler deploy"
   },
   "dependencies": {
+    "@local/components": "workspace:*",
+    "@local/utils": "workspace:*",
+    "@orama/orama": "^3.0.8",
+    "@radix-ui/react-label": "2.1.2",
     "hono": "4.6.20",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-server-dom-webpack": "19.0.0",
     "waku": "0.21.19",
-    "wrangler": "3.109.1",
-    "@local/components": "workspace:*",
-    "@local/utils": "workspace:*",
-    "@radix-ui/react-label": "2.1.2"
+    "wrangler": "3.109.1"
   },
   "imports": {
     "#utils/*": "./src/utils/*",
@@ -37,6 +38,8 @@
     "@types/node": "22.13.0",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",
+    "fast-glob": "^3.3.3",
+    "gray-matter": "^4.0.3",
     "miniflare": "3.20250129.0",
     "postcss": "8.5.2",
     "rehype-mdx-code-props": "3.0.1",

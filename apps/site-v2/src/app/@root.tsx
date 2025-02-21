@@ -24,7 +24,7 @@ export default function Root({ children }: { children: ReactNode }) {
           content="Where developers debate the small stuff that matters"
         />
       </head>
-      <body>
+      <body className="font-(family-name:--font-geist-mono)">
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{ __html: `(${themeCheck.toString()})()` }}

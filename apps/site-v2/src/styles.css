@@ -247,6 +247,9 @@ html.dark .shiki span {
   --sidebar-ring: oklch(0.87 0 0);
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
+
+  --font-geist-sans: "GeistSans", sans-serif;
+  --font-geist-mono: "GeistMono", monospace;
 }
 
 .dark {
@@ -332,4 +335,19 @@ html.dark .shiki span {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+/* Custom fonts */
+@font-face {
+  font-family: "GeistSans";
+  src: url("/geist-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "GeistMono";
+  src: url("/geistmono-regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }

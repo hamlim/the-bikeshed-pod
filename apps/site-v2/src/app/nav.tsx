@@ -1,6 +1,6 @@
+import { Action } from "@local/components/action";
 import { Search } from "lucide-react";
 import { Link } from "waku";
-// import { Button } from "~/components/ui/button";
 
 export function Nav() {
   return (
@@ -37,10 +37,10 @@ export function Nav() {
             </div>
           </div>
           {/* <Button variant="ghost" size="sm" asChild> */}
-          <Link to="/search" className="gap-2">
+          <Action variant="ghost" is={Link} to="/search" className="gap-2">
             <Search className="h-4 w-4" />
             Search
-          </Link>
+          </Action>
           {/* </Button> */}
         </div>
       </div>

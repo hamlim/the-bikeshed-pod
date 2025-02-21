@@ -17,6 +17,7 @@
       "persistent": true
     },
     "predev": {},
-    "prebuild": {}
+    "prebuild": {},
+    "deploy": {}
   }
 }

@@ -1,11 +1,14 @@
 import { cn } from "@local/utils/cn";
 import { cva } from "class-variance-authority";
-import NextLink from "next/link";
 import type { ElementType, ReactNode } from "react";
 
 export type ActionProps = {
   children: ReactNode;
-  is: "button" | "a" | typeof NextLink;
+  is:
+    | "button"
+    | "a"
+    | typeof import("waku").Link
+    | typeof import("next/link").default;
   href?: string;
   disabled?: boolean;
   className?: string;
@@ -102,7 +105,8 @@ export function Action({
   ...props
 }: ActionProps): React.ReactNode {
   let Element: ElementType = is;
-  if (disabled && (is === "a" || is === NextLink)) {
+  // still not a good litmus test - since you could pass in a custom button component
+  if (disabled && is !== "button") {
     Element = "span";
   }
 

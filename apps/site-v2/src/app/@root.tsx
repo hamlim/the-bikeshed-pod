@@ -19,7 +19,7 @@ export default function Root({ children }: { children: ReactNode }) {
   // @TODO: Make sure this preload is used below in the body!
   // geist-regular / geist sans isn't used currently
   // preload(`/fonts/geist-regular.woff2`, { as: "font" });
-  preload(`/fonts/geist-mono-regular.woff2`, { as: "font" });
+  preload(`/fonts/geistmono-regular.woff2`, { as: "font" });
   return (
     <html lang="en" suppressHydrationWarning>
       <head suppressHydrationWarning>

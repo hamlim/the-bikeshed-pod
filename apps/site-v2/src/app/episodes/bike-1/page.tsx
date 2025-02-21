@@ -1,10 +1,10 @@
-import Content, { frontmatter } from "./episode-bike-1.mdx";
+import { EpisodeMeta } from "#components/episode-meta";
+import Content, { frontmatter as rawMatter } from "./episode-bike-1.mdx";
 
 export default function Page() {
   return (
     <article>
-      <pre>{JSON.stringify(frontmatter, null, 2)}</pre>
-      <hr />
+      <EpisodeMeta rawMetadata={rawMatter} />
       <Content />
     </article>
   );

@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "build-cf-types": "wrangler types --experimental-include-runtime",
-    "predev": "bun ./scripts/build-search-index.ts",
+    "predev": "bun ./scripts/prebuild.ts",
     "dev": "garbanzo dev",
-    "prebuild": "bun ./scripts/build-search-index.ts",
+    "prebuild": "bun ./scripts/prebuild.ts",
     "build": "garbanzo build",
     "start": "wrangler dev",
     "predeploy": "bun run build",

@@ -1,5 +1,6 @@
-import { create, load, search } from "@orama/orama";
+import { create, insert, search } from "@orama/orama";
 import type {
+  Orama,
   Result as OramaResult,
   Results as OramaResults,
 } from "@orama/orama";
@@ -9,16 +10,71 @@ import { Card, CardContent } from "#components/ui/card";
 import { Input } from "#components/ui/input";
 import { Label } from "#components/ui/label";
 import { Button } from "#ui/button";
-import type { EpisodeMetadata } from "../../types";
+import type { EpisodeMetadata, Host } from "../../types";
 
-let searchIndex: typeof import("./search-index.json");
+let episodeMetadata: Array<EpisodeMetadata>;
 
-async function loadIndex() {
-  if (!searchIndex) {
-    searchIndex = await import("./search-index.json");
+async function loadEpisodeMetadata() {
+  if (!episodeMetadata) {
+    episodeMetadata = (await import("../../episode-metadata.json")).default;
   }
 
-  return searchIndex;
+  return episodeMetadata;
+}
+
+function stringifyHosts(hosts: Array<Host>): Array<string> {
+  // return something like: `${hostName}<${hostBlueSkyURL}:${hostTwitterURL}:${hostXURL}>`
+  // not perfect because if you search for `github`, you may end up getting weird results
+  // TBD....
+  // maybe we don't index thier socials?
+  // for now we'll not index the socials
+  // if we want to add it back we can do something like this:
+  // <${host.socials.map((social) => `${social.url}`).join(":")}>
+  return hosts.map((host) => {
+    return host.name;
+  });
+}
+
+let schema = {
+  episodeId: "string",
+  title: "string",
+  shortDescription: "string",
+  // unfortunately orama doesn't support an array of objects
+  // so we'll stringify the Host type and search on the whole string
+  hosts: "string[]",
+  metadata: "string[]",
+  publishTime: "number",
+  duration: "number",
+  longDescription: "string",
+  audioURL: "string",
+} as const;
+
+let index: Orama<typeof schema>;
+
+function makeIndex(
+  episodeMetadata: Array<EpisodeMetadata>,
+): Orama<typeof schema> {
+  if (!index) {
+    index = create({
+      schema,
+    }) as Orama<typeof schema>;
+
+    for (let episode of episodeMetadata) {
+      insert(index, {
+        episodeId: episode.episodeId,
+        title: episode.title,
+        shortDescription: episode.shortDescription,
+        hosts: stringifyHosts(episode.hosts),
+        metadata: episode.metadata,
+        publishTime: episode.publishTime,
+        duration: episode.duration,
+        longDescription: episode.longDescription,
+        audioURL: episode.audioURL,
+      });
+    }
+  }
+
+  return index as Orama<typeof schema>;
 }
 
 export default async function SearchPage({
@@ -30,18 +86,12 @@ export default async function SearchPage({
   let results: Array<EpisodeMetadata> = [];
 
   if (query) {
-    let searchIndex = await loadIndex();
+    let episodeMetadata = await loadEpisodeMetadata();
+    let searchIndex = makeIndex(episodeMetadata);
 
-    let newQueryDB = create({
-      schema: {
-        __placeholder: "string",
-      },
-    });
-
-    load(newQueryDB, searchIndex);
-
-    let res = search(newQueryDB, {
+    let res = search(searchIndex, {
       term: query,
+      tolerance: 2,
     }) as OramaResults<EpisodeMetadata>;
 
     results =

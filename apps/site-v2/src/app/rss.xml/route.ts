@@ -1,5 +1,5 @@
-import rssData from "./rss.json";
+import episodeMetadata from "../../episode-metadata.json";
 
 export default async function RSSRoute() {
-  return Response.json(rssData);
+  return Response.json(episodeMetadata);
 }

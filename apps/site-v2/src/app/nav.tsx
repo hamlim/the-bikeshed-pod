@@ -28,7 +28,7 @@ export function Nav() {
               </Button>
             </div>
           </div>
-          <Button variant="outline" asChild className="gap-2">
+          <Button variant="link" asChild className="gap-2">
             <Link to="/search">
               <Search className="h-4 w-4" />
               Search

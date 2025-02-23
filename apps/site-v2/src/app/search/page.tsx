@@ -10,17 +10,8 @@ import { Card, CardContent } from "#components/ui/card";
 import { Input } from "#components/ui/input";
 import { Label } from "#components/ui/label";
 import { Button } from "#ui/button";
+import episodeMetadata from "../../episode-metadata.json";
 import type { EpisodeMetadata, Host } from "../../types";
-
-let episodeMetadata: Array<EpisodeMetadata>;
-
-async function loadEpisodeMetadata() {
-  if (!episodeMetadata) {
-    episodeMetadata = (await import("../../episode-metadata.json")).default;
-  }
-
-  return episodeMetadata;
-}
 
 function stringifyHosts(hosts: Array<Host>): Array<string> {
   // return something like: `${hostName}<${hostBlueSkyURL}:${hostTwitterURL}:${hostXURL}>`
@@ -77,6 +68,8 @@ function makeIndex(
   return index as Orama<typeof schema>;
 }
 
+let searchIndex = makeIndex(episodeMetadata);
+
 export default async function SearchPage({
   query: queryString,
 }: PageProps<"/search">) {
@@ -86,14 +79,12 @@ export default async function SearchPage({
   let results: Array<EpisodeMetadata> = [];
 
   if (query) {
-    let episodeMetadata = await loadEpisodeMetadata();
-    let searchIndex = makeIndex(episodeMetadata);
-
     let res = search(searchIndex, {
       term: query,
       tolerance: 2,
     }) as OramaResults<EpisodeMetadata>;
 
+    // @TODO: hydrate hosts here as well!
     results =
       res.hits.map((result: OramaResult<EpisodeMetadata>) => result.document) ||
       [];

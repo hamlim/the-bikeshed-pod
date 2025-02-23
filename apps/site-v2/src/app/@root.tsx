@@ -17,7 +17,16 @@ function themeCheck() {
 
 function WIPBanner() {
   return (
-    <div className="bg-[repeating-linear-gradient(-45deg,#f7df1e_0,#f7df1e_10px,#000_10px,#000_20px)] py-2 flex justify-center items-center">
+    <div className="wip-banner py-2 flex justify-center items-center">
+      <style precedence="high" href="hack">{`.wip-banner {
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--uchu-yellow-4) 0,
+    var(--uchu-yellow-4) 10px,
+    var(--uchu-yin-7) 10px,
+    var(--uchu-yin-7) 20px
+  );
+}`}</style>
       <p className=" text-white bg-black text-center font-bold px-4">
         ⚠️ This site is a work in progress! ⚠️
       </p>

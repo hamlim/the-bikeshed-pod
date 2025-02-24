@@ -8,7 +8,7 @@ import layout0 from "./app/@layout";
 import root1 from "./app/@root";
 import page2 from "./app/about/page";
 import route3 from "./app/api/greet/route";
-import page4 from "./app/episodes/bike-1/page";
+import page4 from "./app/episodes/bike-0001/page";
 import page5 from "./app/episodes/ignored/page";
 import page6 from "./app/episodes/page";
 import page7 from "./app/page";
@@ -43,7 +43,7 @@ createApi({
 }),
 createPage({
   render: "dynamic",
-  path: "/episodes/bike-1",
+  path: "/episodes/bike-0001",
   component: page4,
 }),
 createPage({

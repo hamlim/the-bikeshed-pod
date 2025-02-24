@@ -1,5 +1,4 @@
-import { hosts } from "../hosts";
-import type { Host, HydratedFrontmatter, RawFrontmatter } from "../types";
+import type { Host, HydratedFrontmatter } from "../types";
 
 let dateFormatter = new Intl.DateTimeFormat("en-US", {
   year: "numeric",
@@ -8,17 +7,10 @@ let dateFormatter = new Intl.DateTimeFormat("en-US", {
 }).format;
 
 export function EpisodeMeta({
-  rawMetadata,
+  frontmatter,
 }: {
-  rawMetadata: RawFrontmatter;
+  frontmatter: HydratedFrontmatter;
 }) {
-  let frontmatter = {
-    ...rawMetadata,
-    hosts: rawMetadata.hosts
-      .map((host: string): Host | undefined => hosts[host])
-      .filter(Boolean) as Array<Host>,
-  } satisfies HydratedFrontmatter;
-
   return (
     <>
       <meta name="description" content={frontmatter.shortDescription} />

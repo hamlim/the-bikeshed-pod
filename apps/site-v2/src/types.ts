@@ -29,7 +29,7 @@ export type Social = {
 
 export type Host = {
   name: string;
-  socials: Array<Social>;
+  socials: [Social, ...Social[]];
 };
 
 export interface EpisodeMetadata {

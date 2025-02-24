@@ -30,6 +30,7 @@ metadata: []
 publishTime: ${Date.now()}
 duration: TODO
 audioURL: "TODO"
+captionURL: "TODO"
 ---
 
 Long description here...

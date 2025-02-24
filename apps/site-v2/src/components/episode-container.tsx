@@ -50,7 +50,7 @@ export function EpisodeContainer({
       </hgroup>
       <audio controls className="w-full">
         <source src={frontmatter.audioURL} type="audio/mpeg" />
-        <track kind="captions" src={frontmatter.captionsURL} />
+        <track kind="captions" src={frontmatter.captionURL} />
       </audio>
       {children}
     </article>

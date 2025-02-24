@@ -41,6 +41,7 @@ export type SearchEpisodeMetadata = {
   publishTime: number;
   duration: number;
   audioURL: string;
+  captionURL: string;
   longDescription: string;
 };
 
@@ -53,6 +54,7 @@ export interface EpisodeMetadata {
   publishTime: number;
   duration: number;
   audioURL: string;
+  captionURL: string;
   longDescription: string;
 }
 
@@ -70,6 +72,7 @@ export interface RawFrontmatter {
   publishTime: number;
   duration: number;
   audioURL: string;
+  captionURL: string;
 }
 
 export interface HydratedFrontmatter {
@@ -81,4 +84,5 @@ export interface HydratedFrontmatter {
   publishTime: number;
   duration: number;
   audioURL: string;
+  captionURL: string;
 }

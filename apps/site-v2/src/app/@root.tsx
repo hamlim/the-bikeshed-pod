@@ -1,6 +1,8 @@
 import type { ReactNode } from "react";
 import { preload } from "react-dom";
 import "../styles.css";
+import { AudioControls } from "#components/audio/audio-controls";
+import { Provider } from "#components/audio/audio-player";
 import { Nav } from "./nav";
 
 function themeCheck() {
@@ -55,7 +57,7 @@ export default function Root({ children }: { children: ReactNode }) {
         />
         <WIPBanner />
         <Nav />
-        {children}
+        <Provider>{children}</Provider>
       </body>
     </html>
   );

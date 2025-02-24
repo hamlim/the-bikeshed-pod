@@ -37,15 +37,14 @@ Long description here...
   ),
   writeFile(
     pageFilePath,
-    `import { EpisodeMeta } from "#components/episode-meta";
-import Content, { frontmatter as rawMatter } from "./episode-bike-1.mdx";
+    `import { EpisodeContainer } from "#components/episode-container";
+import Content, { frontmatter as rawMetadata } from "./episode-${id}.mdx";
 
 export default function Page() {
   return (
-    <article>
-      <EpisodeMeta rawMetadata={rawMatter} />
+    <EpisodeContainer rawMetadata={rawMetadata}>
       <Content />
-    </article>
+    </EpisodeContainer>
   );
 }
 `,

@@ -1,17 +1,19 @@
+import { Heading } from "@local/components/heading";
 import { create, insert, search } from "@orama/orama";
 import type {
   Orama,
   Result as OramaResult,
   Results as OramaResults,
 } from "@orama/orama";
-import { PlayCircle, Search } from "lucide-react";
+import { Search } from "lucide-react";
 import type { PageProps } from "waku/router";
-import { Card, CardContent } from "#components/ui/card";
+import { EpisodeCard } from "#components/episode-card.js";
 import { Input } from "#components/ui/input";
 import { Label } from "#components/ui/label";
+import episodeMetadata from "#episode-metadata";
 import { Button } from "#ui/button";
-import episodeMetadata from "../../episode-metadata.json";
-import type { EpisodeMetadata, Host } from "../../types";
+import { hosts } from "../../hosts";
+import type { EpisodeMetadata, Host, SearchEpisodeMetadata } from "../../types";
 
 function stringifyHosts(hosts: Array<Host>): Array<string> {
   // return something like: `${hostName}<${hostBlueSkyURL}:${hostTwitterURL}:${hostXURL}>`
@@ -68,7 +70,7 @@ function makeIndex(
   return index as Orama<typeof schema>;
 }
 
-let searchIndex = makeIndex(episodeMetadata);
+let searchIndex = makeIndex(episodeMetadata as Array<EpisodeMetadata>);
 
 export default async function SearchPage({
   query: queryString,
@@ -82,17 +84,25 @@ export default async function SearchPage({
     let res = search(searchIndex, {
       term: query,
       tolerance: 2,
-    }) as OramaResults<EpisodeMetadata>;
+    }) as OramaResults<SearchEpisodeMetadata>;
 
-    // @TODO: hydrate hosts here as well!
     results =
-      res.hits.map((result: OramaResult<EpisodeMetadata>) => result.document) ||
-      [];
+      res.hits.map(
+        (result: OramaResult<SearchEpisodeMetadata>): EpisodeMetadata => {
+          return {
+            ...result.document,
+            hosts: result.document.hosts
+              .map((host: string): Host | undefined => hosts[host])
+              .filter(Boolean) as Array<Host>,
+          };
+        },
+      ) || [];
   }
 
   return (
-    <div className="container mx-auto max-w-5xl py-12">
-      <form className="flex gap-4 mb-8" action="/search">
+    <div className="container mx-auto max-w-4xl py-12">
+      <Heading level={2}>Search</Heading>
+      <form className="flex gap-4 my-8" action="/search">
         <div className="relative flex-1">
           <Search className="absolute left-3 top-3 h-4 w-4 text-slate-500" />
           <Label>
@@ -115,25 +125,7 @@ export default async function SearchPage({
           <>
             {results.length > 0 ? (
               results.map((episode) => (
-                <Card key={episode.episodeId}>
-                  <CardContent className="p-6">
-                    <div className="flex justify-between items-start">
-                      <div>
-                        <h3 className="text-xl font-semibold mb-2">
-                          Episode {episode.title}: Search Result Example
-                        </h3>
-                        <p className="text-slate-600 mb-4">
-                          This episode matches your search for "{query}"...
-                        </p>
-                        <Button variant="outline" size="sm" className="gap-2">
-                          <PlayCircle className="w-4 h-4" />
-                          Listen Now
-                        </Button>
-                      </div>
-                      <div className="text-sm text-slate-500">45 min</div>
-                    </div>
-                  </CardContent>
-                </Card>
+                <EpisodeCard key={episode.episodeId} episode={episode} />
               ))
             ) : (
               <div className="text-center text-slate-500">

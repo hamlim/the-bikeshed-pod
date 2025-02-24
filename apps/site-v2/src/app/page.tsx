@@ -13,7 +13,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section className="px-4 py-24 md:px-6 lg:px-8 bg-gradient-to-b from-slate-900 to-slate-800">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-4xl">
           <div className="text-center space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold text-white dark:text-base">
               The Bikeshed Pod
@@ -39,7 +39,7 @@ export default function Home() {
 
       {/* Features Section */}
       <section className="px-4 py-16 md:px-6 lg:px-8">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-4xl">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <Card>
               <CardHeader>
@@ -80,7 +80,7 @@ export default function Home() {
 
       {/* Latest Episodes Section */}
       <section className="px-4 py-16 md:px-6 lg:px-8">
-        <div className="container mx-auto max-w-5xl">
+        <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-8">Latest Episodes</h2>
           <div className="grid gap-6">
             {[1, 2, 3].map((episode) => (

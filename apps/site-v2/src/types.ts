@@ -32,6 +32,18 @@ export type Host = {
   socials: [Social, ...Social[]];
 };
 
+export type SearchEpisodeMetadata = {
+  episodeId: string;
+  title: string;
+  shortDescription: string;
+  hosts: Array<string>;
+  metadata: Array<string>;
+  publishTime: number;
+  duration: number;
+  audioURL: string;
+  longDescription: string;
+};
+
 export interface EpisodeMetadata {
   episodeId: string;
   title: string;

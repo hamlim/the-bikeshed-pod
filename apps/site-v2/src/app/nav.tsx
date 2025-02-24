@@ -5,7 +5,7 @@ import { Button } from "#ui/button";
 export function Nav() {
   return (
     <nav className="border-b">
-      <div className="container mx-auto max-w-5xl px-4">
+      <div className="container mx-auto max-w-4xl px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center gap-6">
             <Button variant="link" asChild>

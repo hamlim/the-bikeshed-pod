@@ -5,8 +5,8 @@ declare module "*.mdx" {
   export const frontmatter: RawFrontmatter;
 }
 
-// declare module "src/app/episodes/*.mdx" {
-//   let MDXComponent: (props: any) => JSX.Element;
-//   export default MDXComponent;
-//   export const frontmatter: EpisodeMetadata;
-// }
+declare module "#episode-metadata" {
+  import type { EpisodeMetadata } from "./src/types";
+  let episodeMetadata: Array<EpisodeMetadata>;
+  export default episodeMetadata;
+}

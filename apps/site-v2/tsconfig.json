@@ -16,7 +16,8 @@
       "#components/*": ["./src/components/*"],
       "#ui/*": ["./src/components/ui/*"],
       "#lib/*": ["./src/lib/*"],
-      "#hooks/*": ["./src/hooks/*"]
+      "#hooks/*": ["./src/hooks/*"],
+      "#episode-metadata": ["./src/episode-metadata.json"]
     }
   }
 }

@@ -1,3 +1,4 @@
+import { Heading } from "@local/components/heading";
 import { Github, Mic2 } from "lucide-react";
 import { BlueSky } from "#components/bluesky";
 import { Card, CardContent } from "#components/ui/card";
@@ -5,13 +6,13 @@ import { Button } from "#ui/button";
 
 export default function AboutPage() {
   return (
-    <div className="container mx-auto max-w-3xl py-12">
-      <h1 className="text-4xl font-bold mb-8">About The Bikeshed Pod</h1>
+    <article className="py-10 container max-w-4xl mx-auto">
+      <Heading level={2}>About The Bikeshed Pod</Heading>
 
-      <Card className="mb-8">
+      <Card className="mt-8">
         <CardContent className="p-8">
           <div className="prose prose-slate max-w-none">
-            <p className="text-xl text-slate-600">
+            <p className="text-lg text-slate-600">
               The Bikeshed Pod is a weekly show where developers dive deep into
               the small but important details of software development that we
               all love to debate.
@@ -95,6 +96,6 @@ export default function AboutPage() {
           </div>
         </CardContent>
       </Card>
-    </div>
+    </article>
   );
 }

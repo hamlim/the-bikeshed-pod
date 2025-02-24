@@ -26,7 +26,7 @@ export function EpisodeContainer({
   } satisfies HydratedFrontmatter;
 
   return (
-    <article className="prose lg:prose-xl mx-auto pt-10">
+    <article className="py-10 container max-w-4xl mx-auto">
       <EpisodeMeta frontmatter={frontmatter} />
       <hgroup>
         <Heading level={1}>

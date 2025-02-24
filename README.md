@@ -5,7 +5,7 @@
 1. Install bun
 2. Clone the repo
 3. Run `bun i`
-4. Run `bun run dev --filter=site...`
+4. Run `bun run dev --filter=site-v2...`
 
 ---
 

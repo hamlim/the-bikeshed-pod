@@ -27,6 +27,13 @@ const buttonVariants = cva(
         icon: "size-9",
       },
     },
+    compoundVariants: [
+      {
+        variant: "link",
+        size: "default",
+        className: "h-[unset] px-0 py-0",
+      },
+    ],
     defaultVariants: {
       variant: "default",
       size: "default",

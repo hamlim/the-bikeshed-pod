@@ -52,4 +52,4 @@ export let hosts: Record<string, Host> = {
       },
     ],
   },
-};
+} as const;

@@ -3,6 +3,7 @@ import { Button } from "#ui/button";
 import { hosts } from "../hosts";
 import type { HydratedFrontmatter } from "../types";
 import type { Host, Social } from "../types";
+import { SeeDiscussionOnBluesky, ShareToBluesky } from "./bluesky-social";
 import { EpisodeMeta } from "./episode-meta";
 
 function getPreferredSocial(host: Host): Social {
@@ -15,16 +16,39 @@ function getPreferredSocial(host: Host): Social {
   return host.socials[0];
 }
 
+let formatDate = new Intl.DateTimeFormat("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+  hour: "numeric",
+  minute: "numeric",
+  timeZone: "America/New_York",
+}).format;
+
+function formatTime(time: number) {
+  let hours = Math.floor(time / 3600);
+  let minutes = Math.floor((time % 3600) / 60);
+  let seconds = Math.floor(time % 60);
+
+  if (hours > 0) {
+    return `${hours}h ${minutes}m ${seconds}s`;
+  }
+  if (minutes > 0) {
+    return `${minutes}m ${seconds}s`;
+  }
+  return `${seconds}s`;
+}
+
 export function EpisodeContainer({
   children,
   rawMetadata,
 }: { children: React.ReactNode; rawMetadata: any }) {
-  let frontmatter = {
+  let frontmatter: HydratedFrontmatter = {
     ...rawMetadata,
     hosts: rawMetadata.hosts
       .map((host: string): Host | undefined => hosts[host])
       .filter(Boolean) as Array<Host>,
-  } satisfies HydratedFrontmatter;
+  };
 
   return (
     <article className="py-10 container max-w-4xl mx-auto">
@@ -55,11 +79,25 @@ export function EpisodeContainer({
               );
             })}
           </ul>
+          <p>
+            Released: <time>{formatDate(frontmatter.publishTime)}</time>
+          </p>
+          <p>Episode length: {formatTime(frontmatter.duration)}</p>
         </hgroup>
         <audio controls className="w-full">
           <source src={frontmatter.audioURL} type="audio/mpeg" />
           <track kind="captions" src={frontmatter.captionURL} />
         </audio>
+        <div className="flex gap-2 justify-center">
+          <ShareToBluesky
+            title={`The Bikeshed Podcast episode: ${frontmatter.episodeId} - ${frontmatter.title}`}
+          >
+            Share this episode on Bluesky
+          </ShareToBluesky>
+          <SeeDiscussionOnBluesky>
+            See discussion on Bluesky
+          </SeeDiscussionOnBluesky>
+        </div>
       </div>
       <hr className="my-8" />
       <section className="prose dark:prose-invert container max-w-4xl mx-auto">

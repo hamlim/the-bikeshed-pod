@@ -37,11 +37,12 @@ export default async function RSSRoute() {
             <title>${episode.title}</title>
             <enclosure url="${episode.audioURL}" 
                       type="audio/mpeg" 
+                      // @TODO
                       length="0"/>
-            <guid isPermaLink="false">${episode.episodeId}</guid>
+            <guid isPermaLink="false">${episode.episodeId.toLowerCase()}</guid>
 
             <!-- Recommended Item Elements -->
-            <link>https://bikeshedpod.com/episodes/${episode.episodeId}</link>
+            <link>https://bikeshedpod.com/episodes/${episode.episodeId.toLowerCase()}</link>
             <pubDate>${new Date(episode.publishTime).toUTCString()}</pubDate>
             <description><![CDATA[${episode.shortDescription}]]></description>
             <content:encoded><![CDATA[${episode.longDescription}]]></content:encoded>

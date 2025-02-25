@@ -62,6 +62,15 @@ export interface EpisodeMetadata {
   audioURL: string;
   captionURL: string;
   longDescription: string;
+  // New fields for RSS feed compliance
+  fileSizeBytes: number; // Required for enclosure
+  imageUrl?: string; // Episode-specific artwork
+  episodeType?: "full" | "trailer" | "bonus";
+  episodeNumber?: number;
+  season?: number;
+  keywords?: string[];
+  authorName?: string;
+  explicit?: boolean;
 }
 
 // Frontmatter types

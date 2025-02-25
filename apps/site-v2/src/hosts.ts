@@ -5,7 +5,7 @@ export let hosts: Record<string, Host> = {
     name: "Scott Kaye",
     socials: {
       bluesky: "https://bsky.app/profile/scottykaye.com",
-      twitter: "https://x.com/scottykaye",
+      // twitter: "https://x.com/scottykaye",
       github: "https://github.com/scottykaye/",
       website: "https://scottykaye.com/",
     },

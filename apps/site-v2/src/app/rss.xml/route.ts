@@ -35,9 +35,9 @@ export default async function RSSRoute() {
           <item>
             <!-- Required Item Elements -->
             <title>${episode.title}</title>
+            <!-- @TODO: add enclosure length -->
             <enclosure url="${episode.audioURL}" 
                       type="audio/mpeg" 
-                      // @TODO
                       length="0"/>
             <guid isPermaLink="false">${episode.episodeId.toLowerCase()}</guid>
 

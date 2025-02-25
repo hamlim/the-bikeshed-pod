@@ -4,7 +4,7 @@ import episodeMetadata from "#episode-metadata";
 
 export default function EpisodesPage() {
   return (
-    <article className="py-10 container max-w-4xl mx-auto">
+    <article className="py-10 container max-w-[90vw] md:max-w-4xl mx-auto min-h-screen">
       <Heading level={2}>All Episodes</Heading>
       <div className="grid gap-6 mt-8">
         {episodeMetadata.map((episode) => (

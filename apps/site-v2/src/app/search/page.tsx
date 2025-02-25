@@ -100,7 +100,7 @@ export default async function SearchPage({
   }
 
   return (
-    <div className="container mx-auto max-w-4xl py-12">
+    <article className="container mx-auto max-w-[90vw] md:max-w-4xl py-12 min-h-screen">
       <Heading level={2}>Search</Heading>
       <form className="flex gap-4 my-8" action="/search">
         <div className="relative flex-1">
@@ -139,6 +139,6 @@ export default async function SearchPage({
           </div>
         )}
       </div>
-    </div>
+    </article>
   );
 }

@@ -18,7 +18,7 @@ export function EpisodeCard({ episode }: { episode: EpisodeMetadata }) {
               <Button asChild variant="outline" size="sm">
                 <Link
                   to={
-                    `/episodes/${episode.episodeId}` as Parameters<
+                    `/episodes/${episode.episodeId.toLowerCase()}` as Parameters<
                       typeof Link
                     >[0]["to"]
                   }

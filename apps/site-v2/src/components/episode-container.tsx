@@ -2,18 +2,13 @@ import { Heading } from "@local/components/heading";
 import { Button } from "#ui/button";
 import { hosts } from "../hosts";
 import type { HydratedFrontmatter } from "../types";
-import type { Host, Social } from "../types";
+import type { Host } from "../types";
 import { SeeDiscussionOnBluesky, ShareToBluesky } from "./bluesky-social";
 import { EpisodeMeta } from "./episode-meta";
 
-function getPreferredSocial(host: Host): Social {
-  let websiteSocial = host.socials.find(
-    (socialInfo) => socialInfo.network === "website",
-  );
-  if (websiteSocial) {
-    return websiteSocial;
-  }
-  return host.socials[0];
+function getPreferredSocial(host: Host): { network: string; url: string } {
+  const website = host.socials.website;
+  return { network: "website", url: website };
 }
 
 let formatDate = new Intl.DateTimeFormat("en-US", {

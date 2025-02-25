@@ -35,6 +35,7 @@ for (let episode of episodeMDXFiles) {
     duration: data.duration,
     longDescription: content,
     audioURL: data.audioURL,
+    captionURL: data.captionURL,
   });
 }
 

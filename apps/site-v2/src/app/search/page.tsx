@@ -19,10 +19,10 @@ function stringifyHosts(hosts: Array<Host>): Array<string> {
   // return something like: `${hostName}<${hostBlueSkyURL}:${hostTwitterURL}:${hostXURL}>`
   // not perfect because if you search for `github`, you may end up getting weird results
   // TBD....
-  // maybe we don't index thier socials?
+  // maybe we don't index their socials?
   // for now we'll not index the socials
   // if we want to add it back we can do something like this:
-  // <${host.socials.map((social) => `${social.url}`).join(":")}>
+  // <${Object.values(host.socials).join(":")}>
   return hosts.map((host) => {
     return host.name;
   });

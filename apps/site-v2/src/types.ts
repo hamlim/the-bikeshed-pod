@@ -27,9 +27,15 @@ export type Social = {
   url: string;
 };
 
+export type SocialNetwork = "bluesky" | "twitter" | "github" | "website";
+
+type OptionalSocialNetworks = Exclude<SocialNetwork, "website">;
+
 export type Host = {
   name: string;
-  socials: [Social, ...Social[]];
+  socials: { website: string } & Partial<
+    Record<OptionalSocialNetworks, string>
+  >;
 };
 
 export type SearchEpisodeMetadata = {

@@ -1,15 +1,9 @@
 import { Button } from "#components/ui/button";
 import { hosts } from "../hosts";
-import type { Host, Social } from "../types";
+import type { Host } from "../types";
 
-function getPreferredSocial(host: Host): Social {
-  let websiteSocial = host.socials.find(
-    (socialInfo) => socialInfo.network === "website",
-  );
-  if (websiteSocial) {
-    return websiteSocial;
-  }
-  return host.socials[0];
+function getPreferredSocial(host: Host): string {
+  return host.socials.website;
 }
 
 export function Footer() {
@@ -22,7 +16,7 @@ export function Footer() {
             Created by{" "}
             <Button variant="link" asChild>
               <a
-                href={getPreferredSocial(hosts.scott as Host).url}
+                href={getPreferredSocial(hosts.scott as Host)}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -32,7 +26,7 @@ export function Footer() {
             ,{" "}
             <Button variant="link" asChild>
               <a
-                href={getPreferredSocial(hosts.dillon as Host).url}
+                href={getPreferredSocial(hosts.dillon as Host)}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -42,7 +36,7 @@ export function Footer() {
             , and{" "}
             <Button variant="link" asChild>
               <a
-                href={getPreferredSocial(hosts.matt as Host).url}
+                href={getPreferredSocial(hosts.matt as Host)}
                 target="_blank"
                 rel="noreferrer"
               >

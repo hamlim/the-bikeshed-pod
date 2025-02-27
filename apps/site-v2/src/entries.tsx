@@ -39,6 +39,10 @@ createApi({
     PUT: route3,
     DELETE: route3,
     PATCH: route3,
+    OPTIONS: route3,
+    HEAD: route3,
+    TRACE: route3,
+    CONNECT: route3,
   },
 }),
 createPage({
@@ -70,6 +74,10 @@ createApi({
     PUT: route8,
     DELETE: route8,
     PATCH: route8,
+    OPTIONS: route8,
+    HEAD: route8,
+    TRACE: route8,
+    CONNECT: route8,
   },
 }),
 createPage({

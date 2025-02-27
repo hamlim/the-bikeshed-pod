@@ -1,12 +1,15 @@
 import { Clock, Mic2, PlayCircle, Rss } from "lucide-react";
+import { EpisodeCard } from "#components/episode-card";
 import {
   Card,
-  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
 } from "#components/ui/card";
+import episodeMetadata from "#episode-metadata";
 import { Button } from "#ui/button";
+
+let latestEpisodes = episodeMetadata.slice(0, 3);
 
 export default function Home() {
   return (
@@ -83,28 +86,8 @@ export default function Home() {
         <div className="container mx-auto max-w-4xl">
           <h2 className="text-3xl font-bold mb-8">Latest Episodes</h2>
           <div className="grid gap-6">
-            {[1, 2, 3].map((episode) => (
-              <Card key={episode}>
-                <CardContent className="p-6">
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-2">
-                        Episode {episode}: The Great Tabs vs Spaces Debate
-                      </h3>
-                      <p className="mb-4">
-                        Join us as we dive deep into the age-old developer
-                        debate: tabs or spaces? We explore the pros and cons,
-                        tooling implications, and team dynamics.
-                      </p>
-                      <Button variant="outline" size="sm" className="gap-2">
-                        <PlayCircle className="w-4 h-4" />
-                        Listen Now
-                      </Button>
-                    </div>
-                    <div className="text-sm">45 min</div>
-                  </div>
-                </CardContent>
-              </Card>
+            {latestEpisodes.map((episode) => (
+              <EpisodeCard key={episode.id} episode={episode} />
             ))}
           </div>
         </div>

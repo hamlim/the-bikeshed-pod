@@ -1,4 +1,4 @@
-import { Clock, Mic2, PlayCircle, Rss } from "lucide-react";
+import { Mic2, PlayCircle, Rss } from "lucide-react";
 import { Link } from "waku";
 import { EpisodeCard } from "#components/episode-card";
 import {

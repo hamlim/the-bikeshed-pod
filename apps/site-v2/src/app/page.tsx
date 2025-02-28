@@ -31,7 +31,9 @@ export default function Home() {
             </p>
             <div className="flex gap-4 justify-center pt-8">
               <Button asChild size="lg" className="gap-2">
-                <Link to={`/episodes/${episodeMetadata[0].episodeId}`}>
+                <Link
+                  to={`/episodes/${episodeMetadata[0].episodeId.toLowerCase()}`}
+                >
                   <PlayCircle className="w-5 h-5" />
                   Latest Episode
                 </Link>

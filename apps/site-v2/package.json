@@ -27,7 +27,8 @@
     "react-dom": "19.0.0",
     "react-server-dom-webpack": "19.0.0",
     "waku": "0.21.22",
-    "wrangler": "3.109.1"
+    "wrangler": "3.109.1",
+    "lucide-react": "0.439.0"
   },
   "imports": {
     "#utils/*": "./src/utils/*",

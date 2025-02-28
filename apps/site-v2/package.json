@@ -28,7 +28,9 @@
     "react-server-dom-webpack": "19.0.0",
     "waku": "0.21.22",
     "wrangler": "3.109.1",
-    "lucide-react": "0.439.0"
+    "lucide-react": "0.439.0",
+    "class-variance-authority": "0.7.0",
+    "tailwindcss-animate": "1.0.7"
   },
   "imports": {
     "#utils/*": "./src/utils/*",

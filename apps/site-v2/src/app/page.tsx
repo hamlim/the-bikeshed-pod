@@ -22,9 +22,11 @@ export default function Home() {
               The Bikeshed Pod
             </h1>
             <p className="text-xl max-w-2xl mx-auto text-white dark:text-base">
-              Where developers debate the small stuff that matters. Join us for
-              in-depth discussions about coding practices, tools, and tech
-              decisions.
+              Where developers debate the small stuff that <s>doesn't</s> matter
+              <mark>(s)</mark>
+              <span className="inline-block align-middle ml-0.5 w-[2px] h-[1.2em] bg-white animate-cursor" />
+              . Join us for in-depth discussions about coding practices, tools,
+              and tech decisions.
             </p>
             <div className="flex gap-4 justify-center pt-8">
               <Button size="lg" className="gap-2">
@@ -43,19 +45,23 @@ export default function Home() {
       {/* Features Section */}
       <section className="px-4 py-16 md:px-6 lg:px-8">
         <div className="container mx-auto max-w-4xl">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Mic2 className="w-5 h-5" />
-                  Weekly Episodes
+                  <span>
+                    Weekly<em>ish</em>
+                  </span>{" "}
+                  Episodes
                 </CardTitle>
                 <CardDescription>
-                  New episodes every week discussing the latest in tech
+                  New episodes (usually) every week discussing the latest in
+                  tech
                 </CardDescription>
               </CardHeader>
             </Card>
-            <Card>
+            {/* <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Clock className="w-5 h-5" />
@@ -65,7 +71,7 @@ export default function Home() {
                   Concise, focused discussions perfect for your commute
                 </CardDescription>
               </CardHeader>
-            </Card>
+            </Card> */}
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">

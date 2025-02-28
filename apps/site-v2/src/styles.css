@@ -356,3 +356,17 @@ html.dark .shiki span {
 mark {
   background-color: var(--uchu-yellow-4);
 }
+
+@keyframes cursor {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-cursor {
+  animation: cursor 1s ease-in-out infinite;
+}

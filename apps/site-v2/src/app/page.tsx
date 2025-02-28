@@ -1,4 +1,5 @@
 import { Clock, Mic2, PlayCircle, Rss } from "lucide-react";
+import { Link } from "waku";
 import { EpisodeCard } from "#components/episode-card";
 import {
   Card,
@@ -29,13 +30,11 @@ export default function Home() {
               and tech decisions.
             </p>
             <div className="flex gap-4 justify-center pt-8">
-              <Button size="lg" className="gap-2">
-                <PlayCircle className="w-5 h-5" />
-                Latest Episode
-              </Button>
-              <Button size="lg" variant="outline" className="gap-2">
-                <Rss className="w-5 h-5" />
-                Subscribe
+              <Button asChild size="lg" className="gap-2">
+                <Link to={`/episodes/${episodeMetadata[0].episodeId}`}>
+                  <PlayCircle className="w-5 h-5" />
+                  Latest Episode
+                </Link>
               </Button>
             </div>
           </div>

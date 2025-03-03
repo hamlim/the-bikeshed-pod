@@ -5,7 +5,7 @@ interface LogoIconProps {
   className?: string;
 }
 
-export function BlueSky({
+export function Bluesky({
   attributes = { role: "graphics-symbol" },
   className,
 }: LogoIconProps) {

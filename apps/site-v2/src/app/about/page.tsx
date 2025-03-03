@@ -1,6 +1,6 @@
 import { Heading } from "@local/components/heading";
 import { Github, Globe, Mic2, Twitter } from "lucide-react";
-import { BlueSky } from "#components/bluesky";
+import { Bluesky } from "#components/bluesky";
 import { Card, CardContent } from "#components/ui/card";
 import { Button } from "#ui/button";
 import { hosts } from "../../hosts";
@@ -9,7 +9,7 @@ import type { Host, SocialNetwork } from "../../types";
 function SocialIcon({ network }: { network: SocialNetwork }) {
   switch (network) {
     case "bluesky":
-      return <BlueSky className="w-4 h-4" />;
+      return <Bluesky className="w-4 h-4" />;
     case "twitter":
       return <Twitter className="w-4 h-4" />;
     case "github":

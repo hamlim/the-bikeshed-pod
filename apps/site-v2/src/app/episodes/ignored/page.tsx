@@ -16,7 +16,7 @@ export default async function EpisodePage({ id }: PageProps<"/episodes/[id]">) {
             Episode {id}: The Great Tabs vs Spaces Debate
           </h1>
 
-          <div className="flex gap-4 text-sm text-slate-500 mb-6">
+          <div className="flex gap-4 text-sm text-stone-500 mb-6">
             <span className="flex items-center gap-1">
               <Calendar className="w-4 h-4" />
               March 15, 2024
@@ -32,7 +32,7 @@ export default async function EpisodePage({ id }: PageProps<"/episodes/[id]">) {
             Play Episode
           </Button>
 
-          <div className="prose prose-slate max-w-none">
+          <div className="prose prose-stone max-w-none">
             <h2>Episode Description</h2>
             <p>
               In this episode, we dive deep into one of programming's most

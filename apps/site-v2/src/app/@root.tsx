@@ -17,30 +17,11 @@ function themeCheck() {
   });
 }
 
-function WIPBanner() {
-  return (
-    <div className="wip-banner py-2 flex justify-center items-center">
-      <style precedence="high" href="hack">{`.wip-banner {
-  background: repeating-linear-gradient(
-    -45deg,
-    var(--uchu-yellow-4) 0,
-    var(--uchu-yellow-4) 10px,
-    var(--uchu-yin-7) 10px,
-    var(--uchu-yin-7) 20px
-  );
-}`}</style>
-      <p className=" text-white bg-black text-center font-bold px-4">
-        ⚠️ This site is a work in progress! ⚠️
-      </p>
-    </div>
-  );
-}
-
 export default function Root({ children }: { children: ReactNode }) {
   // @TODO: Make sure this preload is used below in the body!
   // geist-regular / geist sans isn't used currently
   // preload(`/geist-regular.woff2`, { as: "font" });
-  preload(`/geistmono-regular.woff2`, { as: "font" });
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head suppressHydrationWarning>
@@ -50,12 +31,11 @@ export default function Root({ children }: { children: ReactNode }) {
           content="Where developers debate the small stuff that matters"
         />
       </head>
-      <body className="font-(family-name:--font-geist-mono)">
+      <body>
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{ __html: `(${themeCheck.toString()})()` }}
         />
-        <WIPBanner />
         <Nav />
         <Provider>{children}</Provider>
         <Footer />

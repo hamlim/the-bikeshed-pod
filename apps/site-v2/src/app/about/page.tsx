@@ -26,8 +26,8 @@ export default function AboutPage() {
 
       <Card className="mt-8">
         <CardContent className="p-8">
-          <div className="prose prose-slate max-w-none">
-            <p className="text-lg text-slate-600">
+          <div className="prose prose-stone max-w-none">
+            <p className="text-lg text-stone-600">
               The Bikeshed Pod is a weekly show where developers dive deep into
               the small but important details of software development that we
               all love to debate.
@@ -58,7 +58,7 @@ export default function AboutPage() {
                 <div className="flex flex-col flex-1">
                   <div>
                     <h3 className="font-bold">Matt Hamlin</h3>
-                    <p className="text-slate-600">
+                    <p className="text-stone-600">
                       50 years of experience bikeshedding.
                     </p>
                   </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
                 <div className="flex flex-col flex-1">
                   <div>
                     <h3 className="font-bold">Scott Kaye</h3>
-                    <p className="text-slate-600">
+                    <p className="text-stone-600">
                       Alacritous Pollyanna and frontend enthusiast.
                     </p>
                   </div>
@@ -129,7 +129,7 @@ export default function AboutPage() {
                 <div className="flex flex-col flex-1">
                   <div>
                     <h3 className="font-bold">Dillon Curry</h3>
-                    <p className="text-slate-600">Spicy take Curry.</p>
+                    <p className="text-stone-600">Spicy take Curry.</p>
                   </div>
                   <div className="mt-auto pt-4">
                     {Object.entries((hosts.dillon as Host).socials).map(

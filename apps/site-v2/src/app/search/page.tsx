@@ -104,7 +104,7 @@ export default async function SearchPage({
       <Heading level={2}>Search</Heading>
       <form className="flex gap-4 my-8" action="/search">
         <div className="relative flex-1">
-          <Search className="absolute left-3 top-3 h-4 w-4 text-slate-500" />
+          <Search className="absolute left-3 top-3 h-4 w-4 text-stone-500" />
           <Label>
             <span className="sr-only">
               Search episodes by title, description, or keywords
@@ -128,13 +128,13 @@ export default async function SearchPage({
                 <EpisodeCard key={episode.episodeId} episode={episode} />
               ))
             ) : (
-              <div className="text-center text-slate-500">
+              <div className="text-center text-stone-500">
                 No results found for "{query}"
               </div>
             )}
           </>
         ) : (
-          <div className="text-center text-slate-500">
+          <div className="text-center text-stone-500">
             Search for episodes by title, description, or keywords
           </div>
         )}

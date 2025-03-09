@@ -1,13 +1,15 @@
 import { Link } from "waku";
+import { Button } from "#components/ui/button";
 
 export function Nav() {
   return (
-    <header className="container mx-auto max-w-4xl p-4 flex items-center justify-between">
-      <nav className="flex items-center gap-6">
+    <header className="container mx-auto max-w-4xl p-4">
+      <nav className="flex justify-between items-center gap-6">
         <Link to="/">
           <svg
             width="150"
             height="auto"
+            className="w-30"
             viewBox="0 0 2615 940"
             fill="currentColor"
             xmlns="http://www.w3.org/2000/svg"
@@ -33,6 +35,14 @@ export function Nav() {
             <path d="M2312.76 645.702V569.721H2409.11C2432.61 569.721 2453.16 565.133 2470.78 555.956C2488.4 546.413 2501.98 532.648 2511.52 514.662C2521.07 496.677 2525.84 475.387 2525.84 450.795C2525.84 426.202 2520.88 405.096 2510.97 387.477C2501.43 369.858 2487.85 356.277 2470.23 346.734C2452.98 337.19 2432.61 332.419 2409.11 332.419H2310.01V256.988H2410.21C2439.58 256.988 2466.56 261.76 2491.15 271.304C2516.11 280.48 2537.77 293.878 2556.12 311.496C2574.84 328.748 2589.16 349.303 2599.07 373.162C2609.34 396.654 2614.48 422.715 2614.48 451.345C2614.48 479.609 2609.34 505.67 2599.07 529.528C2589.16 553.387 2575.02 573.942 2556.67 591.194C2538.32 608.446 2516.66 621.843 2491.7 631.387C2467.11 640.93 2440.31 645.702 2411.32 645.702H2312.76ZM2254.4 645.702V256.988H2340.84V645.702H2254.4Z" />
           </svg>
         </Link>
+        <div className="flex items-center gap-2 text-xl">
+          <Button asChild variant="link">
+            <Link to="/about">About</Link>
+          </Button>
+          <Button asChild variant="link">
+            <Link to="/search">Search</Link>
+          </Button>
+        </div>
       </nav>
     </header>
   );

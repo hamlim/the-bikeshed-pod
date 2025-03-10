@@ -33,6 +33,7 @@
     "tailwindcss-animate": "1.0.7"
   },
   "imports": {
+    "#/*": "./src/*",
     "#utils/*": "./src/utils/*",
     "#components/*": "./src/components/*",
     "#ui/*": "./src/components/ui/*",

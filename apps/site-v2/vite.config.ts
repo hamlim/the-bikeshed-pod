@@ -33,7 +33,7 @@ let mdxPlugin = mdx({
 export default defineConfig({
   resolve: {
     alias: {
-      "#utils/*": "./src/utils/*",
+      "#/*": "./src/*",
     },
   },
   plugins: [mdxPlugin],

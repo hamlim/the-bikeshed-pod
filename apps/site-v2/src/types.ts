@@ -62,15 +62,8 @@ export interface EpisodeMetadata {
   audioURL: string;
   captionURL: string;
   longDescription: string;
-  // New fields for RSS feed compliance
-  fileSizeBytes: number; // Required for enclosure
-  imageUrl?: string; // Episode-specific artwork
-  episodeType?: "full" | "trailer" | "bonus";
-  episodeNumber?: number;
-  season?: number;
-  keywords?: string[];
-  authorName?: string;
-  explicit?: boolean;
+  // Required for enclosure
+  fileSizeBytes: number;
 }
 
 // Frontmatter types
@@ -88,6 +81,7 @@ export interface RawFrontmatter {
   duration: number;
   audioURL: string;
   captionURL: string;
+  fileSizeBytes: number;
 }
 
 export interface HydratedFrontmatter {
@@ -100,4 +94,5 @@ export interface HydratedFrontmatter {
   duration: number;
   audioURL: string;
   captionURL: string;
+  fileSizeBytes: number;
 }

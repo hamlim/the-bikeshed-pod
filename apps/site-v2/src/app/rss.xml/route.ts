@@ -10,19 +10,18 @@ export default async function RSSRoute() {
          xmlns:atom="http://www.w3.org/2005/Atom"
          xmlns:content="http://purl.org/rss/1.0/modules/content/">
       <channel>
-        <!-- Required Channel Elements -->
         <title>The Bikeshed Pod</title>
         <description>The Bikeshed Pod is a weekly show where developers dive deep into the small but important details of software development that we all love to debate.</description>
         <link>https://bikeshedpod.com</link>
         <language>en-us</language>
         <atom:link href="https://bikeshedpod.com/rss.xml" rel="self" type="application/rss+xml"/>
         <itunes:category text="Technology"/>
-        <itunes:explicit>false</itunes:explicit>
-        <itunes:image href="https://bikeshedpod.com/podcast-cover.jpg"/>
+        <itunes:explicit>true</itunes:explicit>
+        <itunes:image href="https://bikeshedpod.com/logo.png"/>
 
         <!-- Recommended Channel Elements -->
         <podcast:locked>no</podcast:locked>
-        <podcast:guid>bikeshed-fm-podcast</podcast:guid>
+        <podcast:guid>bikeshed-podcast</podcast:guid>
         <itunes:author>The Bikeshed Pod Team</itunes:author>
 
         <!-- Optional Channel Elements -->
@@ -35,10 +34,9 @@ export default async function RSSRoute() {
           <item>
             <!-- Required Item Elements -->
             <title>${episode.title}</title>
-            <!-- @TODO: add enclosure length -->
             <enclosure url="${episode.audioURL}" 
                       type="audio/mpeg" 
-                      length="0"/>
+                      length="${episode.fileSizeBytes}"/>
             <guid isPermaLink="false">${episode.episodeId.toLowerCase()}</guid>
 
             <!-- Recommended Item Elements -->
@@ -48,7 +46,7 @@ export default async function RSSRoute() {
             <content:encoded><![CDATA[${episode.longDescription}]]></content:encoded>
             <itunes:duration>${episode.duration}</itunes:duration>
             ${episode.captionURL ? `<podcast:transcript url="${episode.captionURL}" type="text/vtt"/>` : ""}
-            <itunes:explicit>false</itunes:explicit>
+            <itunes:explicit>true</itunes:explicit>
           </item>
         `,
           )

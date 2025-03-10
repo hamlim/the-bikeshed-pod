@@ -56,16 +56,18 @@ export default function Home() {
               . Join us for in-depth discussions about coding practices, tools,
               and tech decisions.
             </p>
-            <div className="flex gap-4 justify-center pt-8">
-              <Button asChild size="lg" className="gap-2">
-                <Link
-                  to={`/episodes/${episodeMetadata[0].episodeId.toLowerCase()}`}
-                >
-                  <PlayCircle className="w-5 h-5" />
-                  Latest Episode
-                </Link>
-              </Button>
-            </div>
+            {episodeMetadata.length ? (
+              <div className="flex gap-4 justify-center pt-8">
+                <Button asChild size="lg" className="gap-2">
+                  <Link
+                    to={`/episodes/${episodeMetadata[0].episodeId.toLowerCase()}`}
+                  >
+                    <PlayCircle className="w-5 h-5" />
+                    Latest Episode
+                  </Link>
+                </Button>
+              </div>
+            ) : null}
           </div>
         </div>
       </section>
@@ -116,16 +118,18 @@ export default function Home() {
       </section>
 
       {/* Latest Episodes Section */}
-      <section className="px-4 py-16 md:px-6 lg:px-8">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-8">Latest Episodes</h2>
-          <div className="grid gap-6">
-            {latestEpisodes.map((episode) => (
-              <EpisodeCard key={episode.id} episode={episode} />
-            ))}
+      {episodeMetadata.length ? (
+        <section className="px-4 py-16 md:px-6 lg:px-8">
+          <div className="container mx-auto max-w-4xl">
+            <h2 className="text-3xl font-bold mb-8">Latest Episodes</h2>
+            <div className="grid gap-6">
+              {latestEpisodes.map((episode) => (
+                <EpisodeCard key={episode.id} episode={episode} />
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ) : null}
     </main>
   );
 }

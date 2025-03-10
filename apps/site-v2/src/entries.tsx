@@ -8,12 +8,10 @@ import layout0 from "./app/@layout";
 import root1 from "./app/@root";
 import page2 from "./app/about/page";
 import route3 from "./app/api/greet/route";
-import page4 from "./app/episodes/bike-001/page";
-import page5 from "./app/episodes/ignored/page";
-import page6 from "./app/episodes/page";
-import page7 from "./app/page";
-import route8 from "./app/rss.xml/route";
-import page9 from "./app/search/page";
+import page4 from "./app/episodes/page";
+import page5 from "./app/page";
+import route6 from "./app/rss.xml/route";
+import page7 from "./app/search/page";
 
 let pages = createPages(async ({ createPage, createLayout, createRoot, createApi }) => [
 createLayout({
@@ -47,43 +45,33 @@ createApi({
 }),
 createPage({
   render: "dynamic",
-  path: "/episodes/bike-001",
+  path: "/episodes",
   component: page4,
 }),
 createPage({
   render: "dynamic",
-  path: "/episodes/ignored",
-  component: page5,
-}),
-createPage({
-  render: "dynamic",
-  path: "/episodes",
-  component: page6,
-}),
-createPage({
-  render: "dynamic",
   path: "/",
-  component: page7,
+  component: page5,
 }),
 createApi({
   render: "dynamic",
   path: "/rss.xml",
   handlers: {
-    GET: route8,
-    POST: route8,
-    PUT: route8,
-    DELETE: route8,
-    PATCH: route8,
-    OPTIONS: route8,
-    HEAD: route8,
-    TRACE: route8,
-    CONNECT: route8,
+    GET: route6,
+    POST: route6,
+    PUT: route6,
+    DELETE: route6,
+    PATCH: route6,
+    OPTIONS: route6,
+    HEAD: route6,
+    TRACE: route6,
+    CONNECT: route6,
   },
 }),
 createPage({
   render: "dynamic",
   path: "/search",
-  component: page9,
+  component: page7,
 }),
 ]);
 

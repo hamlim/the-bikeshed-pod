@@ -1,7 +1,7 @@
 import type { ReactNode } from "react";
-import { preload } from "react-dom";
+// import { preload } from "react-dom";
 import "../styles.css";
-import { Provider } from "#components/audio/audio-player";
+// import { Provider } from "#components/audio/audio-player";
 import { Footer } from "./footer";
 import { Nav } from "./nav";
 
@@ -18,10 +18,6 @@ function themeCheck() {
 }
 
 export default function Root({ children }: { children: ReactNode }) {
-  // @TODO: Make sure this preload is used below in the body!
-  // geist-regular / geist sans isn't used currently
-  // preload(`/geist-regular.woff2`, { as: "font" });
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head suppressHydrationWarning>
@@ -37,7 +33,7 @@ export default function Root({ children }: { children: ReactNode }) {
           dangerouslySetInnerHTML={{ __html: `(${themeCheck.toString()})()` }}
         />
         <Nav />
-        <Provider>{children}</Provider>
+        {children}
         <Footer />
       </body>
     </html>

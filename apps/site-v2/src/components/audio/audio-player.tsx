@@ -12,11 +12,7 @@ export function Provider({ children }: { children: React.ReactNode }) {
   let [speed, setSpeed] = useState(1);
   let [muted, setMuted] = useState(false);
   let [track, setTrack] = useState<{ src: string; captionsSrc: string } | null>(
-    {
-      src: "/first-pod-edited.mp3",
-      captionsSrc: null,
-      // captionsSrc: "/first-pod-edited.vtt",
-    },
+    null,
   );
   let [duration, setDuration] = useState(0);
 

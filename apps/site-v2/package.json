@@ -14,6 +14,7 @@
     "deploy": "wrangler deploy"
   },
   "dependencies": {
+    "@hamstack/bluesky-comments": "0.1.1",
     "@local/components": "workspace:*",
     "@local/utils": "workspace:*",
     "@orama/orama": "3.0.8",

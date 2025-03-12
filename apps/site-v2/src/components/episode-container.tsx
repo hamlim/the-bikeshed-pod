@@ -1,3 +1,4 @@
+import { CommentSection } from "@hamstack/bluesky-comments";
 import { Heading } from "@local/components/heading";
 import { Button } from "#ui/button";
 import { hosts } from "../hosts";
@@ -98,6 +99,8 @@ export function EpisodeContainer({
       <section className="prose dark:prose-invert container max-w-4xl mx-auto">
         {children}
       </section>
+      <hr className="my-8" />
+      <CommentSection author="bikeshedpod.com" />
     </article>
   );
 }

@@ -25,6 +25,7 @@
       "name": "site-v2",
       "version": "0.0.0",
       "dependencies": {
+        "@hamstack/bluesky-comments": "0.1.1",
         "@local/components": "workspace:*",
         "@local/utils": "workspace:*",
         "@orama/orama": "3.0.8",
@@ -247,6 +248,8 @@
     "@floating-ui/utils": ["@floating-ui/utils@0.2.9", "", {}, "sha512-MDWhGtE+eHw5JW7lq4qhc5yRLS11ERl1c7Z6Xd0a58DozHES6EnNNwUWbMiG4J9Cgj053Bhk8zvlhFYKVhULwg=="],
 
     "@garbanzo/cli": ["@garbanzo/cli@0.1.1", "", { "dependencies": { "giget": "1.2.4", "mri": "1.2.0" }, "bin": { "garbanzo": "cli.mjs" } }, "sha512-on05Eg1VepAUWY1QWbSZtTEGAd5uKYbTxbJJ2GHb+RETGT0iZIRGpZo1c705Kk0DAFF7VK37i+pDoK/3cuapDg=="],
+
+    "@hamstack/bluesky-comments": ["@hamstack/bluesky-comments@0.1.1", "", { "peerDependencies": { "react": "*" } }, "sha512-G/1KszTrrHo4UzcsyCS//ifr0xOEof9i6+BC60WMrxqMnLH3v0sURjKE3hwtJJs0GgkQksy+zZpGWU0HHBGPOw=="],
 
     "@hono/node-server": ["@hono/node-server@1.13.8", "", { "peerDependencies": { "hono": "^4" } }, "sha512-fsn8ucecsAXUoVxrUil0m13kOEq4mkX4/4QozCqmY+HpGfKl74OYSn8JcMA8GnG0ClfdRI4/ZSeG7zhFaVg+wg=="],
 

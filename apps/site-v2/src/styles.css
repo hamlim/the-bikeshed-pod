@@ -11,6 +11,12 @@
 /* Second source is if the process is running from the app dir */
 @source "../../../node_modules/@local/components";
 
+/* This kinda sucks */
+/* First source is if the process is running from the root of the repo */
+@source "../node_modules/@hamstack/bluesky-comments/dist/index.js";
+/* Second source is if the process is running from the app dir */
+@source "../../../node_modules/@hamstack/bluesky-comments/dist/index.js";
+
 /* Shiki */
 html.dark .shiki,
 html.dark .shiki span {

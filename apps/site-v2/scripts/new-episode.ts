@@ -7,7 +7,16 @@ if (!id) {
   process.exit(1);
 }
 
-let folderPath = `./src/app/episodes/${id}`;
+let title = process.argv[3];
+
+if (!title) {
+  console.warn(`⚠️ Please make sure to provide the title of the new episode!`);
+  process.exit(1);
+}
+// @todo: make this more robust
+let titleSlug = title.toLowerCase().replace(/ /g, "-");
+
+let folderPath = `./src/app/episodes/${id}/${titleSlug}`;
 let mdxFilePath = `${folderPath}/episode-${id}.mdx`;
 let pageFilePath = `${folderPath}/page.tsx`;
 
@@ -23,7 +32,7 @@ await Promise.all([
     mdxFilePath,
     `---
 episodeId: "${id}"
-title: "TODO"
+title: "${title}"
 shortDescription: "TODO"
 hosts: []
 metadata: []

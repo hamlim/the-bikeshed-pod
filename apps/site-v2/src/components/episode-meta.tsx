@@ -14,6 +14,13 @@ export function EpisodeMeta({
   return (
     <>
       <meta name="description" content={frontmatter.shortDescription} />
+      <meta property="og:title" content={frontmatter.title} />
+      <meta property="og:description" content={frontmatter.shortDescription} />
+      <meta property="og:image" content="/bikeshed-pod-square.png" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://bikeshedpod.com" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image" content="/bikeshed-pod-square.png" />
       {/* Bug in react IMO - title with interpolated values doesn't work */}
       <title>
         {`Bikeshed Podcast - ${frontmatter.episodeId} ${frontmatter.title}`}

@@ -100,45 +100,63 @@ export default async function SearchPage({
   }
 
   return (
-    <article className="container mx-auto max-w-[90vw] md:max-w-4xl py-12 min-h-screen">
-      <Heading level={2}>Search</Heading>
-      <form className="flex gap-4 my-8" action="/search">
-        <div className="relative flex-1">
-          <Search className="absolute left-3 top-3 h-4 w-4 text-stone-500" />
-          <Label>
-            <span className="sr-only">
-              Search episodes by title, description, or keywords
-            </span>
-            <Input
-              name="query"
-              placeholder="Search episodes..."
-              className="pl-10"
-              defaultValue={query}
-            />
-          </Label>
-        </div>
-        <Button type="submit">Search</Button>
-      </form>
-
-      <div className="grid gap-6">
-        {query ? (
-          <>
-            {results.length > 0 ? (
-              results.map((episode) => (
-                <EpisodeCard key={episode.episodeId} episode={episode} />
-              ))
-            ) : (
-              <div className="text-center text-stone-500">
-                No results found for "{query}"
-              </div>
-            )}
-          </>
-        ) : (
-          <div className="text-center text-stone-500">
-            Search for episodes by title, description, or keywords
+    <>
+      <meta
+        name="description"
+        content="Where developers debate the small stuff that matters"
+      />
+      <title>Search The Bikeshed Pod Episodes</title>
+      <meta property="og:title" content="Search The Bikeshed Pod Episodes" />
+      <meta
+        property="og:description"
+        content="Where developers debate the small stuff that matters"
+      />
+      <meta property="og:image" content="/bikeshed-pod-square.png" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://bikeshedpod.com" />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:image" content="/bikeshed-pod-square.png" />
+      <link rel="icon" href="/favicon.ico" />
+      <main className="container mx-auto max-w-[90vw] md:max-w-4xl py-12 min-h-screen">
+        <Heading level={2}>Search</Heading>
+        <form className="flex gap-4 my-8" action="/search">
+          <div className="relative flex-1">
+            <Search className="absolute left-3 top-3 h-4 w-4 text-stone-500" />
+            <Label>
+              <span className="sr-only">
+                Search episodes by title, description, or keywords
+              </span>
+              <Input
+                name="query"
+                placeholder="Search episodes..."
+                className="pl-10"
+                defaultValue={query}
+              />
+            </Label>
           </div>
-        )}
-      </div>
-    </article>
+          <Button type="submit">Search</Button>
+        </form>
+
+        <div className="grid gap-6">
+          {query ? (
+            <>
+              {results.length > 0 ? (
+                results.map((episode) => (
+                  <EpisodeCard key={episode.episodeId} episode={episode} />
+                ))
+              ) : (
+                <div className="text-center text-stone-500">
+                  No results found for "{query}"
+                </div>
+              )}
+            </>
+          ) : (
+            <div className="text-center text-stone-500">
+              Search for episodes by title, description, or keywords
+            </div>
+          )}
+        </div>
+      </main>
+    </>
   );
 }

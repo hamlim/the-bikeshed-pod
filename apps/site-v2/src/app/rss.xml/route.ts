@@ -4,7 +4,7 @@ export default async function RSSRoute() {
   return new Response(
     `<?xml version="1.0" encoding="UTF-8"?>
     <?xml-stylesheet type="text/xsl" href="/rss.xsl"?>
-    <rss version="2.0" 
+    <rss version="2.0"
          xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
          xmlns:podcast="https://podcastindex.org/namespace/1.0"
          xmlns:atom="http://www.w3.org/2005/Atom"
@@ -12,12 +12,13 @@ export default async function RSSRoute() {
       <channel>
         <title>The Bikeshed Pod</title>
         <description>The Bikeshed Pod is a weekly show where developers dive deep into the small but important details of software development that we all love to debate.</description>
+        <email>hi@bikeshedpod.com</email>
         <link>https://bikeshedpod.com</link>
         <language>en-us</language>
         <atom:link href="https://bikeshedpod.com/rss.xml" rel="self" type="application/rss+xml"/>
         <itunes:category text="Technology"/>
         <itunes:explicit>true</itunes:explicit>
-        <itunes:image href="https://bikeshedpod.com/logo.png"/>
+        <itunes:image href="https://bikeshedpod.com/bikeshed-pod-square.png"/>
 
         <!-- Recommended Channel Elements -->
         <podcast:locked>no</podcast:locked>
@@ -34,8 +35,8 @@ export default async function RSSRoute() {
           <item>
             <!-- Required Item Elements -->
             <title>${episode.title}</title>
-            <enclosure url="${episode.audioURL}" 
-                      type="audio/mpeg" 
+            <enclosure url="${episode.audioURL}"
+                      type="audio/mpeg"
                       length="${episode.fileSizeBytes}"/>
             <guid isPermaLink="false">${episode.episodeId.toLowerCase()}</guid>
 

@@ -1,5 +1,6 @@
 import { Mic2, PlayCircle, Rss } from "lucide-react";
 import { Link } from "waku";
+import { Anchor } from "#components/anchor";
 import { EpisodeCard } from "#components/episode-card";
 import {
   Card,
@@ -110,17 +111,6 @@ export default function Home() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              {/* <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Clock className="w-5 h-5" />
-                  30-Minute Format
-                </CardTitle>
-                <CardDescription>
-                  Concise, focused discussions perfect for your commute
-                </CardDescription>
-              </CardHeader>
-            </Card> */}
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -128,7 +118,18 @@ export default function Home() {
                     Available Everywhere
                   </CardTitle>
                   <CardDescription>
-                    Listen on Spotify, Apple Podcasts, or your favorite platform
+                    Listen on{" "}
+                    <Anchor href="https://open.spotify.com/show/7njrdM3LvNPnqSftswTkjn?si=5cc424416eaa4b35">
+                      Spotify
+                    </Anchor>
+                    ,{" "}
+                    <Anchor href="https://podcasts.apple.com/us/podcast/the-bikeshed-pod/id1802688284">
+                      Apple Podcasts
+                    </Anchor>
+                    , or{" "}
+                    <Anchor href="/rss.xml" target="_blank" rel="noreferrer">
+                      your favorite platform
+                    </Anchor>
                   </CardDescription>
                 </CardHeader>
               </Card>

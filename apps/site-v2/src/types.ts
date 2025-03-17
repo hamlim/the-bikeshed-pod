@@ -1,32 +1,3 @@
-/*
-
-{
-    "episodeId": "some episode id",
-    "title": "some title",
-    "shortDescription": "Short (< some num of chars) description",
-    "hosts": [
-        {
-            "name": "Host Name",
-            "socials": [
-                {
-                    "network": "bluesky | github | twitter | website",
-                    "url": "some url"
-                }
-            ]
-        }
-    ],
-    "metadata": ["tag-1", "tag-2", "some-other-thing"],
-    "publishTime": 12345,
-    "duration": 12345,
-    "longDescription": "Long form description/show notes - supports MDX",
-    "audioURL": "https://bikeshedpod.com/api/audio/{episodeId}"
-}
-    */
-export type Social = {
-  network: string;
-  url: string;
-};
-
 export type SocialNetwork = "bluesky" | "twitter" | "github" | "website";
 
 type OptionalSocialNetworks = Exclude<SocialNetwork, "website">;
@@ -49,6 +20,7 @@ export type SearchEpisodeMetadata = {
   audioURL: string;
   captionURL: string;
   longDescription: string;
+  slug: string;
 };
 
 export interface EpisodeMetadata {
@@ -64,6 +36,7 @@ export interface EpisodeMetadata {
   longDescription: string;
   // Required for enclosure
   fileSizeBytes: number;
+  slug: string;
 }
 
 // Frontmatter types
@@ -82,6 +55,7 @@ export interface RawFrontmatter {
   audioURL: string;
   captionURL: string;
   fileSizeBytes: number;
+  slug: string;
 }
 
 export interface HydratedFrontmatter {
@@ -95,4 +69,5 @@ export interface HydratedFrontmatter {
   audioURL: string;
   captionURL: string;
   fileSizeBytes: number;
+  slug: string;
 }

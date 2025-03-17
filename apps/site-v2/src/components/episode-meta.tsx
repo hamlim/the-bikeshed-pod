@@ -39,10 +39,7 @@ export function EpisodeMeta({
       <meta property="of:episode" content={frontmatter.episodeId} />
       {/* @TODO??? */}
       {/* <meta property="of:season" content={frontmatter.season} /> */}
-      <meta
-        property="of:episodeNumber"
-        content={frontmatter.episodeId.split("bike-")[1]}
-      />
+      <meta property="of:episodeNumber" content={frontmatter.episodeId} />
       <meta property="of:duration" content={frontmatter.duration.toString()} />
     </>
   );

@@ -40,7 +40,7 @@ export default async function RSSRoute() {
             <guid isPermaLink="false">${episode.episodeId.toLowerCase()}</guid>
 
             <!-- Recommended Item Elements -->
-            <link>https://bikeshedpod.com/episodes/${episode.episodeId.toLowerCase()}</link>
+            <link>https://bikeshedpod.com/episodes/${episode.episodeId.toLowerCase()}/${episode.slug}</link>
             <pubDate>${new Date(episode.publishTime).toUTCString()}</pubDate>
             <description><![CDATA[${episode.shortDescription}]]></description>
             <content:encoded><![CDATA[${episode.longDescription}]]></content:encoded>

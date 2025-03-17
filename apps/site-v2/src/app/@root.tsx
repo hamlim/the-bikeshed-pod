@@ -26,6 +26,17 @@ export default function Root({ children }: { children: ReactNode }) {
           name="description"
           content="Where developers debate the small stuff that matters"
         />
+        <meta property="og:title" content="The Bikeshed Pod" />
+        <meta
+          property="og:description"
+          content="Where developers debate the small stuff that matters"
+        />
+        <meta property="og:image" content="/bikeshed-pod-square.png" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://bikeshedpod.com" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="/bikeshed-pod-square.png" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body>
         <script

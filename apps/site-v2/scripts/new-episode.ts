@@ -32,14 +32,16 @@ await Promise.all([
     mdxFilePath,
     `---
 episodeId: "${id}"
+slug: "${titleSlug}"
 title: "${title}"
 shortDescription: "TODO"
 hosts: []
 metadata: []
 publishTime: ${Date.now()}
-duration: TODO
+duration: 123
 audioURL: "TODO"
 captionURL: "TODO"
+fileSizeBytes: 123
 ---
 
 Long description here...

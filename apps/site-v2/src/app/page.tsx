@@ -12,6 +12,8 @@ import { Button } from "#ui/button";
 
 let latestEpisodes = episodeMetadata.slice(0, 3);
 
+let latestEpisode = latestEpisodes[0];
+
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
@@ -56,11 +58,11 @@ export default function Home() {
               . Join us for in-depth discussions about coding practices, tools,
               and tech decisions.
             </p>
-            {episodeMetadata.length ? (
+            {latestEpisode ? (
               <div className="flex gap-4 justify-center pt-8">
                 <Button asChild size="lg" className="gap-2">
                   <Link
-                    to={`/episodes/${episodeMetadata[0].episodeId.toLowerCase()}`}
+                    to={`/episodes/${latestEpisode.episodeId.toLowerCase()}/${latestEpisode.slug}`}
                   >
                     <PlayCircle className="w-5 h-5" />
                     Latest Episode

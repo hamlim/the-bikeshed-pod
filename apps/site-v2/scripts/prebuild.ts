@@ -36,6 +36,8 @@ for (let episode of episodeMDXFiles) {
     longDescription: content,
     audioURL: data.audioURL,
     captionURL: data.captionURL,
+    slug: data.slug,
+    fileSizeBytes: data.fileSizeBytes,
   });
 }
 

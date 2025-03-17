@@ -22,7 +22,7 @@ export default async function RSSRoute() {
         <!-- Recommended Channel Elements -->
         <podcast:locked>no</podcast:locked>
         <podcast:guid>bikeshed-podcast</podcast:guid>
-        <itunes:author>Matt Hamlin, Dillon Curry & Scott Kaye</itunes:author>
+        <itunes:author>Matt Hamlin, Dillon Curry &amp; Scott Kaye</itunes:author>
         <itunes:owner>
           <itunes:name><![CDATA[Matt Hamlin]]></itunes:name>
           <itunes:email>hi@bikeshedpod.com</itunes:email>

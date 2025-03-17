@@ -12,7 +12,6 @@ export default async function RSSRoute() {
       <channel>
         <title>The Bikeshed Pod</title>
         <description>The Bikeshed Pod is a weekly show where developers dive deep into the small but important details of software development that we all love to debate.</description>
-        <email>hi@bikeshedpod.com</email>
         <link>https://bikeshedpod.com</link>
         <language>en-us</language>
         <atom:link href="https://bikeshedpod.com/rss.xml" rel="self" type="application/rss+xml"/>

@@ -122,7 +122,7 @@ export default async function SearchPage({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="/bikeshed-pod-square.png" />
       <link rel="icon" href="/favicon.ico" />
-      <main className="container mx-auto max-w-[90vw] md:max-w-4xl py-12 min-h-screen">
+      <main className="container mx-auto max-w-[90vw] md:max-w-4xl py-12 grow">
         <Heading level={2}>Search</Heading>
         <search>
           <form className="flex gap-4 my-8" action="/search">

@@ -21,7 +21,7 @@ export default function EpisodesPage() {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="/bikeshed-pod-square.png" />
       <link rel="icon" href="/favicon.ico" />
-      <main className="py-10 container max-w-[90vw] md:max-w-4xl mx-auto min-h-screen">
+      <main className="py-10 container max-w-[90vw] md:max-w-4xl mx-auto grow">
         <Heading level={2}>All Episodes</Heading>
         <div className="grid gap-6 mt-8">
           {episodeMetadata.map((episode) => (

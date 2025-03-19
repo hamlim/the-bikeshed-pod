@@ -19,11 +19,11 @@ function themeCheck() {
 
 export default function Root({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className="h-full">
       <head suppressHydrationWarning>
         <title>The Bikeshed Pod</title>
       </head>
-      <body>
+      <body className="h-full flex flex-col">
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{ __html: `(${themeCheck.toString()})()` }}

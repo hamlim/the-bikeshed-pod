@@ -141,7 +141,10 @@ export default function Home() {
         {episodeMetadata.length ? (
           <section className="px-4 py-16 md:px-6 lg:px-8">
             <div className="container mx-auto max-w-4xl">
-              <h2 className="text-3xl font-bold mb-8">Latest Episodes</h2>
+              <div className="flex justify-between items-center mb-8">
+                <h2 className="text-3xl font-bold">Latest Episodes</h2>
+                <Anchor href="/episodes">View All Episodes</Anchor>
+              </div>
               <div className="grid gap-6">
                 {latestEpisodes.map((episode) => (
                   <EpisodeCard key={episode.id} episode={episode} />

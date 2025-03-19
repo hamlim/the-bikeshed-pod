@@ -40,6 +40,9 @@ let schema = {
   duration: "number",
   longDescription: "string",
   audioURL: "string",
+  captionURL: "string",
+  slug: "string",
+  fileSizeBytes: "number",
 } as const;
 
 let index: Orama<typeof schema>;
@@ -63,6 +66,8 @@ function makeIndex(
         duration: episode.duration,
         longDescription: episode.longDescription,
         audioURL: episode.audioURL,
+        slug: episode.slug,
+        fileSizeBytes: episode.fileSizeBytes,
       });
     }
   }
@@ -119,23 +124,25 @@ export default async function SearchPage({
       <link rel="icon" href="/favicon.ico" />
       <main className="container mx-auto max-w-[90vw] md:max-w-4xl py-12 min-h-screen">
         <Heading level={2}>Search</Heading>
-        <form className="flex gap-4 my-8" action="/search">
-          <div className="relative flex-1">
-            <Search className="absolute left-3 top-3 h-4 w-4 text-stone-500" />
-            <Label>
-              <span className="sr-only">
-                Search episodes by title, description, or keywords
-              </span>
-              <Input
-                name="query"
-                placeholder="Search episodes..."
-                className="pl-10"
-                defaultValue={query}
-              />
-            </Label>
-          </div>
-          <Button type="submit">Search</Button>
-        </form>
+        <search>
+          <form className="flex gap-4 my-8" action="/search">
+            <div className="relative flex-1">
+              <Search className="absolute left-3 top-3 h-4 w-4 text-stone-500" />
+              <Label>
+                <span className="sr-only">
+                  Search episodes by title, description, or keywords
+                </span>
+                <Input
+                  name="query"
+                  placeholder="Search episodes..."
+                  className="pl-10"
+                  defaultValue={query}
+                />
+              </Label>
+            </div>
+            <Button type="submit">Search</Button>
+          </form>
+        </search>
 
         <div className="grid gap-6">
           {query ? (

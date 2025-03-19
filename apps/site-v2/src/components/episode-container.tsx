@@ -38,7 +38,10 @@ function formatTime(time: number) {
 export function EpisodeContainer({
   children,
   rawMetadata,
-}: { children: React.ReactNode; rawMetadata: any }) {
+}: {
+  children: React.ReactNode;
+  rawMetadata: any;
+}) {
   let frontmatter: HydratedFrontmatter = {
     ...rawMetadata,
     hosts: rawMetadata.hosts
@@ -47,7 +50,7 @@ export function EpisodeContainer({
   };
 
   return (
-    <article className="py-10 container max-w-[90vw] lg:max-w-4xl mx-auto min-h-screen">
+    <article className="py-10 container max-w-[90vw] lg:max-w-4xl mx-auto">
       <EpisodeMeta frontmatter={frontmatter} />
       <div className="p-6 bg-[var(--uchu-yin-1)] dark:bg-[var(--uchu-yin-9)] rounded-md space-y-4">
         <hgroup className="space-y-4">

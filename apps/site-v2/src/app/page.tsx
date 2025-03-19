@@ -33,7 +33,7 @@ export default function Home() {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="/bikeshed-pod-square.png" />
       <link rel="icon" href="/favicon.ico" />
-      <main className="flex min-h-screen flex-col">
+      <main className="flex grow flex-col">
         {/* Hero Section */}
         <section className="px-4 py-24 md:px-6 lg:px-8 bg-stone-900">
           <div className="container mx-auto max-w-4xl">

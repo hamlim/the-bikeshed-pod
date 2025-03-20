@@ -6,21 +6,9 @@
       "import": "./dist/heading.js",
       "types": "./dist/heading.d.ts"
     },
-    "./link": {
-      "import": "./dist/link.js",
-      "types": "./dist/link.d.ts"
-    },
     "./error-message": {
       "import": "./dist/error-message.js",
       "types": "./dist/error-message.d.ts"
-    },
-    "./action": {
-      "import": "./dist/action.js",
-      "types": "./dist/action.d.ts"
-    },
-    "./form-button": {
-      "import": "./dist/form-button.js",
-      "types": "./dist/form-button.d.ts"
     },
     "./input": {
       "import": "./dist/input.js",

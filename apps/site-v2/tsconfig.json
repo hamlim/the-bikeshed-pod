@@ -18,7 +18,8 @@
       "#ui/*": ["./src/components/ui/*"],
       "#lib/*": ["./src/lib/*"],
       "#hooks/*": ["./src/hooks/*"],
-      "#episode-metadata": ["./src/episode-metadata.json"]
+      "#episode-metadata": ["./src/episode-metadata.json"],
+      "#rss-feed-data": ["./src/rss-feed-data.json"]
     }
   }
 }

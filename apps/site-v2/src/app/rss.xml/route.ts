@@ -1,4 +1,4 @@
-import episodeMetadata from "../../episode-metadata.json";
+import rssFeedData from "../../rss-feed-data.json";
 
 export default async function RSSRoute() {
   return new Response(
@@ -32,7 +32,7 @@ export default async function RSSRoute() {
         <copyright>© ${new Date().getFullYear()} The Bikeshed Pod</copyright>
         <itunes:type>episodic</itunes:type>
 
-        ${episodeMetadata
+        ${rssFeedData
           .map(
             (episode) => `
           <item>

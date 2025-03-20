@@ -10,3 +10,10 @@ declare module "#episode-metadata" {
   let episodeMetadata: Array<EpisodeMetadata>;
   export default episodeMetadata;
 }
+
+// Hydrated content with raw html
+declare module "#rss-feed-data" {
+  import type { EpisodeMetadata } from "./src/types";
+  let rssFeedData: Array<EpisodeMetadata>;
+  export default rssFeedData;
+}

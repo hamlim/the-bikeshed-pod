@@ -1,5 +1,6 @@
 import { Mic2, PlayCircle, Rss } from "lucide-react";
 import { Link } from "waku";
+import { Anchor } from "#components/anchor";
 import { EpisodeCard } from "#components/episode-card";
 import {
   Card,
@@ -32,7 +33,7 @@ export default function Home() {
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:image" content="/bikeshed-pod-square.png" />
       <link rel="icon" href="/favicon.ico" />
-      <main className="flex min-h-screen flex-col">
+      <main className="flex grow flex-col">
         {/* Hero Section */}
         <section className="px-4 py-24 md:px-6 lg:px-8 bg-stone-900">
           <div className="container mx-auto max-w-4xl">
@@ -110,17 +111,6 @@ export default function Home() {
                   </CardDescription>
                 </CardHeader>
               </Card>
-              {/* <Card>
-              <CardHeader>
-                <CardTitle className="flex items-center gap-2">
-                  <Clock className="w-5 h-5" />
-                  30-Minute Format
-                </CardTitle>
-                <CardDescription>
-                  Concise, focused discussions perfect for your commute
-                </CardDescription>
-              </CardHeader>
-            </Card> */}
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center gap-2">
@@ -128,7 +118,18 @@ export default function Home() {
                     Available Everywhere
                   </CardTitle>
                   <CardDescription>
-                    Listen on Spotify, Apple Podcasts, or your favorite platform
+                    Listen on{" "}
+                    <Anchor href="https://open.spotify.com/show/7njrdM3LvNPnqSftswTkjn?si=5cc424416eaa4b35">
+                      Spotify
+                    </Anchor>
+                    ,{" "}
+                    <Anchor href="https://podcasts.apple.com/us/podcast/the-bikeshed-pod/id1802688284">
+                      Apple Podcasts
+                    </Anchor>
+                    , or{" "}
+                    <Anchor href="/rss.xml" target="_blank" rel="noreferrer">
+                      your favorite platform
+                    </Anchor>
                   </CardDescription>
                 </CardHeader>
               </Card>
@@ -140,7 +141,10 @@ export default function Home() {
         {episodeMetadata.length ? (
           <section className="px-4 py-16 md:px-6 lg:px-8">
             <div className="container mx-auto max-w-4xl">
-              <h2 className="text-3xl font-bold mb-8">Latest Episodes</h2>
+              <div className="flex justify-between items-center mb-8">
+                <h2 className="text-3xl font-bold">Latest Episodes</h2>
+                <Anchor href="/episodes">View All Episodes</Anchor>
+              </div>
               <div className="grid gap-6">
                 {latestEpisodes.map((episode) => (
                   <EpisodeCard key={episode.id} episode={episode} />

@@ -45,6 +45,20 @@
           }
         }
       }
+    },
+    {
+      "include": [
+        "./apps/site-v2/.wrangler/**",
+        "./apps/site-v2/src/entries.tsx",
+        "./apps/site-v2/src/episode-metadata.json",
+        "./apps/site-v2/src/rss-feed-data.json"
+      ],
+      "linter": {
+        "enabled": false
+      },
+      "formatter": {
+        "enabled": false
+      }
     }
   ]
 }

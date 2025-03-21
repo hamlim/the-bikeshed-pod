@@ -1,8 +1,25 @@
 import fs from "node:fs/promises";
 import glob from "fast-glob";
 import matter from "gray-matter";
+import { transformMarkdown } from "mdxlite";
+import { renderToString } from "react-dom/server";
+import { Anchor } from "#components/anchor";
 import { hosts } from "../src/hosts";
 import type { EpisodeMetadata, Host } from "../src/types";
+
+let components = {
+  Anchor({ href, children }: { href: string; children: React.ReactNode }) {
+    return <a href={href}>{children}</a>;
+  },
+};
+let imports = {
+  "#/hosts": {
+    hosts,
+  },
+  "#components/anchor": {
+    Anchor: components.Anchor,
+  },
+};
 
 function hydrateHosts(hostsArray: Array<string>): Array<Host> {
   return hostsArray.map((hostId) => {
@@ -18,7 +35,7 @@ function hydrateHosts(hostsArray: Array<string>): Array<Host> {
 let episodeMDXFiles = await glob("./src/app/episodes/**/*.mdx");
 
 let episodeMetadata: Array<EpisodeMetadata> = [];
-
+let rssFeedData: Array<EpisodeMetadata> = [];
 for (let episode of episodeMDXFiles) {
   let fileContent = await fs.readFile(episode, "utf8");
 
@@ -39,6 +56,27 @@ for (let episode of episodeMDXFiles) {
     slug: data.slug,
     fileSizeBytes: data.fileSizeBytes,
   });
+
+  rssFeedData.push({
+    episodeId: data.episodeId,
+    title: data.title,
+    shortDescription: data.shortDescription,
+    hosts: hydrateHosts(data.hosts),
+    metadata: data.metadata,
+    publishTime: data.publishTime,
+    duration: data.duration,
+    longDescription: renderToString(
+      await transformMarkdown({
+        markdown: content,
+        imports,
+        components,
+      }),
+    ),
+    audioURL: data.audioURL,
+    captionURL: data.captionURL,
+    slug: data.slug,
+    fileSizeBytes: data.fileSizeBytes,
+  });
 }
 
 console.log("Writing episode metadata...");
@@ -46,3 +84,4 @@ await fs.writeFile(
   "./src/episode-metadata.json",
   JSON.stringify(episodeMetadata),
 );
+await fs.writeFile("./src/rss-feed-data.json", JSON.stringify(rssFeedData));

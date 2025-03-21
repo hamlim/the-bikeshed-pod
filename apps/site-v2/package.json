@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "build-cf-types": "wrangler types --experimental-include-runtime",
-    "predev": "bun ./scripts/prebuild.ts",
+    "predev": "bun ./scripts/prebuild.tsx",
     "dev": "garbanzo dev",
-    "prebuild": "bun ./scripts/prebuild.ts",
+    "prebuild": "bun ./scripts/prebuild.tsx",
     "build": "garbanzo build",
     "start": "wrangler dev",
     "predeploy": "bun run build",
@@ -23,15 +23,25 @@
     "@radix-ui/react-slider": "1.2.3",
     "@radix-ui/react-slot": "1.1.2",
     "@tailwindcss/typography": "0.5.16",
+    "class-variance-authority": "0.7.0",
+    "estree-util-visit": "2.0.0",
+    "hast-util-to-jsx-runtime": "2.3.6",
     "hono": "4.6.20",
+    "html-url-attributes": "3.0.1",
+    "lucide-react": "0.439.0",
+    "mdxlite": "1.0.0",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "react-server-dom-webpack": "19.0.0",
+    "remark-mdx": "3.1.0",
+    "remark-parse": "11.0.0",
+    "remark-rehype": "11.1.1",
+    "sval": "0.6.3",
+    "tailwindcss-animate": "1.0.7",
+    "unified": "11.0.5",
+    "unist-util-visit": "5.0.0",
     "waku": "0.21.22",
-    "wrangler": "3.109.1",
-    "lucide-react": "0.439.0",
-    "class-variance-authority": "0.7.0",
-    "tailwindcss-animate": "1.0.7"
+    "wrangler": "3.109.1"
   },
   "imports": {
     "#/*": "./src/*",
@@ -40,7 +50,8 @@
     "#ui/*": "./src/components/ui/*",
     "#lib/*": "./src/lib/*",
     "#hooks/*": "./src/hooks/*",
-    "#episode-metadata": "./src/episode-metadata.json"
+    "#episode-metadata": "./src/episode-metadata.json",
+    "#rss-feed-data": "./src/rss-feed-data.json"
   },
   "devDependencies": {
     "@garbanzo/cli": "0.1.1",

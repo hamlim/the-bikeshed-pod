@@ -34,11 +34,18 @@ function hydrateHosts(hostsArray: Array<string>): Array<Host> {
 // along with the contents
 let episodeMDXFiles = await glob("./src/app/episodes/**/*.mdx");
 
+episodeMDXFiles.sort((a, b) => {
+  // Lets just split on this path because we know its always a number
+  let fileA = Number(a.split("/")[4]);
+  let fileB = Number(b.split("/")[4]);
+
+  return fileB - fileA;
+});
+
 let episodeMetadata: Array<EpisodeMetadata> = [];
 let rssFeedData: Array<EpisodeMetadata> = [];
 for (let episode of episodeMDXFiles) {
   let fileContent = await fs.readFile(episode, "utf8");
-
   // parse the frontmatter
   let { data, content } = matter(fileContent);
 

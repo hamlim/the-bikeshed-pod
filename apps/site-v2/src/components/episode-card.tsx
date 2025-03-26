@@ -12,7 +12,7 @@ export function EpisodeCard({ episode }: { episode: EpisodeMetadata }) {
           {episode.episodeId} - {episode.title}
         </Heading>
         <div className="flex justify-between items-start pt-4">
-          <div>
+          <div className="grow">
             <p className="mb-4">{episode.shortDescription}</p>
             <div className="flex gap-2 justify-end">
               <Button asChild variant="outline" size="sm">

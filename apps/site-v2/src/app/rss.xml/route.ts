@@ -17,7 +17,7 @@ export default async function RSSRoute() {
         <atom:link href="https://bikeshedpod.com/rss.xml" rel="self" type="application/rss+xml"/>
         <itunes:category text="Technology"/>
         <itunes:explicit>true</itunes:explicit>
-        <itunes:image href="https://bikeshedpod.com/bikeshed-pod-square.png"/>
+        <itunes:image href="https://bikeshedpod.com/bikeshed-episode-cover-lm.png"/>
 
         <!-- Recommended Channel Elements -->
         <podcast:locked>no</podcast:locked>

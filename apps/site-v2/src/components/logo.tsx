@@ -9,7 +9,6 @@ export function Logo({
   attributes = { role: "graphics-symbol" },
   className,
 }: LogoIconProps) {
-  console.log("attributes", attributes);
   return (
     <svg
       width="125"

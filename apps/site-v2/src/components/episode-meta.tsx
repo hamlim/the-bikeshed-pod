@@ -16,7 +16,7 @@ export function EpisodeMeta({
       <meta name="description" content={frontmatter.shortDescription} />
       <meta property="og:title" content={frontmatter.title} />
       <meta property="og:description" content={frontmatter.shortDescription} />
-      <meta property="og:image" content="/bikeshed-episode-cover-lm.png" />
+      <meta property="og:image" content="/bikeshed-metadata-lm.png" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://bikeshedpod.com" />
       <meta name="twitter:card" content="summary_large_image" />

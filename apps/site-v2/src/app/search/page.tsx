@@ -116,7 +116,7 @@ export default async function SearchPage({
         property="og:description"
         content="Where developers debate the small stuff that matters"
       />
-      <meta property="og:image" content="/bikeshed-episode-cover-lm.png" />
+      <meta property="og:image" content="/bikeshed-metadata-lm.png" />
       <meta property="og:type" content="website" />
       <meta property="og:url" content="https://bikeshedpod.com" />
       <meta name="twitter:card" content="summary_large_image" />

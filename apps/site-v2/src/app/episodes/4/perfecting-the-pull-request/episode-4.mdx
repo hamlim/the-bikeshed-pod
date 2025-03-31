@@ -1,0 +1,58 @@
+---
+episodeId: "4"
+slug: "perfecting-the-pull-request"
+title: "Perfecting The Pull Request"
+shortDescription: "The guys discuss best practices for code review, with a focus on creating effective pull requests (PRs) and how to approach reviewing code."
+hosts: ["scott", "dillon", "matt"]
+metadata: [
+    "code-review",
+    "pull-requests",
+    "pair-programming",
+    "pair-reviewing",
+    "live-reviewing",
+    "automated-testing",
+    "spicy-takes"
+]
+publishTime: 1743447007902
+duration: 3159
+audioURL: "https://assets.bikeshedpod.com/episodes/4/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/4/captions.vtt"
+fileSizeBytes: 75831088
+---
+
+## Summary:
+
+This episode of the Bikeshed Podcast features Scott Kaye, Matt Hamlin, and Dillon Curry discussing best practices for code review, with a focus on creating effective pull requests (PRs) and how to approach reviewing code.
+
+Creating Great Pull Requests
+
+* Context is Key: Highlight the problem being solved, the goal of the PR, and the solution chosen. Explain why this solution was selected over alternatives.
+* Scope: PRs should be isolated to a single problem or feature.
+* Rollback: Consider and outline the rollback procedure for changes.
+* Templates: Minimal templates with "context" and "details" sections are generally preferred. "Alternatives Considered" can be a useful addition.
+* Self-Review: Conduct a self-review of the code, ideally within the GitHub PR interface, to identify potential issues.
+* Draft Mode: Utilizing draft PRs is helpful for iterative development and early feedback.
+* Visual Aids: Include screenshots, screen recordings, and preview deploys to contextualize changes, especially for UI-related PRs. Dev tool screenshots can be helpful.
+  * [How to capture full-size screenshots within Chrome Devtools](https://developer.chrome.com/blog/devtools-tips-33)
+  * [Matt's replacement for Dropbox Capture](https://matthamlin.me/blog/2025/march/replacing-dropbox-capture-with-raycast)
+* Tests: Defer writing tests until a solid solution and some initial feedback have been received to avoid wasted effort due to significant code changes.
+
+Reviewing Code Effectively
+
+* Understand the Big Picture: Start by understanding the problem being solved and the overall goal of the PR.
+* Use Available Context: Utilize videos, screenshots, and preview deploys to understand the changes.
+* Prioritize: Focus on major changes and save minor issues for a second pass.
+* "What, Why, How" Approach: Consider what the change does, why it's being made, and how it's implemented.
+* Live Reviews/Pairing: For complex changes, consider live reviews or pair programming to accelerate feedback and build shared understanding. However, acknowledge that this is not always feasible due to time constraints.
+* Knowledge Sharing: Use code reviews as an opportunity to onboard team members and share knowledge.
+
+Spicy Takes (and Not-So-Spicy Takes)
+
+* Code review maybe is not needed: It was suggested in certain situations, code review may not be necessary. This take was received as extremely situational.
+* You should almost never have to do two code reviews This take was received as neither mild or spicy, more so cold and lukewarm.
+
+What's Up With You? (Stand-up Updates)
+
+* Dillon: Was looking into something called embargoed assets in Contentful.
+* Scott: Learned about animating on scroll videos and pictures in React using the Canvas tag, bypassing React's re-rendering limitations.
+* Matt: Investigating Content Security Policy (CSP) and durable objects on Cloudflare.

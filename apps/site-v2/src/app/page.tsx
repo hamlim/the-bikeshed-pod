@@ -147,6 +147,7 @@ export default function Home() {
                 {latestEpisodes.map((episode) => (
                   <EpisodeCard key={episode.id} episode={episode} />
                 ))}
+                <Anchor href="/episodes">View All Episodes</Anchor>
               </div>
             </div>
           </section>

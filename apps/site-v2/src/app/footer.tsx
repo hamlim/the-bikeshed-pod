@@ -2,6 +2,7 @@ import { Rss } from "lucide-react";
 import { Anchor } from "#components/anchor";
 import { ApplePodcasts } from "#components/apple-podcasts.js";
 import { Bluesky } from "#components/bluesky.js";
+import { Discord } from "#components/discord.js";
 import { Spotify } from "#components/spotify.js";
 import { hosts } from "../hosts";
 import type { Host } from "../types";
@@ -30,6 +31,9 @@ export function Footer() {
         <p>&copy; 2025 The Bikeshed Podcast</p>
         <Anchor href="https://bsky.app/profile/bikeshedpod.com">
           <Bluesky className="w-4 h-4 mr-2" /> Follow us on Bluesky
+        </Anchor>
+        <Anchor href="https://discord.gg/djaZBjJJ">
+          <Discord className="w-4 h-4 mr-2" /> Join our Discord
         </Anchor>
         <p>
           Created by{" "}

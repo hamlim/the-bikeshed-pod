@@ -3,13 +3,15 @@ import glob from "fast-glob";
 import matter from "gray-matter";
 import { transformMarkdown } from "mdxlite";
 import { renderToString } from "react-dom/server";
-import { Anchor } from "#components/anchor";
 import { hosts } from "../src/hosts";
 import type { EpisodeMetadata, Host } from "../src/types";
 
 let components = {
   Anchor({ href, children }: { href: string; children: React.ReactNode }) {
     return <a href={href}>{children}</a>;
+  },
+  img({ src, alt }: { src: string; alt: string }) {
+    return <img src={`https://bikeshedpod.com${src}`} alt={alt} />;
   },
 };
 let imports = {

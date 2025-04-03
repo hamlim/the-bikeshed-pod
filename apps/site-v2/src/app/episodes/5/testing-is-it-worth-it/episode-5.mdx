@@ -1,0 +1,58 @@
+---
+episodeId: "5"
+slug: "testing-is-it-worth-it"
+title: "Testing - Is It Worth It?!?"
+shortDescription: "The gang discusses all things software testing, from manual verification to automated tests and other things you can do to ensure stability!"
+hosts: ["scott", "dillon", "matt"]
+metadata: [
+    "automated-testing",
+    "spicy-takes",
+    "unit-testing",
+    "end-to-end-testing"
+]
+publishTime: 1743630067411
+duration: 4090
+audioURL: "https://assets.bikeshedpod.com/episodes/5/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/5/captions.vtt"
+fileSizeBytes: 98158259
+---
+
+## Summary:
+
+This episode of the Bikeshed Podcast features a discussion about software testing, with a focus on automated testing in frontend development. The hosts, Scott Kaye, Matt Hamlin, and Dillon Curry, explore various testing methodologies, tools, and their value in different contexts. They delve into the nuances of unit, integration, and end-to-end testing, and the trade-offs involved in choosing one over the other. The discussion also touches on the role of mocking, dependency injection, and the importance of balancing test coverage with development speed. They each share personal experiences from their development career on testing, and their favorite tools.
+
+Key Discussion Points:
+
+* Value of Testing: Testing is often not enjoyable in the short term, but provides significant long-term value by preventing bugs and providing confidence in code changes.
+* Unit Testing vs. Integration/End-to-End: Unit testing is valuable for specific functions, while integration and end-to-end tests are better for critical user flows. However, end-to-end tests can be flaky.
+* Mocking: The overuse of mocking can reduce the value of tests. Dependency injection is viewed more favorably than mocking, though they serve similar purposes.
+* Test Coverage: Aiming for 100% test coverage may not be efficient; focus on testing essential product features. Consider the time and effort spent on tests versus the value they provide.
+* Testing in Production: The hosts explore the concept of testing in production, with tools like Datadog synthetics. This allows the team to assess the experience for end-users in production.
+
+<figure>
+  <img
+    src="/testing-midwit-meme.png"
+    alt="A graphic showing the bell curve distribution of IQ score, the low end shows a comical depiction of a head with the text 'test in prod' above it, the middle shows another head with the text 'build a pristine hermetic environment to run tests against that matches prod 1:1', and the right hand side also shows a head with the text 'test in prod'."
+  />
+  <figcaption>The "midwit" meme reference that Matt made during the episode</figcaption>
+</figure>
+
+* Test-Driven Development (TDD): TDD may not always be practical, especially when developing new features with unknown outputs. Writing tests after the feature is more common in these scenarios.
+* Proof of Concept (POC): Developing a proof of concept outside the main application to validate an idea before integrating it is valuable.
+* Accessibility Testing: The importance of accessibility testing is discussed, but integrating it into the development process is important.
+* Component Tests: A discussion of testing in isolation to ensure true browser experience. Component testing will ensure the system will run in the browser as expected.
+* Code and Test Half-Life: Tests lose value over time as codebase patterns change. It's important to re-evaluate their relevance.
+  * [Referenced blog post on the half-life of code and tests](https://matthamlin.me/blog/2018/december/testing-software)
+
+### Spicy Takes:
+
+> Tune in to the episode to hear all our spicy takes on testing!
+
+### Misc. References:
+
+Scott shared a few Neovim related projects that he has been working with:
+
+- [Folke Snacks.nvim](https://github.com/folke/snacks.nvim)
+- [Folke Lazy.nvim](https://github.com/folke/lazy.nvim)
+- [Folke Flash.nvim](https://github.com/folke/flash.nvim)
+- [Avante.nvim](https://github.com/yetone/avante.nvim)

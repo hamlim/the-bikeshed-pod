@@ -1,8 +1,8 @@
-import { Rss } from "lucide-react";
 import { Anchor } from "#components/anchor";
 import { ApplePodcasts } from "#components/apple-podcasts.js";
 import { Bluesky } from "#components/bluesky.js";
 import { Discord } from "#components/discord.js";
+import { Rss } from "#components/rss";
 import { Spotify } from "#components/spotify.js";
 import { hosts } from "../hosts";
 import type { Host } from "../types";

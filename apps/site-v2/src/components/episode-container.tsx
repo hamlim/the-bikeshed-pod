@@ -4,8 +4,11 @@ import { Button } from "#ui/button";
 import { hosts } from "../hosts";
 import type { HydratedFrontmatter } from "../types";
 import type { Host } from "../types";
+import { Anchor } from "./anchor";
+import { ApplePodcasts } from "./apple-podcasts";
 import { SeeDiscussionOnBluesky, ShareToBluesky } from "./bluesky-social";
 import { EpisodeMeta } from "./episode-meta";
+import { Spotify } from "./spotify";
 
 function getPreferredSocial(host: Host): { network: string; url: string } {
   const website = host.socials.website;
@@ -87,6 +90,14 @@ export function EpisodeContainer({
           <source src={frontmatter.audioURL} type="audio/mpeg" />
           <track kind="captions" src={frontmatter.captionURL} />
         </audio>
+        <div className="flex flex-col md:flex-row gap-2 justify-center">
+          <Anchor href="https://open.spotify.com/show/7njrdM3LvNPnqSftswTkjn?si=5cc424416eaa4b35">
+            <Spotify className="w-4 h-4 mr-2" /> Listen on Spotify
+          </Anchor>
+          <Anchor href="https://podcasts.apple.com/us/podcast/the-bikeshed-pod/id1802688284">
+            <ApplePodcasts className="w-4 h-4 mr-2" /> Listen on Apple Podcasts
+          </Anchor>
+        </div>
         <div className="flex flex-col md:flex-row gap-2 justify-center">
           <ShareToBluesky
             title={`The Bikeshed Podcast episode: ${frontmatter.episodeId} - ${frontmatter.title}`}

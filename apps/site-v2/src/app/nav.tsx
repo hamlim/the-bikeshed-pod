@@ -2,8 +2,8 @@ import { Link } from "waku";
 import { Anchor } from "#components/anchor.js";
 import { ApplePodcasts } from "#components/apple-podcasts.js";
 import { Logo } from "#components/logo";
+import { Rss } from "#components/rss";
 import { Spotify } from "#components/spotify.js";
-import { Button } from "#components/ui/button";
 
 export function Nav() {
   return (
@@ -23,6 +23,10 @@ export function Nav() {
           <Anchor href="https://podcasts.apple.com/us/podcast/the-bikeshed-pod/id1802688284">
             <ApplePodcasts className="w-6 h-6" />{" "}
             <span className="sr-only">Find us on Apple Podcasts</span>
+          </Anchor>
+          <Anchor href="/rss.xml" target="_blank" rel="noreferrer">
+            <Rss className="w-6 h-6" />{" "}
+            <span className="sr-only">Follow our RSS feed</span>
           </Anchor>
         </div>
       </nav>

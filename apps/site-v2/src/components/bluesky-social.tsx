@@ -3,7 +3,6 @@
 import { Share } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
-import { Button } from "#components/ui/button";
 import { Anchor } from "./anchor";
 import { Bluesky } from "./bluesky";
 
@@ -35,15 +34,9 @@ export function SeeDiscussionOnBluesky({ children }: { children: ReactNode }) {
   }, []);
 
   return (
-    <Button asChild variant="link">
-      <a
-        href={`https://bsky.app/search?q=${encodeURIComponent(url)}`}
-        target="_blank"
-        rel="noreferrer"
-      >
-        <Bluesky className="w-4 h-4 mr-2" />
-        {children}
-      </a>
-    </Button>
+    <Anchor href={`https://bsky.app/search?q=${encodeURIComponent(url)}`}>
+      <Bluesky className="w-4 h-4 mr-2" />
+      {children}
+    </Anchor>
   );
 }

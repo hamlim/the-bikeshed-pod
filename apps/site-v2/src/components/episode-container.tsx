@@ -1,6 +1,5 @@
 import { CommentSection } from "@hamstack/bluesky-comments";
 import { Heading } from "@local/components/heading";
-import { Button } from "#ui/button";
 import { hosts } from "../hosts";
 import type { HydratedFrontmatter } from "../types";
 import type { Host } from "../types";
@@ -68,15 +67,9 @@ export function EpisodeContainer({
               return (
                 <li key={host.name}>
                   {host.name} -{" "}
-                  <Button asChild variant="link">
-                    <a
-                      target="_blank"
-                      href={preferredSocial.url}
-                      rel="noreferrer"
-                    >
-                      {preferredSocial.network}
-                    </a>
-                  </Button>
+                  <Anchor href={preferredSocial.url} target="_blank">
+                    {preferredSocial.network}
+                  </Anchor>
                 </li>
               );
             })}

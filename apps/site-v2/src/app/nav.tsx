@@ -15,7 +15,7 @@ export function Nav() {
         <div className="flex items-center gap-2 text-xl">
           <Anchor href="/about">About</Anchor>
           <Anchor href="/search">Search</Anchor>
-          <Anchor href="/episodes">All Episodes</Anchor>
+          <Anchor href="/episodes">Episodes</Anchor>
           <Anchor href="https://open.spotify.com/show/7njrdM3LvNPnqSftswTkjn?si=5cc424416eaa4b35">
             <Spotify className="w-6 h-6" />{" "}
             <span className="sr-only">Find us on Spotify</span>

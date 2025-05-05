@@ -2,8 +2,8 @@ import type { ReactNode } from "react";
 // import { preload } from "react-dom";
 import "../styles.css";
 // import { Provider } from "#components/audio/audio-player";
-import { Footer } from "./footer";
-import { Nav } from "./nav";
+import { Footer } from "../footer";
+import { Nav } from "../nav";
 
 function themeCheck() {
   let prefersDarkModeQuery = window.matchMedia("(prefers-color-scheme: dark)");

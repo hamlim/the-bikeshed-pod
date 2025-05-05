@@ -4,11 +4,11 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build-cf-types": "wrangler types --experimental-include-runtime",
+    "cf:typegen": "wrangler types",
     "predev": "bun ./scripts/prebuild.tsx",
-    "dev": "garbanzo dev",
+    "dev": "waku dev",
     "prebuild": "bun ./scripts/prebuild.tsx",
-    "build": "garbanzo build",
+    "build": "waku build --with-cloudflare",
     "start": "wrangler dev",
     "predeploy": "bun run build",
     "deploy": "wrangler deploy"
@@ -40,8 +40,8 @@
     "tailwindcss-animate": "1.0.7",
     "unified": "11.0.5",
     "unist-util-visit": "5.0.0",
-    "waku": "0.21.22",
-    "wrangler": "3.109.1"
+    "waku": "0.22.4",
+    "wrangler": "4.14.1"
   },
   "imports": {
     "#/*": "./src/*",
@@ -54,11 +54,10 @@
     "#rss-feed-data": "./src/rss-feed-data.json"
   },
   "devDependencies": {
-    "@garbanzo/cli": "0.1.1",
     "@mdx-js/mdx": "3.1.0",
     "@mdx-js/rollup": "3.1.0",
     "@shikijs/rehype": "2.4.2",
-    "@tailwindcss/postcss": "4.0.6",
+    "@tailwindcss/vite": "4.1.5",
     "@types/node": "22.13.0",
     "@types/react": "19.0.8",
     "@types/react-dom": "19.0.3",

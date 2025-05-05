@@ -1,6 +1,6 @@
 import rssFeedData from "../../rss-feed-data.json";
 
-export default async function RSSRoute() {
+export async function GET() {
   return new Response(
     `<?xml version="1.0" encoding="UTF-8"?>
     <?xml-stylesheet type="text/xsl" href="/rss.xsl"?>

@@ -1,4 +1,5 @@
 import mdx from "@mdx-js/rollup";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "vite";
 
 import rehypeShiki from "@shikijs/rehype";
@@ -36,5 +37,5 @@ export default defineConfig({
       "#/*": "./src/*",
     },
   },
-  plugins: [mdxPlugin],
+  plugins: [mdxPlugin, tailwindcss()],
 });

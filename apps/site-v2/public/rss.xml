@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <?xml-stylesheet type="text/xsl" href="/rss.xsl"?>
+    <rss version="2.0"
+         xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+         xmlns:podcast="https://podcastindex.org/namespace/1.0"
+         xmlns:atom="http://www.w3.org/2005/Atom"
+         xmlns:content="http://purl.org/rss/1.0/modules/content/">
+      <channel>
+        <title>The Bikeshed Pod</title>
+        <description>The Bikeshed Pod is a weekly show where developers dive deep into the small but important details of software development that we all love to debate.</description>
+        <link>https://bikeshedpod.com</link>
+        <language>en-us</language>
+        <atom:link href="https://bikeshedpod.com/rss.xml" rel="self" type="application/rss+xml"/>
+        <itunes:category text="Technology"/>
+        <itunes:explicit>true</itunes:explicit>
+        <itunes:image href="https://bikeshedpod.com/bikeshed-episode-lm.png"/>
+
+        <!-- Recommended Channel Elements -->
+        <podcast:locked>no</podcast:locked>
+        <podcast:guid>bikeshed-podcast</podcast:guid>
+        <itunes:author>Matt Hamlin, Dillon Curry &amp; Scott Kaye</itunes:author>
+        <itunes:owner>
+          <itunes:name><![CDATA[Matt Hamlin]]></itunes:name>
+          <itunes:email>hi@bikeshedpod.com</itunes:email>
+        </itunes:owner>
+
+        <!-- Optional Channel Elements -->
+        <copyright>© 2025 The Bikeshed Pod</copyright>
+        <itunes:type>episodic</itunes:type>
+
+        
+          <item>
+            <!-- Required Item Elements -->
+            <title>Scratching the Surface on Design Systems</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/6/audio.mp3"
+                      type="audio/mpeg"
+                      length="79150729"/>
+            <guid isPermaLink="false">6</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/6/scratching-the-surface-on-design-systems</link>
+            <pubDate>Fri, 11 Apr 2025 22:00:17 GMT</pubDate>
+            <description><![CDATA[The gang talks all about design systems, ranging from what they are, why you may (or may not) need one, and then share a few spicy takes on Storybook, modals, and Tailwind!]]></description>
+            <content:encoded><![CDATA[<link rel="preload" as="image" href="https://bikeshedpod.com/mr-krabs.jpeg"/><h2>Summary:</h2>
+<p>This episode of The Bikeshed Podcast covers design systems, including their benefits, trade-offs, and whether your company needs one. The hosts also share experiences from their time working on a design system team at Wayfair. Segments include stand-up updates, &quot;Two Takes and a Fake,&quot; and &quot;Spicy Takes with Curry.&quot;</p>
+<h3>Stand-up Updates</h3>
+<ul>
+<li><strong>Dillon</strong>: Shifted to a new project requiring more help. He is listening to the audiobook &quot;Sapiens.&quot;</li>
+<li><strong>Matt</strong>: Exploring the <a href="https://www.npmjs.com/package/@cloudflare/vite-plugin">Cloudflare Vite plugin</a>, which allows building a worker and a client-side app. Also experimenting with <a href="https://tinybase.org/">TinyBase</a>, a sync engine for web applications.</li>
+<li><strong>Scott</strong>: Took time off before starting a new job. He completed home improvement projects such as re-grouting tiles and fixing a couch leg. Updated the Bikeshed Podcast logo and metadata. Started working on an incremental Bun compiler and playing around with a Moon monorepo.</li>
+</ul>
+<h3>Design Systems Discussion</h3>
+<ul>
+<li><strong>Benefits</strong>: Design systems are helpful, especially in larger corporations, as they standardize UI, increase speed, create brand consistency, and ease rebranding. They establish a UI contract between designers, engineers, and product teams.</li>
+<li><strong>Considerations</strong>: Smaller companies might benefit more from solutions like Shadcn, where components are consumed into the application. The team should also be responsible for contributing back. Design systems should be flexible and adapt to user needs. It is important to take an empathetic approach to use cases.</li>
+<li><strong>Wayfair Experience</strong>: The team discusses their experience working on a design system at Wayfair, highlighting the importance of a single source of truth for design. They also discussed the value of patterns and collaborative environment for creativity and continuous improvement. The team started rigid and inflexible, but matured to provide more flexibility for the teams they were supporting.</li>
+<li><strong>Component Libraries vs. Design Systems</strong>: A component library is one piece of a design system. Component libraries are more of a starting point, less rigid, and more flexible, whereas design systems are more opinionated and include non-tangible elements like guidelines and documentation.</li>
+<li><strong>Organization Size</strong>: Organization size impacts the design system. Large companies benefit from large investments in platform tooling. Design systems require dedicated people to think about them and the best way to set them up.</li>
+<li><strong>Selling the Value</strong>: It is often hard to quantify and sell the value of what the team is doing. Tools that show adoption can help leaders see the value of a design system.</li>
+</ul>
+<h3>Spicy Takes</h3>
+<p>Tune in to hear the takes that Dillon and Matt share to make Scott react like Mr Krabs:</p>
+<p><div class="flex items-center justify-center"><img src="https://bikeshedpod.com/mr-krabs.jpeg" alt="An image of Mr. Krabs from Spongebob, with a dizzy-like effect around him"/></div></p>
+<h3>Two Takes and a Fake</h3>
+<p>The hosts play a game where they identify the fake tech-related news among two real ones. This week&#x27;s topics were Bun, Vercel changelog, and Next.js.</p>
+<blockquote>
+<p>Tune in to hear who wins this week!</p>
+</blockquote>]]></content:encoded>
+            <itunes:duration>3298</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/6/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
+            <title>Testing - Is It Worth It?!?</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/5/audio.mp3"
+                      type="audio/mpeg"
+                      length="98158259"/>
+            <guid isPermaLink="false">5</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/5/testing-is-it-worth-it</link>
+            <pubDate>Wed, 02 Apr 2025 21:41:07 GMT</pubDate>
+            <description><![CDATA[The gang discusses all things software testing, from manual verification to automated tests and other things you can do to ensure stability!]]></description>
+            <content:encoded><![CDATA[<link rel="preload" as="image" href="https://bikeshedpod.com/testing-midwit-meme.png"/><h2>Summary:</h2>
+<p>This episode of the Bikeshed Podcast features a discussion about software testing, with a focus on automated testing in frontend development. The hosts, Scott Kaye, Matt Hamlin, and Dillon Curry, explore various testing methodologies, tools, and their value in different contexts. They delve into the nuances of unit, integration, and end-to-end testing, and the trade-offs involved in choosing one over the other. The discussion also touches on the role of mocking, dependency injection, and the importance of balancing test coverage with development speed. They each share personal experiences from their development career on testing, and their favorite tools.</p>
+<p>Key Discussion Points:</p>
+<ul>
+<li>Value of Testing: Testing is often not enjoyable in the short term, but provides significant long-term value by preventing bugs and providing confidence in code changes.</li>
+<li>Unit Testing vs. Integration/End-to-End: Unit testing is valuable for specific functions, while integration and end-to-end tests are better for critical user flows. However, end-to-end tests can be flaky.</li>
+<li>Mocking: The overuse of mocking can reduce the value of tests. Dependency injection is viewed more favorably than mocking, though they serve similar purposes.</li>
+<li>Test Coverage: Aiming for 100% test coverage may not be efficient; focus on testing essential product features. Consider the time and effort spent on tests versus the value they provide.</li>
+<li>Testing in Production: The hosts explore the concept of testing in production, with tools like Datadog synthetics. This allows the team to assess the experience for end-users in production.</li>
+</ul>
+<figure><img src="https://bikeshedpod.com/testing-midwit-meme.png" alt="A graphic showing the bell curve distribution of IQ score, the low end shows a comical depiction of a head with the text &#x27;test in prod&#x27; above it, the middle shows another head with the text &#x27;build a pristine hermetic environment to run tests against that matches prod 1:1&#x27;, and the right hand side also shows a head with the text &#x27;test in prod&#x27;."/><p><figcaption>The &quot;midwit&quot; meme reference that Matt made during the episode</figcaption></p></figure>
+<ul>
+<li>Test-Driven Development (TDD): TDD may not always be practical, especially when developing new features with unknown outputs. Writing tests after the feature is more common in these scenarios.</li>
+<li>Proof of Concept (POC): Developing a proof of concept outside the main application to validate an idea before integrating it is valuable.</li>
+<li>Accessibility Testing: The importance of accessibility testing is discussed, but integrating it into the development process is important.</li>
+<li>Component Tests: A discussion of testing in isolation to ensure true browser experience. Component testing will ensure the system will run in the browser as expected.</li>
+<li>Code and Test Half-Life: Tests lose value over time as codebase patterns change. It&#x27;s important to re-evaluate their relevance.<!-- -->
+<ul>
+<li><a href="https://matthamlin.me/blog/2018/december/testing-software">Referenced blog post on the half-life of code and tests</a></li>
+</ul>
+</li>
+</ul>
+<h3>Spicy Takes:</h3>
+<blockquote>
+<p>Tune in to the episode to hear all our spicy takes on testing!</p>
+</blockquote>
+<h3>Misc. References:</h3>
+<p>Scott shared a few Neovim related projects that he has been working with:</p>
+<ul>
+<li><a href="https://github.com/folke/snacks.nvim">Folke Snacks.nvim</a></li>
+<li><a href="https://github.com/folke/lazy.nvim">Folke Lazy.nvim</a></li>
+<li><a href="https://github.com/folke/flash.nvim">Folke Flash.nvim</a></li>
+<li><a href="https://github.com/yetone/avante.nvim">Avante.nvim</a></li>
+</ul>]]></content:encoded>
+            <itunes:duration>4090</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/5/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
+            <title>Perfecting The Pull Request</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/4/audio.mp3"
+                      type="audio/mpeg"
+                      length="75831088"/>
+            <guid isPermaLink="false">4</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/4/perfecting-the-pull-request</link>
+            <pubDate>Mon, 31 Mar 2025 18:50:07 GMT</pubDate>
+            <description><![CDATA[The guys discuss best practices for code review, with a focus on creating effective pull requests (PRs) and how to approach reviewing code.]]></description>
+            <content:encoded><![CDATA[<h2>Summary:</h2>
+<p>This episode of the Bikeshed Podcast features Scott Kaye, Matt Hamlin, and Dillon Curry discussing best practices for code review, with a focus on creating effective pull requests (PRs) and how to approach reviewing code.</p>
+<p>Creating Great Pull Requests</p>
+<ul>
+<li>Context is Key: Highlight the problem being solved, the goal of the PR, and the solution chosen. Explain why this solution was selected over alternatives.</li>
+<li>Scope: PRs should be isolated to a single problem or feature.</li>
+<li>Rollback: Consider and outline the rollback procedure for changes.</li>
+<li>Templates: Minimal templates with &quot;context&quot; and &quot;details&quot; sections are generally preferred. &quot;Alternatives Considered&quot; can be a useful addition.</li>
+<li>Self-Review: Conduct a self-review of the code, ideally within the GitHub PR interface, to identify potential issues.</li>
+<li>Draft Mode: Utilizing draft PRs is helpful for iterative development and early feedback.</li>
+<li>Visual Aids: Include screenshots, screen recordings, and preview deploys to contextualize changes, especially for UI-related PRs. Dev tool screenshots can be helpful.<!-- -->
+<ul>
+<li><a href="https://developer.chrome.com/blog/devtools-tips-33">How to capture full-size screenshots within Chrome Devtools</a></li>
+<li><a href="https://matthamlin.me/blog/2025/march/replacing-dropbox-capture-with-raycast">Matt&#x27;s replacement for Dropbox Capture</a></li>
+</ul>
+</li>
+<li>Tests: Defer writing tests until a solid solution and some initial feedback have been received to avoid wasted effort due to significant code changes.</li>
+</ul>
+<p>Reviewing Code Effectively</p>
+<ul>
+<li>Understand the Big Picture: Start by understanding the problem being solved and the overall goal of the PR.</li>
+<li>Use Available Context: Utilize videos, screenshots, and preview deploys to understand the changes.</li>
+<li>Prioritize: Focus on major changes and save minor issues for a second pass.</li>
+<li>&quot;What, Why, How&quot; Approach: Consider what the change does, why it&#x27;s being made, and how it&#x27;s implemented.</li>
+<li>Live Reviews/Pairing: For complex changes, consider live reviews or pair programming to accelerate feedback and build shared understanding. However, acknowledge that this is not always feasible due to time constraints.</li>
+<li>Knowledge Sharing: Use code reviews as an opportunity to onboard team members and share knowledge.</li>
+</ul>
+<p>Spicy Takes (and Not-So-Spicy Takes)</p>
+<ul>
+<li>Code review maybe is not needed: It was suggested in certain situations, code review may not be necessary. This take was received as extremely situational.</li>
+<li>You should almost never have to do two code reviews This take was received as neither mild or spicy, more so cold and lukewarm.</li>
+</ul>
+<p>What&#x27;s Up With You? (Stand-up Updates)</p>
+<ul>
+<li>Dillon: Was looking into something called embargoed assets in Contentful.</li>
+<li>Scott: Learned about animating on scroll videos and pictures in React using the Canvas tag, bypassing React&#x27;s re-rendering limitations.</li>
+<li>Matt: Investigating Content Security Policy (CSP) and durable objects on Cloudflare.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>3159</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/4/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
+            <title>A Day In The Life: Coding, Coffee, and Commit Messages</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/3/audio.mp3"
+                      type="audio/mpeg"
+                      length="55287558"/>
+            <guid isPermaLink="false">3</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages</link>
+            <pubDate>Wed, 26 Mar 2025 13:32:42 GMT</pubDate>
+            <description><![CDATA[The guys talk about their daily routines, how they remain productive, and then share spicy hot takes!]]></description>
+            <content:encoded><![CDATA[<h2>Summary:</h2>
+<p>In this episode of the Bikeshed Podcast, the gang dives into their daily routine exploring their productivity habits and workflows. They also get down and dirty on discussing their spicy takes.</p>
+<p>Daily Routines for Productivity</p>
+<ul>
+<li>Matt: Starts his day with a morning walk and uses Obsidian as a central hub for notes and task management. He reviews notes and Slack to identify action items. He also notes that he finds opportunities to make improvements on other things while doing a given task and acts on it instead of simply noting it.</li>
+<li>Scott: Begins with coffee, checks personal and work emails and Slack, reviews his calendar, and focuses with his headphones and vibes with music.. He uses Obsidian, Notion, or Notes to track tasks and goals, breaking down complex tasks into smaller, manageable parts. He also prioritizes clear communication and task articulation to minimize disruptions.</li>
+<li>Dillon: Prefers working from the office for increased productivity. He maps out his day with a &quot;stand-up update&quot; and clears his email and Slack to minimize distractions and enable focused work periods.</li>
+</ul>
+<p>Follow-up on Daily Routines</p>
+<ul>
+<li>Matt and Scott both use end-of-day summaries to set the stage for the next day.</li>
+<li>Dillon prefers the office to WFH and does not perform an end-of-day summary and stated it&#x27;s something he could work on.</li>
+<li>Matt uses an &quot;outcomes&quot; section in his daily notes to track accomplishments and artifacts, aiding in reviews and progress tracking over time.</li>
+</ul>
+<p>Spicy Takes</p>
+<ul>
+<li>Dillon (Medium): React components often abuse props, violating the single responsibility principle due to a lack of care or education.</li>
+<li>Scott (Hot): Design systems should empathetically conform to user needs and not try to influence design in a specific direction. A bolder take was that design systems shouldn&#x27;t exist at all.</li>
+<li>Matt (Hot Fire): We should not always assume good intent when reviewing code or understanding legacy systems. Sometimes, it&#x27;s necessary to challenge decisions and consider alternative paths.</li>
+</ul>
+<p>Two Takes and a Fake</p>
+<p>The hosts played a round of &quot;Two Takes and a Fake,&quot; a game where they presented three tech-related statements (two real, one fake) and challenged each other to identify the fabrication. Who will win? Tune in and find out!</p>
+<p>What&#x27;s New</p>
+<ul>
+<li>Scott: Been working with UI heavy work to animate webm video files on scroll. Check out the homepage of <a href="https://tollbit.com/">Tollbit</a></li>
+<li>Matt: Released <a href="https://github.com/hamlim/vndr/tree/main/packages/vndr">Vndr</a>, a CLI tool for vendoring (inlining) packages.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>2303</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/3/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
+            <title>Is The Web Getting Worse?!?!?</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/2/audio.mp3"
+                      type="audio/mpeg"
+                      length="93307007"/>
+            <guid isPermaLink="false">2</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/2/is-the-web-getting-worse</link>
+            <pubDate>Wed, 19 Mar 2025 14:14:20 GMT</pubDate>
+            <description><![CDATA[Scott and Matt talk about how things have been feeling worse on the internet in recent years, and how everything has focused on incremental optimizations over large innovations.]]></description>
+            <content:encoded><![CDATA[<h2>Summary:</h2>
+<p>This episode of the Bikeshed Podcast explores the concept of &quot;enshittification,&quot; the idea that the quality of products and services deteriorates over time, often accompanied by increased monetization and decreased customer value. They further discuss how this relates to web development and the broader tech industry. They explore potential cultural factors behind this.</p>
+<p>Key Discussion Points:</p>
+<ul>
+<li>Enshittification Examples: The hosts provide examples of enshittification in popular services like Spotify (increased ads with subscription) and Netflix (higher prices for premium features). Facebook is also mentioned as a product that has seemingly declined in popularity as it has aged.</li>
+<li>AI Integration: The hosts discussed the trend of tacking on AI to products just to say that they offer AI features, which can often be annoying and not serve the original purpose of the product.</li>
+<li>Lost Focus on User Needs: They discuss how companies sometimes lose sight of their original mission and focus more on monetization through KPIs rather than solving customer needs. The hosts share that as measures become metrics, they become less valuable over time.</li>
+<li><a href="https://grantslatton.com/nobody-cares">&quot;Nobody Cares&quot; Blog Post</a>: They discuss the Grant Slatton blog post, interpreting it as a reflection of how engineers may be disempowered from caring about the overall product due to narrow focus and lack of agency in larger organizations.</li>
+<li>“Shadification of the Web”: They introduce the term &quot;shadification&quot; to describe the growing trend of websites looking the same due to the widespread use of component libraries like Shadcn/ui (copy-paste) along with Material UI and Bootstrap.</li>
+<li>Optimization vs. Innovation: They discuss how companies often prioritize optimization and A/B testing over true innovation, resulting in a lack of creativity and unique user experiences.</li>
+<li>Performance Costs: Optimizations made at the expense of performance degrade the customer experience.</li>
+<li>Blurred Ownership: In larger companies, it becomes harder to draw ownership lines when there are more people owning things and there isn&#x27;t clear defined guidelines.</li>
+<li>Impact of AI on UI Creativity: The hosts explore the potential for AI to further standardize UI patterns and stifle creativity, as AI models are trained on existing designs and may not generate truly novel solutions.</li>
+<li>AI Dependency: Discussion of companies choosing to support new libraries based on the amount of support AI models know about them and recommend them, which can lead to everything becoming the same.</li>
+</ul>
+<p>Personal Updates:</p>
+<ul>
+<li>Scott has been digging into <a href="https://github.com/yetone/avante.nvim">Avante</a>, finding it helpful for learning Go. He plans to build a backend service in Node and then refactor it to Go as a learning exercise.</li>
+<li>Matt has been experimenting with Cursor&#x27;s Composer agent feature and a tool called <a href="https://block.github.io/goose/">Codename Goose</a>, which uses AI to infer functionality on his computer.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>3888</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/2/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
+            <title>Vibe Coding When The Vibes Are Off</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/1/audio.mp3"
+                      type="audio/mpeg"
+                      length="85070912"/>
+            <guid isPermaLink="false">1</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/1/vibe-coding-when-the-vibes-are-off</link>
+            <pubDate>Mon, 17 Mar 2025 15:40:11 GMT</pubDate>
+            <description><![CDATA[Dillon, Matt & Scott dive into AI's impact on coding, discussing its role in daily work, how to use it effectively, and balancing creativity with automation in 2025.]]></description>
+            <content:encoded><![CDATA[
+<p><a href="https://dilloncurry.vercel.app/">Dillon</a>, <a href="https://matthamlin.me/">Matt</a> &amp; <a href="https://scottykaye.com/">Scott</a> record an episode with some semblance of quality.</p>
+<p>The gang dove directly into software&#x27;s hottest topic: AI. We believe in using AI in your day to day job to be more successful.</p>
+<p>In this episode we discuss;</p>
+<ul>
+<li>use cases for AI in software development,</li>
+<li>the fun tasks AI has taken away and,</li>
+<li>how to be successful using AI tools.</li>
+</ul>
+<p>Listen to us explain navigating writing code in a world where more and more companies are increasingly advocating the usage of AI at your day job.</p>
+<p>How do we continue to learn and grow as human while still maintaining fun, creativity and human interaction as an engineer in 2025?</p>
+<p>AI is a powerful tool used correctly, however that AI will submit to confirmation bias and your role is to prompt AI to be as unbiased as possible to the best of your ability.</p>
+<h3>Episode Summary:</h3>
+<p>In this episode of The Bikeshed Podcast, hosts Scott Kaye, Matt Hamlin, and Dillon Curry discuss the role of AI in software development, sharing their experiences with various AI-powered tools and debating the impact of AI on engineering workflows, learning, and job satisfaction.</p>
+<p>Key Topics Discussed:</p>
+<ol>
+<li>AI in Software Development</li>
+</ol>
+<ul>
+<li>The hosts discuss how AI has become integral to software engineering, particularly for writing code and automating tasks.</li>
+<li>Matt introduces the main discussion: how AI is used in development today and the broader implications of its adoption.</li>
+</ul>
+<ol start="2">
+<li>Preferred AI Tools</li>
+</ol>
+<ul>
+<li>Dillon shares that he used Cursor until his company restricted it, forcing him to switch to Copilot, which he finds inferior.</li>
+<li>Scott uses NeoVim with NeoCodium and Avante, but acknowledges their limitations compared to Cursor.</li>
+<li>Matt relies on Cursor at work, noting that his company prefers it over other AI tools.</li>
+</ul>
+<ol start="3">
+<li>AI&#x27;s Impact on Development</li>
+</ol>
+<ul>
+<li>AI enables developers to work faster but can remove the learning process.</li>
+<li>Over-reliance on AI can lead to shallow understanding of code and a decrease in creativity.</li>
+<li>AI often acts like a junior engineer whose code must be reviewed, making debugging a larger part of the job.</li>
+<li>Using AI can lead to less collaboration with teammates, as developers tend to consult AI over their colleagues.</li>
+</ul>
+<ol start="4">
+<li>Concerns About AI in Software Engineering</li>
+</ol>
+<ul>
+<li>Some engineers feel less engaged with their work as AI handles boilerplate and repetitive tasks.</li>
+<li>AI&#x27;s agreeable nature can reinforce incorrect assumptions, leading to confirmation bias.</li>
+<li>Companies may use AI to increase efficiency and reduce hiring, raising concerns about job displacement.</li>
+</ul>
+<ol start="5">
+<li>AI vs. Traditional Search (Google)</li>
+</ol>
+<ul>
+<li>Unlike Google, where users must craft precise search queries, AI allows more fluid back-and-forth conversations.</li>
+<li>AI can provide immediate answers but might not always offer the best or most optimized solution.</li>
+</ul>
+<ol start="6">
+<li>The “No AI” Challenge</li>
+</ol>
+<ul>
+<li>The hosts agree to a two-and-a-half-day challenge of coding without AI, to evaluate how it affects their work and problem-solving abilities.</li>
+</ul>
+<ol start="7">
+<li>Game Segment – “Two Takes and a Fake”</li>
+</ol>
+<ul>
+<li>Scott introduces a new segment where Matt and Dillon guess which of three AI-related tweets is fake.</li>
+<li>Matt wins this round, showing a keen eye for spotting AI discourse trends.</li>
+</ul>
+<ol start="8">
+<li>What&#x27;s New?</li>
+</ol>
+<ul>
+<li>Dillon is learning piano and music theory to slow down and disconnect from work.</li>
+<li>Matt is exploring Cloudflare workers and running Deepseek R1 locally for AI experimentation.</li>
+<li>Scott is focused on improving his Golang skills and debating Cherry Pepsi Zero vs. Cherry Coke Zero.</li>
+</ul>
+<ol start="9">
+<li>Closing Thoughts</li>
+</ol>
+<ul>
+<li>The hosts discuss burnout, learning in tech, and how side projects keep programming fun.</li>
+<li>They tease next week&#x27;s episode on burnout and side projects.</li>
+</ul>
+<p>The episode wraps up with some lighthearted banter and a call for listeners to like, subscribe, and share.</p>]]></content:encoded>
+            <itunes:duration>3544</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/1/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+      </channel>
+    </rss>

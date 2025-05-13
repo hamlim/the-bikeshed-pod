@@ -4,8 +4,8 @@ import { Bluesky } from "#components/bluesky.js";
 import { Discord } from "#components/discord.js";
 import { Rss } from "#components/rss";
 import { Spotify } from "#components/spotify.js";
-import { hosts } from "../hosts";
-import type { Host } from "../types";
+import { hosts } from "./hosts";
+import type { Host } from "./types";
 
 function getPreferredSocial(host: Host): string {
   return host.socials.website;

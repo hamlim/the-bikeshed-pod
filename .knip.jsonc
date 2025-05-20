@@ -1,0 +1,31 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "workspaces": {
+    ".": {
+      "ignoreDependencies": ["@turbo/gen"]
+    },
+    "packages/*": {
+      "ignore": ["**/*.test.(ts|tsx|mjs|js)"],
+      "ignoreDependencies": ["@swc/cli", "@swc/core"]
+    },
+    "apps/*": {
+      "ignore": ["**/*.test.(ts|tsx|mjs|js)"]
+    },
+    "apps/site": {
+      "ignore": [
+        "**/*.test.(ts|tsx|mjs|js)",
+        // temporary ignores
+        "lib/data-client.ts",
+        // This is less than ideal
+        // Some of the exports from the shadcn/ui library are not used
+        // but we don't really want to change the files
+        "components/ui/button.tsx",
+        "components/ui/card.tsx"
+      ],
+      "ignoreDependencies": [
+        // used in tests
+        "rereplay"
+      ]
+    }
+  }
+}

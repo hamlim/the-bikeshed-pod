@@ -2,7 +2,7 @@
 
 We host the audio files and the transcriptions all in a Cloudflare R2 bucket.
 
-This bucket is bound in the website under the `the-bikeshed-pod` name ([code here](../apps/site-v2/wrangler.jsonc)).
+This bucket is bound in the website under the `the-bikeshed-pod` name ([code here](./wrangler.jsonc)).
 
 ## Structure:
 

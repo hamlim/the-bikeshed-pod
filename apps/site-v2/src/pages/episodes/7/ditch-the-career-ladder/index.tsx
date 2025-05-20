@@ -1,5 +1,5 @@
 import { EpisodeContainer } from "#components/episode-container";
-import Content, { frontmatter as rawMetadata } from "./episode-3.mdx";
+import Content, { frontmatter as rawMetadata } from "./episode-7.mdx";
 
 export default function Page() {
   return (

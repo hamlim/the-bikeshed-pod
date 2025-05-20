@@ -31,6 +31,54 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Ditch the Career Ladder</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/7/audio.mp3"
+                      type="audio/mpeg"
+                      length="64775023"/>
+            <guid isPermaLink="false">7</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/7/ditch-the-career-ladder</link>
+            <pubDate>Tue, 20 May 2025 13:39:36 GMT</pubDate>
+            <description><![CDATA[The gang talks about engineering career levels, approaching promotions, building connections and leverage through time and effort, and why levels don’t really matter.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>The Bikeshed Podcast introduces its hosts: Scott Kaye (UI guy, coffee curator, powerlifter) and Matt Hamlin (principal engineer, senior engineering lead) and Dillon (Spicy Take) Curry. They cover software engineering, tech events, and Discord emojis.</p>
+<h3>Keyboard Discussion</h3>
+<p>Dillon discusses his <a href="https://nuphy.com/collections/keyboards/products/halo75-v2-qmk-via-wireless-custom-mechanical-keyboard?variant=41037254197357">new Nuphy keyboard</a> with silent red clear top switches, featuring RGB lighting. Matt reveals he recently ordered a <a href="https://nuphy.com/collections/keyboards/products/air75-v2">Nuphy Air 75 v2</a> after being influenced by Dillon. This leads to a brief discussion about potentially dedicating an entire episode to keyboards.</p>
+<h3>Engineering Levels Discussion</h3>
+<ul>
+<li><strong>Introduction:</strong> The main topic shifts to engineering levels and promotions. They discuss the convoluted process of getting promoted and the often vague nature of career ladders.</li>
+<li><strong>Promotions</strong>: Dillon suggests openly communicating promotion goals to managers early on and highlights finding a new job as another way to move up.</li>
+<li><strong>Level Alignment</strong>: They acknowledge that engineering levels are not uniform across companies. A &quot;senior&quot; at one company might be a &quot;junior&quot; or &quot;staff&quot; at another. More competitive companies may make it harder to get higher-level titles.</li>
+<li><strong>Fast Growth:</strong> They discuss the pros and cons of moving up the career ladder quickly and the importance of confidence and continuous learning. It’s also good to feel confident that you could interview and find a new job.</li>
+<li><strong>Company Growth:</strong> The podcast touches on companies growing quickly can provide opportunity for advancement in titles.</li>
+<li><strong>Lateral Growth</strong>: The hosts discuss the importance of lateral growth within a level to increase skillset. Seeking opportunities to grow and learn new things will make you more hireable in the future.</li>
+<li><strong>Company Needs</strong>: The hosts emphasize identifying and solving company-wide problems as a way to stand out and grow within an organization.</li>
+<li><strong>Leverage</strong>: Leverage is built through information and relationships. Leverage builds up over time in an organization and you begin to be able to better deliver results.</li>
+</ul>
+<h3>Building Connections</h3>
+<ul>
+<li><strong>Networking:</strong> The hosts discuss the importance of building a strong network across the company. Dillon recommends setting up one-on-ones with team members to understand their roles better.</li>
+<li><strong>Be Nice:</strong> Genuine excitement about connections lead to great relationships.</li>
+<li><strong>Authenticity</strong>: It&#x27;s important to create genuine friendships at work and enjoy the time spent with colleagues.</li>
+<li><strong>Teach</strong>: Teach people selflessly.</li>
+</ul>
+<h3>Conclusion</h3>
+<p>The hosts wrap up the discussion, emphasizing that levels matter differently to different people and depending on what their professional goals are. It&#x27;s important to pursue constant growth and balance career aspirations with personal satisfaction.</p>
+<h3>Stand-up Updates</h3>
+<ul>
+<li>  Scott discusses his laid-back onboarding experience at Airbnb and his excitement about the new role.</li>
+<li>  Dillon shares his success with morning workouts after adjusting his sleep schedule.</li>
+<li>  Matt discusses his on-site event, tinkering with Obsidian and <a href="https://tinybase.org/">TinyBase</a>, and his anticipation for his new keyboard.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>2699</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/7/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Scratching the Surface on Design Systems</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/6/audio.mp3"
                       type="audio/mpeg"

@@ -16,9 +16,9 @@ if (!title) {
 // @todo: make this more robust
 let titleSlug = title.toLowerCase().replace(/ /g, "-");
 
-let folderPath = `./src/app/episodes/${id}/${titleSlug}`;
+let folderPath = `./src/pages/episodes/${id}/${titleSlug}`;
 let mdxFilePath = `${folderPath}/episode-${id}.mdx`;
-let pageFilePath = `${folderPath}/page.tsx`;
+let pageFilePath = `${folderPath}/index.tsx`;
 
 if (existsSync(folderPath)) {
   console.warn(`⚠️ Episode ${id} already exists!`);
@@ -59,6 +59,14 @@ export default function Page() {
     </EpisodeContainer>
   );
 }
+
+
+export function getConfig() {
+  return {
+    render: "dynamic",
+  };
+}
+
 `,
   ),
 ]);

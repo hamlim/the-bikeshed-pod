@@ -1,5 +1,5 @@
-import { Heading } from "@local/components/heading";
 import { Link } from "waku";
+import { Heading } from "#components/heading";
 import { Card, CardContent } from "#components/ui/card";
 import { Button } from "#ui/button";
 import type { EpisodeMetadata } from "../types";

@@ -1,4 +1,3 @@
-import { Heading } from "@local/components/heading";
 import { create, insert, search } from "@orama/orama";
 import type {
   Orama,
@@ -8,6 +7,7 @@ import type {
 import { Search } from "lucide-react";
 import type { PageProps } from "waku/router";
 import { EpisodeCard } from "#components/episode-card.js";
+import { Heading } from "#components/heading";
 import { Input } from "#components/ui/input";
 import { Label } from "#components/ui/label";
 import episodeMetadata from "#episode-metadata";

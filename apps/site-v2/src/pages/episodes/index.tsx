@@ -1,5 +1,5 @@
-import { Heading } from "@local/components/heading";
 import { EpisodeCard } from "#components/episode-card";
+import { Heading } from "#components/heading";
 import episodeMetadata from "#episode-metadata";
 
 export default function EpisodesPage() {

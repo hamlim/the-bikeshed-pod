@@ -8,3 +8,9 @@ export default function Page() {
     </EpisodeContainer>
   );
 }
+
+export function getConfig() {
+  return {
+    render: "dynamic",
+  };
+}

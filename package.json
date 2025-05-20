@@ -53,6 +53,7 @@
     "#rss-feed-data": "./src/rss-feed-data.json"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.9.4",
     "@mdx-js/mdx": "3.1.0",
     "@mdx-js/rollup": "3.1.0",
     "@shikijs/rehype": "2.4.2",

@@ -47,10 +47,9 @@ Done!
 
 This is the final step in releasing the new episode!
 
-- Go to the app in your terminal, e.g. `cd ./apps/site-v2`
 - Run `bun ./scripts/new-episode.ts <episode-id>`
   - `<episode-id>` **must** match the directory name that you uploaded into the bucket above!
-  - This will generate the new page for the episode within `src/app/epsiodes/<episode-id>/`
+  - This will generate the new page for the episode within `src/pages/epsiodes/<episode-id>/`
 - Open the generated `episode-<episode-id>.mdx` file
 - Fill in all the fields within the frontmatter
   - Every field is **required**

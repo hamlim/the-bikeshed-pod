@@ -32,7 +32,7 @@ export function Footer() {
         <Anchor href="https://bsky.app/profile/bikeshedpod.com">
           <Bluesky className="w-4 h-4 mr-2" /> Follow us on Bluesky
         </Anchor>
-        <Anchor href="https://discord.gg/djaZBjJJ">
+        <Anchor href="https://discord.gg/fY7mJzvC2H">
           <Discord className="w-4 h-4 mr-2" /> Join our Discord
         </Anchor>
         <p>

@@ -19,12 +19,16 @@ export default function cloudflareMiddleware(): ReturnType<Middleware> {
       return;
     }
     let contentType = ctx.res.headers?.["content-type"];
+    ctx.res.headers ||= {};
+    // no index RSC requests/responses
+    if (ctx.req.url.pathname.startsWith("/_/RSC/")) {
+      ctx.res.headers["X-Robots-Tag"] = "noindex";
+    }
     if (
       !contentType ||
       contentType.includes("text/html") ||
       contentType.includes("text/plain")
     ) {
-      ctx.res.headers ||= {};
       ctx.res.headers["content-encoding"] = "Identity";
     }
   };

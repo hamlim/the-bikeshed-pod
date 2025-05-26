@@ -9,6 +9,8 @@ function isWranglerDev(headers?: Record<string, string | string[]>): boolean {
 type Context = Parameters<ReturnType<Middleware>>[0];
 type Next = Parameters<ReturnType<Middleware>>[1];
 
+let rscPattern = /\/RSC\//;
+
 export default function cloudflareMiddleware(): ReturnType<Middleware> {
   return async (ctx: Context, next: Next) => {
     await next();
@@ -21,7 +23,7 @@ export default function cloudflareMiddleware(): ReturnType<Middleware> {
     let contentType = ctx.res.headers?.["content-type"];
     ctx.res.headers ||= {};
     // no index RSC requests/responses
-    if (ctx.req.url.pathname.startsWith("/_/RSC/")) {
+    if (rscPattern.test(ctx.req.url.pathname)) {
       ctx.res.headers["X-Robots-Tag"] = "noindex";
     }
     if (

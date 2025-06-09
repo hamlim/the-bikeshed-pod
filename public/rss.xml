@@ -31,6 +31,66 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Monorepos And The Golden Age of CSS</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/8/audio.mp3"
+                      type="audio/mpeg"
+                      length="100761309"/>
+            <guid isPermaLink="false">8</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/8/monorepos-and-the-golden-age-of-css</link>
+            <pubDate>Mon, 09 Jun 2025 21:03:17 GMT</pubDate>
+            <description><![CDATA[The Bikeshed podcast returns after a brief hiatus with hosts Scott Kaye, Matt Hamlin, and Dillon Curry. Tune in to hear the gang talk about keyboards, Scott's Italy trip, monorepos, and our hot takes on CSS!]]></description>
+            <content:encoded><![CDATA[<p>The Bikeshed podcast returns after a brief hiatus with hosts Scott Kaye, Matt Hamlin, and Dillon Curry. Tune in to hear the gang talk about keyboards, Scott&#x27;s Italy trip, monorepos, and our hot takes on CSS!</p>
+<h2>Stand-up Updates</h2>
+<ul>
+<li>Dillon is dealing with disruptive construction at his house and is taking time off to combat burnout after a large launch at Woop. He has volunteered to be the guild lead of web, but is finding it difficult to motivate others and get things done.</li>
+<li>Scott recaps his recent trip to Italy, highlighting Rome, Florence, Venice, Milan, and Lake Como. He is working on a project at his new job to rebuild GitHub. His project involves visually displaying changes when someone pushes to live. He&#x27;s also rebuilt an open-source keyboard navigation project using <code>useSyncExternalStore</code>, adding new use cases like a command K search palette.</li>
+<li>Matt is migrating translations in Webpack apps to a &quot;postmodern&quot; variant. He rebuilt his website using Waku and is debugging cold start issues on Cloudflare. He also got a new keyboard, the Nuphy Air V2 75, but a V3 model is coming out soon.</li>
+</ul>
+<h2>Monorepos Discussion</h2>
+<p>The main topic shifts to monorepos:</p>
+<ul>
+<li>Definition: A monorepo is a single repository containing multiple projects, packages, or workspaces.</li>
+<li>Popularity: Monorepos are popular at large companies like Google and Meta and are gaining traction in companies of various sizes.</li>
+<li>Experiences: The hosts discuss their experiences with monorepos at Wayfair, HubSpot, and their current companies. They talk about the shift from monoliths to microservices and back to monorepos at Wayfair, the benefits of shared code, and the importance of culture and expectations.</li>
+<li>Key Considerations:<!-- -->
+<ul>
+<li>Company size and number of contributors.</li>
+<li>Deployment speed vs. stability.</li>
+<li>Whether teams need to collaborate across problem spaces.</li>
+<li>The existence of good documentation and onboarding processes.</li>
+<li>The balance between consistency, speed, and safety.</li>
+</ul>
+</li>
+<li>Tooling:  They mention tools like Lerna, Turborepo, and PMPM that support monorepo management.</li>
+<li>Potential Downsides:<!-- -->
+<ul>
+<li>Monorepos can slow down development if not properly managed (e.g., long CI times).</li>
+<li>Developers creating a dependency chain instead of simply reusing code.</li>
+<li>Consistency is hard to maintain.</li>
+</ul>
+</li>
+<li>Monorepo vs. Technical Solution: Adopting a monorepo is often a technical solution to an organizational problem (e.g., aligning teams on coding standards).</li>
+<li>The discussion shifts to how to deal with problems across the board, with more or less monorepos, more or less repos per projects, and things to consider when deciding what approach to use.</li>
+</ul>
+<h2>Team Structure and Code Ownership</h2>
+<ul>
+<li>The discussion pivots to team structure, code ownership, and velocity.</li>
+<li>The hosts discuss the importance of discoverability of dependencies in monorepos.</li>
+<li>Siloed Ownership in the monorepo can lead to faster development and is better for teams.</li>
+<li>Speed in the form of high velocity, along with the proper North Star is critical for success.</li>
+</ul>
+<h2>Spicy Takes: CSS</h2>
+<p>The hosts share some spicy takes, primarily focused on CSS, tune in to the episode to hear them!</p>]]></content:encoded>
+            <itunes:duration>4198</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/8/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Ditch the Career Ladder</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/7/audio.mp3"
                       type="audio/mpeg"

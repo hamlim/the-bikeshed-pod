@@ -42,6 +42,7 @@ duration: 123
 audioURL: "TODO"
 captionURL: "TODO"
 fileSizeBytes: 123
+blueskyPostUri: ""
 ---
 
 Long description here...

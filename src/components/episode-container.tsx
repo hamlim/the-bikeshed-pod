@@ -1,4 +1,5 @@
 import { CommentSection } from "@hamstack/bluesky-comments";
+import { BlueskyPostEmbed } from "@hamstack/bluesky-embed-rsc";
 import { Heading } from "#components/heading";
 import { hosts } from "../hosts";
 import type { HydratedFrontmatter } from "../types";
@@ -107,7 +108,17 @@ export function EpisodeContainer({
         {children}
       </section>
       <hr className="my-8" />
-      <CommentSection author="bikeshedpod.com" />
+      {frontmatter.blueskyPostUri && (
+        <div className="not-prose mt-10 gap-4 flex flex-col">
+          <Heading level={3}>Bluesky Post and Comments:</Heading>
+          <BlueskyPostEmbed src={frontmatter.blueskyPostUri}>
+            {null}
+          </BlueskyPostEmbed>
+          <div className="max-w-xl min-w-full sm:min-w-xl mx-auto bg-gray-50 dark:bg-gray-900 p-4 border rounded-lg">
+            <CommentSection uri={frontmatter.blueskyPostUri} />
+          </div>
+        </div>
+      )}
     </article>
   );
 }

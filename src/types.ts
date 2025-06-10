@@ -56,6 +56,7 @@ export interface RawFrontmatter {
   captionURL: string;
   fileSizeBytes: number;
   slug: string;
+  blueskyPostUri?: string;
 }
 
 export interface HydratedFrontmatter {
@@ -70,4 +71,5 @@ export interface HydratedFrontmatter {
   captionURL: string;
   fileSizeBytes: number;
   slug: string;
+  blueskyPostUri?: string;
 }

@@ -18,7 +18,7 @@ import type { getConfig as File_Episodes6ScratchingTheSurfaceOnDesignSystemsInde
 // prettier-ignore
 import type { getConfig as File_Episodes7DitchTheCareerLadderIndex_getConfig } from './pages/episodes/7/ditch-the-career-ladder/index';
 // prettier-ignore
-import type { getConfig as File_Episodes8MonoreposAndTheGoldenAgeOfCssIndex_getConfig } from './pages/episodes/8/monorepos-and-the-golden-age-of-css/index';
+import type { getConfig as File_Episodes8MonorepoMadnessIndex_getConfig } from './pages/episodes/8/monorepo-madness/index';
 
 // prettier-ignore
 type Page =
@@ -31,7 +31,7 @@ type Page =
 | ({ path: '/episodes/5/testing-is-it-worth-it' } & GetConfigResponse<typeof File_Episodes5TestingIsItWorthItIndex_getConfig>)
 | ({ path: '/episodes/6/scratching-the-surface-on-design-systems' } & GetConfigResponse<typeof File_Episodes6ScratchingTheSurfaceOnDesignSystemsIndex_getConfig>)
 | ({ path: '/episodes/7/ditch-the-career-ladder' } & GetConfigResponse<typeof File_Episodes7DitchTheCareerLadderIndex_getConfig>)
-| ({ path: '/episodes/8/monorepos-and-the-golden-age-of-css' } & GetConfigResponse<typeof File_Episodes8MonoreposAndTheGoldenAgeOfCssIndex_getConfig>)
+| ({ path: '/episodes/8/monorepo-madness' } & GetConfigResponse<typeof File_Episodes8MonorepoMadnessIndex_getConfig>)
 | { path: '/episodes'; render: 'dynamic' }
 | { path: '/'; render: 'dynamic' }
 | { path: '/search'; render: 'dynamic' };

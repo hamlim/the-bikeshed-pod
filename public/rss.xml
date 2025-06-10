@@ -31,14 +31,14 @@
         
           <item>
             <!-- Required Item Elements -->
-            <title>Monorepos And The Golden Age of CSS</title>
+            <title>Monorepo Madness</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/8/audio.mp3"
                       type="audio/mpeg"
                       length="100761309"/>
             <guid isPermaLink="false">8</guid>
 
             <!-- Recommended Item Elements -->
-            <link>https://bikeshedpod.com/episodes/8/monorepos-and-the-golden-age-of-css</link>
+            <link>https://bikeshedpod.com/episodes/8/monorepo-madness</link>
             <pubDate>Mon, 09 Jun 2025 21:03:17 GMT</pubDate>
             <description><![CDATA[The Bikeshed podcast returns after a brief hiatus with hosts Scott Kaye, Matt Hamlin, and Dillon Curry. Tune in to hear the gang talk about keyboards, Scott's Italy trip, monorepos, and our hot takes on CSS!]]></description>
             <content:encoded><![CDATA[<p>The Bikeshed podcast returns after a brief hiatus with hosts Scott Kaye, Matt Hamlin, and Dillon Curry. Tune in to hear the gang talk about keyboards, Scott&#x27;s Italy trip, monorepos, and our hot takes on CSS!</p>

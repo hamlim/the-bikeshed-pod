@@ -1,0 +1,63 @@
+---
+episodeId: "9"
+slug: "are-react-server-components-risky"
+title: "Are React Server Components Risky?!?"
+shortDescription: "The gang interviews Matt on this episode, talking about all things React Server Components (RSCs), exploring their benefits, trade-offs, and adoption strategies. The hosts draw on their experiences at Wayfair, Fireworks, and Whoop to provide practical insights for learning and adopting RSCs."
+hosts: ["dillon", "scott", "matt"]
+metadata: ["react-server-components", "RSC", "web-development", "nextjs", "waku", "parcel", "redwoodSDK", "spicy-takes"]
+publishTime: 1750100443549
+duration: 4617
+audioURL: "https://assets.bikeshedpod.com/episodes/9/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/9/captions.vtt"
+fileSizeBytes: 110819288
+blueskyPostUri: ""
+---
+
+
+The gang interviews Matt on this episode, talking about all things React Server Components (RSCs), exploring their benefits, trade-offs, and adoption strategies. The hosts draw on their experiences at Wayfair, Fireworks, and Whoop to provide practical insights for learning and adopting RSCs.
+
+### Why React Server Components
+
+* **Benefits:**
+  * Improved Time to First Byte (TTFB) via streaming.
+  * More cohesive view of data dependencies (tighter front-end/back-end coupling).
+  * Potential for smaller client-side bundles (automatic code splitting).
+
+* **Trade-offs:**
+  * Requires a server layer (which might be a new concept for some React developers).
+
+### Migrating to React Server Components
+
+* **Adoption Strategy:**
+  * Start page by page (easiest entry point).
+  * Flip the mental model: Start from the server and work towards the client.
+  * Need to consider the bundler support for RSCs.
+* **Challenges:**
+  * You cannot easily swap out a small subsection of your page with an RSC.
+  * Ensuring the bundler supports RSCs.
+* **Key Considerations:**
+  * Think about two environments: server and client.
+
+### Understanding RSC Concepts
+
+* **Two Environments:** The importance of understanding server (server components, server actions) and client (client components) environments when using RSCs. Front-end engineers new to server-side development need to be aware of security implications and potential caching issues.
+* **Frameworks:** Highlighted the importance of understanding the core RSC principles separate from framework implementations like Next.js.
+* **Not Necessarily Server Rendered:** Clarifying that client components can be server-rendered, avoiding the assumption that client components are solely client-side rendered.
+* **Resources:** Blog post ["React for Two Computers" by Dan Abramov](https://overreacted.io/react-for-two-computers/) is a great resource to learn about the mental model. Also start to look at the other framework implementations to understand that there's next features and there are RSC features
+
+### Standup Updates
+
+* **Dillon:** Using a Dexcom continuous glucose monitor to manage blood sugar levels and migraines.
+* **Scott:** Getting wedding suits, migrating from Datadog to Grafana monitors.
+* **Matt:** Working on lyaml translation migration. Experimenting with Parcel's RSC integration and Redwood SDK.
+
+
+## Links / References:
+
+- [React for Two Computers by Dan Abramov](https://overreacted.io/react-for-two-computers/)
+  - An excellent introduction to the concepts behind React Server Components
+- [The Bookkeeping Pattern](https://matthamlin.me/2024/october/the-bookkeeping-pattern)
+  - A little look at how Scott and Matt leveraged Server Components and Server Functions at Fireworks
+- [Waku RSC Todo App](https://github.com/hamlim/rsc-todos-waku)
+- [Parcel RSC Todo App](https://github.com/hamlim/rsc-todos-parcel)
+- [RedwoodSDK RSC Todo App](https://github.com/hamlim/rsc-todos-redwood)

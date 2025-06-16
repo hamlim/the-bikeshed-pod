@@ -31,6 +31,92 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Ricky RSCs</title>
+            <enclosure url="TODO"
+                      type="audio/mpeg"
+                      length="123"/>
+            <guid isPermaLink="false">9</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/9/risky-rscs</link>
+            <pubDate>Mon, 16 Jun 2025 19:00:43 GMT</pubDate>
+            <description><![CDATA[The gang interviews Matt on this episode, talking about all things React Server Components (RSCs), exploring their benefits, trade-offs, and adoption strategies. The hosts draw on their experiences at Wayfair, Fireworks, and Whoop to provide practical insights for learning and adopting RSCs.]]></description>
+            <content:encoded><![CDATA[<p>The gang interviews Matt on this episode, talking about all things React Server Components (RSCs), exploring their benefits, trade-offs, and adoption strategies. The hosts draw on their experiences at Wayfair, Fireworks, and Whoop to provide practical insights for learning and adopting RSCs.</p>
+<h3>Why React Server Components</h3>
+<ul>
+<li>
+<p><strong>Benefits:</strong></p>
+<ul>
+<li>Improved Time to First Byte (TTFB) via streaming.</li>
+<li>More cohesive view of data dependencies (tighter front-end/back-end coupling).</li>
+<li>Potential for smaller client-side bundles (automatic code splitting).</li>
+</ul>
+</li>
+<li>
+<p><strong>Trade-offs:</strong></p>
+<ul>
+<li>Requires a server layer (which might be a new concept for some React developers).</li>
+</ul>
+</li>
+</ul>
+<h3>Migrating to React Server Components</h3>
+<ul>
+<li><strong>Adoption Strategy:</strong>
+<ul>
+<li>Start page by page (easiest entry point).</li>
+<li>Flip the mental model: Start from the server and work towards the client.</li>
+<li>Need to consider the bundler support for RSCs.</li>
+</ul>
+</li>
+<li><strong>Challenges:</strong>
+<ul>
+<li>You cannot easily swap out a small subsection of your page with an RSC.</li>
+<li>Ensuring the bundler supports RSCs.</li>
+</ul>
+</li>
+<li><strong>Key Considerations:</strong>
+<ul>
+<li>Think about two environments: server and client.</li>
+</ul>
+</li>
+</ul>
+<h3>Understanding RSC Concepts</h3>
+<ul>
+<li><strong>Two Environments:</strong> The importance of understanding server (server components, server actions) and client (client components) environments when using RSCs. Front-end engineers new to server-side development need to be aware of security implications and potential caching issues.</li>
+<li><strong>Frameworks:</strong> Highlighted the importance of understanding the core RSC principles separate from framework implementations like Next.js.</li>
+<li><strong>Not Necessarily Server Rendered:</strong> Clarifying that client components can be server-rendered, avoiding the assumption that client components are solely client-side rendered.</li>
+<li><strong>Resources:</strong> Blog post <a href="https://overreacted.io/react-for-two-computers/">&quot;React for Two Computers&quot; by Dan Abramov</a> is a great resource to learn about the mental model. Also start to look at the other framework implementations to understand that there&#x27;s next features and there are RSC features</li>
+</ul>
+<p><strong>Monitoring Performance</strong></p>
+<ul>
+<li>Monitor web vitals daily.</li>
+</ul>
+<h3>Standup Updates</h3>
+<ul>
+<li><strong>Dillon:</strong> Using a Dexcom continuous glucose monitor to manage blood sugar levels and migraines.</li>
+<li><strong>Scott:</strong> Getting wedding suits, migrating from Datadog to Grafana monitors.</li>
+<li><strong>Matt:</strong> Working on lyaml translation migration. Experimenting with Parcel&#x27;s RSC integration and Redwood SDK.</li>
+</ul>
+<h2>Links / References:</h2>
+<ul>
+<li><a href="https://overreacted.io/react-for-two-computers/">React for Two Computers by Dan Abramov</a></li>
+<li><a href="https://matthamlin.me/2024/october/the-bookkeeping-pattern">The Bookkeeping Pattern</a>
+<ul>
+<li>A little look at how Scott and Matt leveraged Server Components and Server Functions at Fireworks</li>
+</ul>
+</li>
+<li><a href="https://github.com/hamlim/rsc-todos-waku">Waku RSC Todo App</a></li>
+<li><a href="https://github.com/hamlim/rsc-todos-parcel">Parcel RSC Todo App</a></li>
+<li><a href="https://github.com/hamlim/rsc-todos-redwood">RedwoodSDK RSC Todo App</a></li>
+</ul>]]></content:encoded>
+            <itunes:duration>123</itunes:duration>
+            <podcast:transcript url="TODO" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Monorepo Madness</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/8/audio.mp3"
                       type="audio/mpeg"

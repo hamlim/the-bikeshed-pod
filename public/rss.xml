@@ -31,14 +31,14 @@
         
           <item>
             <!-- Required Item Elements -->
-            <title>Ricky RSCs</title>
-            <enclosure url="TODO"
+            <title>Are React Server Components Risky?!?</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/9/audio.mp3"
                       type="audio/mpeg"
-                      length="123"/>
+                      length="110819288"/>
             <guid isPermaLink="false">9</guid>
 
             <!-- Recommended Item Elements -->
-            <link>https://bikeshedpod.com/episodes/9/risky-rscs</link>
+            <link>https://bikeshedpod.com/episodes/9/are-react-server-components-risky</link>
             <pubDate>Mon, 16 Jun 2025 19:00:43 GMT</pubDate>
             <description><![CDATA[The gang interviews Matt on this episode, talking about all things React Server Components (RSCs), exploring their benefits, trade-offs, and adoption strategies. The hosts draw on their experiences at Wayfair, Fireworks, and Whoop to provide practical insights for learning and adopting RSCs.]]></description>
             <content:encoded><![CDATA[<p>The gang interviews Matt on this episode, talking about all things React Server Components (RSCs), exploring their benefits, trade-offs, and adoption strategies. The hosts draw on their experiences at Wayfair, Fireworks, and Whoop to provide practical insights for learning and adopting RSCs.</p>
@@ -87,10 +87,6 @@
 <li><strong>Not Necessarily Server Rendered:</strong> Clarifying that client components can be server-rendered, avoiding the assumption that client components are solely client-side rendered.</li>
 <li><strong>Resources:</strong> Blog post <a href="https://overreacted.io/react-for-two-computers/">&quot;React for Two Computers&quot; by Dan Abramov</a> is a great resource to learn about the mental model. Also start to look at the other framework implementations to understand that there&#x27;s next features and there are RSC features</li>
 </ul>
-<p><strong>Monitoring Performance</strong></p>
-<ul>
-<li>Monitor web vitals daily.</li>
-</ul>
 <h3>Standup Updates</h3>
 <ul>
 <li><strong>Dillon:</strong> Using a Dexcom continuous glucose monitor to manage blood sugar levels and migraines.</li>
@@ -99,7 +95,11 @@
 </ul>
 <h2>Links / References:</h2>
 <ul>
-<li><a href="https://overreacted.io/react-for-two-computers/">React for Two Computers by Dan Abramov</a></li>
+<li><a href="https://overreacted.io/react-for-two-computers/">React for Two Computers by Dan Abramov</a>
+<ul>
+<li>An excellent introduction to the concepts behind React Server Components</li>
+</ul>
+</li>
 <li><a href="https://matthamlin.me/2024/october/the-bookkeeping-pattern">The Bookkeeping Pattern</a>
 <ul>
 <li>A little look at how Scott and Matt leveraged Server Components and Server Functions at Fireworks</li>
@@ -109,8 +109,8 @@
 <li><a href="https://github.com/hamlim/rsc-todos-parcel">Parcel RSC Todo App</a></li>
 <li><a href="https://github.com/hamlim/rsc-todos-redwood">RedwoodSDK RSC Todo App</a></li>
 </ul>]]></content:encoded>
-            <itunes:duration>123</itunes:duration>
-            <podcast:transcript url="TODO" type="text/vtt"/>
+            <itunes:duration>4617</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/9/captions.vtt" type="text/vtt"/>
             <itunes:explicit>true</itunes:explicit>
           </item>
         

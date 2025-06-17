@@ -1,4 +1,5 @@
 import fs from "node:fs/promises";
+import watcher from "@parcel/watcher";
 import glob from "fast-glob";
 import matter from "gray-matter";
 import { transformMarkdown } from "mdxlite";
@@ -32,71 +33,75 @@ function hydrateHosts(hostsArray: Array<string>): Array<Host> {
   });
 }
 
-// find all `*.mdx` files within `src/pages/episodes/` and collect the frontmatter
-// along with the contents
-let episodeMDXFiles = await glob("./src/pages/episodes/**/*.mdx");
+let episodeMDXDir = "./src/pages/episodes";
+let episodeMDXPath = `${episodeMDXDir}/**/*.mdx`;
 
-episodeMDXFiles.sort((a, b) => {
-  // Lets just split on this path because we know its always a number
-  let fileA = Number(a.split("/")[4]);
-  let fileB = Number(b.split("/")[4]);
+async function generateMetadataAndRSS() {
+  // find all `*.mdx` files within `src/pages/episodes/` and collect the frontmatter
+  // along with the contents
+  let episodeMDXFiles = await glob(episodeMDXPath);
 
-  return fileB - fileA;
-});
+  episodeMDXFiles.sort((a, b) => {
+    // Lets just split on this path because we know its always a number
+    let fileA = Number(a.split("/")[4]);
+    let fileB = Number(b.split("/")[4]);
 
-let episodeMetadata: Array<EpisodeMetadata> = [];
-let rssFeedData: Array<EpisodeMetadata> = [];
-for (let episode of episodeMDXFiles) {
-  let fileContent = await fs.readFile(episode, "utf8");
-  // parse the frontmatter
-  let { data, content } = matter(fileContent);
-
-  episodeMetadata.push({
-    episodeId: data.episodeId,
-    title: data.title,
-    shortDescription: data.shortDescription,
-    hosts: hydrateHosts(data.hosts),
-    metadata: data.metadata,
-    publishTime: data.publishTime,
-    duration: data.duration,
-    longDescription: content,
-    audioURL: data.audioURL,
-    captionURL: data.captionURL,
-    slug: data.slug,
-    fileSizeBytes: data.fileSizeBytes,
+    return fileB - fileA;
   });
 
-  rssFeedData.push({
-    episodeId: data.episodeId,
-    title: data.title,
-    shortDescription: data.shortDescription,
-    hosts: hydrateHosts(data.hosts),
-    metadata: data.metadata,
-    publishTime: data.publishTime,
-    duration: data.duration,
-    longDescription: renderToString(
-      await transformMarkdown({
-        markdown: content,
-        imports,
-        components,
-      }),
-    ),
-    audioURL: data.audioURL,
-    captionURL: data.captionURL,
-    slug: data.slug,
-    fileSizeBytes: data.fileSizeBytes,
-  });
-}
+  let episodeMetadata: Array<EpisodeMetadata> = [];
+  let rssFeedData: Array<EpisodeMetadata> = [];
+  for (let episode of episodeMDXFiles) {
+    let fileContent = await fs.readFile(episode, "utf8");
+    // parse the frontmatter
+    let { data, content } = matter(fileContent);
 
-console.log("Writing episode metadata...");
-await fs.writeFile(
-  "./src/episode-metadata.json",
-  JSON.stringify(episodeMetadata),
-);
+    episodeMetadata.push({
+      episodeId: data.episodeId,
+      title: data.title,
+      shortDescription: data.shortDescription,
+      hosts: hydrateHosts(data.hosts),
+      metadata: data.metadata,
+      publishTime: data.publishTime,
+      duration: data.duration,
+      longDescription: content,
+      audioURL: data.audioURL,
+      captionURL: data.captionURL,
+      slug: data.slug,
+      fileSizeBytes: data.fileSizeBytes,
+    });
 
-await fs.writeFile(
-  "./public/rss.xml",
-  `<?xml version="1.0" encoding="UTF-8"?>
+    rssFeedData.push({
+      episodeId: data.episodeId,
+      title: data.title,
+      shortDescription: data.shortDescription,
+      hosts: hydrateHosts(data.hosts),
+      metadata: data.metadata,
+      publishTime: data.publishTime,
+      duration: data.duration,
+      longDescription: renderToString(
+        await transformMarkdown({
+          markdown: content,
+          imports,
+          components,
+        }),
+      ),
+      audioURL: data.audioURL,
+      captionURL: data.captionURL,
+      slug: data.slug,
+      fileSizeBytes: data.fileSizeBytes,
+    });
+  }
+
+  console.log("Writing episode metadata...");
+  await fs.writeFile(
+    "./src/episode-metadata.json",
+    JSON.stringify(episodeMetadata),
+  );
+
+  await fs.writeFile(
+    "./public/rss.xml",
+    `<?xml version="1.0" encoding="UTF-8"?>
     <?xml-stylesheet type="text/xsl" href="/rss.xsl"?>
     <rss version="2.0"
          xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
@@ -151,5 +156,19 @@ await fs.writeFile(
           .join("\n")}
       </channel>
     </rss>`,
-);
-await fs.writeFile("./src/rss-feed-data.json", JSON.stringify(rssFeedData));
+  );
+  await fs.writeFile("./src/rss-feed-data.json", JSON.stringify(rssFeedData));
+}
+
+if (process.argv.includes("--watch")) {
+  let subscription = await watcher.subscribe(episodeMDXDir, async () => {
+    await generateMetadataAndRSS();
+  });
+
+  process.on("SIGINT", async () => {
+    await subscription.unsubscribe();
+    console.log("Unsubscribed from watcher");
+  });
+}
+
+await generateMetadataAndRSS();

@@ -46,8 +46,8 @@
     "tailwindcss-animate": "1.0.7",
     "unified": "11.0.5",
     "unist-util-visit": "5.0.0",
-    "waku": "0.23.2",
-    "wrangler": "4.14.1"
+    "waku": "0.23.3",
+    "wrangler": "4.22.0"
   },
   "imports": {
     "#/*": "./src/*",

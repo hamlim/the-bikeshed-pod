@@ -31,7 +31,7 @@
     "estree-util-visit": "2.0.0",
     "hast-util-to-jsx-runtime": "2.3.6",
     "hls.js": "1.6.5",
-    "hono": "4.6.20",
+    "hono": "4.9.7",
     "html-url-attributes": "3.0.1",
     "lucide-react": "0.514.0",
     "mdxlite": "1.0.0",

@@ -1,0 +1,15 @@
+- [ ] `/htw-rss.xml`
+- [ ] Update `#episode-metadata`
+- [ ] Update landing page (`/`)
+- [ ] Add filter to `/search` and `/episodes` to narrow down to a specific show
+- [ ] Update routing pattern for `tbp-` episodes (prefix on episode id)
+  - [ ] Update `scripts/new-episode.ts` to account for new episode prefix
+  - [ ] Update `scripts/new-episode.ts` to account for new show
+- [ ] Account for all `// @HTW-TODO` comments
+- [ ] Refine `/about` page content
+- [ ] Add redirects for old episode routes
+- [ ] Add Shows link to the Nav
+- [ ] Add `/shows` route
+- [ ] Figure out how to handle Apple/Spotify/RSS links in header
+  - Maybe remove them and instead have folks use the footer links?
+  - Or maybe make them only show up on the specific show pages?

@@ -13,3 +13,4 @@
 - [ ] Figure out how to handle Apple/Spotify/RSS links in header
   - Maybe remove them and instead have folks use the footer links?
   - Or maybe make them only show up on the specific show pages?
+- [ ] Update content on `/shows/how-they-work`

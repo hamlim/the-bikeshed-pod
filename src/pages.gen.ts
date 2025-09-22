@@ -37,7 +37,9 @@ type Page =
 | ({ path: '/episodes/9/are-react-server-components-risky' } & GetConfigResponse<typeof File_Episodes9AreReactServerComponentsRiskyIndex_getConfig>)
 | { path: '/episodes'; render: 'dynamic' }
 | { path: '/'; render: 'dynamic' }
-| { path: '/search'; render: 'dynamic' };
+| { path: '/search'; render: 'dynamic' }
+| { path: '/shows/how-they-work'; render: 'dynamic' }
+| { path: '/shows/the-bikeshed-pod'; render: 'dynamic' };
 
 // prettier-ignore
 declare module 'waku/router' {

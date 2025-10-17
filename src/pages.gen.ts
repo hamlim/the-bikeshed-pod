@@ -6,6 +6,8 @@ import type { PathsForPages, GetConfigResponse } from 'waku/router';
 // prettier-ignore
 import type { getConfig as File_Episodes1VibeCodingWhenTheVibesAreOffIndex_getConfig } from './pages/episodes/1/vibe-coding-when-the-vibes-are-off/index';
 // prettier-ignore
+import type { getConfig as File_Episodes10ManagingDependenciesItDependsIndex_getConfig } from './pages/episodes/10/managing-dependencies-it-depends/index';
+// prettier-ignore
 import type { getConfig as File_Episodes2IsTheWebGettingWorseIndex_getConfig } from './pages/episodes/2/is-the-web-getting-worse/index';
 // prettier-ignore
 import type { getConfig as File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig } from './pages/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages/index';
@@ -27,6 +29,7 @@ type Page =
 | { path: '/_root'; render: 'dynamic' }
 | { path: '/about'; render: 'dynamic' }
 | ({ path: '/episodes/1/vibe-coding-when-the-vibes-are-off' } & GetConfigResponse<typeof File_Episodes1VibeCodingWhenTheVibesAreOffIndex_getConfig>)
+| ({ path: '/episodes/10/managing-dependencies-it-depends' } & GetConfigResponse<typeof File_Episodes10ManagingDependenciesItDependsIndex_getConfig>)
 | ({ path: '/episodes/2/is-the-web-getting-worse' } & GetConfigResponse<typeof File_Episodes2IsTheWebGettingWorseIndex_getConfig>)
 | ({ path: '/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages' } & GetConfigResponse<typeof File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig>)
 | ({ path: '/episodes/4/perfecting-the-pull-request' } & GetConfigResponse<typeof File_Episodes4PerfectingThePullRequestIndex_getConfig>)

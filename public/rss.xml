@@ -31,6 +31,62 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Managing Dependencies: It Depends</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/10/audio.mp3"
+                      type="audio/mpeg"
+                      length="67913478"/>
+            <guid isPermaLink="false">10</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/10/managing-dependencies-it-depends</link>
+            <pubDate>Fri, 17 Oct 2025 21:06:02 GMT</pubDate>
+            <description><![CDATA[The gang shares how FAANG-like companies manage their frontend dependencies without pain! Hint! They Don't!]]></description>
+            <content:encoded><![CDATA[<p>This episode of the Bikeshed Podcast dives into dependency management, particularly within the context of front-end projects. The discussion centers around the &quot;one version rule,&quot; a strategy adopted by companies like Wayfair to ensure consistency and reduce bundle sizes by using a single version of each library across all projects. The hosts explore the pros and cons of this approach, as well as alternative dependency management strategies.</p>
+<p>Key Discussion Points:</p>
+<ul>
+<li>Introduction to Dependency Management: Dependency management involves pulling in libraries and managing updates, breaking changes, and inconsistencies across projects.</li>
+<li>The One Version Rule: The one version rule aims to ensure that only one version of each library is used across all projects within an organization. This reduces bundle sizes, avoids conflicts, and promotes consistency. React is used as an example, it typically functions as a singleton, using multiple versions is likely to cause issues.</li>
+<li>Benefits of the One Version Rule:<!-- -->
+<ul>
+<li>Smaller bundle sizes</li>
+<li>Reduced conflicts between libraries</li>
+<li>Increased consistency and shared knowledge across teams</li>
+<li>Faster development and easier onboarding for new engineers</li>
+</ul>
+</li>
+<li>Drawbacks of the One Version Rule:<!-- -->
+<ul>
+<li>Upgrading dependencies can become a large, complex project affecting multiple applications.</li>
+<li>Managing breaking changes and coordinating upgrades can be challenging.</li>
+</ul>
+</li>
+<li>Dependency Upgrade Challenges: Upgrades, especially breaking changes, require significant effort. Teams often postpone upgrades, leading to outdated dependencies and more complex upgrade processes later.</li>
+<li>HubSpot&#x27;s Evergreen Dependency System: HubSpot uses an evergreen dependency system where non-breaking changes to libraries are automatically pulled down by all dependent projects on the next build. This reduces the burden of manual upgrades but requires robust tooling to test and verify changes.</li>
+<li>Trade-offs of Evergreen Dependencies:<!-- -->
+<ul>
+<li>Automatic upgrades can cause unexpected breakages if not properly tested.</li>
+<li>HubSpot uses canary deployments and build tooling to mitigate these risks.</li>
+<li>Build reproducibility becomes difficult as projects always pull the latest dependencies.</li>
+</ul>
+</li>
+<li>Avoiding Breaking Changes: There&#x27;s a growing trend towards avoiding breaking changes in internal libraries to minimize disruption and simplify upgrades.</li>
+<li>Peer Dependencies vs. Direct Dependencies: The hosts discuss the trade-offs between using peer dependencies (where the consumer provides the dependency) and direct dependencies (where the library includes the dependency).</li>
+<li>Airbnb&#x27;s Dependency Management: Airbnb uses a system where applications and libraries don&#x27;t have package.json files but instead use internal project.json files to enable or disable dependencies.</li>
+<li>Internal Tooling and Team Investment: The hosts emphasize the importance of internal tooling and dedicated platform teams to effectively manage dependencies and improve developer experience. Open-source tools can be useful for smaller teams, but larger organizations benefit from custom solutions.</li>
+<li>Building Important Systems by Committee: Building important systems like component libraries or design systems by committee can be challenging without a solid foundation and dedicated focus.</li>
+<li>The Tragedy of the Commons: Without a structured process or team to manage dependencies, it&#x27;s unlikely that individuals will prioritize it, leading to a negative feedback loop of neglect and increasing complexity.</li>
+</ul>
+<blockquote>
+<p>Sorry for not adding a nice graphic describing the library relationships - we&#x27;ll leave that as an exercise to the listener!</p>
+</blockquote>]]></content:encoded>
+            <itunes:duration>2830</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/10/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Are React Server Components Risky?!?</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/9/audio.mp3"
                       type="audio/mpeg"

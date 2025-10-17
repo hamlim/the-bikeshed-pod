@@ -39,8 +39,8 @@ hosts: []
 metadata: []
 publishTime: ${Date.now()}
 duration: 123
-audioURL: "TODO"
-captionURL: "TODO"
+audioURL: "https://assets.bikeshedpod.com/episodes/${id}/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/${id}/captions.vtt"
 fileSizeBytes: 123
 blueskyPostUri: ""
 ---

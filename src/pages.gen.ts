@@ -10,6 +10,8 @@ import type { getConfig as File_Episodes10ManagingDependenciesItDependsIndex_get
 // prettier-ignore
 import type { getConfig as File_Episodes11DeployFastAndBreakThingsIndex_getConfig } from './pages/episodes/11/deploy-fast-and-break-things/index';
 // prettier-ignore
+import type { getConfig as File_Episodes12IsTheWebScrewedIndex_getConfig } from './pages/episodes/12/is-the-web-screwed/index';
+// prettier-ignore
 import type { getConfig as File_Episodes2IsTheWebGettingWorseIndex_getConfig } from './pages/episodes/2/is-the-web-getting-worse/index';
 // prettier-ignore
 import type { getConfig as File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig } from './pages/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages/index';
@@ -33,6 +35,7 @@ type Page =
 | ({ path: '/episodes/1/vibe-coding-when-the-vibes-are-off' } & GetConfigResponse<typeof File_Episodes1VibeCodingWhenTheVibesAreOffIndex_getConfig>)
 | ({ path: '/episodes/10/managing-dependencies-it-depends' } & GetConfigResponse<typeof File_Episodes10ManagingDependenciesItDependsIndex_getConfig>)
 | ({ path: '/episodes/11/deploy-fast-and-break-things' } & GetConfigResponse<typeof File_Episodes11DeployFastAndBreakThingsIndex_getConfig>)
+| ({ path: '/episodes/12/is-the-web-screwed' } & GetConfigResponse<typeof File_Episodes12IsTheWebScrewedIndex_getConfig>)
 | ({ path: '/episodes/2/is-the-web-getting-worse' } & GetConfigResponse<typeof File_Episodes2IsTheWebGettingWorseIndex_getConfig>)
 | ({ path: '/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages' } & GetConfigResponse<typeof File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig>)
 | ({ path: '/episodes/4/perfecting-the-pull-request' } & GetConfigResponse<typeof File_Episodes4PerfectingThePullRequestIndex_getConfig>)

@@ -31,6 +31,63 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>The Downfall of React</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/13/audio.mp3"
+                      type="audio/mpeg"
+                      length="78399029"/>
+            <guid isPermaLink="false">13</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/13/the-downfall-of-react</link>
+            <pubDate>Sat, 08 Nov 2025 18:10:26 GMT</pubDate>
+            <description><![CDATA[The bikeshed boys talk about the new hottest web framework on the block: Remix 3, hopefully its third times the charm for the remix guys!]]></description>
+            <content:encoded><![CDATA[<h3>Remix 3 Discussion</h3>
+<ul>
+<li>Overview: The hosts discuss the recent Remix Jam conference and the unveiled Remix 3 framework, which aims to simplify web development. Remix 3 is centered around event handling and components with a different approach to React.</li>
+<li>Key Concepts:<!-- -->
+<ul>
+<li>Event Handling: A core focus is on managing DOM events and using events to manage state.</li>
+<li>Components: Aims to reduce complexity compared to React&#x27;s functional components, potentially eliminating the need for hooks.</li>
+<li>Frames: A replacement for suspense that they called frames</li>
+</ul>
+</li>
+<li>Concerns:<!-- -->
+<ul>
+<li>The framework is still pre-alpha, and APIs are subject to change.</li>
+<li>Potential difficulties in migrating existing React codebases to Remix 3.</li>
+<li>Reliance on AI-generated code for core abstractions raises trust concerns.</li>
+</ul>
+</li>
+<li>Potential Benefits:<!-- -->
+<ul>
+<li>A simpler programming model compared to React.</li>
+<li>Better control over data loading and state management.</li>
+<li>The built-in CSS-in-JS solution.</li>
+</ul>
+</li>
+<li>Future of React: Remix 3 may signify a shift in the React ecosystem, as developers explore alternative approaches to web development.</li>
+<li>AI in Development: A discussion about the use of AI in building the framework and the importance of reviewing AI-generated code.</li>
+</ul>
+<h3>Scott&#x27;s Style Corner: Handling Null/Undefined Values in UI</h3>
+<ul>
+<li>Topic: Scott discusses UX suggestions for representing null or undefined values in UIs.</li>
+<li>Key Point: Avoid directly displaying &quot;null&quot; or &quot;undefined.&quot; Instead, use descriptive names that provide clarity for the user (e.g., &quot;Not Reviewed&quot; instead of &quot;Empty&quot;).</li>
+<li>Importance: This improves UX by preventing confusion and making it easier for users to understand the information presented.</li>
+</ul>
+<h3>Stand-up Updates:</h3>
+<ul>
+<li>Scott: Got married, honeymooned in Iceland, and is nearing completion of a large feature that was delayed due to a migration project.</li>
+<li>Matt: Investigating a memory leak in rspack and listening to the album &quot;Heavy Metal&quot; by Cameron Winter.</li>
+<li>Dillon: Has been working out consistently, building a reverse proxy for splitting traffic for a Next.js replatform project.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>3266</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/13/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Is The Web Screwed?!</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/12/audio.mp3"
                       type="audio/mpeg"

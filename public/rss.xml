@@ -31,6 +31,53 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>The Parking Lot</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/14/audio.mp3"
+                      type="audio/mpeg"
+                      length="80505544"/>
+            <guid isPermaLink="false">14</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/14/the-parking-lot</link>
+            <pubDate>Tue, 11 Nov 2025 21:43:17 GMT</pubDate>
+            <description><![CDATA[The bikeshed boys ramble on about coffee, Cursor 2.0 and their new composer model, Claude Code tips and tricks, and pitfalls, as well as AI in coding interviews!]]></description>
+            <content:encoded><![CDATA[<h2>Coffee Discussion</h2>
+<p>The hosts spend considerable time discussing coffee preferences and brewing methods. They critique Dunkin&#x27; Donuts coffee quality, with the consensus being it&#x27;s subpar without heavy sugar additions. Matt shares his experiences with different brewing methods including espresso machines, <a href="https://corkcicle.com/pages/palmpress">palm press</a>, and Chemex. Scott provides an enthusiastic review of his new Breville espresso machine, explaining the learning curve around grind settings and shot preparation. The group agrees that smaller coffee shops generally have better quality beans than chain establishments.</p>
+<h2>Cursor 2.0 Release</h2>
+<p>The team discusses <a href="https://cursor.com/">Cursor&#x27;s major update</a>, which repositions it as an &quot;AI-first&quot; coding experience rather than just VS Code with AI features. Key changes include:</p>
+<ul>
+<li>UI redesign with chat moved to the left sidebar</li>
+<li>New &quot;composer&quot; model trained specifically for editor integration</li>
+<li>Support for running multiple AI models simultaneously</li>
+<li>Built-in Git worktree support for parallel development</li>
+</ul>
+<p>Matt notes mixed results with the new composer model, finding it sometimes lazy about fixing unrelated test failures.</p>
+<h2>AI Development Tools</h2>
+<p>The hosts share their experiences with various AI coding assistants:</p>
+<ul>
+<li>Claude Code: Matt&#x27;s primary tool, though he&#x27;s hitting token limits frequently</li>
+<li>Planning Mode: Scott advocates strongly for using planning mode to get better results by having conversations about approaches before implementation</li>
+<li>Ultrathink: The group discusses using extended reasoning modes, with Scott recommending it for complex problems</li>
+</ul>
+<p>They debate the cost implications of AI tools, with Dillon suggesting some features are &quot;easy ways to waste money.&quot;</p>
+<h2>Git Worktrees</h2>
+<p>Scott explains his experimentation with Git worktrees as a way to work on multiple branches simultaneously. The consensus is that while worktrees are useful for quick context switching (like handling urgent hotfixes mid-feature), simply cloning the repository multiple times may be simpler for many developers.</p>
+<h2>AI in Interviews</h2>
+<p>The hosts touch on how companies are handling AI usage during technical interviews. Matt notes his company measures &quot;AI fluency&quot; in behavioral questions but doesn&#x27;t allow AI use during coding sessions, creating an interesting contradiction.</p>
+<h2>Standup Updates</h2>
+<ul>
+<li>Dillon is taking time off to play Arc Raiders, a new extraction shooter game</li>
+<li>Matt is working on wedding planning and a side project CMS, and also prepping for a work presentation</li>
+<li>Scott dealt with a flat tire and is preparing for Halloween trick-or-treaters</li>
+</ul>]]></content:encoded>
+            <itunes:duration>3354</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/14/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>The Downfall of React</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/13/audio.mp3"
                       type="audio/mpeg"

@@ -31,6 +31,76 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Why Internal Tooling Sucks</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/15/audio.mp3"
+                      type="audio/mpeg"
+                      length="67133566"/>
+            <guid isPermaLink="false">15</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/15/why-internal-tooling-sucks</link>
+            <pubDate>Fri, 21 Nov 2025 12:50:44 GMT</pubDate>
+            <description><![CDATA[The bikeshed boys tackle one of software engineering's most contentious debates: should you build internal tools or adopt external solutions? With real examples from their companies—custom dependency managers, GitHub wrappers, and developer portals—they explore when it makes sense to roll your own versus when you're just creating expensive technical debt. Expect war stories, a framework for build-vs-buy decisions, and Dillon's first truly spicy take about Vercel.]]></description>
+            <content:encoded><![CDATA[<h2>Why Internal Tooling (Usually) Sucks</h2>
+<p>In this episode, Matt kicks things off with a provocative thesis: internal tooling usually sucks. What follows is a deep, nuanced exploration of one of software engineering&#x27;s most persistent challenges—the build versus buy decision that every company eventually faces.</p>
+<h3>The Two Types of Internal Tools</h3>
+<p>The hosts identify two distinct categories of internal tooling:</p>
+<ul>
+<li><strong>Wrappers</strong>: Tools that extend existing external solutions (like a custom UI for managing GitHub repository settings)</li>
+<li><strong>Replacements</strong>: Complete alternatives to industry-standard tools (like building your own NPM/Yarn/PNPM equivalent)</li>
+</ul>
+<p>Through examples from HubSpot, Airbnb, and Whoop, they dissect when each approach makes sense and when it becomes a costly mistake.</p>
+<h3>The Hidden Costs Nobody Talks About</h3>
+<p>Scott breaks down the real expenses of internal tooling that go beyond initial development:</p>
+<ul>
+<li><strong>Knowledge transfer</strong> when the original creator leaves the company</li>
+<li><strong>Onboarding friction</strong> for new engineers who must learn proprietary systems</li>
+<li><strong>Maintenance burden</strong> that never ends and always competes with customer-facing priorities</li>
+<li><strong>Documentation debt</strong> that compounds over time</li>
+<li><strong>The bus factor</strong> when only one person truly understands the tool</li>
+</ul>
+<p>Matt shares his perspective that internal tools will always be secondary to a company&#x27;s core business, making it nearly impossible to invest appropriately in their long-term health. Even with dedicated developer tooling teams, these tools rarely get the polish and support they need.</p>
+<h3>When Internal Tooling Actually Makes Sense</h3>
+<p>Despite the skepticism, the crew identifies legitimate scenarios for building internally:</p>
+<p>When no external solution exists for your specific problem (and they mean truly doesn&#x27;t exist)
+When you have subject matter experts who can build something better and maintain it
+When wrapping an external tool with company-specific context adds significant value
+When security or data sensitivity requirements make external tools impractical</p>
+<p>They discuss examples like FlowBuilder at Airbnb and Easy Deploy at Whoop, exploring what makes these tools successful versus the cautionary tales of failed projects.</p>
+<h3>The External Tooling Counterargument</h3>
+<p>Dillon delivers his first genuinely spicy take of the podcast: external tooling has its own serious problems. Tools can be abandoned by maintainers, new versions can become impossible to migrate to, and companies can pivot their features in ways that don&#x27;t align with your needs. His critique of Next.js and Vercel&#x27;s approach generates the kind of heat the hosts have been asking him to bring.</p>
+<h2>Real War Stories</h2>
+<p>The episode is packed with concrete examples:</p>
+<ul>
+<li>HubSpot&#x27;s custom dependency manager that replaces NPM entirely</li>
+<li>Wayfair&#x27;s Tungsten framework (a React alternative that created years of technical debt)</li>
+<li>A year-long interior design app project that got canceled after launch</li>
+<li>The Jambox testing tool that could have worked with proper buy-in</li>
+<li>The painful reality of forking open source tools and maintaining them forever</li>
+</ul>
+<h3>The &quot;It Depends&quot; Framework</h3>
+<p>By the end, the hosts converge on a practical framework for making these decisions:</p>
+<h3>Questions to ask before building:</h3>
+<ul>
+<li>What percentage of your use case does the external tool solve? (If it&#x27;s 90%+, probably don&#x27;t build)</li>
+<li>How foundational is this to your engineering system?</li>
+<li>What&#x27;s the true cost including maintenance, not just initial development?</li>
+<li>Can the tool be replaced in days, weeks, or months if needed?</li>
+<li>Do you have the organizational buy-in and resources to support it long-term?</li>
+<li>Are you building to avoid a 10% gap or because nothing exists?</li>
+</ul>
+<p>The general principle: Don&#x27;t build internal tools that replicate 90% of what external tools already do. The remaining 10% is rarely worth the lifetime cost of ownership.</p>
+<h2>Personal Updates &amp; Tangents</h2>
+<p>The standup section includes home renovation updates (mini splits and solar panels), Scott&#x27;s Rhode Island trip plans, Dillon&#x27;s Web Guild leadership experience at Whoop (described as &quot;group therapy for front-end engineers&quot;), and Matt&#x27;s build performance optimization work that might actually be making things slower.</p>
+<p>Whether you&#x27;re an engineering leader making tooling decisions or a developer maintaining legacy internal systems, this episode offers hard-won wisdom about the real tradeoffs in the build-versus-buy debate. Sometimes the answer is &quot;build,&quot; but more often than not, it&#x27;s &quot;please don&#x27;t.&quot;</p>]]></content:encoded>
+            <itunes:duration>2797</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/15/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>The Parking Lot - 1</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/14/audio.mp3"
                       type="audio/mpeg"

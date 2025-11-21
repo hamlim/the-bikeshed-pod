@@ -31,6 +31,52 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Clankers Can Review Code Now?!?</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/16/audio.mp3"
+                      type="audio/mpeg"
+                      length="74547118"/>
+            <guid isPermaLink="false">16</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/16/clankers-can-review-code-now</link>
+            <pubDate>Fri, 21 Nov 2025 20:48:26 GMT</pubDate>
+            <description><![CDATA[The bikeshed boys dive deep into the emerging world of AI-powered code reviews—exploring whether our robot overlords are ready to stamp your PRs, or if they're just glorified linters with delusions of grandeur.]]></description>
+            <content:encoded><![CDATA[<h2>The AI Code Review Landscape: Three Companies, Three Approaches</h2>
+<p>The conversation kicks off with each host sharing their company&#x27;s approach to AI code review tooling. Dillon reveals that Whoop is piloting three different tools simultaneously—Greptile, GitHub Copilot, and CodeRabbit—leaving engineers unsure which bot will show up in their PRs on any given day. Matt explains HubSpot&#x27;s dual approach with &quot;Sidekick&quot; (their internal AI agent for chat and code review) alongside &quot;Sparrow,&quot; a non-AI bot that auto-approves low-risk changes like markdown updates. Scott shares that Airbnb uses Claude for PR reviews, finding it catches genuine bugs but sometimes pushes for overly defensive code patterns.</p>
+<h2>The Big Debate: Should AI Be Allowed to Approve PRs?</h2>
+<p>The hosts wrestle with a central tension: should AI be allowed to actually approve PRs? Matt argues for empowering teams to move fast by letting AI stamp changes, while Scott and Dillon pump the brakes—noting that speed and stability exist in a delicate balance. HubSpot learned this lesson the hard way when engineers discovered they could prompt Sidekick to both write a PR and approve it, shipping code without any human review. That loophole was quickly closed.</p>
+<h2>AI as a &quot;Smarter Linter&quot;</h2>
+<p>The discussion evolves into broader questions about the value proposition of AI code review. Dillon frames it as &quot;a smarter linting step that can sometimes lint for control flow being correct.&quot; Matt highlights how AI reviewers can internalize architectural patterns that would be tedious to encode as traditional lint rules. But both acknowledge the tools aren&#x27;t quite at human-reviewer parity yet.</p>
+<h2>The Rise of Multi-Agent Review: Red-Teaming Your Own Code</h2>
+<p>A key insight emerges around using multiple AI instances to catch more bugs. Matt describes his workflow of having one Claude instance write code, then spinning up a fresh instance to review those changes—a form of &quot;red-teaming&quot; that catches logical errors the original agent missed. Scott notes this mirrors the broader trend of orchestrating multiple specialized agents, each with fresh context and different objectives.</p>
+<h2>AI Fatigue and the Fear of Over-Reliance</h2>
+<p>A fascinating thread emerges around AI fatigue—the creeping exhaustion from constant AI discourse and the concern that engineers are becoming over-reliant on these tools. Dillon worries that AI is making developers lazy: &quot;We&#x27;re getting so reliant on it that it&#x27;s just making us dumber.&quot; Scott counters that the human role is shifting from implementation to orchestration, managing AI at a higher level while the bots handle smaller tasks.</p>
+<h2>Measuring Success: How Do You Know AI Is Actually Helping?</h2>
+<p>The hosts explore how companies measure AI tool success. Survey-based NPS scores? Tracking Claude&#x27;s signatures in commit histories? Using &quot;evals&quot; (evaluations) to benchmark agent performance against known solutions? HubSpot repurposed their annual hackathon framework as an eval system—a clever approach that validates AI against real-world internal problems. Dillon raises the uncomfortable question: are we all just on the hype train without truly validating the benefits?</p>
+<h2>The Productivity Paradox: More Output, But Is It Better?</h2>
+<p>Scott surfaces an important counterpoint to productivity gains: &quot;Yeah, it&#x27;s 30% more productivity, but how much of it is actually better?&quot; The hosts reflect on previous episodes where they&#x27;ve discussed the web getting worse—noting that shipping more PRs doesn&#x27;t necessarily mean shipping better software. AI-generated code can become unwieldy, creating &quot;band-aids on top of band-aids&quot; that are harder to maintain.</p>
+<h2>Matt&#x27;s Claude Code Credit Binge</h2>
+<p>Matt shares his enthusiasm for Anthropic&#x27;s recent free credit promotion, noting he&#x27;s burned through $120 of his $250 credit in a week while shipping 20+ PRs for personal projects. His hot take: AI has rekindled his passion for coding outside of work, turning feature implementation into a dopamine-fueled productivity loop. He&#x27;s been throwing &quot;ultrathink&quot; on every prompt and barely making a dent—and yes, he built himself a custom to-do app instead of paying for Todoist.</p>
+<h2>Standup Updates</h2>
+<p>The episode wraps with standup updates: Scott&#x27;s building visual diff tooling for UI workflows (ironically, a human review tool after an hour of AI review discussion). Dillon&#x27;s improving observability with Cloudflare Workers traces and discovered the hard way that workers have a 6-connection limit—which their 14 feature flag requests were absolutely destroying. Matt&#x27;s abandoned Parcel&#x27;s RSC setup in favor of Vite&#x27;s built-in plugin and is evangelizing wired headphones for speech-to-text dictation with Handy.</p>
+<h2>What Even Is a &quot;Clanker&quot;?</h2>
+<p>Oh, and the hosts debate whether calling AI agents &quot;clankers&quot; is appropriate—it&#x27;s apparently a speculative slur for robots in a future where they&#x27;re subhuman. Matt&#x27;s been using it to keep the machines in their place before the uprising. Scott refuses to insult AI, treating them as equals. Choose your side wisely.</p>
+<h2>Key Takeaways:</h2>
+<ul>
+<li>AI code review is best viewed as an enhanced linting layer, not a replacement for human reviewers</li>
+<li>Multiple AI instances reviewing each other&#x27;s work can catch bugs that single agents miss</li>
+<li>Companies are still figuring out how to measure the ROI of AI development tools</li>
+<li>The engineering role is shifting toward orchestration and architecture as AI handles lower-level tasks</li>
+<li>Speed vs. stability remains the fundamental tradeoff, regardless of whether AI or humans are in the loop</li>
+</ul>]]></content:encoded>
+            <itunes:duration>3106</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/16/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Why Internal Tooling Sucks</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/15/audio.mp3"
                       type="audio/mpeg"

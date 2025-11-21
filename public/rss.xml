@@ -39,7 +39,7 @@
 
             <!-- Recommended Item Elements -->
             <link>https://bikeshedpod.com/episodes/15/why-internal-tooling-sucks</link>
-            <pubDate>Wed, 19 Nov 2025 13:20:34 GMT</pubDate>
+            <pubDate>Fri, 21 Nov 2025 12:50:44 GMT</pubDate>
             <description><![CDATA[The bikeshed boys tackle one of software engineering's most contentious debates: should you build internal tools or adopt external solutions? With real examples from their companies—custom dependency managers, GitHub wrappers, and developer portals—they explore when it makes sense to roll your own versus when you're just creating expensive technical debt. Expect war stories, a framework for build-vs-buy decisions, and Dillon's first truly spicy take about Vercel.]]></description>
             <content:encoded><![CDATA[<h2>Why Internal Tooling (Usually) Sucks</h2>
 <p>In this episode, Matt kicks things off with a provocative thesis: internal tooling usually sucks. What follows is a deep, nuanced exploration of one of software engineering&#x27;s most persistent challenges—the build versus buy decision that every company eventually faces.</p>

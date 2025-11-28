@@ -39,7 +39,7 @@
 
             <!-- Recommended Item Elements -->
             <link>https://bikeshedpod.com/episodes/16/clankers-can-review-code-now</link>
-            <pubDate>Fri, 21 Nov 2025 20:48:26 GMT</pubDate>
+            <pubDate>Fri, 28 Nov 2025 13:34:01 GMT</pubDate>
             <description><![CDATA[The bikeshed boys dive deep into the emerging world of AI-powered code reviews—exploring whether our robot overlords are ready to stamp your PRs, or if they're just glorified linters with delusions of grandeur.]]></description>
             <content:encoded><![CDATA[<h2>The AI Code Review Landscape: Three Companies, Three Approaches</h2>
 <p>The conversation kicks off with each host sharing their company&#x27;s approach to AI code review tooling. Dillon reveals that Whoop is piloting three different tools simultaneously—Greptile, GitHub Copilot, and CodeRabbit—leaving engineers unsure which bot will show up in their PRs on any given day. Matt explains HubSpot&#x27;s dual approach with &quot;Sidekick&quot; (their internal AI agent for chat and code review) alongside &quot;Sparrow,&quot; a non-AI bot that auto-approves low-risk changes like markdown updates. Scott shares that Airbnb uses Claude for PR reviews, finding it catches genuine bugs but sometimes pushes for overly defensive code patterns.</p>

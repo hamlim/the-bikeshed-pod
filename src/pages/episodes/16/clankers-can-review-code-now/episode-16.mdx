@@ -1,0 +1,63 @@
+---
+episodeId: "16"
+slug: "clankers-can-review-code-now"
+title: "Clankers Can Review Code Now?!?"
+shortDescription: "The bikeshed boys dive deep into the emerging world of AI-powered code reviews—exploring whether our robot overlords are ready to stamp your PRs, or if they're just glorified linters with delusions of grandeur."
+hosts: ['dillon', 'scott', 'matt']
+metadata: ['ai', 'code-review', 'developer-experience', 'Claude Code']
+publishTime: 1764336841780
+duration: 3106
+audioURL: "https://assets.bikeshedpod.com/episodes/16/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/16/captions.vtt"
+fileSizeBytes: 74547118
+blueskyPostUri: ""
+---
+
+## The AI Code Review Landscape: Three Companies, Three Approaches
+
+The conversation kicks off with each host sharing their company's approach to AI code review tooling. Dillon reveals that Whoop is piloting three different tools simultaneously—Greptile, GitHub Copilot, and CodeRabbit—leaving engineers unsure which bot will show up in their PRs on any given day. Matt explains HubSpot's dual approach with "Sidekick" (their internal AI agent for chat and code review) alongside "Sparrow," a non-AI bot that auto-approves low-risk changes like markdown updates. Scott shares that Airbnb uses Claude for PR reviews, finding it catches genuine bugs but sometimes pushes for overly defensive code patterns.
+
+## The Big Debate: Should AI Be Allowed to Approve PRs?
+
+The hosts wrestle with a central tension: should AI be allowed to actually approve PRs? Matt argues for empowering teams to move fast by letting AI stamp changes, while Scott and Dillon pump the brakes—noting that speed and stability exist in a delicate balance. HubSpot learned this lesson the hard way when engineers discovered they could prompt Sidekick to both write a PR and approve it, shipping code without any human review. That loophole was quickly closed.
+
+## AI as a "Smarter Linter"
+
+The discussion evolves into broader questions about the value proposition of AI code review. Dillon frames it as "a smarter linting step that can sometimes lint for control flow being correct." Matt highlights how AI reviewers can internalize architectural patterns that would be tedious to encode as traditional lint rules. But both acknowledge the tools aren't quite at human-reviewer parity yet.
+
+## The Rise of Multi-Agent Review: Red-Teaming Your Own Code
+
+A key insight emerges around using multiple AI instances to catch more bugs. Matt describes his workflow of having one Claude instance write code, then spinning up a fresh instance to review those changes—a form of "red-teaming" that catches logical errors the original agent missed. Scott notes this mirrors the broader trend of orchestrating multiple specialized agents, each with fresh context and different objectives.
+
+## AI Fatigue and the Fear of Over-Reliance
+
+A fascinating thread emerges around AI fatigue—the creeping exhaustion from constant AI discourse and the concern that engineers are becoming over-reliant on these tools. Dillon worries that AI is making developers lazy: "We're getting so reliant on it that it's just making us dumber." Scott counters that the human role is shifting from implementation to orchestration, managing AI at a higher level while the bots handle smaller tasks.
+
+## Measuring Success: How Do You Know AI Is Actually Helping?
+
+The hosts explore how companies measure AI tool success. Survey-based NPS scores? Tracking Claude's signatures in commit histories? Using "evals" (evaluations) to benchmark agent performance against known solutions? HubSpot repurposed their annual hackathon framework as an eval system—a clever approach that validates AI against real-world internal problems. Dillon raises the uncomfortable question: are we all just on the hype train without truly validating the benefits?
+
+## The Productivity Paradox: More Output, But Is It Better?
+
+Scott surfaces an important counterpoint to productivity gains: "Yeah, it's 30% more productivity, but how much of it is actually better?" The hosts reflect on previous episodes where they've discussed the web getting worse—noting that shipping more PRs doesn't necessarily mean shipping better software. AI-generated code can become unwieldy, creating "band-aids on top of band-aids" that are harder to maintain.
+
+## Matt's Claude Code Credit Binge
+
+Matt shares his enthusiasm for Anthropic's recent free credit promotion, noting he's burned through $120 of his $250 credit in a week while shipping 20+ PRs for personal projects. His hot take: AI has rekindled his passion for coding outside of work, turning feature implementation into a dopamine-fueled productivity loop. He's been throwing "ultrathink" on every prompt and barely making a dent—and yes, he built himself a custom to-do app instead of paying for Todoist.
+
+## Standup Updates
+
+The episode wraps with standup updates: Scott's building visual diff tooling for UI workflows (ironically, a human review tool after an hour of AI review discussion). Dillon's improving observability with Cloudflare Workers traces and discovered the hard way that workers have a 6-connection limit—which their 14 feature flag requests were absolutely destroying. Matt's abandoned Parcel's RSC setup in favor of Vite's built-in plugin and is evangelizing wired headphones for speech-to-text dictation with Handy.
+
+## What Even Is a "Clanker"?
+
+Oh, and the hosts debate whether calling AI agents "clankers" is appropriate—it's apparently a speculative slur for robots in a future where they're subhuman. Matt's been using it to keep the machines in their place before the uprising. Scott refuses to insult AI, treating them as equals. Choose your side wisely.
+
+
+## Key Takeaways:
+
+- AI code review is best viewed as an enhanced linting layer, not a replacement for human reviewers
+- Multiple AI instances reviewing each other's work can catch bugs that single agents miss
+- Companies are still figuring out how to measure the ROI of AI development tools
+- The engineering role is shifting toward orchestration and architecture as AI handles lower-level tasks
+- Speed vs. stability remains the fundamental tradeoff, regardless of whether AI or humans are in the loop

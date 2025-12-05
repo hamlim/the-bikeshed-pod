@@ -31,6 +31,41 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Retro & React - 1</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/17/audio.mp3"
+                      type="audio/mpeg"
+                      length="44017080"/>
+            <guid isPermaLink="false">17</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/17/retro-and-react-1</link>
+            <pubDate>Fri, 05 Dec 2025 19:32:05 GMT</pubDate>
+            <description><![CDATA[This week on The Bikeshed, Scott, Matt, and Dillon tackle two breaking stories that have the JavaScript community buzzing: React's severity 10 vulnerability in React Server Components and Anthropic's surprising acquisition of Bun.]]></description>
+            <content:encoded><![CDATA[<p>This week on The Bikeshed, Scott, Matt, and Dillon tackle two breaking stories that have the JavaScript community buzzing: React&#x27;s severity 10 vulnerability in React Server Components and Anthropic&#x27;s surprising acquisition of Bun.</p>
+<h2>React&#x27;s Critical Vulnerability</h2>
+<p>The hosts dive into the details of React&#x27;s newly disclosed security flaw affecting React Server Components—a severity 10 vulnerability that could potentially allow arbitrary code execution on servers. While major infrastructure providers like Cloudflare, Vercel, Railway, Netlify, and Deno Deploy quickly patched the issue at the firewall level, the team discusses the concerning lack of early disclosure to smaller framework maintainers. Matt notes that while Next.js (essentially &quot;the React team at this point&quot;) was keyed in early, frameworks like Waku were left in the dark until the public announcement.</p>
+<p>The conversation touches on the complexity of versioning in the Next.js ecosystem, the challenges of upgrading legacy applications, and what this means for the broader adoption of React Server Components. Scott sees a silver lining: it might slow down the pressure to adopt RSCs at work. The team debates whether this opens the door for alternative frameworks like Remix (coming April 2026... or maybe March 2030?) or TanStack Start to gain ground.</p>
+<h2>Anthropic Acquires Bun</h2>
+<p>The second half explores Anthropic&#x27;s acquisition of the fast JavaScript runtime Bun—a move nobody had on their 2025 bingo card. The hosts unpack what this means for the JavaScript ecosystem, noting that Claude Code already heavily uses Bun for both its CLI and runtime execution.</p>
+<p>Scott calls it a &quot;big win for JavaScript,&quot; highlighting that Anthropic is keeping the entire Bun team and expanding it rather than absorbing and dismantling. The discussion explores whether this reflects a broader industry trend of AI companies investing in language runtimes, with OpenAI&#x27;s Codex being rewritten in Rust while Anthropic goes all-in on Bun (which is written in Zig).</p>
+<p>The team contemplates how this positions Anthropic as the &quot;developer&#x27;s tool&quot; company versus OpenAI&#x27;s consumer focus, and whether we might see similar acquisitions in the space—perhaps OpenAI buying Deno? They discuss concerns about whether Bun&#x27;s development priorities will shift to serve only Anthropic&#x27;s needs versus the broader open-source community.</p>
+<h2>Quick Hits</h2>
+<ul>
+<li>Dillon reveals he&#x27;s now using Claude Code (after getting free access, of course)</li>
+<li>The age-based bowling tournament at work where experience crushed youth</li>
+<li>Scott&#x27;s excitement about building &quot;the best permissions table of all time&quot;</li>
+<li>Matt&#x27;s upcoming European Christmas market adventure</li>
+<li>The digital advent calendar built with Claude&#x27;s help</li>
+</ul>
+<p>A fast-paced, timely episode that captures the chaos and excitement of a transformative week in the JavaScript world.</p>]]></content:encoded>
+            <itunes:duration>1834</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/17/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Clankers Can Review Code Now?!?</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/16/audio.mp3"
                       type="audio/mpeg"

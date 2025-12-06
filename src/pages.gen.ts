@@ -20,6 +20,8 @@ import type { getConfig as File_Episodes15WhyInternalToolingSucksIndex_getConfig
 // prettier-ignore
 import type { getConfig as File_Episodes16ClankersCanReviewCodeNowIndex_getConfig } from './pages/episodes/16/clankers-can-review-code-now/index';
 // prettier-ignore
+import type { getConfig as File_Episodes17RetroAndReact1Index_getConfig } from './pages/episodes/17/retro-and-react-1/index';
+// prettier-ignore
 import type { getConfig as File_Episodes2IsTheWebGettingWorseIndex_getConfig } from './pages/episodes/2/is-the-web-getting-worse/index';
 // prettier-ignore
 import type { getConfig as File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig } from './pages/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages/index';
@@ -48,6 +50,7 @@ type Page =
 | ({ path: '/episodes/14/the-parking-lot-1' } & GetConfigResponse<typeof File_Episodes14TheParkingLot1Index_getConfig>)
 | ({ path: '/episodes/15/why-internal-tooling-sucks' } & GetConfigResponse<typeof File_Episodes15WhyInternalToolingSucksIndex_getConfig>)
 | ({ path: '/episodes/16/clankers-can-review-code-now' } & GetConfigResponse<typeof File_Episodes16ClankersCanReviewCodeNowIndex_getConfig>)
+| ({ path: '/episodes/17/retro-and-react-1' } & GetConfigResponse<typeof File_Episodes17RetroAndReact1Index_getConfig>)
 | ({ path: '/episodes/2/is-the-web-getting-worse' } & GetConfigResponse<typeof File_Episodes2IsTheWebGettingWorseIndex_getConfig>)
 | ({ path: '/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages' } & GetConfigResponse<typeof File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig>)
 | ({ path: '/episodes/4/perfecting-the-pull-request' } & GetConfigResponse<typeof File_Episodes4PerfectingThePullRequestIndex_getConfig>)

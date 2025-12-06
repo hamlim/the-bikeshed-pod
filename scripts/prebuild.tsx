@@ -73,7 +73,9 @@ async function generateMetadataAndRSS() {
 
     rssFeedData.push({
       episodeId: data.episodeId,
-      title: data.title,
+      title: data.title.includes("&")
+        ? data.title.replace("&", "&amp;")
+        : data.title,
       shortDescription: data.shortDescription,
       hosts: hydrateHosts(data.hosts),
       metadata: data.metadata,

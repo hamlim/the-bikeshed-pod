@@ -1,12 +1,12 @@
+import nodeLoaderCloudflare from "@hiogawa/node-loader-cloudflare/vite";
 import mdx from "@mdx-js/rollup";
-import tailwindcss from "@tailwindcss/vite";
 import rehypeShiki from "@shikijs/rehype";
+import tailwindcss from "@tailwindcss/vite";
 import rehypeMdxCodeProps from "rehype-mdx-code-props";
 import remarkFlexibleMarkers from "remark-flexible-markers";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
-import nodeLoaderCloudflare from "@hiogawa/node-loader-cloudflare/vite";
 import { defineConfig } from "waku/config";
 
 const mdxPlugin = mdx({

@@ -91,17 +91,16 @@ export default async function SearchPage({
       tolerance: 2,
     }) as OramaResults<SearchEpisodeMetadata>;
 
-    results =
-      res.hits.map(
-        (result: OramaResult<SearchEpisodeMetadata>): EpisodeMetadata => {
-          return {
-            ...result.document,
-            hosts: result.document.hosts
-              .map((host: string): Host | undefined => hosts[host])
-              .filter(Boolean) as Array<Host>,
-          };
-        },
-      ) || [];
+    results = res.hits.map(
+      (result: OramaResult<SearchEpisodeMetadata>): EpisodeMetadata => {
+        return {
+          ...result.document,
+          hosts: result.document.hosts
+            .map((host: string): Host | undefined => hosts[host])
+            .filter(Boolean) as Array<Host>,
+        };
+      },
+    ) || [];
   }
 
   return (
@@ -162,25 +161,35 @@ export default async function SearchPage({
         </search>
 
         <div className="grid gap-6">
-          {query ? (
-            <>
-              {results.length > 0 ? (
-                results.map((episode) => (
-                  <EpisodeCard key={episode.episodeId} episode={episode} />
-                ))
-              ) : (
-                <div className="text-center text-stone-500">
-                  No results found for "{query}"
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="text-center text-stone-500">
-              Search for episodes by title, description, or keywords
-            </div>
-          )}
+          {query
+            ? (
+              <>
+                {results.length > 0
+                  ? (
+                    results.map((episode) => (
+                      <EpisodeCard key={episode.episodeId} episode={episode} />
+                    ))
+                  )
+                  : (
+                    <div className="text-center text-stone-500">
+                      No results found for "{query}"
+                    </div>
+                  )}
+              </>
+            )
+            : (
+              <div className="text-center text-stone-500">
+                Search for episodes by title, description, or keywords
+              </div>
+            )}
         </div>
       </main>
     </>
   );
+}
+
+export function getConfig() {
+  return {
+    render: "dynamic",
+  } as const;
 }

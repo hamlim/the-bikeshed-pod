@@ -7,7 +7,7 @@
     "cf:typegen": "wrangler types",
     "dev": "concurrently \"waku dev\" \"bun ./scripts/prebuild.tsx --watch\"",
     "prebuild": "bun ./scripts/prebuild.tsx",
-    "build": "waku build --with-cloudflare",
+    "build": "waku build",
     "start": "wrangler dev",
     "predeploy": "bun run build",
     "deploy": "wrangler deploy"
@@ -46,7 +46,7 @@
     "tailwindcss-animate": "1.0.7",
     "unified": "11.0.5",
     "unist-util-visit": "5.0.0",
-    "waku": "0.23.3",
+    "waku": "0.27.5",
     "wrangler": "4.35.0"
   },
   "imports": {
@@ -60,6 +60,7 @@
     "#rss-feed-data": "./src/rss-feed-data.json"
   },
   "devDependencies": {
+    "@hiogawa/node-loader-cloudflare": "0.0.2",
     "@biomejs/biome": "1.9.4",
     "@mdx-js/mdx": "3.1.0",
     "@mdx-js/rollup": "3.1.0",

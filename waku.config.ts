@@ -7,6 +7,7 @@ import remarkFlexibleMarkers from "remark-flexible-markers";
 import remarkFrontmatter from "remark-frontmatter";
 import remarkGfm from "remark-gfm";
 import remarkMdxFrontmatter from "remark-mdx-frontmatter";
+import type { PluginOption } from "vite";
 import { defineConfig } from "waku/config";
 
 const mdxPlugin = mdx({
@@ -39,7 +40,7 @@ export default defineConfig({
       },
     },
     plugins: [
-      mdxPlugin,
+      mdxPlugin as PluginOption,
       tailwindcss(),
       nodeLoaderCloudflare({
         environments: ["rsc"],

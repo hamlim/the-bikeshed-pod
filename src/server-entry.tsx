@@ -43,6 +43,8 @@ function httpsUpgradeMiddleware(): MiddlewareHandler {
       let cfVisitor = c.req.header("cf-visitor");
       let isHttp = false;
 
+      console.log("cfVisitor", cfVisitor);
+
       if (cfVisitor) {
         try {
           let visitor = JSON.parse(cfVisitor);
@@ -57,6 +59,9 @@ function httpsUpgradeMiddleware(): MiddlewareHandler {
         let proto = c.req.header("x-forwarded-proto");
         isHttp = proto === "http";
       }
+
+      console.log("isHttp", isHttp);
+      console.log("c.req.url", c.req.url);
 
       if (isHttp) {
         let url = new URL(c.req.url);

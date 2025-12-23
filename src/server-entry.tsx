@@ -37,6 +37,7 @@ let cloudflareMiddleware = (): MiddlewareHandler => {
 
 function httpsUpgradeMiddleware(): MiddlewareHandler {
   return async (c, next) => {
+    console.log("httpsUpgradeMiddleware");
     // Redirect HTTP to HTTPS in production
     if (import.meta.env?.PROD) {
       // In Cloudflare Workers, check the cf-visitor header to determine the original scheme

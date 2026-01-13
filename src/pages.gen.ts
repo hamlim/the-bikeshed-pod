@@ -22,6 +22,8 @@ import type { getConfig as File_Episodes16ClankersCanReviewCodeNowIndex_getConfi
 // prettier-ignore
 import type { getConfig as File_Episodes17RetroAndReact1Index_getConfig } from './pages/episodes/17/retro-and-react-1/index';
 // prettier-ignore
+import type { getConfig as File_Episodes18AiWroteMyPerformanceReviewIndex_getConfig } from './pages/episodes/18/ai-wrote-my-performance-review/index';
+// prettier-ignore
 import type { getConfig as File_Episodes2IsTheWebGettingWorseIndex_getConfig } from './pages/episodes/2/is-the-web-getting-worse/index';
 // prettier-ignore
 import type { getConfig as File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig } from './pages/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages/index';
@@ -37,6 +39,8 @@ import type { getConfig as File_Episodes7DitchTheCareerLadderIndex_getConfig } f
 import type { getConfig as File_Episodes8MonorepoMadnessIndex_getConfig } from './pages/episodes/8/monorepo-madness/index';
 // prettier-ignore
 import type { getConfig as File_Episodes9AreReactServerComponentsRiskyIndex_getConfig } from './pages/episodes/9/are-react-server-components-risky/index';
+// prettier-ignore
+import type { getConfig as File_SearchIndex_getConfig } from './pages/search/index';
 
 // prettier-ignore
 type Page =
@@ -51,6 +55,7 @@ type Page =
 | ({ path: '/episodes/15/why-internal-tooling-sucks' } & GetConfigResponse<typeof File_Episodes15WhyInternalToolingSucksIndex_getConfig>)
 | ({ path: '/episodes/16/clankers-can-review-code-now' } & GetConfigResponse<typeof File_Episodes16ClankersCanReviewCodeNowIndex_getConfig>)
 | ({ path: '/episodes/17/retro-and-react-1' } & GetConfigResponse<typeof File_Episodes17RetroAndReact1Index_getConfig>)
+| ({ path: '/episodes/18/ai-wrote-my-performance-review' } & GetConfigResponse<typeof File_Episodes18AiWroteMyPerformanceReviewIndex_getConfig>)
 | ({ path: '/episodes/2/is-the-web-getting-worse' } & GetConfigResponse<typeof File_Episodes2IsTheWebGettingWorseIndex_getConfig>)
 | ({ path: '/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages' } & GetConfigResponse<typeof File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig>)
 | ({ path: '/episodes/4/perfecting-the-pull-request' } & GetConfigResponse<typeof File_Episodes4PerfectingThePullRequestIndex_getConfig>)
@@ -61,7 +66,7 @@ type Page =
 | ({ path: '/episodes/9/are-react-server-components-risky' } & GetConfigResponse<typeof File_Episodes9AreReactServerComponentsRiskyIndex_getConfig>)
 | { path: '/episodes'; render: 'dynamic' }
 | { path: '/'; render: 'dynamic' }
-| { path: '/search'; render: 'dynamic' };
+| ({ path: '/search' } & GetConfigResponse<typeof File_SearchIndex_getConfig>);
 
 // prettier-ignore
 declare module 'waku/router' {

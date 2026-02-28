@@ -39,7 +39,7 @@
 
             <!-- Recommended Item Elements -->
             <link>https://bikeshedpod.com/episodes/21/avoiding-the-slop-with-ai-coding</link>
-            <pubDate>Sun, 22 Feb 2026 20:55:18 GMT</pubDate>
+            <pubDate>Sat, 28 Feb 2026 17:32:41 GMT</pubDate>
             <description><![CDATA[Dillon, Scott, and Matt discuss how to avoid the 'slop pit' of AI-assisted development — the tendency to accept mediocre AI-generated code without proper scrutiny. They share practical strategies for maintaining code quality including upfront planning workflows, multi-layered code review with AI and human reviewers, TDD-inspired approaches to AI coding, and the role of linting and type safety as guardrails.]]></description>
             <content:encoded><![CDATA[<h2>Summary</h2>
 <p>In this episode of The Bikeshed Podcast, Dillon, Scott, and Matt tackle a topic that&#x27;s been top of mind for Matt lately: how do you maintain high code quality standards when AI agents are writing most of your code? Matt opens up about falling into what he calls a &quot;slop pit&quot; — the habit of throwing a prompt over the wall, getting back code that technically works, and moving on without scrutinizing it. The hosts explore whether this problem is worse in large codebases versus small side projects, with Scott noting that AI tends to bolt solutions on top of existing code rather than elegantly integrating with established patterns, especially in bigger repos. Matt argues it happens everywhere, though codebase size may be a contributing factor.</p>

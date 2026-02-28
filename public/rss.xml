@@ -31,6 +31,32 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Avoiding the Slop With AI Coding</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/21/audio.mp3"
+                      type="audio/mpeg"
+                      length="81145648"/>
+            <guid isPermaLink="false">21</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/21/avoiding-the-slop-with-ai-coding</link>
+            <pubDate>Sat, 28 Feb 2026 17:32:41 GMT</pubDate>
+            <description><![CDATA[Dillon, Scott, and Matt discuss how to avoid the 'slop pit' of AI-assisted development — the tendency to accept mediocre AI-generated code without proper scrutiny. They share practical strategies for maintaining code quality including upfront planning workflows, multi-layered code review with AI and human reviewers, TDD-inspired approaches to AI coding, and the role of linting and type safety as guardrails.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>In this episode of The Bikeshed Podcast, Dillon, Scott, and Matt tackle a topic that&#x27;s been top of mind for Matt lately: how do you maintain high code quality standards when AI agents are writing most of your code? Matt opens up about falling into what he calls a &quot;slop pit&quot; — the habit of throwing a prompt over the wall, getting back code that technically works, and moving on without scrutinizing it. The hosts explore whether this problem is worse in large codebases versus small side projects, with Scott noting that AI tends to bolt solutions on top of existing code rather than elegantly integrating with established patterns, especially in bigger repos. Matt argues it happens everywhere, though codebase size may be a contributing factor.</p>
+<p>The conversation zeroes in on two key practices: planning and review. Dillon shares that he spends 10–15 minutes planning before letting AI write any code, and has been experimenting with Anthropic&#x27;s &quot;feature dev&quot; skill that does extensive codebase exploration before generating a plan. Scott reveals his workflow of using Claude&#x27;s plan mode, keeping a dedicated tab open on the generated plan file, and manually editing or conversing with the model to refine it. All three agree on a critical pitfall: having the AI generate a plan and then rubber-stamping it without actually reading and comprehending it defeats the purpose entirely.</p>
+<p>On the review side, Matt describes a multi-layered approach — spinning up a second agent to review code locally, then using HubSpot&#x27;s internal AI tool Sidekick for PR-level code review before opening it up for human review. Scott has been experimenting with a Claude code review skill that pulls recent PR history to understand review patterns. Dillon prefers reviewing on GitHub because it puts him in the right mindset, and isn&#x27;t afraid of messy draft PRs with self-comments.</p>
+<p>Testing gets significant airtime, with the hosts discussing TDD-inspired approaches to AI development — writing failing tests first and then having the agent implement against them. Dillon shares a revealing story about his team burning tokens to get test coverage from 8% to 50–60%, only to realize that increased test coverage alone doesn&#x27;t equal confidence when the underlying code is messy. The hosts also discuss the value of linting, TypeScript strictness, and other automated guardrails in keeping AI-generated code on track, while acknowledging that pattern consistency remains a largely unsolved problem even with human contributors.</p>
+<p>The episode touches on model differences, with Matt noting that GPT models tend to follow instructions more strictly while Claude sometimes takes liberties (reaching for <code>as any</code> or disabling ESLint rules). Scott and Dillon weigh in on the broader question of whether code quality still matters in an AI-first world, with Scott arguing that companies going all-in on AI without maintaining engineering standards will eventually hit painful bugs that are hard to solve even with AI assistance.</p>
+<h3>Standup:</h3>
+<p>In the standup segment, Scott shares his experience switching to rebasing (great for small branches, nightmarish for stacked PRs), plans to try Graphite and LazyGit, and mentions an upcoming skiing trip and a minor adductor pull ahead of a powerlifting meet. Dillon talks about having AI handle more of his Git workflow, pitching infrastructure improvements like batch endpoints for Cloudflare Workers, and shouts out 4A Coffee from Newton, MA. Matt recounts causing a repeat incident at HubSpot that broke front-end build testing, his remediation work on the offending service, and his experiments with OpenCode as a Claude Code alternative and Git worktrees for managing multiple branches.</p>]]></content:encoded>
+            <itunes:duration>3381</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/21/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>2026 Predictions</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/20/audio.mp3"
                       type="audio/mpeg"

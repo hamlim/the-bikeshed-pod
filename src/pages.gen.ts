@@ -24,7 +24,15 @@ import type { getConfig as File_Episodes17RetroAndReact1Index_getConfig } from '
 // prettier-ignore
 import type { getConfig as File_Episodes18AiWroteMyPerformanceReviewIndex_getConfig } from './pages/episodes/18/ai-wrote-my-performance-review/index';
 // prettier-ignore
+import type { getConfig as File_Episodes19RetroAndReact2Index_getConfig } from './pages/episodes/19/retro-and-react-2/index';
+// prettier-ignore
 import type { getConfig as File_Episodes2IsTheWebGettingWorseIndex_getConfig } from './pages/episodes/2/is-the-web-getting-worse/index';
+// prettier-ignore
+import type { getConfig as File_Episodes202026PredictionsIndex_getConfig } from './pages/episodes/20/2026-predictions/index';
+// prettier-ignore
+import type { getConfig as File_Episodes21AvoidingTheSlopWithAiCodingIndex_getConfig } from './pages/episodes/21/avoiding-the-slop-with-ai-coding/index';
+// prettier-ignore
+import type { getConfig as File_Episodes22AiAdoptionRealityCheckIndex_getConfig } from './pages/episodes/22/ai-adoption-reality-check/index';
 // prettier-ignore
 import type { getConfig as File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig } from './pages/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages/index';
 // prettier-ignore
@@ -56,7 +64,11 @@ type Page =
 | ({ path: '/episodes/16/clankers-can-review-code-now' } & GetConfigResponse<typeof File_Episodes16ClankersCanReviewCodeNowIndex_getConfig>)
 | ({ path: '/episodes/17/retro-and-react-1' } & GetConfigResponse<typeof File_Episodes17RetroAndReact1Index_getConfig>)
 | ({ path: '/episodes/18/ai-wrote-my-performance-review' } & GetConfigResponse<typeof File_Episodes18AiWroteMyPerformanceReviewIndex_getConfig>)
+| ({ path: '/episodes/19/retro-and-react-2' } & GetConfigResponse<typeof File_Episodes19RetroAndReact2Index_getConfig>)
 | ({ path: '/episodes/2/is-the-web-getting-worse' } & GetConfigResponse<typeof File_Episodes2IsTheWebGettingWorseIndex_getConfig>)
+| ({ path: '/episodes/20/2026-predictions' } & GetConfigResponse<typeof File_Episodes202026PredictionsIndex_getConfig>)
+| ({ path: '/episodes/21/avoiding-the-slop-with-ai-coding' } & GetConfigResponse<typeof File_Episodes21AvoidingTheSlopWithAiCodingIndex_getConfig>)
+| ({ path: '/episodes/22/ai-adoption-reality-check' } & GetConfigResponse<typeof File_Episodes22AiAdoptionRealityCheckIndex_getConfig>)
 | ({ path: '/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages' } & GetConfigResponse<typeof File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig>)
 | ({ path: '/episodes/4/perfecting-the-pull-request' } & GetConfigResponse<typeof File_Episodes4PerfectingThePullRequestIndex_getConfig>)
 | ({ path: '/episodes/5/testing-is-it-worth-it' } & GetConfigResponse<typeof File_Episodes5TestingIsItWorthItIndex_getConfig>)

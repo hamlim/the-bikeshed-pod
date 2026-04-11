@@ -31,6 +31,38 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Retro &amp; React - 3</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/23/audio.mp3"
+                      type="audio/mpeg"
+                      length="60351970"/>
+            <guid isPermaLink="false">23</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/23/retro-and-react-3</link>
+            <pubDate>Sat, 11 Apr 2026 20:22:23 GMT</pubDate>
+            <description><![CDATA[Dillon, Scott, and Matt unpack the chaotic saga of ClawdBot → MoldBot → OpenClaw — the rapidly-rebranded autonomous agent platform that's exploded on GitHub — and dig into the marketplace malware scandal, the credentials-access risks, and what Anthropic cutting off subscription billing tells us about the economics of agentic AI.]]></description>
+            <content:encoded><![CDATA[<h2>The OpenClaw Saga: Rebrands, Malware, and Who Pays for Your Agent</h2>
+<p>Matt, Scott, and Dillon try to make sense of one of the fastest-moving stories in agentic AI: the project that started as <strong>ClawdBot</strong>, briefly became <strong>MoldBot</strong> for about three hours, and now goes by <strong>OpenClaw</strong> — at least until the next rebrand.</p>
+<h3>What even is OpenClaw?</h3>
+<p>The crew sets the stage for Dillon (and any listener who&#x27;s been blissfully out of the loop). OpenClaw is an always-on, multi-agent autonomy platform — think &quot;proto-Jarvis&quot; or &quot;Siri but 100x.&quot; You hand it your calendar, email, Slack, messaging apps, and home automation, and it goes off and does the menial digital work for you. Matt notes its GitHub star growth has outpaced essentially every project ever, though the guys speculate how much of that is real humans vs. agents spinning up GitHub accounts and starring the repo themselves.</p>
+<h3>The marketplace malware scandal</h3>
+<p>Scott opens the episode with the bombshell: the <strong>#1 most-downloaded skill in the OpenClaw marketplace was malware</strong> — stealing SSH keys, crypto wallets, and browser cookies, and opening a reverse shell to the attacker&#x27;s server. <strong>1,184 malicious skills</strong> were found in total, with <strong>one attacker responsible for 677 packages</strong>. The conversation turns to the obvious tension: the more credentials and access you give an always-on agent, the more catastrophic a supply-chain attack on its plugin ecosystem becomes.</p>
+<h3>The rebrand carousel and the drama</h3>
+<p>The hosts walk through the dizzying pace of changes — naming, ownership questions, and the broader &quot;is this a scam?&quot; vibes swirling around the project. Matt points out the loop is so tight that anything they say will probably be outdated by the time the episode drops.</p>
+<h3>Anthropic pulls the plug on subscription billing</h3>
+<p>A big thread: Matt wanted to run his own OpenClaw agent but is held back because <strong>he can&#x27;t point it at his Claude subscription</strong> anymore. The crew theorizes why — consumer subscriptions are almost certainly loss-leaders for the model providers, while per-token API billing is where the margin lives. Shutting subscription access off for agents that burn tokens 24/7 is basically self-defense.</p>
+<h3>Tokens, tokens, tokens</h3>
+<p>Dillon makes the point that the model companies probably <em>love</em> OpenClaw in principle: it&#x27;s a perfect machine for getting customers to burn tokens faster. He also shares that he recently got a gentle slap on the wrist at work for always reaching for the most expensive model. Scott admits he never swaps models either. The guys riff on the dystopia of paying big AI companies to build agents that do work for other big companies — while no one&#x27;s handing <em>us</em> the robot.</p>
+<h3>Wrapping up</h3>
+<p>They close with predictions that the ClawdBot/OpenClaw competition between model providers will keep producing new shiny things until someone gets acquired — and a half-joking suggestion that listeners should one-shot a startup idea on Saturday afternoon and become billionaires by Monday.</p>]]></content:encoded>
+            <itunes:duration>2514</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/23/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>AI Adoption Reality Check</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/22/audio.mp3"
                       type="audio/mpeg"

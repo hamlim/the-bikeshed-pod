@@ -34,6 +34,8 @@ import type { getConfig as File_Episodes21AvoidingTheSlopWithAiCodingIndex_getCo
 // prettier-ignore
 import type { getConfig as File_Episodes22AiAdoptionRealityCheckIndex_getConfig } from './pages/episodes/22/ai-adoption-reality-check/index';
 // prettier-ignore
+import type { getConfig as File_Episodes23RetroAndReact3Index_getConfig } from './pages/episodes/23/retro-and-react-3/index';
+// prettier-ignore
 import type { getConfig as File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig } from './pages/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages/index';
 // prettier-ignore
 import type { getConfig as File_Episodes4PerfectingThePullRequestIndex_getConfig } from './pages/episodes/4/perfecting-the-pull-request/index';
@@ -69,6 +71,7 @@ type Page =
 | ({ path: '/episodes/20/2026-predictions' } & GetConfigResponse<typeof File_Episodes202026PredictionsIndex_getConfig>)
 | ({ path: '/episodes/21/avoiding-the-slop-with-ai-coding' } & GetConfigResponse<typeof File_Episodes21AvoidingTheSlopWithAiCodingIndex_getConfig>)
 | ({ path: '/episodes/22/ai-adoption-reality-check' } & GetConfigResponse<typeof File_Episodes22AiAdoptionRealityCheckIndex_getConfig>)
+| ({ path: '/episodes/23/retro-and-react-3' } & GetConfigResponse<typeof File_Episodes23RetroAndReact3Index_getConfig>)
 | ({ path: '/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages' } & GetConfigResponse<typeof File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig>)
 | ({ path: '/episodes/4/perfecting-the-pull-request' } & GetConfigResponse<typeof File_Episodes4PerfectingThePullRequestIndex_getConfig>)
 | ({ path: '/episodes/5/testing-is-it-worth-it' } & GetConfigResponse<typeof File_Episodes5TestingIsItWorthItIndex_getConfig>)

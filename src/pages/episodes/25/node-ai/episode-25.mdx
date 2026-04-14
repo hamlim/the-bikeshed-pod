@@ -1,0 +1,41 @@
+---
+episodeId: "25"
+slug: "node-ai"
+title: "No(de.js) AI"
+shortDescription: "Dillon, Scott, and Matt dig into the drama around Matteo Collina's 19,000-line Node.js PR — written largely with Claude Code over Christmas break — that's forced the Node.js community to confront how AI-assisted contributions fit into open source governance, the DCO, and the future of runtimes like Bun and Deno."
+hosts: ['dillon', 'scott', 'matt']
+metadata: ['ai', 'bun', 'node.js', 'deno', 'claude-code']
+publishTime: 1776125735729
+duration: 1862
+audioURL: "https://assets.bikeshedpod.com/episodes/25/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/25/captions.vtt"
+fileSizeBytes: 44694801
+blueskyPostUri: ""
+---
+
+## The 19,000-Line Slopfork: Node.js, Claude Code, and the AI Contribution Crisis
+
+Matt, Scott, and Dillon unpack one of the messiest open source dramas of the moment: Matteo Collina — Node TSC member and Fastify creator — dropped a ~19,000-line PR on Node.js core over Christmas break, openly built with the help of Claude Code. The PR adds long-requested **virtual file system** support, intercepting 164+ points across `fs`, `fs/promises`, and the module loading system. Over half the diff is tests, which is part of why it raised eyebrows in the first place — that volume of integration tests is something a human contributor likely wouldn't have written by hand.
+
+### The DCO question
+The crew dig into the **Developer's Certificate of Origin (DCO)** and whether agent-generated code cleanly satisfies it. Does Claude-written code count as "authored by you"? It's still a foggy question, and one contributor was rattled enough to start a **petition to ban AI-generated code from Node.js core**. Matteo's response: *I made all the decisions, I fixed the AI's mistakes, it's still my code.*
+
+### Process, not just AI
+Scott's take is that the size and abruptness are doing as much damage as the AI angle. There were existing issues discussing a VFS, but no RFC, no upfront tech plan, and the commit history is borderline unreviewable. Classic "easier to ask forgiveness than permission" energy — but on a change that touches a major surface of the runtime. The crew sympathize with the engineer's instinct to just *ship the thing*, but agree that a feature this big needed buy-in first. (Scott would have left a `nit:` comment asking for a rebase to a single commit.)
+
+### How do you even police this?
+Dillon raises the obvious enforcement problem: AI detection tools have the same false-positive issues that plague universities. A one-line bug fix is indistinguishable from a human's. That points toward either accepting AI-assisted contributions outright or building entirely new governance — which is roughly where the broader OSS community seems to be landing (the related issue was reportedly closed with consensus that AI-assisted dev *is* allowed).
+
+### What if Node says no?
+Matt poses the strategic question: if Node.js bans AI contributions, does that hand momentum to **Bun** and **Deno**? Bun is already leaning hard into Claude-assisted development, ships features fast (native SQLite being the canonical example), and operates as a company rather than a committee — so it has structural advantages on velocity and backwards-compat tradeoffs. Scott pushes back that big corporations are slow to migrate runtimes regardless, but Matt counters that **agents dramatically lower switching costs** — point Claude at your codebase and say "migrate this from Node to Bun" and it's plausibly a weekend.
+
+### Slopforks and the SQLite playbook
+The conversation widens to **Cloudflare's "vinext"** — a Vite-based Next.js reimplementation built by pointing an agent at Next's test suite, which popularized the term **slopfork**. That sparked talk of TLDraw considering closing their test suite to prevent agent-driven reimplementation, and the long-standing **SQLite model** where the code is open source but the comprehensive test suite is paid/closed. Expect more projects to consider that pattern as agents make test-suite-driven reimplementation trivially cheap.
+
+### Closing takes
+- Open source projects may need to *lean into* AI just to stay competitive with company-backed runtimes.
+- The irony: another Node contributor used Claude to write a deep-dive review of the PR itself.
+- Matteo also published a userland polyfill on npm, hedging against Node's slow merge process.
+- Scott's verdict: merge it already.
+
+Plus a brief detour on the iojs fork of yore, and Matt's proposed name for the inevitable Node slopfork: **input-output.js**.

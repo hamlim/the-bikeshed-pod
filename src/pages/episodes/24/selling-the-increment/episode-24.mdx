@@ -1,0 +1,50 @@
+---
+episodeId: "24"
+slug: "selling-the-increment"
+title: "Selling The Increment: PR Scope, Nitpicks, and Token Anxiety"
+shortDescription: "Dillon, Scott, and Matt dig into what happens when PR feedback drifts from the plan the team thought they aligned on — scope creep, nitpick comments that block merges, and the eternal tension between shipping the incremental thing and building the \"ideal\" thing. They land on communication, lightweight design docs, and a healthier code review culture as the way through. Plus: Dillon discovers token anxiety after burning $300 of Opus in four hours, and Scott spoils Project Hail Mary for Matt."
+hosts: ['scott', 'dillon', 'matt']
+metadata: ['ai', 'pull-requests', 'code-review', 'teamwork', 'collaboration']
+publishTime: 1776125299352
+duration: 2433
+audioURL: "https://assets.bikeshedpod.com/episodes/24/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/24/captions.vtt"
+fileSizeBytes: 58390278
+blueskyPostUri: ""
+---
+
+## Main Topic: When PR Feedback Diverges From The Plan
+
+Matt and Scott both recently shipped PRs and got reviewer feedback that didn't match what they thought the team had agreed on — either asking for far more scope than intended, or pushing back on an incremental approach in favor of the "ideal" final solution.
+
+### Scope Creep In Review
+The classic example: you make one focused change in an old codebase, and a reviewer points to an unrelated `eslint-disable` comment five lines above your diff and asks you to "fix it properly." Suddenly your tight PR is fighting a battle you didn't sign up for.
+
+### Incremental vs. Ideal
+Scott frames the core tension: most of the team agrees with incremental PRs in principle, but in practice a reviewer can blindside you by insisting the PR get all the way to the ideal end-state. The skill is **selling the increment** — showing the path from "value shipped today" to "ideal solution later" so reviewers buy into the staging, not just the destination.
+
+Scott's concrete example: he was building end-to-end smoke tests where the ideal version was blocked by another team. He had to plead his case, point to follow-up tickets, and frame the smoke tests as immediate value on the way to the real thing.
+
+### Trust, Teams, and Context
+Dillon notes he doesn't hit this much — his team has jelled, they tell each other up front "you're not going to like this, let's talk in person." Scott contrasts that with newer teams or strong-opinioned teammates where trust hasn't been built and standups go in one ear, out the other.
+
+### Plans as the Through-Line
+The group converges on **communicate, communicate, communicate**. Matt argues for creating a clear through-line — an issue or doc that breaks the work into steps so a reviewer landing on PR #3 can click back to the plan. It doesn't have to be a senior-staff-signoff design doc; even a one-pager or a markdown plan from Claude counts. Matt also pitches "shift left" on reviews: get eyes on the plan *before* the PR, not at PR time.
+
+Dillon introduces the PRD framing — product requirements doc owned by PMs, separate from an engineering design doc. When you don't have a dedicated PM, you have to own that artifact yourself, and teams sometimes forget.
+
+## Nitpicks and Code Review Culture
+
+Matt's open question: how do you stop blocking nitpick comments from dominating? Scott's stance is firm — **nitpicks should not block PRs**. Unless there's a real architectural problem or a literal bug, call it out, approve anyway, and let the author decide whether to address it now or as a follow-up. Code review is a two-way conversation, not a one-way directive, regardless of seniority.
+
+Dillon's tactics: mark nitpicks as out-of-scope with a follow-up ticket, or just take the conversation to Slack/in-person to break through faster than async GitHub threads.
+
+A frustrating wrinkle Matt raises: their SOX-required approval process dismisses approvals on any new push, so even fixing a non-blocking comment forces a re-review cycle — actively discouraging the fast-follow behavior everyone says they want.
+
+The underlying message: assume good intent, trust your fellow engineers, and recognize that increasingly you may be reviewing a Claude-generated PR anyway.
+
+## Stand-Up
+
+- **Dillon**: Witnessed comedic whiplash at work — one presenter said "turn on bypass permissions and use Opus for everything," and an engineering leader said the exact opposite an hour later. Has been vibe-coding a personal dashboard with Opus and burned **$300 in four hours**, leading him to discover "token anxiety." Can't even relax on the couch wondering if the agent is deleting his computer.
+- **Scott**: Powerlifting meet next Sunday, body hurts. Saw *Project Hail Mary*, loved it, then proceeded to spoil it on-mic.
+- **Matt**: Going to see *Project Hail Mary* tonight (thanks Scott). Otherwise enjoying being back in the metaphorical (and literal) booth.

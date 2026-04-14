@@ -31,6 +31,47 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Selling The Increment: PR Scope, Nitpicks, and Token Anxiety</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/24/audio.mp3"
+                      type="audio/mpeg"
+                      length="58390278"/>
+            <guid isPermaLink="false">24</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/24/selling-the-increment</link>
+            <pubDate>Tue, 14 Apr 2026 00:08:19 GMT</pubDate>
+            <description><![CDATA[Dillon, Scott, and Matt dig into what happens when PR feedback drifts from the plan the team thought they aligned on — scope creep, nitpick comments that block merges, and the eternal tension between shipping the incremental thing and building the "ideal" thing. They land on communication, lightweight design docs, and a healthier code review culture as the way through. Plus: Dillon discovers token anxiety after burning $300 of Opus in four hours, and Scott spoils Project Hail Mary for Matt.]]></description>
+            <content:encoded><![CDATA[<h2>Main Topic: When PR Feedback Diverges From The Plan</h2>
+<p>Matt and Scott both recently shipped PRs and got reviewer feedback that didn&#x27;t match what they thought the team had agreed on — either asking for far more scope than intended, or pushing back on an incremental approach in favor of the &quot;ideal&quot; final solution.</p>
+<h3>Scope Creep In Review</h3>
+<p>The classic example: you make one focused change in an old codebase, and a reviewer points to an unrelated <code>eslint-disable</code> comment five lines above your diff and asks you to &quot;fix it properly.&quot; Suddenly your tight PR is fighting a battle you didn&#x27;t sign up for.</p>
+<h3>Incremental vs. Ideal</h3>
+<p>Scott frames the core tension: most of the team agrees with incremental PRs in principle, but in practice a reviewer can blindside you by insisting the PR get all the way to the ideal end-state. The skill is <strong>selling the increment</strong> — showing the path from &quot;value shipped today&quot; to &quot;ideal solution later&quot; so reviewers buy into the staging, not just the destination.</p>
+<p>Scott&#x27;s concrete example: he was building end-to-end smoke tests where the ideal version was blocked by another team. He had to plead his case, point to follow-up tickets, and frame the smoke tests as immediate value on the way to the real thing.</p>
+<h3>Trust, Teams, and Context</h3>
+<p>Dillon notes he doesn&#x27;t hit this much — his team has jelled, they tell each other up front &quot;you&#x27;re not going to like this, let&#x27;s talk in person.&quot; Scott contrasts that with newer teams or strong-opinioned teammates where trust hasn&#x27;t been built and standups go in one ear, out the other.</p>
+<h3>Plans as the Through-Line</h3>
+<p>The group converges on <strong>communicate, communicate, communicate</strong>. Matt argues for creating a clear through-line — an issue or doc that breaks the work into steps so a reviewer landing on PR #3 can click back to the plan. It doesn&#x27;t have to be a senior-staff-signoff design doc; even a one-pager or a markdown plan from Claude counts. Matt also pitches &quot;shift left&quot; on reviews: get eyes on the plan <em>before</em> the PR, not at PR time.</p>
+<p>Dillon introduces the PRD framing — product requirements doc owned by PMs, separate from an engineering design doc. When you don&#x27;t have a dedicated PM, you have to own that artifact yourself, and teams sometimes forget.</p>
+<h2>Nitpicks and Code Review Culture</h2>
+<p>Matt&#x27;s open question: how do you stop blocking nitpick comments from dominating? Scott&#x27;s stance is firm — <strong>nitpicks should not block PRs</strong>. Unless there&#x27;s a real architectural problem or a literal bug, call it out, approve anyway, and let the author decide whether to address it now or as a follow-up. Code review is a two-way conversation, not a one-way directive, regardless of seniority.</p>
+<p>Dillon&#x27;s tactics: mark nitpicks as out-of-scope with a follow-up ticket, or just take the conversation to Slack/in-person to break through faster than async GitHub threads.</p>
+<p>A frustrating wrinkle Matt raises: their SOX-required approval process dismisses approvals on any new push, so even fixing a non-blocking comment forces a re-review cycle — actively discouraging the fast-follow behavior everyone says they want.</p>
+<p>The underlying message: assume good intent, trust your fellow engineers, and recognize that increasingly you may be reviewing a Claude-generated PR anyway.</p>
+<h2>Stand-Up</h2>
+<ul>
+<li><strong>Dillon</strong>: Witnessed comedic whiplash at work — one presenter said &quot;turn on bypass permissions and use Opus for everything,&quot; and an engineering leader said the exact opposite an hour later. Has been vibe-coding a personal dashboard with Opus and burned <strong>$300 in four hours</strong>, leading him to discover &quot;token anxiety.&quot; Can&#x27;t even relax on the couch wondering if the agent is deleting his computer.</li>
+<li><strong>Scott</strong>: Powerlifting meet next Sunday, body hurts. Saw <em>Project Hail Mary</em>, loved it, then proceeded to spoil it on-mic.</li>
+<li><strong>Matt</strong>: Going to see <em>Project Hail Mary</em> tonight (thanks Scott). Otherwise enjoying being back in the metaphorical (and literal) booth.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>2433</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/24/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Retro &amp; React - 3</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/23/audio.mp3"
                       type="audio/mpeg"

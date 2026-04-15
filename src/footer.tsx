@@ -28,7 +28,11 @@ export function Footer() {
       </nav>
       {/* Right Column - Info and Social */}
       <section className="flex flex-col gap-2 items-start">
-        <p>&copy; <span suppressHydrationWarning>{new Date().getFullYear()}</span> The Bikeshed Podcast</p>
+        <p>
+          &copy;{" "}
+          <span suppressHydrationWarning>{new Date().getFullYear()}</span> The
+          Bikeshed Podcast
+        </p>
         <Anchor href="https://bsky.app/profile/bikeshedpod.com">
           <Bluesky className="w-4 h-4 mr-2" /> Follow us on Bluesky
         </Anchor>

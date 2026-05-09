@@ -31,6 +31,47 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Plan Mode Sucks</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/27/audio.mp3"
+                      type="audio/mpeg"
+                      length="49438219"/>
+            <guid isPermaLink="false">27</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/27/plan-mode-sucks</link>
+            <pubDate>Sat, 09 May 2026 22:01:41 GMT</pubDate>
+            <description><![CDATA[Dillon, Scott, and Matt dig into Matt's hot take that you shouldn't be using plan mode in your AI coding agents anymore. They land on a nuanced agreement — planning still matters, but plan mode in Claude Code and Codex has stopped pulling its weight, spinning for 30 minutes and dumping a markdown doc instead of asking the clarifying questions it used to. Plus grill-me skills, POC-first workflows, Scott's eighth powerlifting meet, and Matt accidentally reinventing Tanstack Query.]]></description>
+            <content:encoded><![CDATA[<h2>Episode Summary:</h2>
+<p>Matt revisits a hot take from a year ago that he believes more strongly now: you shouldn&#x27;t be using <strong>plan mode</strong> in your AI coding agents. The conversation lands on a more nuanced position — planning still matters, plan mode just isn&#x27;t the right tool for it anymore.</p>
+<h3>The Case Against Plan Mode</h3>
+<p>Matt argues that plan mode in <strong>Claude Code</strong> and <strong>Codex</strong> has degraded over the past month or so. Where it used to ask a ton of clarifying questions, it now spins for 30 minutes and hands back a full markdown plan without ever pinging you for context. The on-rails experience has stopped doing the part that made it valuable.</p>
+<p>Scott pushes back gently: plan mode still has a place, especially for big architectural changes where one-shotting will leave you with a context provider sprinkled across multiple files (his real example from the previous Friday). But he agrees the out-of-the-box version isn&#x27;t the only way to plan, and often isn&#x27;t the best one.</p>
+<h3>Planning ≠ Plan Mode</h3>
+<p>The real takeaway: planning the <em>activity</em> is still incredibly valuable. Plan mode the <em>feature</em> is just one — increasingly mediocre — implementation of it. The crew walks through the alternatives they&#x27;re actually reaching for:</p>
+<h4>The Grill Me Skill</h4>
+<p>Matt surfaces the <strong>grill-me skill</strong> Matt Pocock shared (and Dillon dropped in the Discord): a one-line skill that tells the agent to keep asking questions until it actually understands what you&#x27;re trying to build. Strong fit for feature work where you don&#x27;t yet know the shape of the problem space.</p>
+<h4>POC-First Development</h4>
+<p>Dillon describes his current workflow on a big work project: POC the entire user flow first, then POC each piece of the flow before building anything for real. He&#x27;s been using <strong>Superpowers</strong> (the most popular Claude Code skill) and its <strong>brainstorming</strong> sub-skill, which builds mock interfaces so you can compare options. He&#x27;d rather over-plan than have to tell a coworker <em>&quot;Claude thought it was a good idea&quot;</em> when they ask why something works the way it does.</p>
+<h4>The Plan / Build Spectrum</h4>
+<p>Matt frames plan mode and build mode as two ends of a spectrum where you actually want to land somewhere in the middle — exploring three or four ideas, spinning off agents to POC each, bringing findings back, iterating. He hasn&#x27;t found a skill that nails this loop yet, and invites listeners with a working setup to share it in the Discord.</p>
+<h4>Plan Mode Is Still Great for Newcomers</h4>
+<p>Dillon&#x27;s softer take: plan mode is genuinely useful when you&#x27;re new to agentic tooling. It gives you a clear default workflow before you know what you actually need. You grow out of it as you discover the specific checks — codebase exploration, TDD, edge-case enumeration — you want before any code gets written.</p>
+<h4>Ask for Sources</h4>
+<p>Dillon&#x27;s quick aside: when you&#x27;re using the agent to <em>learn</em> something, ask it for sources. It&#x27;ll mash concepts together, and being able to cross-check against the actual docs catches the seams.</p>
+<h2>Standup / Life Updates</h2>
+<ul>
+<li><strong>Dillon</strong> spent the week in northwest Arkansas (Fayetteville and Bentonville) for his brother&#x27;s birthday and a baby shower for his niece, due in June. Bentonville was a surprise — Walmart HQ has turned the area into a brand-new, Apple-campus-tier hub since the company required vendors to relocate post-COVID. Cost of living roughly half of Boston, Onyx Coffee on the ground. He looked at the Walmart careers page.</li>
+<li><strong>Scott</strong> completed his eighth powerlifting meet in eight years (with a two-year, two-month injury gap): <strong>597.5 kg total</strong> at 82.5 kg bodyweight — 200 squat, 140 bench, 257.5 deadlift. That&#x27;s a 1,317 lb total. He&#x27;s 85 kg from the national qualifying total, or he turns 40 first and qualifies on the masters total he&#x27;s already cleared. Also teasing some open source work he&#x27;s &quot;boiling down to a usable small chunk&quot; — ETA four or five years per Scott; <em>&quot;what model are you using?&quot;</em> per Dillon.</li>
+<li><strong>Matt</strong> has been ping-ponging across his personal tooling: gave up vibe-coding his own note-taking app, gave Notion another try, set up scheduled Claude Code tasks to summarize recent notes, and switched from Arc to Chrome specifically for the Claude Chrome extension and Cowork. Recording from a HubSpot meeting room during an onsite, with bachelor party planning in May wrapping up. And in the loudest beat of the segment: he had the agent build a library blending <strong>CRDTs</strong>, offline-first, RSC, and server actions — pulling from auto-merge, YJS, and Tanstack Query — and it dutifully <strong>reinvented Tanstack Query</strong>.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>2060</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/27/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Vibe-Coding Your Own Productivity Stack</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/26/audio.mp3"
                       type="audio/mpeg"

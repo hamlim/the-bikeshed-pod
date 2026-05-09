@@ -31,6 +31,66 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Vibe-Coding Your Own Productivity Stack</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/26/audio.mp3"
+                      type="audio/mpeg"
+                      length="49438219"/>
+            <guid isPermaLink="false">26</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/26/vibe-coding-your-own-productivity-stack</link>
+            <pubDate>Sat, 09 May 2026 19:23:15 GMT</pubDate>
+            <description><![CDATA[Dillon walks Scott and Matt through the daily briefing dashboard he's been vibe-coding at work — a single page that aggregates his to-dos, PRs, JIRA tickets, Datadog alerts, and recent notes — and shares the custom Claude skills he's built around it. The conversation explores AI as a fast track to personal software, where AI agents struggle (keeping consistent UI), where they shine (generating visual diagrams to understand problems), and the trap of suddenly having 20 open PRs because you can ship faster than you can review.]]></description>
+            <content:encoded><![CDATA[<h2>Episode Summary</h2>
+<p>In this episode, Dillon walks Scott and Matt through a personal productivity dashboard he&#x27;s been building with Claude — and uses it as a jumping-off point for a wider conversation about what AI unlocks for &quot;personal software.&quot;</p>
+<h3>The Daily Briefing Dashboard</h3>
+<p>Dillon&#x27;s dashboard started as a joke: use Claude&#x27;s new cron feature to post a daily inspirational quote at 9 a.m. He quickly realized he could put something genuinely useful there instead. The result is a single page he opens every morning that surfaces:</p>
+<ul>
+<li>To-dos</li>
+<li>Open PRs</li>
+<li>JIRA tickets</li>
+<li>Datadog alerts</li>
+<li>Summaries of recent notes</li>
+<li>A custom Kanban board for tracking dev &quot;harnesses&quot; (scoping → planning →
+execution → review)</li>
+</ul>
+<p>It&#x27;s intentionally simple under the hood: zero dependencies, a Python server, HTML, and CSS. <code>make start</code> and you&#x27;re running. He&#x27;s burning roughly $2,500/mo in Claude tokens building it, has shared it openly with leadership and the broader company, and treats it as a sandbox for trying anything new in AI.</p>
+<h3>Why Build It Yourself?</h3>
+<p>Matt frames the bigger thesis: AI is a fast track to <em>personal software</em> — the small niche of building a tool tuned exactly to your own workflow rather than adopting something off the shelf or solving for millions of users. The closest off-the-shelf comparison would be something like Notion or Dream.ai, but neither would match Dillon&#x27;s specific data sources or the way he wants to see them.</p>
+<h3>Where AI Surprised Him (Good and Bad)</h3>
+<ul>
+<li><strong>Struggles with UI consistency.</strong> AI gets the functionality right, but drifts from the design system, makes spacing and layout mistakes, and occasionally tries to &quot;helpfully&quot; refactor onto a totally different stack (e.g. &quot;let&#x27;s add SQLite&quot;) mid-project. Dillon&#x27;s mitigation: keep it simple, have Claude audit the UI and write its own lightweight design system, and push reminders into CLAUDE.md.</li>
+<li><strong>Matt&#x27;s tip:</strong> expose a route on your app that renders all components on one page (poor man&#x27;s Storybook) so the agent can discover existing patterns.</li>
+<li><strong>Unexpected win: visual thinking.</strong> Dillon&#x27;s been asking Claude to generate HTML pages with architecture diagrams, user flows, and dependency maps to build a mental model of unfamiliar projects before diving in. Matt does the same to navigate his monorepo&#x27;s package dependency graph.</li>
+</ul>
+<h3>Skills Dillon Has Built</h3>
+<ul>
+<li><strong>Start of Day / End of Day</strong> — a paired skill that asks reflection questions in the evening and gives him a standup-style recap in the morning, including &quot;what&#x27;s on my radar that I&#x27;m not thinking about.&quot;</li>
+<li><strong>PR Status / PR Watch</strong> — pulls GitHub check status, surfaces comments, and runs every five minutes to send a Mac notification when a PR is ready to merge.</li>
+<li><strong>Mind Dump</strong> — partner skill to End of Day that takes a stream of consciousness and organizes it into a structured markdown doc.</li>
+<li><strong>Contentful skills</strong> — connect to the CMS API to pull content types, explain how they work, and (experimentally) architect new ones.</li>
+<li><strong>The &quot;Grill Me&quot; skill</strong> (borrowed from Matt Pocock) — has Claude slowly ask questions about a plan to surface edge cases and force thinking through the problem.</li>
+</ul>
+<p>His meta-tip: every time you use a skill, reflect on how it did and ask
+Claude to improve it.</p>
+<h3>The Productivity Paradox</h3>
+<p>Has it actually made him more productive? Yes — but the new problem is spreading too thin. Dillon shipped 14 PRs in a week and now has 20 open ones he can&#x27;t get back to. As Matt jokes: &quot;the trick is to go faster.&quot; The real discipline is cleaning up after yourself, slowing down, and focusing on one thing at a time, even when you have 12 work trees open.</p>
+<h3>Caveats and Takeaways</h3>
+<ul>
+<li>This is <em>personal software</em> — running locally, no deploy target, code quality is intentionally rough. Not how Dillon does actual work.</li>
+<li>A lot of devs at his company are afraid to build things outside their tickets. Dillon&#x27;s been transparent with leadership and turned it into a shared resource instead.</li>
+<li>If you want to start: literally talk to Claude (or sketch a screenshot) about what you&#x27;d want to see every morning, and go from there.</li>
+</ul>
+<h3>Teasers</h3>
+<p>Future episode ideas raised: how to get good UI out of agents, and using AI to onboard yourself onto an unfamiliar codebase. Scott also hints he has a &quot;pretty good solution&quot; for the UI consistency problem — saving that for another episode.</p>]]></content:encoded>
+            <itunes:duration>2060</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/26/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>No(de.js) AI</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/25/audio.mp3"
                       type="audio/mpeg"

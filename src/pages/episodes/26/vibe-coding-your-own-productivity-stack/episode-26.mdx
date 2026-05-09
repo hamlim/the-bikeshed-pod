@@ -1,0 +1,67 @@
+---
+episodeId: "26"
+slug: "vibe-coding-your-own-productivity-stack"
+title: "Vibe-Coding Your Own Productivity Stack"
+shortDescription: "Dillon walks Scott and Matt through the daily briefing dashboard he's been vibe-coding at work — a single page that aggregates his to-dos, PRs, JIRA tickets, Datadog alerts, and recent notes — and shares the custom Claude skills he's built around it. The conversation explores AI as a fast track to personal software, where AI agents struggle (keeping consistent UI), where they shine (generating visual diagrams to understand problems), and the trap of suddenly having 20 open PRs because you can ship faster than you can review."
+hosts: ['scott', 'dillon', 'matt']
+metadata: ['ai', 'dashboard', 'skills']
+publishTime: 1778354595392
+duration: 2060
+audioURL: "https://assets.bikeshedpod.com/episodes/26/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/26/captions.vtt"
+fileSizeBytes: 49438219
+blueskyPostUri: ""
+---
+
+## Episode Summary
+
+In this episode, Dillon walks Scott and Matt through a personal productivity dashboard he's been building with Claude — and uses it as a jumping-off point for a wider conversation about what AI unlocks for "personal software."
+
+### The Daily Briefing Dashboard
+
+Dillon's dashboard started as a joke: use Claude's new cron feature to post a daily inspirational quote at 9 a.m. He quickly realized he could put something genuinely useful there instead. The result is a single page he opens every morning that surfaces:
+
+- To-dos
+- Open PRs
+- JIRA tickets
+- Datadog alerts
+- Summaries of recent notes
+- A custom Kanban board for tracking dev "harnesses" (scoping → planning →
+  execution → review)
+
+It's intentionally simple under the hood: zero dependencies, a Python server, HTML, and CSS. `make start` and you're running. He's burning roughly $2,500/mo in Claude tokens building it, has shared it openly with leadership and the broader company, and treats it as a sandbox for trying anything new in AI.
+
+### Why Build It Yourself?
+
+Matt frames the bigger thesis: AI is a fast track to *personal software* — the small niche of building a tool tuned exactly to your own workflow rather than adopting something off the shelf or solving for millions of users. The closest off-the-shelf comparison would be something like Notion or Dream.ai, but neither would match Dillon's specific data sources or the way he wants to see them.
+
+### Where AI Surprised Him (Good and Bad)
+
+- **Struggles with UI consistency.** AI gets the functionality right, but drifts from the design system, makes spacing and layout mistakes, and occasionally tries to "helpfully" refactor onto a totally different stack (e.g. "let's add SQLite") mid-project. Dillon's mitigation: keep it simple, have Claude audit the UI and write its own lightweight design system, and push reminders into CLAUDE.md.
+- **Matt's tip:** expose a route on your app that renders all components on one page (poor man's Storybook) so the agent can discover existing patterns.
+- **Unexpected win: visual thinking.** Dillon's been asking Claude to generate HTML pages with architecture diagrams, user flows, and dependency maps to build a mental model of unfamiliar projects before diving in. Matt does the same to navigate his monorepo's package dependency graph.
+
+### Skills Dillon Has Built
+
+- **Start of Day / End of Day** — a paired skill that asks reflection questions in the evening and gives him a standup-style recap in the morning, including "what's on my radar that I'm not thinking about."
+- **PR Status / PR Watch** — pulls GitHub check status, surfaces comments, and runs every five minutes to send a Mac notification when a PR is ready to merge.
+- **Mind Dump** — partner skill to End of Day that takes a stream of consciousness and organizes it into a structured markdown doc.
+- **Contentful skills** — connect to the CMS API to pull content types, explain how they work, and (experimentally) architect new ones.
+- **The "Grill Me" skill** (borrowed from Matt Pocock) — has Claude slowly ask questions about a plan to surface edge cases and force thinking through the problem.
+
+His meta-tip: every time you use a skill, reflect on how it did and ask
+Claude to improve it.
+
+### The Productivity Paradox
+
+Has it actually made him more productive? Yes — but the new problem is spreading too thin. Dillon shipped 14 PRs in a week and now has 20 open ones he can't get back to. As Matt jokes: "the trick is to go faster." The real discipline is cleaning up after yourself, slowing down, and focusing on one thing at a time, even when you have 12 work trees open.
+
+### Caveats and Takeaways
+
+- This is *personal software* — running locally, no deploy target, code quality is intentionally rough. Not how Dillon does actual work.
+- A lot of devs at his company are afraid to build things outside their tickets. Dillon's been transparent with leadership and turned it into a shared resource instead.
+- If you want to start: literally talk to Claude (or sketch a screenshot) about what you'd want to see every morning, and go from there.
+
+### Teasers
+
+Future episode ideas raised: how to get good UI out of agents, and using AI to onboard yourself onto an unfamiliar codebase. Scott also hints he has a "pretty good solution" for the UI consistency problem — saving that for another episode.

@@ -6,6 +6,7 @@
   "scripts": {
     "cf:typegen": "wrangler types",
     "dev": "concurrently \"waku dev\" \"bun ./scripts/prebuild.tsx --watch\"",
+    "new": "bun ./scripts/new-episode.ts",
     "prebuild": "bun ./scripts/prebuild.tsx",
     "build": "waku build",
     "start": "wrangler dev",

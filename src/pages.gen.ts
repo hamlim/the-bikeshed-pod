@@ -44,6 +44,8 @@ import type { getConfig as File_Episodes26VibeCodingYourOwnProductivityStackInde
 // prettier-ignore
 import type { getConfig as File_Episodes27PlanModeSucksIndex_getConfig } from './pages/episodes/27/plan-mode-sucks/index';
 // prettier-ignore
+import type { getConfig as File_Episodes28TheAgentsArentTheOnlyOnesOverworkedIndex_getConfig } from './pages/episodes/28/the-agents-arent-the-only-ones-overworked/index';
+// prettier-ignore
 import type { getConfig as File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig } from './pages/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages/index';
 // prettier-ignore
 import type { getConfig as File_Episodes4PerfectingThePullRequestIndex_getConfig } from './pages/episodes/4/perfecting-the-pull-request/index';
@@ -84,6 +86,7 @@ type Page =
 | ({ path: '/episodes/25/node-ai' } & GetConfigResponse<typeof File_Episodes25NodeAiIndex_getConfig>)
 | ({ path: '/episodes/26/vibe-coding-your-own-productivity-stack' } & GetConfigResponse<typeof File_Episodes26VibeCodingYourOwnProductivityStackIndex_getConfig>)
 | ({ path: '/episodes/27/plan-mode-sucks' } & GetConfigResponse<typeof File_Episodes27PlanModeSucksIndex_getConfig>)
+| ({ path: '/episodes/28/the-agents-arent-the-only-ones-overworked' } & GetConfigResponse<typeof File_Episodes28TheAgentsArentTheOnlyOnesOverworkedIndex_getConfig>)
 | ({ path: '/episodes/3/a-day-in-the-life-coding-coffee-and-commit-messages' } & GetConfigResponse<typeof File_Episodes3ADayInTheLifeCodingCoffeeAndCommitMessagesIndex_getConfig>)
 | ({ path: '/episodes/4/perfecting-the-pull-request' } & GetConfigResponse<typeof File_Episodes4PerfectingThePullRequestIndex_getConfig>)
 | ({ path: '/episodes/5/testing-is-it-worth-it' } & GetConfigResponse<typeof File_Episodes5TestingIsItWorthItIndex_getConfig>)

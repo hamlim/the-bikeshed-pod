@@ -3,13 +3,17 @@
 import { Share } from "lucide-react";
 import { useEffect, useState } from "react";
 import type { ReactNode } from "react";
+
 import { Anchor } from "./anchor";
 import { Bluesky } from "./bluesky";
 
 export function ShareToBluesky({
   children,
   title,
-}: { children: ReactNode; title: string }) {
+}: {
+  children: ReactNode;
+  title: string;
+}) {
   let [url, setUrl] = useState("");
 
   useEffect(() => {

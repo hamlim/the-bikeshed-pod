@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+
 import { StateContext, UpdateContext } from "./audio-context";
 import type { AudioStateContext, AudioUpdateContext } from "./audio-context";
 
@@ -69,7 +70,6 @@ export function Provider({ children }: { children: React.ReactNode }) {
       <UpdateContext value={audioUpdateContext}>
         {children}
         {track ? (
-          // biome-ignore lint/a11y/useMediaCaption: <explanation>
           <audio
             ref={audioRef}
             // @TODO: I can't figure out any of this - none of these handlers are being called

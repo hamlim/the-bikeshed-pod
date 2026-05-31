@@ -1,9 +1,11 @@
 import fs from "node:fs/promises";
+
 import watcher from "@parcel/watcher";
 import glob from "fast-glob";
 import matter from "gray-matter";
 import { transformMarkdown } from "mdxlite";
 import { renderToString } from "react-dom/server";
+
 import { hosts } from "../src/hosts";
 import type { EpisodeMetadata, Host } from "../src/types";
 

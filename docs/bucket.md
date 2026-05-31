@@ -14,4 +14,3 @@ episodes/
     audio.mp3
     transcriptions.srt
 ```
-

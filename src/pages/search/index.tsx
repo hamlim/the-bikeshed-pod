@@ -6,12 +6,14 @@ import type {
 } from "@orama/orama";
 import { Search } from "lucide-react";
 import type { PageProps } from "waku/router";
+
 import { EpisodeCard } from "#components/episode-card.js";
 import { Heading } from "#components/heading";
 import { Input } from "#components/ui/input";
 import { Label } from "#components/ui/label";
 import episodeMetadata from "#episode-metadata";
 import { Button } from "#ui/button";
+
 import { hosts } from "../../hosts";
 import type { EpisodeMetadata, Host, SearchEpisodeMetadata } from "../../types";
 

@@ -1,14 +1,26 @@
 {
   "name": "site-v2",
   "version": "0.0.0",
-  "type": "module",
   "private": true,
+  "type": "module",
+  "imports": {
+    "#/*": "./src/*",
+    "#utils/*": "./src/utils/*",
+    "#components/*": "./src/components/*",
+    "#ui/*": "./src/components/ui/*",
+    "#lib/*": "./src/lib/*",
+    "#hooks/*": "./src/hooks/*",
+    "#episode-metadata": "./src/episode-metadata.json",
+    "#rss-feed-data": "./src/rss-feed-data.json"
+  },
   "scripts": {
     "cf:typegen": "wrangler types",
     "dev": "concurrently \"waku dev\" \"bun ./scripts/prebuild.tsx --watch\"",
     "new": "bun ./scripts/new-episode.ts",
     "prebuild": "bun ./scripts/prebuild.tsx",
     "build": "waku build",
+    "format": "oxfmt .",
+    "format:check": "oxfmt --check .",
     "start": "wrangler dev",
     "predeploy": "bun run build",
     "deploy": "wrangler deploy"
@@ -49,19 +61,8 @@
     "waku": "0.27.5",
     "wrangler": "4.59.1"
   },
-  "imports": {
-    "#/*": "./src/*",
-    "#utils/*": "./src/utils/*",
-    "#components/*": "./src/components/*",
-    "#ui/*": "./src/components/ui/*",
-    "#lib/*": "./src/lib/*",
-    "#hooks/*": "./src/hooks/*",
-    "#episode-metadata": "./src/episode-metadata.json",
-    "#rss-feed-data": "./src/rss-feed-data.json"
-  },
   "devDependencies": {
     "@hiogawa/node-loader-cloudflare": "0.0.2",
-    "@biomejs/biome": "1.9.4",
     "@mdx-js/mdx": "3.1.0",
     "@mdx-js/rollup": "3.1.0",
     "@parcel/watcher": "2.5.1",
@@ -74,6 +75,7 @@
     "fast-glob": "3.3.3",
     "gray-matter": "4.0.3",
     "miniflare": "3.20250129.0",
+    "oxfmt": "^0.52.0",
     "postcss": "8.5.10",
     "rehype-mdx-code-props": "3.0.1",
     "remark-flexible-markers": "1.2.1",

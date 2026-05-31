@@ -1,8 +1,10 @@
 import { Github, Globe, Mic2, Twitter } from "lucide-react";
+
 import { Bluesky } from "#components/bluesky";
 import { Heading } from "#components/heading";
 import { Card, CardContent } from "#components/ui/card";
 import { Button } from "#ui/button";
+
 import { hosts } from "../../hosts";
 import type { Host, SocialNetwork } from "../../types";
 

@@ -1,0 +1,24 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "useTabs": false,
+  "tabWidth": 2,
+  "printWidth": 80,
+  "singleQuote": false,
+  "jsxSingleQuote": false,
+  "quoteProps": "as-needed",
+  "trailingComma": "all",
+  "sortImports": true,
+  "semi": true,
+  "arrowParens": "always",
+  "bracketSameLine": false,
+  "bracketSpacing": true,
+  "ignorePatterns": [
+    ".agents/**",
+    ".wrangler/**",
+    "public/rss.xml",
+    "src/episode-metadata.json",
+    "src/rss-feed-data.json",
+    "src/pages.gen.ts",
+    "worker-configuration.d.ts"
+  ]
+}

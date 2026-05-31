@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+
 // import { preload } from "react-dom";
 import "../styles.css";
 // import { Provider } from "#components/audio/audio-player";
@@ -25,7 +26,6 @@ export default function Root({ children }: { children: ReactNode }) {
       </head>
       <body className="h-full flex flex-col">
         <script
-          // biome-ignore lint/security/noDangerouslySetInnerHtml: <explanation>
           dangerouslySetInnerHTML={{ __html: `(${themeCheck.toString()})()` }}
         />
         <Nav />

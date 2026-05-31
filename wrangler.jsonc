@@ -8,33 +8,33 @@
     "directory": "./dist/public",
     "binding": "ASSETS",
     "html_handling": "drop-trailing-slash",
-    "not_found_handling": "404-page"
+    "not_found_handling": "404-page",
   },
   "r2_buckets": [
     {
       "binding": "BUCKET",
-      "bucket_name": "the-bikeshed-pod"
-    }
+      "bucket_name": "the-bikeshed-pod",
+    },
   ],
   "vars": {
-    "BUN_VERSION": "1.2.2"
+    "BUN_VERSION": "1.2.2",
   },
   "routes": [
     {
       "pattern": "bikeshedpod.com",
-      "custom_domain": true
+      "custom_domain": true,
     },
     {
       "pattern": "www.bikeshedpod.com",
-      "custom_domain": true
-    }
+      "custom_domain": true,
+    },
   ],
   "observability": {
     "logs": {
       "enabled": true,
       "head_sampling_rate": 1,
       "invocation_logs": true,
-      "persist": true
-    }
-  }
+      "persist": true,
+    },
+  },
 }

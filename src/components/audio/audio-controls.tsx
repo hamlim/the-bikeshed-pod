@@ -2,6 +2,7 @@
 
 import { Gauge, Pause, Play, Volume2, VolumeX } from "lucide-react";
 import { use, useEffect, useRef, useState } from "react";
+
 import { Button } from "#components/ui/button";
 import {
   DropdownMenu,
@@ -10,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "#components/ui/dropdown-menu";
 import { Slider } from "#components/ui/slider";
+
 import { StateContext, UpdateContext } from "./audio-context";
 
 interface AudioPlayerProps {

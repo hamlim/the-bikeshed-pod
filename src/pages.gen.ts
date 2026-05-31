@@ -1,5 +1,4 @@
 // deno-fmt-ignore-file
-// biome-ignore format: generated types do not need formatting
 // prettier-ignore
 import type { PathsForPages, GetConfigResponse } from 'waku/router';
 

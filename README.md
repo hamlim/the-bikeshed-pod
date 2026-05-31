@@ -1,6 +1,7 @@
 # The Bikeshed Podcast Website!
 
 This website is built using:
+
 - [Garbanzo](https://github.com/hamlim/garbanzo)
 - [Waku](https://waku.gg)
 - [Orama](https://docs.orama.com/open-source) (powers the search feature)

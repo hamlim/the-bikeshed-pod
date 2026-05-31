@@ -1,0 +1,20 @@
+{
+  "name": "bikeshed-episode-from-audio-scripts",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "transcribe": "bun run transcribe.ts",
+    "setup-diarization": "./setup-diarization.sh"
+  },
+  "dependencies": {
+    "nodejs-whisper": "^0.2.9",
+    "sherpa-onnx-node": "^1.10.30"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

@@ -1,5 +1,22 @@
+import { spawn } from "node:child_process";
 import { existsSync } from "node:fs";
 import { mkdir, writeFile } from "node:fs/promises";
+
+async function runFormat() {
+  await new Promise<void>((resolve, reject) => {
+    let child = spawn("bun", ["run", "format"], { stdio: "inherit" });
+
+    child.on("error", reject);
+    child.on("close", (code) => {
+      if (code === 0) {
+        resolve();
+      } else {
+        reject(new Error(`bun run format exited with code ${code}`));
+      }
+    });
+  });
+}
+
 let id = process.argv[2];
 
 if (!id) {
@@ -69,5 +86,7 @@ export function getConfig() {
 `,
   ),
 ]);
+
+await runFormat();
 
 console.log(`✅ Episode ${id} created successfully!`);

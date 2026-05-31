@@ -31,6 +31,53 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Every E2E Is a Smoke Test: Page Object Models, Flaky Pipelines, and When Testing Is Actually Worth It</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/30/audio.mp3"
+                      type="audio/mpeg"
+                      length="71765390"/>
+            <guid isPermaLink="false">30</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/30/every-e2e-is-a-smoke-test</link>
+            <pubDate>Sun, 31 May 2026 14:51:25 GMT</pubDate>
+            <description><![CDATA[Dillon, Scott, and Matt dig into automated testing — the high upfront cost of getting started, why smoke tests deserve to gate code before it hits master, and whether enforced page object models are a useful abstraction or just a layer of indirection. Scott makes the case that smoke tests should come first while his coworkers insist the end-to-end suite will catch everything, and the crew lands on a surprising amount of agreement for a show built on disagreement. Plus: a launch that turned into permanent backend ownership, a 75-day estimate squeezed into two months, and a CLI feedback hook for agents.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<h3>The High Cost of Getting Started</h3>
+<p>Scott has been writing a lot of <strong>automated tests</strong> at a bigger company than he&#x27;s used to, mostly <strong>end-to-end</strong> and <strong>integration</strong> tests in <strong>Playwright</strong> (with past lives in Cypress and Selenium). His recurring theme: getting started takes <strong>three to four times</strong> the normal effort, especially on a product with heavy <strong>third-party permissions</strong> and multiple interacting applications where users may not have access to both. Playwright lowers the entry barrier, but rigorous permission-based flows are still intricate to set up.</p>
+<p>Matt&#x27;s counterpoint: the <strong>test harness</strong> matters more than the tool. Invest upfront in structure that makes flaky tests hard to write — e.g. preventing <strong>async operations from leaking between unit tests</strong> (a trick a former coworker used by tracking promises). Once the harness is solid, you can copy-paste-and-tweak tests quickly. He describes his own CLI&#x27;s <strong>fixture-based</strong> end-to-end suite: run a command against a folder, assert the result against an expected schema.</p>
+<h3>Page Object Models: Abstraction or Indirection?</h3>
+<p>Scott&#x27;s team <strong>enforces page object models (POMs, or &quot;palms&quot;)</strong> — a class per page with private methods to locate elements and public methods to drive reusable actions. He&#x27;s not sold: it adds a <strong>layer of indirection</strong>, and when two people build POMs in parallel they clash and drift into abstract methods that just re-wrap Playwright.</p>
+<ul>
+<li><strong>Dillon</strong> had never heard of POMs and was Googling on the side — his instinct: start with reusable functions, <em>then</em> group them into a POM once they clearly belong to a feature.</li>
+<li><strong>Matt</strong> frames the over-application as classic <strong>speculative generality / YAGNI</strong> — a good pattern spotted once and then mandated everywhere, even where a smoke test just needs to visit a page and check it&#x27;s not a 400 or 500.</li>
+<li>The takeaway, delivered with a laugh: <em>&quot;We&#x27;re supposed to disagree, but we agree.&quot;</em> Login lives in a <strong>fixture</strong> (it spans pages); POMs make sense for genuinely repeated multi-step flows, not for every page by fiat.</li>
+</ul>
+<h3>Smoke Tests First (and the Pushback)</h3>
+<p>Scott&#x27;s crusade: <strong>smoke tests should gate code in the PR</strong>, not just run against staging after merge. He wrote ~200 smoke tests covering every page (including invalid routes) and hit friction from colleagues who argued <em>&quot;the end-to-end tests will catch it.&quot;</em> His rebuttal: the e2e suite runs against staging, so a broken PR sits in master until an on-call engineer has to hunt it down and revert — killing a day&#x27;s deploy. Smoke tests are cheap, fast, and fail loud <em>before</em> that happens.</p>
+<h4>The Definitional Debate</h4>
+<p>Dillon&#x27;s framing lands cleanly: <strong>every end-to-end test is a smoke test</strong>, but a <strong>smoke test is the lightweight version</strong> — a quick &quot;is the page rendering, no crashes&quot; check. Bigger e2e tests cost more to run and, per Dillon, <strong>flakiness scales with scope</strong>: the eight-minute single mega-test that fails in a new place every time you fix it. Keep flows small, parallelize, and balance value against breakage.</p>
+<h3>The Test-Only Pathway Red Flag</h3>
+<p>Scott&#x27;s team considered <strong>editing a GraphQL query to bypass the real flow</strong> just to make a permission-heavy test easier to write. Matt flags this hard: <strong>don&#x27;t build implementation pathways that exist only for tests.</strong> You diverge the test path from the user path, then catch a sev later and wonder why the test didn&#x27;t fire — because it was testing something else entirely. Related: <strong>drift between spec and implementation</strong> (real-time updating dropped for a refresh button mid-project) is what QA ends up flagging, and unit tests, not e2e, are usually the right tool for those small correctness nitpicks.</p>
+<h3>Hot Takes</h3>
+<ul>
+<li><strong>Dillon:</strong> Super valuable — <em>&quot;like having somebody click through your site while you sleep&quot;</em> — but a pain to get right, and they always get pushed to the end of a project when the end state is still moving.</li>
+<li><strong>Scott:</strong> Valuable, but <strong>less is more</strong>. Test what&#x27;s truly vital, co-locate tests so they actually get maintained, lean on smoke tests for fast high-level coverage, and reserve e2e for the most critical flows (login, purchases, final submit).</li>
+<li><strong>Matt:</strong> You <strong>probably don&#x27;t need end-to-end tests as early as you think</strong> — backfill that coverage with good <strong>metrics and real users</strong> until you actually do.</li>
+</ul>
+<h3>Standup / Life Updates</h3>
+<ul>
+<li><strong>Scott:</strong> Launched the application at work — it went well — but immediately inherited backend ownership of permissioning: <em>&quot;I made one change to the shape and I own it for life.&quot;</em> Phase two (better metrics and monitoring dashboards) got pushed down the pipe in favor of improving the automated tests first.</li>
+<li><strong>Dillon:</strong> Mid-migration from <strong>Cloudflare Pages to Cloudflare Workers</strong> (not his main task, and he has to halt everyone&#x27;s dev to do it). Just presented an hour-long tech plan for a <strong>bespoke e-commerce experience</strong> — landing, listing, product, checkout, cart — but with no design system it came out to <strong>24 net-new components</strong>, a ~<strong>75-day estimate</strong> against a <strong>two-month</strong> ship date. Running a <strong>five-mile race at Harpoon Brewery in Boston</strong> tomorrow, gunning for <strong>sub-40 minutes</strong>.</li>
+<li><strong>Matt:</strong> Team&#x27;s in a <strong>&quot;code red&quot;</strong> — shipping fast under pressure, with open questions about whether they&#x27;re building the right things and talking to their developer-customers enough. Spec&#x27;d out a way for <strong>humans and agents to give feedback via the CLI</strong>, including a post-session hook that has Claude review the transcript and report back on the tooling it used.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>2990</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/30/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>The Parking Lot - 2</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/29/audio.mp3"
                       type="audio/mpeg"
@@ -1023,7 +1070,7 @@ When security or data sensitivity requirements make external tools impractical</
 <li>The balance between consistency, speed, and safety.</li>
 </ul>
 </li>
-<li>Tooling:  They mention tools like Lerna, Turborepo, and PMPM that support monorepo management.</li>
+<li>Tooling: They mention tools like Lerna, Turborepo, and PMPM that support monorepo management.</li>
 <li>Potential Downsides:<!-- -->
 <ul>
 <li>Monorepos can slow down development if not properly managed (e.g., long CI times).</li>
@@ -1128,7 +1175,8 @@ When security or data sensitivity requirements make external tools impractical</
 </ul>
 <h3>Spicy Takes</h3>
 <p>Tune in to hear the takes that Dillon and Matt share to make Scott react like Mr Krabs:</p>
-<p><div class="flex items-center justify-center"><img src="https://bikeshedpod.com/mr-krabs.jpeg" alt="An image of Mr. Krabs from Spongebob, with a dizzy-like effect around him"/></div></p>
+<div class="flex items-center justify-center"><p><img src="https://bikeshedpod.com/mr-krabs.jpeg" alt="An image of Mr. Krabs from Spongebob, with a dizzy-like effect around
+him"/></p></div>
 <h3>Two Takes and a Fake</h3>
 <p>The hosts play a game where they identify the fake tech-related news among two real ones. This week&#x27;s topics were Bun, Vercel changelog, and Next.js.</p>
 <blockquote>
@@ -1162,7 +1210,7 @@ When security or data sensitivity requirements make external tools impractical</
 <li>Test Coverage: Aiming for 100% test coverage may not be efficient; focus on testing essential product features. Consider the time and effort spent on tests versus the value they provide.</li>
 <li>Testing in Production: The hosts explore the concept of testing in production, with tools like Datadog synthetics. This allows the team to assess the experience for end-users in production.</li>
 </ul>
-<figure><img src="https://bikeshedpod.com/testing-midwit-meme.png" alt="A graphic showing the bell curve distribution of IQ score, the low end shows a comical depiction of a head with the text &#x27;test in prod&#x27; above it, the middle shows another head with the text &#x27;build a pristine hermetic environment to run tests against that matches prod 1:1&#x27;, and the right hand side also shows a head with the text &#x27;test in prod&#x27;."/><p><figcaption>The &quot;midwit&quot; meme reference that Matt made during the episode</figcaption></p></figure>
+<figure><img src="https://bikeshedpod.com/testing-midwit-meme.png" alt="A graphic showing the bell curve distribution of IQ score, the low end shows a comical depiction of a head with the text &#x27;test in prod&#x27; above it, the middle shows another head with the text &#x27;build a pristine hermetic environment to run tests against that matches prod 1:1&#x27;, and the right hand side also shows a head with the text &#x27;test in prod&#x27;."/><figcaption><p>The &quot;midwit&quot; meme reference that Matt made during the episode</p></figcaption></figure>
 <ul>
 <li>Test-Driven Development (TDD): TDD may not always be practical, especially when developing new features with unknown outputs. Writing tests after the feature is more common in these scenarios.</li>
 <li>Proof of Concept (POC): Developing a proof of concept outside the main application to validate an idea before integrating it is valuable.</li>
@@ -1344,7 +1392,10 @@ When security or data sensitivity requirements make external tools impractical</
             <pubDate>Mon, 17 Mar 2025 15:40:11 GMT</pubDate>
             <description><![CDATA[Dillon, Matt & Scott dive into AI's impact on coding, discussing its role in daily work, how to use it effectively, and balancing creativity with automation in 2025.]]></description>
             <content:encoded><![CDATA[
-<p><a href="https://dilloncurry.vercel.app/">Dillon</a>, <a href="https://matthamlin.me/">Matt</a> &amp; <a href="https://scottykaye.com/">Scott</a> record an episode with some semblance of quality.</p>
+<p><a href="https://dilloncurry.vercel.app/">Dillon</a>,
+<a href="https://matthamlin.me/">Matt</a> &amp;
+<a href="https://scottykaye.com/">Scott</a> record an episode with
+some semblance of quality.</p>
 <p>The bikeshed boys dive directly into software&#x27;s hottest topic: AI. We believe in using AI in your day to day job to be more successful.</p>
 <p>In this episode we discuss;</p>
 <ul>

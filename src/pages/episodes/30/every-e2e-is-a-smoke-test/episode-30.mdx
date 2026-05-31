@@ -1,0 +1,54 @@
+---
+episodeId: "30"
+slug: "every-e2e-is-a-smoke-test"
+title: "Every E2E Is a Smoke Test: Page Object Models, Flaky Pipelines, and When Testing Is Actually Worth It"
+shortDescription: "Dillon, Scott, and Matt dig into automated testing — the high upfront cost of getting started, why smoke tests deserve to gate code before it hits master, and whether enforced page object models are a useful abstraction or just a layer of indirection. Scott makes the case that smoke tests should come first while his coworkers insist the end-to-end suite will catch everything, and the crew lands on a surprising amount of agreement for a show built on disagreement. Plus: a launch that turned into permanent backend ownership, a 75-day estimate squeezed into two months, and a CLI feedback hook for agents."
+hosts: ["dillon", "scott", "matt"]
+metadata: ["e2e-testing", "automated-testing"]
+publishTime: 1780239085218
+duration: 2990
+audioURL: "https://assets.bikeshedpod.com/episodes/30/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/30/captions.vtt"
+fileSizeBytes: 71765390
+blueskyPostUri: ""
+---
+
+## Summary
+
+### The High Cost of Getting Started
+
+Scott has been writing a lot of **automated tests** at a bigger company than he's used to, mostly **end-to-end** and **integration** tests in **Playwright** (with past lives in Cypress and Selenium). His recurring theme: getting started takes **three to four times** the normal effort, especially on a product with heavy **third-party permissions** and multiple interacting applications where users may not have access to both. Playwright lowers the entry barrier, but rigorous permission-based flows are still intricate to set up.
+
+Matt's counterpoint: the **test harness** matters more than the tool. Invest upfront in structure that makes flaky tests hard to write — e.g. preventing **async operations from leaking between unit tests** (a trick a former coworker used by tracking promises). Once the harness is solid, you can copy-paste-and-tweak tests quickly. He describes his own CLI's **fixture-based** end-to-end suite: run a command against a folder, assert the result against an expected schema.
+
+### Page Object Models: Abstraction or Indirection?
+
+Scott's team **enforces page object models (POMs, or "palms")** — a class per page with private methods to locate elements and public methods to drive reusable actions. He's not sold: it adds a **layer of indirection**, and when two people build POMs in parallel they clash and drift into abstract methods that just re-wrap Playwright.
+
+- **Dillon** had never heard of POMs and was Googling on the side — his instinct: start with reusable functions, _then_ group them into a POM once they clearly belong to a feature.
+- **Matt** frames the over-application as classic **speculative generality / YAGNI** — a good pattern spotted once and then mandated everywhere, even where a smoke test just needs to visit a page and check it's not a 400 or 500.
+- The takeaway, delivered with a laugh: _"We're supposed to disagree, but we agree."_ Login lives in a **fixture** (it spans pages); POMs make sense for genuinely repeated multi-step flows, not for every page by fiat.
+
+### Smoke Tests First (and the Pushback)
+
+Scott's crusade: **smoke tests should gate code in the PR**, not just run against staging after merge. He wrote ~200 smoke tests covering every page (including invalid routes) and hit friction from colleagues who argued _"the end-to-end tests will catch it."_ His rebuttal: the e2e suite runs against staging, so a broken PR sits in master until an on-call engineer has to hunt it down and revert — killing a day's deploy. Smoke tests are cheap, fast, and fail loud _before_ that happens.
+
+#### The Definitional Debate
+
+Dillon's framing lands cleanly: **every end-to-end test is a smoke test**, but a **smoke test is the lightweight version** — a quick "is the page rendering, no crashes" check. Bigger e2e tests cost more to run and, per Dillon, **flakiness scales with scope**: the eight-minute single mega-test that fails in a new place every time you fix it. Keep flows small, parallelize, and balance value against breakage.
+
+### The Test-Only Pathway Red Flag
+
+Scott's team considered **editing a GraphQL query to bypass the real flow** just to make a permission-heavy test easier to write. Matt flags this hard: **don't build implementation pathways that exist only for tests.** You diverge the test path from the user path, then catch a sev later and wonder why the test didn't fire — because it was testing something else entirely. Related: **drift between spec and implementation** (real-time updating dropped for a refresh button mid-project) is what QA ends up flagging, and unit tests, not e2e, are usually the right tool for those small correctness nitpicks.
+
+### Hot Takes
+
+- **Dillon:** Super valuable — _"like having somebody click through your site while you sleep"_ — but a pain to get right, and they always get pushed to the end of a project when the end state is still moving.
+- **Scott:** Valuable, but **less is more**. Test what's truly vital, co-locate tests so they actually get maintained, lean on smoke tests for fast high-level coverage, and reserve e2e for the most critical flows (login, purchases, final submit).
+- **Matt:** You **probably don't need end-to-end tests as early as you think** — backfill that coverage with good **metrics and real users** until you actually do.
+
+### Standup / Life Updates
+
+- **Scott:** Launched the application at work — it went well — but immediately inherited backend ownership of permissioning: _"I made one change to the shape and I own it for life."_ Phase two (better metrics and monitoring dashboards) got pushed down the pipe in favor of improving the automated tests first.
+- **Dillon:** Mid-migration from **Cloudflare Pages to Cloudflare Workers** (not his main task, and he has to halt everyone's dev to do it). Just presented an hour-long tech plan for a **bespoke e-commerce experience** — landing, listing, product, checkout, cart — but with no design system it came out to **24 net-new components**, a ~**75-day estimate** against a **two-month** ship date. Running a **five-mile race at Harpoon Brewery in Boston** tomorrow, gunning for **sub-40 minutes**.
+- **Matt:** Team's in a **"code red"** — shipping fast under pressure, with open questions about whether they're building the right things and talking to their developer-customers enough. Spec'd out a way for **humans and agents to give feedback via the CLI**, including a post-session hook that has Claude review the transcript and report back on the tooling it used.

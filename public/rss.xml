@@ -31,6 +31,44 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>tokenomics</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/31/audio.mp3"
+                      type="audio/mpeg"
+                      length="49010647"/>
+            <guid isPermaLink="false">31</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/31/tokenomics</link>
+            <pubDate>Fri, 10 Jul 2026 14:06:17 GMT</pubDate>
+            <description><![CDATA[Scott, Dillon, and Matt dig into 'tokenomics' — the economics of AI models and whether the ever-climbing cost of running them is actually buying anyone more value. They swap notes on the rug-pull theory of AI pricing, tokenizer changes that quietly tax you 30%, and how their companies are clamping down (HubSpot defaulting to Sonnet and zeroing out the Fable budget). Plus a standup of weddings, World Cup corruption, a 16-0 soccer loss, and a first-ever Fourth of July party.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>The crew puts a name to a creeping anxiety: the cost of running AI models keeps climbing, and nobody can prove the value climbing with it. What follows is part economics lesson, part group therapy for engineers drowning in model choices.</p>
+<h3>The Rug Pull Theory</h3>
+<p>Scott lays out his prediction from the year-in-review episode: <strong>AI pricing was always going to soar</strong>. The $20/month plan was never meant to stay $20 — the playbook is to hype the tech, get everyone hooked, then raise prices once you&#x27;re dependent. He draws the <strong>Uber parallel</strong> (&quot;your ride&#x27;s $6&quot; turning into &quot;$50 years later&quot;) and notes NVIDIA execs themselves saying models cost too much. Dillon&#x27;s sharper framing: it&#x27;s <em>insane</em> that this is a service where <strong>you pay for what you get regardless of outcome</strong> — the tokens are spent even when the AI goes off the rails.</p>
+<h3>The Hidden 30% Tax</h3>
+<p>Matt gets into the nitty-gritty: between 4.6 and 4.7, <strong>Anthropic changed the tokenizer</strong>, which effectively added a <strong>~30% cost tax</strong> even though the model isn&#x27;t dramatically better. This is why <strong>HubSpot has stuck with 4.6</strong> rather than jumping to 4.7/4.8. Dillon&#x27;s take: every new feature — like <strong>loops</strong> — is really just &quot;a new way to burn tokens a little bit faster.&quot;</p>
+<h3>Just Use Sonnet (and the Mixture-of-Models Future)</h3>
+<p>HubSpot leadership made <strong>Sonnet the default</strong>, walking back the old habit of defaulting to Opus. Matt argues you can go surprisingly far on Sonnet. Looking ahead, he and Scott revisit the <strong>intelligent router / mixture-of-models</strong> vision (echoed on <em>The Next Token Podcast</em>), where queries get split to cheaper models that are &quot;good enough.&quot; The blocker: there&#x27;s <strong>no sane default</strong> for how to route, and every eval and benchmark is flawed.</p>
+<h3>Guardrails, or the Lack of Them</h3>
+<p>Contrasting notes on internal controls: HubSpot moved to the <strong>Anthropic enterprise plan</strong> and can hard-block models (e.g., a <strong>$0 budget on Fable requests</strong> so they auto-decline). Scott and Dillon&#x27;s shops are still in an <strong>open trial period</strong> — the only &quot;restriction&quot; Dillon got was a Slack DM asking him to not use a pricey model as default. Dillon nails the meta-point: <strong>this is the epitome of the bikeshed</strong> — tabs vs. spaces, but now exploded into fifty variants. He just doesn&#x27;t want to have to choose a model at all.</p>
+<h3>Sharpening the Knife, Never Cutting the Steak</h3>
+<p>The emotional core of the episode. Matt calls out the <strong>Twitter hype cycle</strong> — public figures claiming each new model &quot;completely changed everything,&quot; two weeks apart — as people blabbering for views. The real problem: <strong>software quality hasn&#x27;t meaningfully improved in ~two years</strong>, yet spend keeps rising. His metaphor lands: we&#x27;re all at the whetstone <strong>sharpening the knife but never actually cutting the steak</strong>. On measuring value, Matt admits HubSpot has <strong>no real KPIs</strong> (just DORA/SPACE speed metrics), and Dillon describes a dashboard that literally divides <strong>tokens spent by PRs merged</strong> into an &quot;efficiency rating&quot; — which once crowned him top engineer for shipping 20 config PRs in a week.</p>
+<h3>The Takeaway</h3>
+<p>Matt&#x27;s message of the day: <strong>be cognizant of how much time you spend whittling your workflow</strong>, and question whether you really need the newest new-fangled model. Scott still recommends experimenting, but in small enough chunks that it doesn&#x27;t consume you. Dillon just wants to <strong>care less about which model he&#x27;s using</strong> and get it out of his head entirely.</p>
+<h3>Standup / Life Updates</h3>
+<ul>
+<li><strong>Matt:</strong> Back from a summer break — <strong>got married, went to Greece, honeymoon</strong>, then returned to a funky, low-work week around July 4th. Next up: weekends of writing thank-you notes.</li>
+<li><strong>Dillon:</strong> Watching the <strong>World Cup</strong> (half of it looks like corruption), which reignited his urge to play soccer — subbed for a local league and <strong>lost 16-0</strong> in 85° heat, tapping out every 5-10 minutes. Also <strong>burned out</strong> on a relentless demo cycle: vibe-code a demo, then spend the next week untangling the spaghetti-code knot for the executives.</li>
+<li><strong>Scott:</strong> Projects moving at work, a jam-packed <strong>two-day Seattle trip</strong>, <strong>camping in New Hampshire</strong> this weekend, and he <strong>hosted his first Fourth of July party</strong> with family — the start of a new tradition.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>2042</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/31/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Every E2E Is a Smoke Test: Page Object Models, Flaky Pipelines, and When Testing Is Actually Worth It</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/30/audio.mp3"
                       type="audio/mpeg"

@@ -1,0 +1,41 @@
+---
+episodeId: "31"
+slug: "tokenomics"
+title: "tokenomics"
+shortDescription: "Scott, Dillon, and Matt dig into 'tokenomics' — the economics of AI models and whether the ever-climbing cost of running them is actually buying anyone more value. They swap notes on the rug-pull theory of AI pricing, tokenizer changes that quietly tax you 30%, and how their companies are clamping down (HubSpot defaulting to Sonnet and zeroing out the Fable budget). Plus a standup of weddings, World Cup corruption, a 16-0 soccer loss, and a first-ever Fourth of July party."
+hosts: ['scott', 'dillon', 'matt']
+metadata: ['ai', 'tokenomics', 'models', 'llm-cost', 'developer-productivity']
+publishTime: 1783692377854
+duration: 2042
+audioURL: "https://assets.bikeshedpod.com/episodes/31/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/31/captions.vtt"
+fileSizeBytes: 49010647
+blueskyPostUri: ""
+---
+
+## Summary
+
+The crew puts a name to a creeping anxiety: the cost of running AI models keeps climbing, and nobody can prove the value climbing with it. What follows is part economics lesson, part group therapy for engineers drowning in model choices.
+
+### The Rug Pull Theory
+Scott lays out his prediction from the year-in-review episode: **AI pricing was always going to soar**. The $20/month plan was never meant to stay $20 — the playbook is to hype the tech, get everyone hooked, then raise prices once you're dependent. He draws the **Uber parallel** ("your ride's $6" turning into "$50 years later") and notes NVIDIA execs themselves saying models cost too much. Dillon's sharper framing: it's *insane* that this is a service where **you pay for what you get regardless of outcome** — the tokens are spent even when the AI goes off the rails.
+
+### The Hidden 30% Tax
+Matt gets into the nitty-gritty: between 4.6 and 4.7, **Anthropic changed the tokenizer**, which effectively added a **~30% cost tax** even though the model isn't dramatically better. This is why **HubSpot has stuck with 4.6** rather than jumping to 4.7/4.8. Dillon's take: every new feature — like **loops** — is really just "a new way to burn tokens a little bit faster."
+
+### Just Use Sonnet (and the Mixture-of-Models Future)
+HubSpot leadership made **Sonnet the default**, walking back the old habit of defaulting to Opus. Matt argues you can go surprisingly far on Sonnet. Looking ahead, he and Scott revisit the **intelligent router / mixture-of-models** vision (echoed on *The Next Token Podcast*), where queries get split to cheaper models that are "good enough." The blocker: there's **no sane default** for how to route, and every eval and benchmark is flawed.
+
+### Guardrails, or the Lack of Them
+Contrasting notes on internal controls: HubSpot moved to the **Anthropic enterprise plan** and can hard-block models (e.g., a **$0 budget on Fable requests** so they auto-decline). Scott and Dillon's shops are still in an **open trial period** — the only "restriction" Dillon got was a Slack DM asking him to not use a pricey model as default. Dillon nails the meta-point: **this is the epitome of the bikeshed** — tabs vs. spaces, but now exploded into fifty variants. He just doesn't want to have to choose a model at all.
+
+### Sharpening the Knife, Never Cutting the Steak
+The emotional core of the episode. Matt calls out the **Twitter hype cycle** — public figures claiming each new model "completely changed everything," two weeks apart — as people blabbering for views. The real problem: **software quality hasn't meaningfully improved in ~two years**, yet spend keeps rising. His metaphor lands: we're all at the whetstone **sharpening the knife but never actually cutting the steak**. On measuring value, Matt admits HubSpot has **no real KPIs** (just DORA/SPACE speed metrics), and Dillon describes a dashboard that literally divides **tokens spent by PRs merged** into an "efficiency rating" — which once crowned him top engineer for shipping 20 config PRs in a week.
+
+### The Takeaway
+Matt's message of the day: **be cognizant of how much time you spend whittling your workflow**, and question whether you really need the newest new-fangled model. Scott still recommends experimenting, but in small enough chunks that it doesn't consume you. Dillon just wants to **care less about which model he's using** and get it out of his head entirely.
+
+### Standup / Life Updates
+- **Matt:** Back from a summer break — **got married, went to Greece, honeymoon**, then returned to a funky, low-work week around July 4th. Next up: weekends of writing thank-you notes.
+- **Dillon:** Watching the **World Cup** (half of it looks like corruption), which reignited his urge to play soccer — subbed for a local league and **lost 16-0** in 85° heat, tapping out every 5-10 minutes. Also **burned out** on a relentless demo cycle: vibe-code a demo, then spend the next week untangling the spaghetti-code knot for the executives.
+- **Scott:** Projects moving at work, a jam-packed **two-day Seattle trip**, **camping in New Hampshire** this weekend, and he **hosted his first Fourth of July party** with family — the start of a new tradition.

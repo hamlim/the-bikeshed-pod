@@ -23,7 +23,7 @@
         "estree-util-visit": "2.0.0",
         "hast-util-to-jsx-runtime": "2.3.6",
         "hls.js": "1.6.5",
-        "hono": "4.12.18",
+        "hono": "4.12.21",
         "html-url-attributes": "3.0.1",
         "lucide-react": "0.514.0",
         "mdxlite": "1.0.0",
@@ -794,7 +794,7 @@
 
     "hls.js": ["hls.js@1.6.5", "", {}, "sha512-KMn5n7JBK+olC342740hDPHnGWfE8FiHtGMOdJPfUjRdARTWj9OB+8c13fnsf9sk1VtpuU2fKSgUjHvg4rNbzQ=="],
 
-    "hono": ["hono@4.12.18", "", {}, "sha512-RWzP96k/yv0PQfyXnWjs6zot20TqfpfsNXhOnev8d1InAxubW93L11/oNUc3tQqn2G0bSdAOBpX+2uDFHV7kdQ=="],
+    "hono": ["hono@4.12.21", "", {}, "sha512-uV63apnb0kyPtAUwoWgaGh9HyIFcv8lgmzPZSiTBQAFOFGIzka5EZ1dZocmGnn0XdX0+XTqJ6Tqv7selMuGLRQ=="],
 
     "html-url-attributes": ["html-url-attributes@3.0.1", "", {}, "sha512-ol6UPyBWqsrO6EJySPz2O7ZSr856WDrEzM5zMqp+FJJLGMW35cLYmmZnl0vztAZxRUoNZJFTCohfjuIJ8I4QBQ=="],
 

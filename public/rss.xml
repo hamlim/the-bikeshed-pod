@@ -31,6 +31,56 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>Skill Issue</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/32/audio.mp3"
+                      type="audio/mpeg"
+                      length="39419738"/>
+            <guid isPermaLink="false">32</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/32/skill-issue</link>
+            <pubDate>Sat, 22 Aug 2026 16:45:48 GMT</pubDate>
+            <description><![CDATA[Scott, Dillon, and Matt dig into AI agent skills — what they are, when they earn their place, and when a plain prompt does the same job. Scott's team routes every unit and integration test through a mandatory skill, Dillon dips in and out of them, and Matt loads almost none and lets the model figure it out. Plus anti-slop cleanups, the ponytail skill, handoff docs, and why ASD-STE100 is the only PR-description prompt Matt needs.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>Three engineers, three very different answers to the same question: how much of your workflow should live in a skill file? The episode moves from a plain-English definition to the org-scale version at Scott&#x27;s company, then to the small personal skills each host actually opens.</p>
+<h3>What a skill actually is</h3>
+<p><strong>Dillon</strong> starts simple: a skill is <em>&quot;really just blocks of text&quot;</em> for common tasks you ask an agent to do. Two shapes are useful — a specific workflow you want followed, or a specific tool you interact with. His example is <strong>Contentful</strong>: he taught one skill everything about migrations, publishing, and the API, and offloaded that behavior permanently. Now he never has to open a session with <em>&quot;hey, can you help me with Contentful?&quot;</em> and watch the agent go read the docs.</p>
+<p><strong>Matt</strong> reframes it for anyone who has worked in ops: a skill is a <strong>runbook</strong> or a <strong>standard operating procedure</strong>, written down once and shared — except the reader is an agent instead of a coworker.</p>
+<h3>When a skill earns its place</h3>
+<p><strong>Scott</strong> reaches for skills on repeat tasks: PR descriptions, <strong>deploy confidence</strong> checks, a <strong>UI review</strong> skill that drives Chrome, takes screenshots, and posts them to the GitHub PR.</p>
+<p>At the org level it goes much further. His company runs a <strong>skills marketplace per repo</strong> plus skills per project — multiple tiers of layers. Every unit and integration test is <em>forced</em> through a skill: a tag in <code>AGENTS.md</code> and the <code>CLAUDE.md</code> files invokes it whenever a test gets written, so the only way around it is writing the test by hand. The <strong>web platform team</strong> put real effort into making it robust, and Scott&#x27;s read is that the forced path is a good thing because you get consistency out of it. Everything else is <em>&quot;choose your own adventure&quot;</em> — storybook stories, GraphQL, rebase-and-merge, title-tag migrations.</p>
+<p><strong>Matt</strong> sits at the other end. He barely loads skills at all. His repetitive prompts are short enough to live in a clipboard manager, and pasting a snippet is faster than saving a skill and loading it into a session. His hot take: the value of a skill depends on the <strong>model and the harness</strong> — some combinations do the pre-programmed work just as well without it. He notes <strong>HubSpot</strong> had a skill-writing explosion a couple of months back that has since cooled off. Scott&#x27;s counter is short: <em>&quot;that&#x27;s not the experience I have&quot;</em> — his are battle-tested and very clear.</p>
+<h3>The skills they actually use</h3>
+<ul>
+<li><strong>Handoff / MyDocs</strong> — Dillon likes Matt Pocock&#x27;s <strong>handoff</strong> skill for dumping summarized context to pass to a second agent, since telling one agent to do two things at once <em>&quot;gets everything really screwed up.&quot;</em> He is not sure you even need a skill for it. Scott&#x27;s version is <strong>MyDocs</strong>: write up everything we just said, drop it in a local folder, and categorize it as an RFC, a feature guide, or a plan.</li>
+<li><strong>Grilling with docs</strong> — Pocock&#x27;s doc skill (the name keeps changing) asks Scott a million questions before writing anything high-level. He rates it highly.</li>
+<li><strong>Trio review</strong> — a code review skill from friend-of-the-pod <strong>Joe Boyle</strong> that spins up three sub-agents, each with a different personality, giving feedback at different levels. Dillon saves it for critical code; a simple feature does not need it.</li>
+<li><strong>ponytail</strong> — applies <strong>YAGNI</strong> to whatever you are building, looks for anything too complex, and suggests simplifications. Dillon says the recommendations are good.</li>
+<li><strong>anti-slop</strong> — Dillon Mulroy&#x27;s project, a set of custom <strong>Oxlint</strong> plugins plus an agent skill. Matt kicked it off before bed and woke up to a <strong>-6,000 / +2,000</strong> PR clearing useless comments and tests that assert a function returns true.</li>
+<li><strong>EOD / SOD</strong> — Dillon&#x27;s end-of-day mind dump and start-of-day recap, which pulls from <strong>GitHub</strong> and <strong>Jira</strong> to connect the dots and doubles as a standup update.</li>
+<li><strong>Meeting notes</strong> — Matt&#x27;s weekly scheduled task walks his work calendar and creates <strong>Notion</strong> notes per meeting, mapping email addresses to people. A skill beats a script here because it can handle a name it does not recognize.</li>
+</ul>
+<h3>PR descriptions, and the one prompt that fixes them</h3>
+<p>Matt&#x27;s whole PR-description prompt is: use <strong>ASD-STE100 Simplified Technical English</strong>. That is it. He finds the output slightly over-concise rather than verbose — the failure mode he sees from coworkers whose agents write PR descriptions that are <em>&quot;incredibly verbose and annoying to read.&quot;</em> Dillon, who had never heard of the spec, said on air that he was about to run his tech spec through it. His company&#x27;s PR plugin solves the same problem the long way: tell the agent not to detail every implementation choice, because <em>&quot;I used tailwind classes to move the div to the left&quot;</em> is not helpful to a reviewer who can see the diff.</p>
+<h3>Beyond skills: harnesses and fleet-wide migrations</h3>
+<p>Both companies are pushing past single skills into automated harnesses. Dillon&#x27;s team has a workflow that cleans up a <strong>feature flag</strong> across many repos in one go — scan the repos, spin up tickets, execute them, open PRs, and pause for a human approval that unblocks the next stage. HubSpot has <strong>Mothership</strong>, built for scripted tasks like codemods across thousands of repos (they are, Matt says, <em>&quot;maybe infamously not a monorepo company&quot;</em>), and has recently added <strong>agentic missions</strong> that run a prompt across that same fleet. Matt flags a future episode: agents versus deterministic codemods, and where the line sits.</p>
+<h3>Standup / Life Updates</h3>
+<p>Light week. Matt&#x27;s headphones kept dropping mid-record, so Dillon carried a stretch solo. Dillon fired off a live experiment — rewriting a tech spec in ASD-STE100 — and promised a verdict later. Scott&#x27;s team shipped a natural-language end-to-end test platform built on aluminum, which he calls pretty cool. And the hosts agree there is enough left over for a follow-up episode on skills.</p>
+<h3>Links</h3>
+<ul>
+<li>ASD Simplified Technical English — https://matthamlin.me/2026/august/simplified-technical-english</li>
+<li>ponytail — https://github.com/DietrichGebert/ponytail</li>
+<li>Dillon Mulroy&#x27;s anti-slop skill — https://github.com/dmmulroy/anti-slop</li>
+<li>Matt Pocock&#x27;s skills — https://github.com/mattpocock/skills</li>
+</ul>]]></content:encoded>
+            <itunes:duration>1642</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/32/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Tokenomics</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/31/audio.mp3"
                       type="audio/mpeg"

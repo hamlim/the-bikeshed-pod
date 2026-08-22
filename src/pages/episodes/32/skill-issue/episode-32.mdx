@@ -1,0 +1,61 @@
+---
+episodeId: "32"
+slug: "skill-issue"
+title: "Skill Issue"
+shortDescription: "Scott, Dillon, and Matt dig into AI agent skills — what they are, when they earn their place, and when a plain prompt does the same job. Scott's team routes every unit and integration test through a mandatory skill, Dillon dips in and out of them, and Matt loads almost none and lets the model figure it out. Plus anti-slop cleanups, the ponytail skill, handoff docs, and why ASD-STE100 is the only PR-description prompt Matt needs."
+hosts: ['scott', 'dillon', 'matt']
+metadata: ['ai', 'agent-skills', 'developer-workflow', 'code-review', 'ai-tooling']
+publishTime: 1787417148435
+duration: 1642
+audioURL: "https://assets.bikeshedpod.com/episodes/32/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/32/captions.vtt"
+fileSizeBytes: 39419738
+blueskyPostUri: ""
+---
+
+## Summary
+
+Three engineers, three very different answers to the same question: how much of your workflow should live in a skill file? The episode moves from a plain-English definition to the org-scale version at Scott's company, then to the small personal skills each host actually opens.
+
+### What a skill actually is
+
+**Dillon** starts simple: a skill is *"really just blocks of text"* for common tasks you ask an agent to do. Two shapes are useful — a specific workflow you want followed, or a specific tool you interact with. His example is **Contentful**: he taught one skill everything about migrations, publishing, and the API, and offloaded that behavior permanently. Now he never has to open a session with *"hey, can you help me with Contentful?"* and watch the agent go read the docs.
+
+**Matt** reframes it for anyone who has worked in ops: a skill is a **runbook** or a **standard operating procedure**, written down once and shared — except the reader is an agent instead of a coworker.
+
+### When a skill earns its place
+
+**Scott** reaches for skills on repeat tasks: PR descriptions, **deploy confidence** checks, a **UI review** skill that drives Chrome, takes screenshots, and posts them to the GitHub PR.
+
+At the org level it goes much further. His company runs a **skills marketplace per repo** plus skills per project — multiple tiers of layers. Every unit and integration test is *forced* through a skill: a tag in `AGENTS.md` and the `CLAUDE.md` files invokes it whenever a test gets written, so the only way around it is writing the test by hand. The **web platform team** put real effort into making it robust, and Scott's read is that the forced path is a good thing because you get consistency out of it. Everything else is *"choose your own adventure"* — storybook stories, GraphQL, rebase-and-merge, title-tag migrations.
+
+**Matt** sits at the other end. He barely loads skills at all. His repetitive prompts are short enough to live in a clipboard manager, and pasting a snippet is faster than saving a skill and loading it into a session. His hot take: the value of a skill depends on the **model and the harness** — some combinations do the pre-programmed work just as well without it. He notes **HubSpot** had a skill-writing explosion a couple of months back that has since cooled off. Scott's counter is short: *"that's not the experience I have"* — his are battle-tested and very clear.
+
+### The skills they actually use
+
+- **Handoff / MyDocs** — Dillon likes Matt Pocock's **handoff** skill for dumping summarized context to pass to a second agent, since telling one agent to do two things at once *"gets everything really screwed up."* He is not sure you even need a skill for it. Scott's version is **MyDocs**: write up everything we just said, drop it in a local folder, and categorize it as an RFC, a feature guide, or a plan.
+- **Grilling with docs** — Pocock's doc skill (the name keeps changing) asks Scott a million questions before writing anything high-level. He rates it highly.
+- **Trio review** — a code review skill from friend-of-the-pod **Joe Boyle** that spins up three sub-agents, each with a different personality, giving feedback at different levels. Dillon saves it for critical code; a simple feature does not need it.
+- **ponytail** — applies **YAGNI** to whatever you are building, looks for anything too complex, and suggests simplifications. Dillon says the recommendations are good.
+- **anti-slop** — Dillon Mulroy's project, a set of custom **Oxlint** plugins plus an agent skill. Matt kicked it off before bed and woke up to a **-6,000 / +2,000** PR clearing useless comments and tests that assert a function returns true.
+- **EOD / SOD** — Dillon's end-of-day mind dump and start-of-day recap, which pulls from **GitHub** and **Jira** to connect the dots and doubles as a standup update.
+- **Meeting notes** — Matt's weekly scheduled task walks his work calendar and creates **Notion** notes per meeting, mapping email addresses to people. A skill beats a script here because it can handle a name it does not recognize.
+
+### PR descriptions, and the one prompt that fixes them
+
+Matt's whole PR-description prompt is: use **ASD-STE100 Simplified Technical English**. That is it. He finds the output slightly over-concise rather than verbose — the failure mode he sees from coworkers whose agents write PR descriptions that are *"incredibly verbose and annoying to read."* Dillon, who had never heard of the spec, said on air that he was about to run his tech spec through it. His company's PR plugin solves the same problem the long way: tell the agent not to detail every implementation choice, because *"I used tailwind classes to move the div to the left"* is not helpful to a reviewer who can see the diff.
+
+### Beyond skills: harnesses and fleet-wide migrations
+
+Both companies are pushing past single skills into automated harnesses. Dillon's team has a workflow that cleans up a **feature flag** across many repos in one go — scan the repos, spin up tickets, execute them, open PRs, and pause for a human approval that unblocks the next stage. HubSpot has **Mothership**, built for scripted tasks like codemods across thousands of repos (they are, Matt says, *"maybe infamously not a monorepo company"*), and has recently added **agentic missions** that run a prompt across that same fleet. Matt flags a future episode: agents versus deterministic codemods, and where the line sits.
+
+### Standup / Life Updates
+
+Light week. Matt's headphones kept dropping mid-record, so Dillon carried a stretch solo. Dillon fired off a live experiment — rewriting a tech spec in ASD-STE100 — and promised a verdict later. Scott's team shipped a natural-language end-to-end test platform built on aluminum, which he calls pretty cool. And the hosts agree there is enough left over for a follow-up episode on skills.
+
+### Links
+
+- ASD Simplified Technical English — https://matthamlin.me/2026/august/simplified-technical-english
+- ponytail — https://github.com/DietrichGebert/ponytail
+- Dillon Mulroy's anti-slop skill — https://github.com/dmmulroy/anti-slop
+- Matt Pocock's skills — https://github.com/mattpocock/skills

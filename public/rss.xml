@@ -31,6 +31,63 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>All You Need Is a Router</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/33/audio.mp3"
+                      type="audio/mpeg"
+                      length="43484182"/>
+            <guid isPermaLink="false">33</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/33/all-you-need-is-a-router</link>
+            <pubDate>Sat, 22 Aug 2026 16:50:51 GMT</pubDate>
+            <description><![CDATA[Scott, Dillon, and Matt dig into AI routers — the layer that decides which model actually answers your prompt — and why Stripe reportedly paid ~$9B for OpenRouter while Ramp built its own. The conversation covers what routers really do today (less 'smart judge,' more traffic control), why orgs want a single gateway for spend and model policy, and whether providers will quietly downgrade you to a cheaper model. Plus: burnout recovery, smart chess boards, flaky end-to-end tests, and a reindeer hot dog in Bergen.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>The layer between your prompt and the model that answers it is turning into real infrastructure — and real money. Matt walks through what an <strong>AI router</strong> is, why Stripe and Ramp are both making moves in the space, and what routers look like inside a large org today.</p>
+<h3>What a router actually is</h3>
+<p>Matt defines the term for the AI context: a router takes one prompt and decides which backing model should answer it. Every major inference company already runs one, it just isn&#x27;t talked about much. His example — send a prompt to <strong>Fable</strong> in Claude Code, hit a topic the model shouldn&#x27;t handle, and the request gets quietly redirected to <strong>Opus 5</strong> behind the scenes.</p>
+<p>Outside the big labs, a crop of startups sell a generic version: point your traffic at the router and it decides whether the request goes to OpenAI, Anthropic, or some other backend, based on your use case. The pitch to companies is flexibility — one subscription, many model types.</p>
+<h3>The news: Stripe / OpenRouter and Ramp</h3>
+<p>Two items on the table:</p>
+<ul>
+<li><strong>Stripe</strong> has either closed or is in talks on an acquisition of <strong>OpenRouter</strong>, the largest startup operating a router at scale, reportedly around <strong>$9 billion</strong>.</li>
+<li><strong>Ramp</strong>, a financial services company, is launching its own router as an alternative.</li>
+</ul>
+<p>Matt&#x27;s read on Stripe&#x27;s motive: less about clever prompt-level routing, more about wanting a <strong>single gateway</strong> for all AI traffic and a single place to tune where requests go — offloading the infrastructure instead of juggling it internally.</p>
+<p>Dillon pushes back on the valuation. Taking a prompt and picking a model doesn&#x27;t sound like a hard problem — <em>&quot;are they just using an agent to then... ask the agent, hey, what model should we use for this?&quot;</em> Matt suspects OpenRouter isn&#x27;t doing much intelligent per-request judging today; it&#x27;s closer to percentage splits and explicit model selection. A true <strong>judgment agent</strong> at the router layer is still costly and hard to run efficiently at scale.</p>
+<h3>Frontier-model maximalists vs. fine-tuners</h3>
+<p>Matt frames a split in the ecosystem that most people don&#x27;t realize they&#x27;re on one side of:</p>
+<ul>
+<li>One camp believes the <strong>frontier models are good enough at everything</strong> — just throw it at Fable 5 or GPT 5.6 and move on.</li>
+<li>The other believes a model <strong>fine-tuned for one narrow job</strong> (triaging error alerts, say) will outperform any generalist on that job, even if it&#x27;s useless at everything else — at somewhat higher cost today.</li>
+</ul>
+<p>Routers lean toward the second camp: they&#x27;re what makes it practical to send specific requests to specific tuned models.</p>
+<p>Scott recalls this exact theory from his <strong>Fireworks</strong> days — that catch-all models doing everything were unlikely to be realistic, and the future was small, well-tuned models plus a router that maps the right prompt to the right one. His observation now: model tuning has largely been <strong>offloaded from businesses to the AI companies themselves</strong>, because tuning is a high-cost problem space. Companies just hold an Anthropic subscription and an OpenAI subscription instead.</p>
+<h3>Spend, limits, and the shame board</h3>
+<p>Dillon&#x27;s practical want: <strong>pre-baked limits</strong>. At his job you can use Cursor, Claude Code, or ChatGPT, all as separate applications with different interfaces and no built-in caps — you find out you&#x27;ve used too much when someone tells you to chill out. He&#x27;d use expensive models <em>more</em> freely if he knew he had, say, a $100/week Fable allotment. Right now the ambiguity makes him avoid them.</p>
+<p>Scott&#x27;s org is similar: no hard limit, just an occasional &quot;hey, calm down.&quot; Dillon&#x27;s team had a <strong>leaderboard</strong> of AI spend by name — his strategy was staying out of the top 10. Matt&#x27;s verdict: <em>&quot;so it&#x27;s like a shame board now instead of a leaderboard.&quot;</em> Scott got pinged as an &quot;AI leader&quot; at his company and didn&#x27;t believe it, noting some colleagues are migrating entire codebases and taking it to extremes.</p>
+<h3>Routers inside HubSpot</h3>
+<p>Matt describes the real setup: HubSpot runs a <strong>LiteLLM</strong> gateway deployed internally, with requests forwarded to OpenAI, <strong>Amazon Bedrock</strong>, or <strong>Base Ten</strong> depending on the model. Anthropic models go through Anthropic&#x27;s enterprise offering instead. It covers both sides — engineers writing code and customers using <strong>Breeze</strong>, HubSpot&#x27;s agentic surface — which lets the org control which model actually serves each request.</p>
+<p>A finding from that setup: plenty of people assume they need Opus 5 or Fable 5 or GPT 5.6 to get the best result, but when the model is <strong>obfuscated behind the scenes</strong>, they can&#x27;t tell they&#x27;re getting GLM 5.2 and rate the output as good enough. Matt&#x27;s careful framing — the point isn&#x27;t lying to your engineers, it&#x27;s that routers give orgs sane levers over cost and model policy.</p>
+<p>Scott wonders where a routing layer would sit relative to <strong>Bedrock</strong> in his own stack. Matt&#x27;s answer: Bedrock has a router, but a basic one — it honors the model you asked for rather than making a judgment call.</p>
+<h3>Cursor auto mode as the mental model</h3>
+<p>The clearest consumer-facing example: <strong>Cursor&#x27;s auto mode</strong>, where you don&#x27;t pick a model or thinking level, you just send the prompt and Cursor decides. Same pattern with subagents — <strong>Composer 2</strong> for the main prompt, lighter models for scoped subagent work, which is how <strong>Claude Code</strong> spins up Haiku for subagents.</p>
+<p>Matt&#x27;s prediction for the back half of 2026 into 2027: routers get bigger, driven by companies employing more AI while getting <strong>fiscally conservative</strong> about AI spend. Routers are the balancing point — cap the requests hitting expensive frontier models, send the rest to something cheap that does the same work for pennies.</p>
+<h3>Hot takes</h3>
+<p>Dillon&#x27;s (self-described not-very-hot) take: he&#x27;d prefer routing be automatic, because <em>&quot;I don&#x27;t think we should be spending our day bikeshedding over what model to use&quot;</em> — the name of the podcast, by the way.</p>
+<p>Matt agrees, but names the obstacle: engineers want to know the implementation detail and want to be using the best tool. Convincing them a cheaper open-source model is just as good for their problem is a hard sell against the branding.</p>
+<p>Dillon&#x27;s actually-hot take: he doesn&#x27;t trust the providers at all. <em>&quot;I use Opus, they&#x27;re probably using Haiku... and telling you it&#x27;s Opus, charging you for Opus.&quot;</em> Scott laughs because he kind of agrees. Both suspect it&#x27;s already happening — earlier in the episode Scott predicted providers would <em>&quot;route you to some crappy model that you don&#x27;t know you&#x27;re using and tell you it&#x27;s a one-tier model.&quot;</em></p>
+<h3>Standup / Life Updates</h3>
+<p><strong>Dillon</strong> — finished a long project that made him want to quit his job, mostly from burnout, which is now cooling off after some time away. He&#x27;s been playing chess on a <strong>smart chess board</strong> that grades your moves as good, bad, or an inaccuracy in real time and highlights legal moves when you touch a piece. Played his first game on it with his wife.</p>
+<p><strong>Scott</strong> — juggling five things at once, wrapping phase two of a project (his tech lead has replaced &quot;phase one/two/three&quot; with witty names). Fighting <strong>end-to-end tests</strong> that fail again every morning, and building a <strong>Buildkite CI pipeline</strong> to check against preview deploys instead of the current setup where everything fails in staging and never escalates to on-call. Calls it a nightmare. Heading to <strong>Portugal</strong> soon, and feeling re-energized after his own brush with burnout — he got to write some UI, which he doesn&#x27;t do much anymore.</p>
+<p><strong>Matt</strong> — a teammate just left, leaving him and his principal engineer on the team, with a possible merge back into a sister team. Outside work: <strong>Big Walk</strong>, possible game of the year, maybe the decade. The <strong>Modern Warfare 4</strong> closed beta starts today, with <strong>DMZ</strong> returning in October. Heading to <strong>Bergen, Norway</strong> with a plan to eat a reindeer hot dog — a trip Scott and Dillon learned about live, and took as a personal insult.</p>]]></content:encoded>
+            <itunes:duration>1812</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/33/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
+
+          <item>
+            <!-- Required Item Elements -->
             <title>Skill Issue</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/32/audio.mp3"
                       type="audio/mpeg"

@@ -1,0 +1,82 @@
+---
+episodeId: "33"
+slug: "all-you-need-is-a-router"
+title: "All You Need Is a Router"
+shortDescription: "Scott, Dillon, and Matt dig into AI routers — the layer that decides which model actually answers your prompt — and why Stripe reportedly paid ~$9B for OpenRouter while Ramp built its own. The conversation covers what routers really do today (less 'smart judge,' more traffic control), why orgs want a single gateway for spend and model policy, and whether providers will quietly downgrade you to a cheaper model. Plus: burnout recovery, smart chess boards, flaky end-to-end tests, and a reindeer hot dog in Bergen."
+hosts: ['scott', 'dillon', 'matt']
+metadata: ['ai', 'routers', 'openrouter', 'llm-infrastructure', 'frontier-models']
+publishTime: 1787417451049
+duration: 1812
+audioURL: "https://assets.bikeshedpod.com/episodes/33/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/33/captions.vtt"
+fileSizeBytes: 43484182
+blueskyPostUri: ""
+---
+
+## Summary
+
+The layer between your prompt and the model that answers it is turning into real infrastructure — and real money. Matt walks through what an **AI router** is, why Stripe and Ramp are both making moves in the space, and what routers look like inside a large org today.
+
+### What a router actually is
+
+Matt defines the term for the AI context: a router takes one prompt and decides which backing model should answer it. Every major inference company already runs one, it just isn't talked about much. His example — send a prompt to **Fable** in Claude Code, hit a topic the model shouldn't handle, and the request gets quietly redirected to **Opus 5** behind the scenes.
+
+Outside the big labs, a crop of startups sell a generic version: point your traffic at the router and it decides whether the request goes to OpenAI, Anthropic, or some other backend, based on your use case. The pitch to companies is flexibility — one subscription, many model types.
+
+### The news: Stripe / OpenRouter and Ramp
+
+Two items on the table:
+
+- **Stripe** has either closed or is in talks on an acquisition of **OpenRouter**, the largest startup operating a router at scale, reportedly around **$9 billion**.
+- **Ramp**, a financial services company, is launching its own router as an alternative.
+
+Matt's read on Stripe's motive: less about clever prompt-level routing, more about wanting a **single gateway** for all AI traffic and a single place to tune where requests go — offloading the infrastructure instead of juggling it internally.
+
+Dillon pushes back on the valuation. Taking a prompt and picking a model doesn't sound like a hard problem — *"are they just using an agent to then... ask the agent, hey, what model should we use for this?"* Matt suspects OpenRouter isn't doing much intelligent per-request judging today; it's closer to percentage splits and explicit model selection. A true **judgment agent** at the router layer is still costly and hard to run efficiently at scale.
+
+### Frontier-model maximalists vs. fine-tuners
+
+Matt frames a split in the ecosystem that most people don't realize they're on one side of:
+
+- One camp believes the **frontier models are good enough at everything** — just throw it at Fable 5 or GPT 5.6 and move on.
+- The other believes a model **fine-tuned for one narrow job** (triaging error alerts, say) will outperform any generalist on that job, even if it's useless at everything else — at somewhat higher cost today.
+
+Routers lean toward the second camp: they're what makes it practical to send specific requests to specific tuned models.
+
+Scott recalls this exact theory from his **Fireworks** days — that catch-all models doing everything were unlikely to be realistic, and the future was small, well-tuned models plus a router that maps the right prompt to the right one. His observation now: model tuning has largely been **offloaded from businesses to the AI companies themselves**, because tuning is a high-cost problem space. Companies just hold an Anthropic subscription and an OpenAI subscription instead.
+
+### Spend, limits, and the shame board
+
+Dillon's practical want: **pre-baked limits**. At his job you can use Cursor, Claude Code, or ChatGPT, all as separate applications with different interfaces and no built-in caps — you find out you've used too much when someone tells you to chill out. He'd use expensive models *more* freely if he knew he had, say, a $100/week Fable allotment. Right now the ambiguity makes him avoid them.
+
+Scott's org is similar: no hard limit, just an occasional "hey, calm down." Dillon's team had a **leaderboard** of AI spend by name — his strategy was staying out of the top 10. Matt's verdict: *"so it's like a shame board now instead of a leaderboard."* Scott got pinged as an "AI leader" at his company and didn't believe it, noting some colleagues are migrating entire codebases and taking it to extremes.
+
+### Routers inside HubSpot
+
+Matt describes the real setup: HubSpot runs a **LiteLLM** gateway deployed internally, with requests forwarded to OpenAI, **Amazon Bedrock**, or **Base Ten** depending on the model. Anthropic models go through Anthropic's enterprise offering instead. It covers both sides — engineers writing code and customers using **Breeze**, HubSpot's agentic surface — which lets the org control which model actually serves each request.
+
+A finding from that setup: plenty of people assume they need Opus 5 or Fable 5 or GPT 5.6 to get the best result, but when the model is **obfuscated behind the scenes**, they can't tell they're getting GLM 5.2 and rate the output as good enough. Matt's careful framing — the point isn't lying to your engineers, it's that routers give orgs sane levers over cost and model policy.
+
+Scott wonders where a routing layer would sit relative to **Bedrock** in his own stack. Matt's answer: Bedrock has a router, but a basic one — it honors the model you asked for rather than making a judgment call.
+
+### Cursor auto mode as the mental model
+
+The clearest consumer-facing example: **Cursor's auto mode**, where you don't pick a model or thinking level, you just send the prompt and Cursor decides. Same pattern with subagents — **Composer 2** for the main prompt, lighter models for scoped subagent work, which is how **Claude Code** spins up Haiku for subagents.
+
+Matt's prediction for the back half of 2026 into 2027: routers get bigger, driven by companies employing more AI while getting **fiscally conservative** about AI spend. Routers are the balancing point — cap the requests hitting expensive frontier models, send the rest to something cheap that does the same work for pennies.
+
+### Hot takes
+
+Dillon's (self-described not-very-hot) take: he'd prefer routing be automatic, because *"I don't think we should be spending our day bikeshedding over what model to use"* — the name of the podcast, by the way.
+
+Matt agrees, but names the obstacle: engineers want to know the implementation detail and want to be using the best tool. Convincing them a cheaper open-source model is just as good for their problem is a hard sell against the branding.
+
+Dillon's actually-hot take: he doesn't trust the providers at all. *"I use Opus, they're probably using Haiku... and telling you it's Opus, charging you for Opus."* Scott laughs because he kind of agrees. Both suspect it's already happening — earlier in the episode Scott predicted providers would *"route you to some crappy model that you don't know you're using and tell you it's a one-tier model."*
+
+### Standup / Life Updates
+
+**Dillon** — finished a long project that made him want to quit his job, mostly from burnout, which is now cooling off after some time away. He's been playing chess on a **smart chess board** that grades your moves as good, bad, or an inaccuracy in real time and highlights legal moves when you touch a piece. Played his first game on it with his wife.
+
+**Scott** — juggling five things at once, wrapping phase two of a project (his tech lead has replaced "phase one/two/three" with witty names). Fighting **end-to-end tests** that fail again every morning, and building a **Buildkite CI pipeline** to check against preview deploys instead of the current setup where everything fails in staging and never escalates to on-call. Calls it a nightmare. Heading to **Portugal** soon, and feeling re-energized after his own brush with burnout — he got to write some UI, which he doesn't do much anymore.
+
+**Matt** — a teammate just left, leaving him and his principal engineer on the team, with a possible merge back into a sister team. Outside work: **Big Walk**, possible game of the year, maybe the decade. The **Modern Warfare 4** closed beta starts today, with **DMZ** returning in October. Heading to **Bergen, Norway** with a plan to eat a reindeer hot dog — a trip Scott and Dillon learned about live, and took as a personal insult.

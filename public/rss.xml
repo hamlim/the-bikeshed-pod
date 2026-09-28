@@ -28,6 +28,43 @@
         <copyright>© 2026 The Bikeshed Pod</copyright>
         <itunes:type>episodic</itunes:type>
 
+        
+          <item>
+            <!-- Required Item Elements -->
+            <title>The Heat Death of Software</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/35/audio.mp3"
+                      type="audio/mpeg"
+                      length="63812045"/>
+            <guid isPermaLink="false">35</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/35/the-heat-death-of-software</link>
+            <pubDate>Mon, 28 Sep 2026 13:26:25 GMT</pubDate>
+            <description><![CDATA[Scott, Dillon, and Matt dig into Matt's blog post, "The Heat Death of Software." The post predicts that open source, software teams, and paid SaaS will look very different within 10–15 years. The hosts argue about the "is-even to curl" range of what an agent can replace, whether cutting junior engineers leaves the industry with no future seniors, and which products have a moat deep enough to survive vibe coding. Plus: white Monster debates, a newfound respect for Diet Coke, and Dillon's water-fueled Whoop age.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>Matt brings his own blog post to the table. It argues that software engineering is heading toward a kind of thermal equilibrium, where the structures we rely on today flatten out. Scott and Dillon test each of its three predictions, and they don&#x27;t always agree.</p>
+<h3>Remember Left-Pad?</h3>
+<p>Before the predictions, a detour into nostalgia: the 2016 <strong>left-pad</strong> incident. A tiny npm package was pulled from the registry, and CI broke across the JavaScript ecosystem in a world before lock files. Matt is shocked his co-hosts don&#x27;t remember it. Dillon notes that he was still in high school, and that it blew up mostly because it was &quot;such a stupid library.&quot;</p>
+<h3>Prediction 1: Open Source Dwindles</h3>
+<p>Matt describes a range of libraries, from <strong>is-even</strong> to <strong>curl</strong>. Agents can already replace the small end. The question is how far up the range that ability goes in 10–15 years. Dillon points to maintainers who are drowning in <strong>vibe-coded slop PRs</strong>, which he says is &quot;killing the fun.&quot; Scott wonders what happens to model quality if less good code goes public. He also worries that an all-proprietary world makes humans less useful when they move between jobs. Dillon&#x27;s darker take: if open source dies, innovation might die with it, because <strong>AI companies will just own the solutions</strong>. Matt also brings up Google-style <strong>readability</strong>, which is really about comprehension, and asks how much of it survives when AI-written code goes straight to production.</p>
+<h3>Prediction 2: Leaner Teams, No Junior Pipeline</h3>
+<p>Junior hiring has dropped off a cliff and teams are shrinking. Matt worries that in five to ten years there will be <strong>no senior engineers left</strong>, because nobody got the chance to &quot;fuck around and find out&quot; as a junior. Scott says his team (14 or 15 people, &quot;not humble bragging&quot;) is actually growing with <strong>ML engineers</strong>. He also calls out an AI-generated PR full of <code>setState</code> and <code>useEffect</code> that should have been lifted up a layer. Dillon calls the &quot;you don&#x27;t need juniors anymore&quot; pitch a <strong>bad bet</strong>. The juniors he works with are &quot;cracked,&quot; and companies that stop bringing in new people will slowly make themselves worse. On the human side, Scott finds talking to an agent all day draining (&quot;Claude, cook&quot;), while Matt has made peace with his role as a <strong>meat proxy</strong>.</p>
+<h3>Prediction 3: Vibe Coding Your Own SaaS</h3>
+<p>Matt&#x27;s claim with the biggest economic impact: models are now good enough to generate something that <strong>LARPs as a product</strong>. For example, a Raycast replacement for a few dollars of tokens instead of $200 a year. Scott connects this to Wes Bos&#x27;s AI yard-sale app and to the <strong>Neovim vs. out-of-the-box</strong> trade-off. Dillon names the catch: if you don&#x27;t understand the code, you can&#x27;t steer it. You hand the wheel to a self-driving car and it &quot;turns you into a tree.&quot;</p>
+<h3>You Wouldn&#x27;t Vibe Code S3</h3>
+<p>Matt ends on the post&#x27;s counterargument, a play on the old &quot;you wouldn&#x27;t download a car&quot; ad. <strong>Durable services</strong> like S3, EC2, and Cloudflare Workers are much harder to replace than a desktop tool. Every product has a <strong>moat</strong>. Raycast&#x27;s is a stream. Amazon&#x27;s is the Atlantic Ocean.</p>
+<h3>Standup / Life Updates</h3>
+<ul>
+<li>The hosts defend starting the day with a <strong>white Monster</strong> after 30. Dillon brings up the old conspiracy theory about the logo (as a joke).</li>
+<li>Matt has switched from Coke Zero to <strong>Diet Coke Lime</strong> and says he finally &quot;understands Diet Coke.&quot;</li>
+<li>Dillon stays on the <strong>Hydro Homies</strong> bus, which Matt says explains why his <strong>Whoop age</strong> is five years younger than his real age.</li>
+<li>Scott is, once again, going to be late for standup.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>2659</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/35/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+        
 
           <item>
             <!-- Required Item Elements -->

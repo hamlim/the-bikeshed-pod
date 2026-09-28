@@ -1,0 +1,52 @@
+---
+episodeId: "34"
+slug: "42-classes-on-one-div"
+title: "42 Classes on One Div"
+shortDescription: 'Scott, Dillon, and Matt talk about why teams are suddenly moving from Tailwind to StyleX. They compare atomic CSS compilers, bundle size, and readability, and they discuss whether AI agents write StyleX better. Plus: Scott has some "spicy deets" about who actually maintains StyleX, and there is a detour into Meta''s open source strategy.'
+hosts: ["scott", "dillon", "matt"]
+metadata:
+  [
+    "tailwind",
+    "stylex",
+    "css",
+    "atomic-css",
+    "css-in-js",
+    "frontend-tooling",
+    "ai-agents",
+    "open-source",
+  ]
+publishTime: 1790599252522
+duration: 1446
+audioURL: "https://assets.bikeshedpod.com/episodes/34/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/34/captions.vtt"
+fileSizeBytes: 34708293
+blueskyPostUri: ""
+---
+
+## Summary
+
+A wave of teams dropping Tailwind for StyleX prompts a look at how the two tools think about CSS, where each wins on performance, and what "readable" means when agents write most of the code.
+
+### Tailwind vs. StyleX: How They Differ
+
+Matt sets up the comparison. **Tailwind** is a utility-first library with prebuilt class names. **StyleX** has you write the styles yourself and **compiles them into atomic utility classes**. Scott compares StyleX to **styled-components**, **Linaria**, and **Vanilla Extract**: the CSS lives right next to your JSX, but the work happens at build time. Matt notes that HubSpot has started to adopt StyleX at the component library level. There, the compiler **dedupes identical rules** into shared class names, which is more atomic than tools like Vanilla Extract, where each style block becomes one class.
+
+### Performance: It Depends
+
+Scott thinks Tailwind is still a bit ahead on **build and compile speed**. Matt has seen mixed reports. Some teams got a **smaller JS bundle** after migrating, because StyleX can merge commonly paired rules into one class. Other teams saw no change or larger output. In Matt's words, to quote Scott's favorite phrase, _"it totally depends."_
+
+### Readability and the AI Angle
+
+One claim that teams make is that **AI coding agents write StyleX better**. Scott is not fully sold on it, but he likes that StyleX puts the real CSS in front of you. He thinks it is important to review AI output and to know modern CSS (he recommends **Kevin Powell's** YouTube channel). Dillon says he only adopted Tailwind because he had to. For him, AI-generated UIs with **42 classes on one div** are unreadable. He would _"die on the hill"_ that long Tailwind class names are bad, because StyleX is much closer to the CSS spec.
+
+### Keeping Up With New CSS
+
+Matt asks how well each tool supports **new CSS features**. Tailwind has lagged because it has to ship new class names, and it is not clear how StyleX handles CSS it does not recognize yet. If these tools get in the way, he expects more people (or their agents) to go back to **handwriting CSS**.
+
+### Who Maintains This Stuff?
+
+Matt mentions that **Tailwind was acquired by Shopify**, while the StyleX team at Meta is smaller than it was. Scott shares his **spicy deets**: he has heard that Meta runs an internal fork and that the open source version may depend on **a single maintainer**. Matt says that an internal/external split is normal for Meta projects (React was the same) and jokes that one person with unlimited agent tokens could be enough.
+
+### Meta's Open Source Playbook
+
+Dillon thinks the community respects Meta's libraries because of React, which could help StyleX grow. Matt thinks that open source is Meta's way to build a larger **hiring pool** of engineers who already know its stack. Compare this with an unpopular in-house framework, like **Tungsten** (a deep cut for longtime listeners). Dillon wants a future episode about how React became so popular.

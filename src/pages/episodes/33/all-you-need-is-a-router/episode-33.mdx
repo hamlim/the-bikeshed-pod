@@ -3,8 +3,9 @@ episodeId: "33"
 slug: "all-you-need-is-a-router"
 title: "All You Need Is a Router"
 shortDescription: "Scott, Dillon, and Matt dig into AI routers — the layer that decides which model actually answers your prompt — and why Stripe reportedly paid ~$9B for OpenRouter while Ramp built its own. The conversation covers what routers really do today (less 'smart judge,' more traffic control), why orgs want a single gateway for spend and model policy, and whether providers will quietly downgrade you to a cheaper model. Plus: burnout recovery, smart chess boards, flaky end-to-end tests, and a reindeer hot dog in Bergen."
-hosts: ['scott', 'dillon', 'matt']
-metadata: ['ai', 'routers', 'openrouter', 'llm-infrastructure', 'frontier-models']
+hosts: ["scott", "dillon", "matt"]
+metadata:
+  ["ai", "routers", "openrouter", "llm-infrastructure", "frontier-models"]
 publishTime: 1787417451049
 duration: 1812
 audioURL: "https://assets.bikeshedpod.com/episodes/33/audio.mp3"
@@ -32,7 +33,7 @@ Two items on the table:
 
 Matt's read on Stripe's motive: less about clever prompt-level routing, more about wanting a **single gateway** for all AI traffic and a single place to tune where requests go — offloading the infrastructure instead of juggling it internally.
 
-Dillon pushes back on the valuation. Taking a prompt and picking a model doesn't sound like a hard problem — *"are they just using an agent to then... ask the agent, hey, what model should we use for this?"* Matt suspects OpenRouter isn't doing much intelligent per-request judging today; it's closer to percentage splits and explicit model selection. A true **judgment agent** at the router layer is still costly and hard to run efficiently at scale.
+Dillon pushes back on the valuation. Taking a prompt and picking a model doesn't sound like a hard problem — _"are they just using an agent to then... ask the agent, hey, what model should we use for this?"_ Matt suspects OpenRouter isn't doing much intelligent per-request judging today; it's closer to percentage splits and explicit model selection. A true **judgment agent** at the router layer is still costly and hard to run efficiently at scale.
 
 ### Frontier-model maximalists vs. fine-tuners
 
@@ -47,9 +48,9 @@ Scott recalls this exact theory from his **Fireworks** days — that catch-all m
 
 ### Spend, limits, and the shame board
 
-Dillon's practical want: **pre-baked limits**. At his job you can use Cursor, Claude Code, or ChatGPT, all as separate applications with different interfaces and no built-in caps — you find out you've used too much when someone tells you to chill out. He'd use expensive models *more* freely if he knew he had, say, a $100/week Fable allotment. Right now the ambiguity makes him avoid them.
+Dillon's practical want: **pre-baked limits**. At his job you can use Cursor, Claude Code, or ChatGPT, all as separate applications with different interfaces and no built-in caps — you find out you've used too much when someone tells you to chill out. He'd use expensive models _more_ freely if he knew he had, say, a $100/week Fable allotment. Right now the ambiguity makes him avoid them.
 
-Scott's org is similar: no hard limit, just an occasional "hey, calm down." Dillon's team had a **leaderboard** of AI spend by name — his strategy was staying out of the top 10. Matt's verdict: *"so it's like a shame board now instead of a leaderboard."* Scott got pinged as an "AI leader" at his company and didn't believe it, noting some colleagues are migrating entire codebases and taking it to extremes.
+Scott's org is similar: no hard limit, just an occasional "hey, calm down." Dillon's team had a **leaderboard** of AI spend by name — his strategy was staying out of the top 10. Matt's verdict: _"so it's like a shame board now instead of a leaderboard."_ Scott got pinged as an "AI leader" at his company and didn't believe it, noting some colleagues are migrating entire codebases and taking it to extremes.
 
 ### Routers inside HubSpot
 
@@ -67,11 +68,11 @@ Matt's prediction for the back half of 2026 into 2027: routers get bigger, drive
 
 ### Hot takes
 
-Dillon's (self-described not-very-hot) take: he'd prefer routing be automatic, because *"I don't think we should be spending our day bikeshedding over what model to use"* — the name of the podcast, by the way.
+Dillon's (self-described not-very-hot) take: he'd prefer routing be automatic, because _"I don't think we should be spending our day bikeshedding over what model to use"_ — the name of the podcast, by the way.
 
 Matt agrees, but names the obstacle: engineers want to know the implementation detail and want to be using the best tool. Convincing them a cheaper open-source model is just as good for their problem is a hard sell against the branding.
 
-Dillon's actually-hot take: he doesn't trust the providers at all. *"I use Opus, they're probably using Haiku... and telling you it's Opus, charging you for Opus."* Scott laughs because he kind of agrees. Both suspect it's already happening — earlier in the episode Scott predicted providers would *"route you to some crappy model that you don't know you're using and tell you it's a one-tier model."*
+Dillon's actually-hot take: he doesn't trust the providers at all. _"I use Opus, they're probably using Haiku... and telling you it's Opus, charging you for Opus."_ Scott laughs because he kind of agrees. Both suspect it's already happening — earlier in the episode Scott predicted providers would _"route you to some crappy model that you don't know you're using and tell you it's a one-tier model."_
 
 ### Standup / Life Updates
 

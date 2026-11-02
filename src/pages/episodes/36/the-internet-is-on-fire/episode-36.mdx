@@ -1,0 +1,64 @@
+---
+episodeId: "36"
+slug: "the-internet-is-on-fire"
+title: "The Internet is On Fire"
+shortDescription: "Scott, Dillon, and Matt recap a hard week for the internet: two critical PHP vulnerabilities, the eMudhra certificate incident, and a GitLab flaw that was there for 10 years. They also talk about the end of Arc, the REA reverse-engineering skill, and the new wave of personal agents, including Claude Duet. Plus, Dillon gets a new keyboard, and two hosts are on call during the recording."
+hosts: ["scott", "dillon", "matt"]
+metadata:
+  [
+    "web-security",
+    "php",
+    "certificate-authorities",
+    "web-browsers",
+    "reverse-engineering",
+    "ai-agents",
+    "personal-agents",
+    "node-js",
+  ]
+publishTime: 1793623504958
+duration: 2057
+audioURL: "https://assets.bikeshedpod.com/episodes/36/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/36/captions.vtt"
+fileSizeBytes: 32906344
+blueskyPostUri: ""
+---
+
+## Summary
+
+This is a grab-bag episode. Most of the news is bad: old software, weak keys, and patches that do not reach old versions. Some of the news is better: new personal agents and new browsers to try.
+
+### RIP Arc (2023–2026)
+
+**The Browser Company of New York** is stopping work on **Arc** and moving users to its new browser, **Dia**. Scott is not happy. He will try Dia with the AI features off, because his work requires a **Chromium**-based browser. He also likes **Zen**, an Arc-style browser built on **Firefox**. Matt uses Dia at work and **Helium** at home, but he wants tab **sync to iOS**. He wants to try **Yab** ("yet another browser") for this. Matt says it is strange that the **Atlassian** CEO was a daily Arc user, but Arc still did not come back. Dillon defends Firefox. Matt says he would use **Internet Explorer 8** first.
+
+### REA: Reverse Engineer Anything
+
+**REA** is a skill that tells an agent how to reverse engineer any software. People used it to make open-source versions of the **Adobe Creative Suite** and to make game mashups: Steve from **Minecraft** in **Elden Ring**, and **Skate 3** on a **Call of Duty** map. Model companies now block it, because it is close to the cybersecurity work they already restrict. Copies with new names continue to appear. Dillon asks a good question: when an agent does not solve a problem, how do you know if it was blocked?
+
+### PHP: Two Critical RCEs
+
+PHP had two **remote code execution** vulnerabilities with **CVSS** scores of approximately 9.2 and 9.3. The timeline is not clear. OpenAI's **Patch the Planet** (similar to Anthropic's **Project Glasswing**) found related issues, and a person outside the **embargo** leaked the announcement early. This made the PHP Foundation release the fix sooner. US, Japanese, German, and Dutch officials told people to take servers down. The patches cover **PHP 8.2 to 8.5** only, so older versions get no fix. HubSpot runs Java, so Matt's team is safe. Matt thinks of **Wayfair**'s PHP monolith first. Scott remembers a former Wayfair leader who said PHP is "very malleable."
+
+### Node.js and Next.js Upgrades
+
+The October **Node.js** security releases fix only **Node 22, 24, and 26**. Matt has local workloads on **Node 12**. Dillon's coworker must upgrade a service on **Node 8**. Dillon is upgrading four apps from **Next.js 15 to 16**, because Next 15 support stopped on October 21.
+
+### eMudhra: The Private Key Was 4
+
+**eMudhra**, an Indian company that manages **intermediate certificates**, used very small numbers as private keys: 4, 11, 23, and others. All eight keys are less than 257. A simple script can find them in less than one minute. At Dillon's company, 20 people worked in one room for three days. A director said the internet is "on fire" and kept walking. Matt is on call, and he had to update a certificate bundle package. The only engineer who knew how it worked was laid off, so Matt used **Opus 5.5** to help.
+
+### GitLab's 10-Year Flaw
+
+**GitLab** had the same flaw in its software for approximately 10 years. The flaw gives attackers access to GitLab servers. Matt makes a joke about GitLab's "10 customers."
+
+### Claude Duet and Personal Agents
+
+Anthropic announced **Claude Duet**, an always-on **personal agent** with memory, calendar, and email access. Other products in this space are **OpenClaw**, **Hermes**, **Grok bots**, **Poke**, **Instinct**, Meta's **Muse**, and OpenAI's **Dots**. Matt has a Dot named **Bill**. He made **Poke** reduce its price from approximately $35 to **$2 per month**, but then he cancelled it. The hosts ask if non-engineers will use these agents. Scott's dad still uses the URL bar as a search engine.
+
+### Standup / Life Updates
+
+- Dillon has a new **Keychron K8 HE** keyboard.
+- Scott says Dillon's CTO wants to sit next to him. Dillon's company has not had a CTO for more than one year.
+- Dillon gets a call from his doctor during the recording, and Scott gets a page for eMudhra.
+- Matt and Dillon are both on call this week.
+- Scott talked to his computer before it was popular. Now everyone talks to their computer.

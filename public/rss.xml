@@ -31,6 +31,48 @@
         
           <item>
             <!-- Required Item Elements -->
+            <title>The Internet is On Fire</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/36/audio.mp3"
+                      type="audio/mpeg"
+                      length="32906344"/>
+            <guid isPermaLink="false">36</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/36/the-internet-is-on-fire</link>
+            <pubDate>Mon, 02 Nov 2026 12:45:04 GMT</pubDate>
+            <description><![CDATA[Scott, Dillon, and Matt recap a hard week for the internet: two critical PHP vulnerabilities, the eMudhra certificate incident, and a GitLab flaw that was there for 10 years. They also talk about the end of Arc, the REA reverse-engineering skill, and the new wave of personal agents, including Claude Duet. Plus, Dillon gets a new keyboard, and two hosts are on call during the recording.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>This is a grab-bag episode. Most of the news is bad: old software, weak keys, and patches that do not reach old versions. Some of the news is better: new personal agents and new browsers to try.</p>
+<h3>RIP Arc (2023–2026)</h3>
+<p><strong>The Browser Company of New York</strong> is stopping work on <strong>Arc</strong> and moving users to its new browser, <strong>Dia</strong>. Scott is not happy. He will try Dia with the AI features off, because his work requires a <strong>Chromium</strong>-based browser. He also likes <strong>Zen</strong>, an Arc-style browser built on <strong>Firefox</strong>. Matt uses Dia at work and <strong>Helium</strong> at home, but he wants tab <strong>sync to iOS</strong>. He wants to try <strong>Yab</strong> (&quot;yet another browser&quot;) for this. Matt says it is strange that the <strong>Atlassian</strong> CEO was a daily Arc user, but Arc still did not come back. Dillon defends Firefox. Matt says he would use <strong>Internet Explorer 8</strong> first.</p>
+<h3>REA: Reverse Engineer Anything</h3>
+<p><strong>REA</strong> is a skill that tells an agent how to reverse engineer any software. People used it to make open-source versions of the <strong>Adobe Creative Suite</strong> and to make game mashups: Steve from <strong>Minecraft</strong> in <strong>Elden Ring</strong>, and <strong>Skate 3</strong> on a <strong>Call of Duty</strong> map. Model companies now block it, because it is close to the cybersecurity work they already restrict. Copies with new names continue to appear. Dillon asks a good question: when an agent does not solve a problem, how do you know if it was blocked?</p>
+<h3>PHP: Two Critical RCEs</h3>
+<p>PHP had two <strong>remote code execution</strong> vulnerabilities with <strong>CVSS</strong> scores of approximately 9.2 and 9.3. The timeline is not clear. OpenAI&#x27;s <strong>Patch the Planet</strong> (similar to Anthropic&#x27;s <strong>Project Glasswing</strong>) found related issues, and a person outside the <strong>embargo</strong> leaked the announcement early. This made the PHP Foundation release the fix sooner. US, Japanese, German, and Dutch officials told people to take servers down. The patches cover <strong>PHP 8.2 to 8.5</strong> only, so older versions get no fix. HubSpot runs Java, so Matt&#x27;s team is safe. Matt thinks of <strong>Wayfair</strong>&#x27;s PHP monolith first. Scott remembers a former Wayfair leader who said PHP is &quot;very malleable.&quot;</p>
+<h3>Node.js and Next.js Upgrades</h3>
+<p>The October <strong>Node.js</strong> security releases fix only <strong>Node 22, 24, and 26</strong>. Matt has local workloads on <strong>Node 12</strong>. Dillon&#x27;s coworker must upgrade a service on <strong>Node 8</strong>. Dillon is upgrading four apps from <strong>Next.js 15 to 16</strong>, because Next 15 support stopped on October 21.</p>
+<h3>eMudhra: The Private Key Was 4</h3>
+<p><strong>eMudhra</strong>, an Indian company that manages <strong>intermediate certificates</strong>, used very small numbers as private keys: 4, 11, 23, and others. All eight keys are less than 257. A simple script can find them in less than one minute. At Dillon&#x27;s company, 20 people worked in one room for three days. A director said the internet is &quot;on fire&quot; and kept walking. Matt is on call, and he had to update a certificate bundle package. The only engineer who knew how it worked was laid off, so Matt used <strong>Opus 5.5</strong> to help.</p>
+<h3>GitLab&#x27;s 10-Year Flaw</h3>
+<p><strong>GitLab</strong> had the same flaw in its software for approximately 10 years. The flaw gives attackers access to GitLab servers. Matt makes a joke about GitLab&#x27;s &quot;10 customers.&quot;</p>
+<h3>Claude Duet and Personal Agents</h3>
+<p>Anthropic announced <strong>Claude Duet</strong>, an always-on <strong>personal agent</strong> with memory, calendar, and email access. Other products in this space are <strong>OpenClaw</strong>, <strong>Hermes</strong>, <strong>Grok bots</strong>, <strong>Poke</strong>, <strong>Instinct</strong>, Meta&#x27;s <strong>Muse</strong>, and OpenAI&#x27;s <strong>Dots</strong>. Matt has a Dot named <strong>Bill</strong>. He made <strong>Poke</strong> reduce its price from approximately $35 to <strong>$2 per month</strong>, but then he cancelled it. The hosts ask if non-engineers will use these agents. Scott&#x27;s dad still uses the URL bar as a search engine.</p>
+<h3>Standup / Life Updates</h3>
+<ul>
+<li>Dillon has a new <strong>Keychron K8 HE</strong> keyboard.</li>
+<li>Scott says Dillon&#x27;s CTO wants to sit next to him. Dillon&#x27;s company has not had a CTO for more than one year.</li>
+<li>Dillon gets a call from his doctor during the recording, and Scott gets a page for eMudhra.</li>
+<li>Matt and Dillon are both on call this week.</li>
+<li>Scott talked to his computer before it was popular. Now everyone talks to their computer.</li>
+</ul>]]></content:encoded>
+            <itunes:duration>2057</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/36/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+
+
+          <item>
+            <!-- Required Item Elements -->
             <title>The Heat Death of Software</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/35/audio.mp3"
                       type="audio/mpeg"

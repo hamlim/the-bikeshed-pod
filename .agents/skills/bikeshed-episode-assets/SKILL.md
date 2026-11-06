@@ -1,133 +1,163 @@
 ---
 name: bikeshed-episode-assets
-description: Generate promotional assets for new episodes of The Bikeshed Podcast (bikeshedpod.com) from a VTT or transcript file — produces a recommended title, a short summary, a tweet-length post, a list of episode tags, and a detailed markdown summary (in a code block) matching the show's established format and voice. Use whenever the user uploads podcast captions, a VTT file, or a transcript and asks for an episode summary, title, tweet, tags, show notes, or "episode assets" for The Bikeshed (also called "Bikeshed pod" or "the pod"), even if they don't list every deliverable explicitly.
+description: Prepare a Bikeshed Podcast episode from an edited audio file, VTT captions, or a transcript. Create named speaker captions, a title, summary, tweet, tags, and show notes. For audio input, prepare ignored local media, use the repo episode generator, and prepare an episode branch. Use for Bikeshed episode assets, transcription, or new episode preparation.
 ---
 
 # Bikeshed Episode Assets
 
-Matt co-hosts The Bikeshed Podcast (bikeshedpod.com) with Scott and Dillon. After each recording, he generates a set of promotional assets from the episode's VTT captions. This skill captures the format and voice he's settled on so the output is ready to publish without much editing.
+Use this skill for the complete audio-to-episode workflow. Audio input starts the
+full workflow unless the user requests a smaller task. It also accepts existing
+captions or a transcript. For existing text input with a request for assets only,
+skip media conversion, page creation, and branch creation. For a request for
+transcription only, stop after the caption checks.
 
-The five deliverables, in the order he wants them in the response:
+Use the supplied file path or attachment path. Do not assume an uploads directory.
+If more than one file can be the edited episode, ask which file to use.
 
-1. **Recommended title** — punchy, ~5 words, often coining a hook phrase from the episode itself
-2. **Short summary** — 2-4 sentences naming the hosts (with Matt listed last) and the main topic
-3. **Tweet** — under 280 characters
-4. **Tags** — a handful of lowercase, hyphenated topic tags, shared as a plain list
-5. **Detailed summary** — full markdown starting with `## Summary`, wrapped in a fenced code block so the raw markdown can be copy-pasted
+## 1. Prepare the episode branch and local folder
 
----
+Read the repo instructions. Check `git status`, the current branch, `package.json`,
+`scripts/new-episode.ts`, `src/hosts.ts`, and the latest episode MDX files.
 
-## Step 1: Locate and read the captions
+For a new episode, use its supplied number. Otherwise, get the highest numeric
+episode directory from `src/pages/episodes/` and add one. Check for an existing
+page or local bundle for that number. Reuse work for the same episode. Ask before
+replacing files or assigning a number when there is conflicting episode work.
 
-The captions are usually uploaded to `/mnt/user-data/uploads/`, typically named `captions.vtt`. If the filename isn't given, list the uploads directory first and pick the obvious transcript file.
+Fetch the default remote branch. From a clean checkout, create `episode-<number>`
+from the current remote `main`. Reuse the current branch if it already contains
+work for this episode. Preserve required unpublished work and user changes. Do
+not reset, stash, or switch away from unrelated changes without resolving which
+checkout to use. Do not create a worktree unless requested.
 
-VTT files for full episodes can run 1000+ lines. **Read the whole transcript, not just the start** — the title-worthy hook phrase, the side topic that makes the summary feel specific, or the standup beats that give the post personality often live in the middle or end. Use multiple `view` calls with `view_range` to cover the whole file.
+Keep all media and intermediate files in the repo's ignored folder:
 
-## Step 2: Identify the structure of the episode
-
-A typical Bikeshed episode has three structural pieces. Listen for all three as you read:
-
-- **Main topic** — usually a tweet, blog post, PR, or industry debate the hosts react to. Identify the source (who tweeted/wrote it) and the core argument or tension.
-- **Side topics** — related rabbit holes the conversation takes. Sometimes these are juicier than the main topic and deserve their own section in the detailed summary.
-- **Standup / life updates** — personal beats at the start or end (sports, books, gym, side projects, family). This is part of the show's character; **include it in the detailed summary as its own section**, don't strip it.
-
-When referring to the hosts, use first names: **Matt, Scott, and Dillon**. In the **short summary** specifically, list **Matt last** (e.g., "Scott, Dillon, and Matt...") — see the short summary style below.
-
-## Step 3: Generate the five assets
-
-Output them inline in the chat response — no file creation. Use this exact structure so it copy-pastes cleanly into the publishing flow:
-
-````markdown
-## Recommended Title
-**[Title]**
-
-## Short Summary
-[2-4 sentences, Matt listed last]
-
-## Tweet
-[Tweet copy]
-
-## Tags
-[lowercase-hyphenated-tag]
-[another-tag]
-[and-so-on]
-
-## Detailed Summary
-
-```markdown
-## Summary
-
-[1-2 sentence framing paragraph — do NOT restate the title or short summary]
-
-### [Main topic section]
-...
-
-### [Side topic section]
-...
-
-### Standup / Life Updates
-...
+```text
+.episode-assets/<number>/
+  audio.mp3
+  captions.vtt
+  work/
+  speaker-clips/
+  speaker-review.json
+  speakers.json
+  assets.md
 ```
-````
 
-### Title style
+The two files for R2 are `audio.mp3` and `captions.vtt`. Other files are local
+working files. Keep the source audio intact. Confirm `/.episode-assets/` is in
+`.gitignore` before creating files. Do not force-add this folder to Git.
 
-Aim for roughly **5 words** — sometimes shorter, and try not to exceed **8 words**. A single punchy hook phrase usually does the work better than a long descriptive title.
+## 2. Create and check named captions
 
-The hook should re-use a specific phrase the hosts coined, repeated, or laughed about in the episode — something that feels specific to *this* episode, not interchangeable with any other tech podcast. Past episodes leaned on hooks like:
+For audio input, follow [references/audio.md](references/audio.md). It gives the
+local transcription commands, speaker review process, and caption export steps.
+Use [scripts/bundle.py](scripts/bundle.py) for MP3 preparation, speaker clips,
+and the final `captions.vtt` file. It needs Python 3, Git, ffmpeg, and ffprobe.
 
-- "The 19,000-Line Slopfork"
-- "AI Adoption Reality Check"
-- "Selling the Increment"
+For existing VTT input, read the whole file. Preserve its timing and named voice
+labels. If labels are unknown, ask for the names with transcript quotes and audio
+clips when audio is available. Do not invent timings for a plain text transcript.
+Ask for the audio if timed captions are required.
 
-(These ran longer in the past with a trailing `: [plain-English description]`; going forward, keep it to the tight hook and drop the long descriptive tail.)
+Before export, inspect `captionURL` in recent episode MDX files and fetch at least
+two published caption files. Examples checked on 2026-11-06:
 
-As you read the transcript, watch for terms the hosts emphasize, repeat, or laugh about. Those are usually the strongest hook candidates.
+- https://assets.bikeshedpod.com/episodes/36/captions.vtt
+- https://assets.bikeshedpod.com/episodes/35/captions.vtt
 
-### Short summary style
+Both use UTF-8 WebVTT, a `WEBVTT` header, blank lines between cues, millisecond
+timestamps, and a named voice prefix on every cue:
 
-- Open by naming the hosts, with **Matt listed last** ("Scott, Dillon, and Matt...")
-- One sentence frames the main topic and the angle
-- Optionally one sentence on a meaty side topic
-- Optionally a "Plus..." sentence previewing standup beats — this gives the summary personality
+```text
+WEBVTT
 
-Aim for 2-4 sentences total. Punchy beats thorough; the detailed summary is where thoroughness goes.
+00:00:12.200 --> 00:00:13.420
+<v Scott>Welcome to the Bikeshed Podcast,
+```
 
-### Tweet style
+Keep the original episode time offset, including an intro with no speech. Use
+`Scott`, `Matt`, and `Dillon` only for confirmed speakers. Allow guests and absent
+hosts. A detected speaker number is not a person's identity. Never infer identity
+from job, topic, pitch, or a fixed speaker order. Use self-introductions, direct
+address, and supplied names as evidence for a suggested mapping. Ask the user to
+confirm or correct the mapping for every detected speaker before final export.
+One person can have more than one detected label.
 
-- Open with `New episode 🚲` (the bike emoji is a recurring visual motif)
-- Hook in plain language, with a hint of voice
-- Don't append the `bikeshedpod.com` URL — leave it out of the tweet copy
-- **Count characters** — must be under 280
+Check the full transcript for missing speech, false speech during music, mixed
+speaker cues, and incorrect technical names. Check excerpts near the start,
+middle, end, and speaker changes against the audio. A successful process exit
+does not establish transcript accuracy. Fix mixed speaker segments at the actual
+speaker change; do not assign a whole mixed segment to its longest speaker.
 
-### Tags style
+## 3. Write the episode assets
 
-A handful of topic tags (aim for ~5-8) that categorize the episode for the publishing flow.
+Read [references/assets.md](references/assets.md). Read the complete transcript.
+Write the title, short summary, tweet, tags, and detailed summary in that format.
+Keep the short title, Matt last in the short summary, no URL in the tweet, plain
+tag lines, and `## Summary` as the first heading of the detailed summary.
 
-- All **lowercase**, words separated by `-` (hyphens) instead of spaces, with **no punctuation** (e.g., `ai-agents`, `open-source-governance`, `node-js`, `frontend-tooling`)
-- Draw them from the episode's actual topics — the main topic, meaty side topics, and recurring themes
-- Present them as a **plain list, one tag per line, with no bullets and no code fence**, so they're trivial to copy straight into the episode file
+Save the assets to `.episode-assets/<number>/assets.md` for a full episode bundle.
+For a request for assets only, return them in chat without creating files unless
+requested. Count the tweet characters and keep the count below 280. Use transcript
+evidence for claims and quotations. Include life updates when present. Do not add
+events or speakers that are absent.
 
-### Detailed summary style
+## 4. Generate and fill the episode page
 
-This is the meatiest deliverable. It should feel like a thoughtful set of show notes — substantive enough that someone could decide whether to listen based on it alone, tight enough to read in under 90 seconds.
+Run the existing package script from the repo root:
 
-- Wrap the entire detailed summary in a fenced code block with `markdown` as the language so the raw markdown can be copied
-- Lead with a `## Summary` heading — **do not** add a `#` title heading, and **never restate the recommended title or the short summary**
-- Under `## Summary`, a 1-2 sentence opening paragraph framing the episode (fresh framing, not a rehash of the short summary)
-- `###` section headers for each major topic and for the standup section
-- **Bold** key terms, names, and concepts (DCO, virtual file system, RSC, slopfork) — it scans well and signals what matters
-- Quote or paraphrase specific moments when they add flavor (e.g., *Matteo's response: "I made all the decisions, I fixed the AI's mistakes, it's still my code."*)
-- Include the standup/life updates as their own section, usually at the end — that's part of the show
+```bash
+bun run new <number> "<title>"
+```
 
-## Voice notes
+Pass the actual title as one quoted argument. The current generator only converts
+spaces to hyphens and lowercases the title. If punctuation makes an unsuitable
+slug, rename the generated directory and update its `slug` field together. Keep
+the display title. The generator refuses only an existing exact title directory;
+check all of `src/pages/episodes/<number>/` first to prevent duplicate pages.
+It also runs the repo-wide formatter. Inspect its diff for unrelated changes.
 
-The Bikeshed is technical but conversational. Match that:
+Fill `src/pages/episodes/<number>/<slug>/episode-<number>.mdx`:
 
-- Substantive on the tech (AI agents, runtimes, OSS governance, frontend tooling, build systems) without being dry
-- Don't editorialize beyond what the hosts say — your job is to summarize *their* take, not add your own
-- A little wit is welcome; the show has a sense of humor
+- Set `title`, plain text `shortDescription`, and `metadata` from the assets.
+- Use the confirmed host keys from `src/hosts.ts` for `hosts`. Do not invent keys
+  for guests. Ask how to credit a guest if the current schema cannot represent them.
+- Set `duration` to the MP3 duration in whole seconds, rounded up, and set
+  `fileSizeBytes` to the size of the final `audio.mp3`. Use the bundle helper output.
+- Use `https://assets.bikeshedpod.com/episodes/<number>/audio.mp3` and
+  `https://assets.bikeshedpod.com/episodes/<number>/captions.vtt` for the media URLs.
+- Use the requested release time for `publishTime` in Unix milliseconds. If no
+  time was given, keep the generator's current time and state this draft assumption.
 
-## After delivering
+Keep `blueskyPostUri` empty unless the user supplies an existing post URI. Replace
+the placeholder body with the detailed summary, without its outer code fence.
+Escape YAML strings correctly. Check `episodeId`, `slug`, and the generated
+`index.tsx` import. Keep the tweet in the local assets file; do not invent a new
+frontmatter field for it.
 
-Don't pile on alternatives unprompted. If the title or tweet feels borderline, offer one alternative angle. Otherwise, deliver the draft and let Matt ask for tweaks.
+Run `bun run prebuild` to update `src/episode-metadata.json`,
+`src/rss-feed-data.json`, and `public/rss.xml`. Run the formatter on changed files,
+then `bun run build` and `git diff --check`. Check the new entry in both metadata
+files and RSS. Report any failed checks. Do not run deploy scripts.
+
+## 5. Deliver the branch and media
+
+Verify that both media files exist, the MP3 opens, the captions have confirmed
+names and valid times, and Git ignores the complete local bundle. Check the diff
+for unrelated changes and ensure the branch is the episode branch. Leave the
+episode changes on that branch for review. Commit, push, or open a PR only when
+the user's request includes that action.
+
+Report the branch, episode page path, absolute paths to both media files, checks,
+speaker confirmation state, and any remaining work. Show the five assets using
+the asset reference format. Provide a local audio link for each review clip when
+speaker confirmation is pending; do not claim that the interface played a clip
+unless playback was observed.
+
+The user can copy the numbered folder elsewhere. For R2, upload only the two final
+files to bucket `the-bikeshed-pod` at `episodes/<number>/audio.mp3` and
+`episodes/<number>/captions.vtt`. Uploads are a separate action unless requested.
+Do not upload working transcripts, speaker clips, or assets notes. When an upload
+is requested, use the current Cloudflare tool instructions, set `audio/mpeg` and
+`text/vtt` content types, and verify the public URLs. A local bundle or a prepared
+branch does not mean the episode is published.

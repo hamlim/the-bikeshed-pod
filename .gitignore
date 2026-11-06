@@ -228,3 +228,6 @@ tsconfig.tsbuildinfo
 
 # Don't want to commit audio files used for testing
 public/*.mp3
+
+# Local episode media, transcripts, and speaker review clips
+/.episode-assets/

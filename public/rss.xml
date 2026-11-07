@@ -28,7 +28,40 @@
         <copyright>© 2026 The Bikeshed Pod</copyright>
         <itunes:type>episodic</itunes:type>
 
-        
+
+          <item>
+            <!-- Required Item Elements -->
+            <title>How to Get Buy In</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/37/audio.mp3"
+                      type="audio/mpeg"
+                      length="45907300"/>
+            <guid isPermaLink="false">37</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/37/how-to-get-buy-in</link>
+            <pubDate>Fri, 06 Nov 2026 15:58:20 GMT</pubDate>
+            <description><![CDATA[Scott, Dillon, and Matt discuss how to get support for technical changes. They cover trust, demos, early feedback, and deadlines. They also compare browsers after Arc and explain why testing only in Chrome can hide problems.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>A sound technical plan does not guarantee support. The hosts discuss how to explain a problem, understand other teams, and help people agree on a change.</p>
+<h3>Build Trust and Show the Work</h3>
+<p><strong>Dillon</strong> works with a small team, where fewer people need to approve a technical decision. He prefers a working <strong>proof of concept</strong> to a long proposal. <strong>Scott</strong> also builds prototypes, but work across teams has brought more resistance. A good document alone does not always resolve it.</p>
+<p><strong>Matt</strong> describes trust as something you build over time and can later borrow against. Changes to a team can reduce that trust. Sometimes the work requires repeated discussions and answers to several rounds of questions.</p>
+<h3>Agree on the Problem First</h3>
+<p>Explain <strong>why the change matters</strong> before you explain the design. Other teams need to understand how the work affects them. People often arrive at a meeting without having read the document, so start with the problem and the shared goal.</p>
+<p>Ask for <strong>early feedback</strong> from people who agree with you and people who might object. Use public discussions to make the plan visible before a formal review. AI can help write a document, but you still need to understand the details and answer questions about them.</p>
+<h3>Use Deadlines to Reach a Decision</h3>
+<p>A <strong>deadline</strong> can stop a team from discussing options without choosing one. Agree on the smallest useful change, deliver it, and improve it over time. The hosts also discuss resistance that comes from people who want control or credit. No method guarantees agreement.</p>
+<h3>Browsers After Arc</h3>
+<p>The hosts return to <strong>Arc</strong> and their search for a replacement. Dillon reports display problems in <strong>Firefox</strong>. Matt describes a text display problem in a <strong>WebKit</strong> browser that worked correctly in Chrome. This leads to a discussion of <strong>browser testing</strong> and company rules for internal tools.</p>
+<p>Scott uses <strong>Dia</strong> with its AI features off. He misses some Arc features, including the way it handled bookmarks. Matt discusses <strong>Yab</strong> and <strong>Helium</strong>. The hosts compare browser features, work requirements, and the cost of changing familiar tools.</p>
+<h3>Standup / Life Updates</h3>
+<p>The personal updates focus on browser use. Scott wants a reliable replacement before Arc stops working for him. He also tries <strong>Zen</strong> and <strong>Yab</strong> on his personal computer. Dillon calls the browser discussion a fitting subject for the show. Matt asks listeners which browser they use.</p>]]></content:encoded>
+            <itunes:duration>1913</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/37/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+
+
           <item>
             <!-- Required Item Elements -->
             <title>The Internet is On Fire</title>

@@ -31,6 +31,39 @@
 
           <item>
             <!-- Required Item Elements -->
+            <title>Slop Bias</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/38/audio.mp3"
+                      type="audio/mpeg"
+                      length="48798115"/>
+            <guid isPermaLink="false">38</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/38/slop-bias</link>
+            <pubDate>Sat, 07 Nov 2026 00:28:45 GMT</pubDate>
+            <description><![CDATA[Scott, Dillon, and Matt discuss whether code written by AI deserves extra doubt. They use the Rust rewrite of TypeScript as a test case, then compare maintenance risks, small trials, and the cost of dependency upgrades. Plus, a return to design system problems and the question of when to stop debating a change.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>How much doubt comes from a new tool, and how much comes from knowing AI wrote it? The hosts discuss how teams can test those concerns and decide whether a change is useful.</p>
+<h3>Judge the Tool and Its Maintainers</h3>
+<p><strong>Matt</strong> introduces <strong>slop bias</strong> through his team&#x27;s discussion of <strong>tsrs</strong>, a Rust rewrite of the Go-based TypeScript compiler. He asks whether people combine valid concerns about a new project with an assumption that AI output must be poor.</p>
+<p>The hosts consider maintenance history, known maintainers, language knowledge, and security risks. <strong>Scott</strong> asks for a working trial and measured benefits. He also questions the double standard of rejecting AI-written dependencies while using AI to write application code.</p>
+<h3>Engineers Still Own the Decisions</h3>
+<p>An engineer must review the output, choose the architecture, and correct errors. The hosts discuss how detailed instructions and tests can help an agent complete a rewrite. Human-written software also had defects and <strong>technical debt</strong> before AI tools became common.</p>
+<h3>Make Room for Dependency Work</h3>
+<p><strong>Dillon</strong> suggests that resistance also comes from workload. Teams want to finish product features, while dependency upgrades compete for time. Calling a tool slop can become a reason to avoid that work.</p>
+<p>Matt argues that cheaper prototypes and broader test coverage should make teams more willing to try changes. Scott agrees that a small trial can provide useful evidence.</p>
+<h3>Start with a Small Trial</h3>
+<p>Dillon distinguishes <strong>build-time tools</strong> from software that runs in production. Matt describes testing tsrs in the builds for internal build tools. The first goal is to gain confidence before wider use. A small local speed improvement can also add up across many applications.</p>
+<p>The hosts return to the previous episode&#x27;s discussion of <strong>getting buy-in</strong>. They discuss when to stop an extended debate, make a decision, and use later changes to improve the result.</p>
+<h3>Design System Detour</h3>
+<p>Memories of oversized <strong>product card components</strong> interrupt the main discussion. The hosts recall the difficulty of making one component handle every possible use. They close with jokes about future compiler rewrites in <strong>C</strong> and <strong>Zig</strong>.</p>]]></content:encoded>
+            <itunes:duration>2034</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/38/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+
+
+          <item>
+            <!-- Required Item Elements -->
             <title>How to Get Buy In</title>
             <enclosure url="https://assets.bikeshedpod.com/episodes/37/audio.mp3"
                       type="audio/mpeg"

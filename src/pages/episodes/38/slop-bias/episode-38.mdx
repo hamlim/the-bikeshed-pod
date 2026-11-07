@@ -1,0 +1,53 @@
+---
+episodeId: "38"
+slug: "slop-bias"
+title: "Slop Bias"
+shortDescription: "Scott, Dillon, and Matt discuss whether code written by AI deserves extra doubt. They use the Rust rewrite of TypeScript as a test case, then compare maintenance risks, small trials, and the cost of dependency upgrades. Plus, a return to design system problems and the question of when to stop debating a change."
+hosts: ["scott", "dillon", "matt"]
+metadata:
+  [
+    "ai-generated-code",
+    "typescript",
+    "rust",
+    "developer-tooling",
+    "dependency-management",
+    "software-maintenance",
+    "engineering-teams",
+  ]
+publishTime: 1794011325995
+duration: 2034
+audioURL: "https://assets.bikeshedpod.com/episodes/38/audio.mp3"
+captionURL: "https://assets.bikeshedpod.com/episodes/38/captions.vtt"
+fileSizeBytes: 48798115
+blueskyPostUri: ""
+---
+
+## Summary
+
+How much doubt comes from a new tool, and how much comes from knowing AI wrote it? The hosts discuss how teams can test those concerns and decide whether a change is useful.
+
+### Judge the Tool and Its Maintainers
+
+**Matt** introduces **slop bias** through his team's discussion of **tsrs**, a Rust rewrite of the Go-based TypeScript compiler. He asks whether people combine valid concerns about a new project with an assumption that AI output must be poor.
+
+The hosts consider maintenance history, known maintainers, language knowledge, and security risks. **Scott** asks for a working trial and measured benefits. He also questions the double standard of rejecting AI-written dependencies while using AI to write application code.
+
+### Engineers Still Own the Decisions
+
+An engineer must review the output, choose the architecture, and correct errors. The hosts discuss how detailed instructions and tests can help an agent complete a rewrite. Human-written software also had defects and **technical debt** before AI tools became common.
+
+### Make Room for Dependency Work
+
+**Dillon** suggests that resistance also comes from workload. Teams want to finish product features, while dependency upgrades compete for time. Calling a tool slop can become a reason to avoid that work.
+
+Matt argues that cheaper prototypes and broader test coverage should make teams more willing to try changes. Scott agrees that a small trial can provide useful evidence.
+
+### Start with a Small Trial
+
+Dillon distinguishes **build-time tools** from software that runs in production. Matt describes testing tsrs in the builds for internal build tools. The first goal is to gain confidence before wider use. A small local speed improvement can also add up across many applications.
+
+The hosts return to the previous episode's discussion of **getting buy-in**. They discuss when to stop an extended debate, make a decision, and use later changes to improve the result.
+
+### Design System Detour
+
+Memories of oversized **product card components** interrupt the main discussion. The hosts recall the difficulty of making one component handle every possible use. They close with jokes about future compiler rewrites in **C** and **Zig**.

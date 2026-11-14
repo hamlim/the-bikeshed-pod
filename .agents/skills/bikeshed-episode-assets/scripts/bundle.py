@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
-"""Prepare local episode media and export confirmed WebVTT captions."""
+"""Prepare episode media, export confirmed captions, and copy final files."""
 
 import argparse
+import hashlib
 import html
 import json
 import math
 import shutil
 import subprocess
+from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 
 def run(*args):
@@ -221,19 +224,78 @@ def captions(args, folder):
     return {"captions": str(path), "cues": len(segments), **metadata(audio)}
 
 
+def digest(path):
+    with path.open("rb") as source:
+        digest = hashlib.sha256()
+        for block in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(block)
+        return digest.hexdigest()
+
+
+def copy_media(args, folder):
+    if not args.review_confirmed:
+        raise ValueError("Confirm speaker names and unclear words before delivery.")
+    episodes = args.dropbox_episodes.resolve(strict=True)
+    if (
+        not episodes.is_dir()
+        or episodes.parts[-3:] != ("Dropbox", "the-bikeshed-pod", "episodes")
+    ):
+        raise ValueError("Select Dropbox/the-bikeshed-pod/episodes.")
+    date = datetime.now(ZoneInfo("America/New_York")).date().isoformat()
+    destination = episodes / f"the-bikeshed-podcast-ep-{date}" / str(args.episode)
+    # Reject links in the destination path before creating any folders.
+    if destination.parent.is_symlink() or destination.is_symlink():
+        raise ValueError("The destination must not be a symbolic link.")
+    if destination.exists():
+        raise ValueError("The destination exists. Compare its files before continuing.")
+    info = metadata(folder / "audio.mp3")
+    captions = (folder / "captions.vtt").read_text(encoding="utf-8")
+    if not captions.startswith("WEBVTT\n\n") or "<v " not in captions:
+        raise ValueError("Use final WebVTT captions with confirmed voice names.")
+    files = [folder / name for name in ("audio.mp3", "captions.vtt")]
+    hashes = {path.name: digest(path) for path in files}
+    result = {
+        "destination": str(destination),
+        "dateZone": "America/New_York",
+        "sha256": hashes,
+        "sizes": {path.name: path.stat().st_size for path in files},
+        **info,
+        "localCopy": False,
+        "dropboxSync": "not verified",
+    }
+    if args.dry_run:
+        return result
+    destination.parent.mkdir(exist_ok=True)
+    destination.mkdir()  # Fail if another process has created it.
+    for source in files:
+        target = destination / source.name
+        with source.open("rb") as input_file, target.open("xb") as output_file:
+            shutil.copyfileobj(input_file, output_file)
+        if digest(target) != hashes[source.name] or digest(source) != hashes[source.name]:
+            raise ValueError("Copy verification failed. Inspect the partial destination.")
+        if target.stat().st_size != source.stat().st_size:
+            raise ValueError("Copy size check failed. Inspect the partial destination.")
+    result["localCopy"] = True
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
         "--root", type=Path, default=Path(__file__).resolve().parents[4]
     )
     subcommands = parser.add_subparsers(dest="command", required=True)
-    for name in ("stage", "review", "captions"):
+    for name in ("stage", "review", "captions", "copy-media"):
         command = subcommands.add_parser(name)
         command.add_argument("episode", type=int)
         if name == "stage":
             command.add_argument("audio", type=Path)
-        else:
+        elif name != "copy-media":
             command.add_argument("transcript", type=Path)
+        if name == "copy-media":
+            command.add_argument("--dropbox-episodes", type=Path, required=True)
+            command.add_argument("--review-confirmed", action="store_true")
+            command.add_argument("--dry-run", action="store_true")
         if name == "captions":
             command.add_argument("speakers", type=Path)
     args = parser.parse_args()
@@ -257,7 +319,8 @@ def main():
         if result.returncode != 0:
             parser.error("Add /.episode-assets/ to the repo .gitignore first.")
     try:
-        print(json.dumps(globals()[args.command](args, folder), indent=2))
+        command = globals()[args.command.replace("-", "_")]
+        print(json.dumps(command(args, folder), indent=2))
     except (
         ValueError,
         OSError,

@@ -28,6 +28,37 @@
         <copyright>© 2026 The Bikeshed Pod</copyright>
         <itunes:type>episodic</itunes:type>
 
+          <item>
+            <!-- Required Item Elements -->
+            <title>Where is the polish?</title>
+            <enclosure url="https://assets.bikeshedpod.com/episodes/39/audio.mp3"
+                      type="audio/mpeg"
+                      length="57975037"/>
+            <guid isPermaLink="false">39</guid>
+
+            <!-- Recommended Item Elements -->
+            <link>https://bikeshedpod.com/episodes/39/where-is-the-polish</link>
+            <pubDate>Fri, 13 Nov 2026 17:37:05 GMT</pubDate>
+            <description><![CDATA[Scott, Dillon, and Matt ask why better tools have not led to better software. They discuss deadlines, service outages, repeated design patterns, and the limits of AI review. They also explain how product use and design review can help teams find small defects.]]></description>
+            <content:encoded><![CDATA[<h2>Summary</h2>
+<p>Writing code faster does not ensure a better experience. The hosts ask what prevents teams from using that extra capacity to improve quality, reliability, and the details that users notice.</p>
+<h3>Faster Delivery or Better Software?</h3>
+<p>The discussion starts with a question: why do familiar applications still have so many defects when engineers have more tools than ever? <strong>AI agents</strong> can help write code and tests, but teams also need time to improve the result. The hosts describe pressure to ship more features instead of making each feature better.</p>
+<p>They also question the repeated use of familiar <strong>interface patterns</strong>. Copying another application can copy its defects too. New CSS features offer more options, but teams do not always use them to improve the experience.</p>
+<h3>Quality Needs Time and Support</h3>
+<p>The hosts include <strong>service reliability</strong> in their definition of polish. They discuss major service outages and how dependence on a small number of providers increases the impact of failures.</p>
+<p>They also consider staff reductions, lost system knowledge, and business measures that reward conversion gains more clearly than small usability improvements. <strong>Linear</strong> comes up as an example of a company that makes design quality part of its public message.</p>
+<h3>Use the Product and Review the Experience</h3>
+<p>Using your own product can reveal friction that a ticket or code review misses. A growing <strong>backlog</strong> does little good if nobody has time to complete the work.</p>
+<p>The hosts describe a gap in <strong>AI review</strong>: an agent can focus on unlikely edge cases while missing obvious problems in the actual experience. Clear instructions and visual designs help, but engineers still need to inspect how the product works for a person.</p>
+<h3>Keep Improving, with Clear Trade-offs</h3>
+<p>Repeated agent runs lead to jokes about <strong>hill climbing</strong>, <strong>Sisyphus</strong>, and the pyramids. The practical question remains: how does a team know that another iteration improved the product?</p>
+<p>The hosts close with a call to explain deadline trade-offs and contribute ideas beyond the supplied design. An animation or a better interaction can be part of an engineer&#x27;s work. Small, deliberate improvements can add up over time.</p>]]></content:encoded>
+            <itunes:duration>1812</itunes:duration>
+            <podcast:transcript url="https://assets.bikeshedpod.com/episodes/39/captions.vtt" type="text/vtt"/>
+            <itunes:explicit>true</itunes:explicit>
+          </item>
+
 
           <item>
             <!-- Required Item Elements -->

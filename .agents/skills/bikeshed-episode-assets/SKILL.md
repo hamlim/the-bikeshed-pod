@@ -1,13 +1,13 @@
 ---
 name: bikeshed-episode-assets
-description: Prepare a Bikeshed Podcast episode from an edited audio file, VTT captions, or a transcript. Create named speaker captions, a title, summary, tweet, tags, and show notes. For audio input, prepare ignored local media, use the repo episode generator, and prepare an episode branch. Use for Bikeshed episode assets, transcription, or new episode preparation.
+description: Prepare a Bikeshed Podcast episode from an edited audio file, VTT captions, or a transcript. Create named speaker captions, a title, summary, tweet, tags, and show notes. For audio input, prepare ignored local media, use the repo episode generator, copy final media to Dropbox, upload it to R2, and create and track a draft PR. Use for Bikeshed episode assets, transcription, or new episode preparation.
 ---
 
 # Bikeshed Episode Assets
 
 Use this skill for the complete audio-to-episode workflow. Audio input starts the
-full workflow unless the user requests a smaller task. It also accepts existing
-captions or a transcript. For existing text input with a request for assets only,
+full workflow, including Dropbox, R2, `$make-pr`, and `$track-pr`, unless the user
+requests a smaller task. It also accepts existing captions or a transcript. For existing text input with a request for assets only,
 skip media conversion, page creation, and branch creation. For a request for
 transcription only, stop after the caption checks.
 
@@ -140,24 +140,64 @@ Run `bun run prebuild` to update `src/episode-metadata.json`,
 then `bun run build` and `git diff --check`. Check the new entry in both metadata
 files and RSS. Report any failed checks. Do not run deploy scripts.
 
-## 5. Deliver the branch and media
+## 5. Check final media and copy it to Dropbox
 
 Verify that both media files exist, the MP3 opens, the captions have confirmed
-names and valid times, and Git ignores the complete local bundle. Check the diff
-for unrelated changes and ensure the branch is the episode branch. Leave the
-episode changes on that branch for review. Commit, push, or open a PR only when
-the user's request includes that action.
+names and valid times, and Git ignores the complete local bundle. Keep the
+speaker confirmation gate in step 2. For unclear words, show the user a timestamp,
+quote, and short audio clip. Get a correction or explicit approval to retain an
+unclear marker before delivery. Do not guess words. Complete these reviews before
+copying or uploading media.
 
-Report the branch, episode page path, absolute paths to both media files, checks,
-speaker confirmation state, and any remaining work. Show the five assets using
-the asset reference format. Provide a local audio link for each review clip when
-speaker confirmation is pending; do not claim that the interface played a clip
-unless playback was observed.
+Follow [references/delivery.md](references/delivery.md). Copy only the final
+`audio.mp3` and `captions.vtt` to:
 
-The user can copy the numbered folder elsewhere. For R2, upload only the two final
-files to bucket `the-bikeshed-pod` at `episodes/<number>/audio.mp3` and
-`episodes/<number>/captions.vtt`. Uploads are a separate action unless requested.
-Do not upload working transcripts, speaker clips, or assets notes. When an upload
-is requested, use the current Cloudflare tool instructions, set `audio/mpeg` and
-`text/vtt` content types, and verify the public URLs. A local bundle or a prepared
-branch does not mean the episode is published.
+```text
+Dropbox/the-bikeshed-pod/episodes/the-bikeshed-podcast-ep-YYYY-MM-DD/<number>/
+```
+
+Use the current date in `America/New_York` when delivery starts, not the recording
+or release date. For example, a delivery on 2026-11-13 uses
+`the-bikeshed-podcast-ep-2026-11-13/<number>/`. Keep original files intact. Check the
+Dropbox root and episode number before copying. Never silently replace files.
+Verify the copied bytes and sizes. Report a local copy and confirmed Dropbox sync
+as separate results. Do not claim sync completion from a local path alone.
+
+## 6. Upload final media to R2
+
+Upload only `audio.mp3` and `captions.vtt` to bucket `the-bikeshed-pod`, keys
+`episodes/<number>/audio.mp3` and `episodes/<number>/captions.vtt`. Use the current
+Cloudflare and wrangler skills for the selected tools. Use existing authorized
+access. Never print credentials. Set `audio/mpeg` and `text/vtt` media types.
+
+Use the remote object checks in the delivery reference. Check existing objects
+before writing. Reuse identical objects; get approval before replacing different
+bytes. Verify both remote objects against the final local bytes. Report partial
+uploads accurately. Check public media URLs separately. A successful upload does
+not prove public reachability or episode page publication.
+
+## 7. Create and track the draft PR
+
+Check the full diff for unrelated changes. Use `$make-pr` to check the final diff,
+base branch, PR template, and required checks. Create a scoped draft PR with `gh`
+and `--body-file`. Reuse an existing PR for this episode. Read back the saved PR.
+Follow the host's PR linking rules immediately after a PR create or push. Do not
+merge or deploy.
+
+Then use `$track-pr`. Verify usable Everything MCP access before a write. Executor
+is the only permitted fallback; do not use a browser or CLI. Use the live vault
+and trait schema and search by PR URL and alias to prevent duplicates. Use the
+live PR title and URL, alias `PR-the-bikeshed-pod--<number>` (the PR number), current
+Eastern created time, the current daily periodic note as day-created, and the
+status option for in review. Preserve existing entries and read back all required
+properties. If access or schema is missing, report that limit without inventing
+properties or claiming tracking completion. Read both skills from the installed
+skill paths; Matt's shared sources are `/Users/matt/dev/skills/skills/make-pr/SKILL.md`
+and `/Users/matt/dev/skills/skills/track-pr/SKILL.md`.
+
+Report the branch, episode page path, absolute media paths, file size and duration,
+review state, checks, Dropbox copy and sync state, R2 object verification, public
+media reachability, PR link, and tracking link. Show the five assets in the asset
+reference format. If review is pending, show local clip links and stop before
+delivery. Do not claim clip playback unless it was observed. A draft PR, copied
+media, or tracking entry does not mean publication.

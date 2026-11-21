@@ -5,6 +5,7 @@ import { ApplePodcasts } from "#components/apple-podcasts.js";
 import { Logo } from "#components/logo";
 import { Rss } from "#components/rss";
 import { Spotify } from "#components/spotify.js";
+import { YouTube, youtubeChannelUrl } from "#components/youtube";
 
 export function Nav() {
   return (
@@ -13,7 +14,7 @@ export function Nav() {
         <Link to="/">
           <Logo />
         </Link>
-        <div className="flex items-center gap-2 text-xl">
+        <div className="flex flex-wrap items-center justify-end gap-2 text-xl">
           <Anchor href="/about">About</Anchor>
           <Anchor href="/search">Search</Anchor>
           <Anchor href="/episodes">Episodes</Anchor>
@@ -24,6 +25,10 @@ export function Nav() {
           <Anchor href="https://podcasts.apple.com/us/podcast/the-bikeshed-pod/id1802688284">
             <ApplePodcasts className="w-6 h-6" />{" "}
             <span className="sr-only">Find us on Apple Podcasts</span>
+          </Anchor>
+          <Anchor href={youtubeChannelUrl}>
+            <YouTube className="w-6 h-6" />
+            <span className="sr-only">Find us on YouTube</span>
           </Anchor>
           <Anchor href="/rss.xml" target="_blank" rel="noreferrer">
             <Rss className="w-6 h-6" />{" "}

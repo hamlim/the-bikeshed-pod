@@ -11,6 +11,7 @@ import { ApplePodcasts } from "./apple-podcasts";
 import { SeeDiscussionOnBluesky, ShareToBluesky } from "./bluesky-social";
 import { EpisodeMeta } from "./episode-meta";
 import { Spotify } from "./spotify";
+import { YouTube, youtubeChannelUrl } from "./youtube";
 
 function getPreferredSocial(host: Host): { network: string; url: string } {
   const website = host.socials.website;
@@ -92,6 +93,9 @@ export function EpisodeContainer({
           </Anchor>
           <Anchor href="https://podcasts.apple.com/us/podcast/the-bikeshed-pod/id1802688284">
             <ApplePodcasts className="w-4 h-4 mr-2" /> Listen on Apple Podcasts
+          </Anchor>
+          <Anchor href={youtubeChannelUrl}>
+            <YouTube className="w-4 h-4 mr-2" /> Find us on YouTube
           </Anchor>
         </div>
         <div className="flex flex-col md:flex-row gap-2 justify-center">

@@ -10,6 +10,7 @@ import {
   CardHeader,
   CardTitle,
 } from "#components/ui/card";
+import { youtubeChannelUrl } from "#components/youtube";
 import episodeMetadata from "#episode-metadata";
 import { Button } from "#ui/button";
 
@@ -125,7 +126,7 @@ export default function Home() {
                     <Anchor href="https://podcasts.apple.com/us/podcast/the-bikeshed-pod/id1802688284">
                       Apple Podcasts
                     </Anchor>
-                    , or{" "}
+                    , <Anchor href={youtubeChannelUrl}>YouTube</Anchor>, or{" "}
                     <Anchor href="/rss.xml" target="_blank" rel="noreferrer">
                       your favorite platform
                     </Anchor>

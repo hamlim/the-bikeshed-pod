@@ -4,6 +4,7 @@ import { Bluesky } from "#components/bluesky.js";
 import { Discord } from "#components/discord.js";
 import { Rss } from "#components/rss";
 import { Spotify } from "#components/spotify.js";
+import { YouTube, youtubeChannelUrl } from "#components/youtube";
 
 import { hosts } from "./hosts";
 import type { Host } from "./types";
@@ -25,6 +26,9 @@ export function Footer() {
         </Anchor>
         <Anchor href="https://open.spotify.com/show/7njrdM3LvNPnqSftswTkjn?si=5cc424416eaa4b35">
           <Spotify className="w-4 h-4 mr-2" /> Spotify
+        </Anchor>
+        <Anchor href={youtubeChannelUrl}>
+          <YouTube className="w-4 h-4 mr-2" /> YouTube
         </Anchor>
       </nav>
       {/* Right Column - Info and Social */}
